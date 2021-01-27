@@ -1,19 +1,20 @@
 /* 
- * File:   Juego_Carrera.c
- * Author: Pablo Arellano
- * Created on January 22, 2021, 9:14 AM
+ * Project: Juego de Carrera
+ * File:    Juego Carrera.c
+ * Author:  Pablo Rene Arellano Estrada
+ * Carnet:  151379
+ * Created: January 24, 2021, 7:25 PM
  */
 
-//******************************************************************************
-// Importación de librerías
-//******************************************************************************
+//============================================================================*/
+// LIBRERIAS
+//============================================================================*/
 
 #include <xc.h>
 
-//******************************************************************************
-// Palabra de configuración
-//******************************************************************************
-
+//============================================================================*/
+// PALABRA DE CONFIGURACION
+//============================================================================*/
 // CONFIG1
 #pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
@@ -25,36 +26,33 @@
 #pragma config IESO = OFF       // Internal External Switchover bit (Internal/External Switchover mode is disabled)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is disabled)
 #pragma config LVP = OFF        // Low Voltage Programming Enable bit (RB3 pin has digital I/O, HV on MCLR must be used for programming)
-
 // CONFIG2
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
-
-
+// DEFINE
 #define _XTAL_FREQ 8000000
-
 #define LED_rojo PORTEbits.RE0
 #define LED_amarillo PORTEbits.RE1
 #define LED_verde PORTEbits.RE2
 
-//******************************************************************************
-// Variables
-//******************************************************************************
+//============================================================================*/
+// VARIABLES
+//============================================================================*/
 
 char counter = 0;
 
-//******************************************************************************
-// Prototipos de funciones
-//******************************************************************************
+//============================================================================*/
+// PROTOTIPO DE FUNCIONES
+//============================================================================*/
+
 void setup(void);
 void semaforo(void);
 
-//******************************************************************************
-// Ciclo principal
-//******************************************************************************
+//============================================================================*/
+// CICLO PRINCIPAL
+//============================================================================*/
 
 void main(void) {
-
     setup();
 
     //**************************************************************************
@@ -62,17 +60,15 @@ void main(void) {
     //**************************************************************************
 
     while (1) {
-        if (PORTB == 0b00000110)
-            semaforo();
+        //if (PORTB == 0b00000110)
+        //    semaforo();
 
-        if (PORTB == 0x06)
-            semaforo();
+        //if (PORTB == 0x06)
+        //    semaforo();
 
         if (PORTBbits.RB0 == 1)
             semaforo();
-
     }
-
     /*
        0000_0110 (PORTB)
        0000_0111 (const)
@@ -82,14 +78,13 @@ void main(void) {
         0000_0000 (const)
      && ---------
         False
-          
-     */
+           */
 
 }
 
-//******************************************************************************
-// Configuración
-//******************************************************************************
+//============================================================================*/
+// CONFIGURACION
+//============================================================================*/
 
 void setup(void) {
     TRISE = 0;
@@ -102,18 +97,27 @@ void setup(void) {
     PORTC = 0;
 }
 
-//******************************************************************************
-// Funciones
-//******************************************************************************
+//============================================================================*/
+// FUNCIONES
+//============================================================================*/
 
 void semaforo(void) {
     LED_rojo = 1;
     __delay_ms(700);
     LED_rojo = 0;
     LED_amarillo = 1;
-    __delay_ms(200);
+    __delay_ms(700);
     LED_amarillo = 0;
     LED_verde = 1;
-    __delay_ms(100);
+    __delay_ms(700);
     LED_verde = 0;
 }
+
+void delay(unsigned char n) { // void, no devuelve nada
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 255; j++) {
+        }
+    }
+}
+

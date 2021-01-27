@@ -1,0 +1,70 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"55 C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+[v _main main `(v  1 e 1 0 ]
+"89
+[v _setup setup `(v  1 e 1 0 ]
+"104
+[v _semaforo semaforo `(v  1 e 1 0 ]
+"228 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S31 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"245
+[u S40 . 1 `S31 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES40  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"414
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S59 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S64 . 1 `S59 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES64  1 e 1 @9 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1664
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"55 C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+[v _main main `(v  1 e 1 0 ]
+{
+"83
+} 0
+"89
+[v _setup setup `(v  1 e 1 0 ]
+{
+"98
+} 0
+"104
+[v _semaforo semaforo `(v  1 e 1 0 ]
+{
+"114
+} 0
