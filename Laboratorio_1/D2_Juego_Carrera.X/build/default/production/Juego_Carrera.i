@@ -2490,6 +2490,41 @@ extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 # 13 "Juego_Carrera.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\math.h" 1 3
+
+
+
+# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__unsupported.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\math.h" 2 3
+# 30 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\math.h" 3
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+# 14 "Juego_Carrera.c" 2
+
 
 
 
@@ -2508,7 +2543,26 @@ extern __bank0 __bit __timeout;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 42 "Juego_Carrera.c"
+# 43 "Juego_Carrera.c"
+void setup(void) {
+    TRISE = 0;
+    PORTE = 0;
+    ANSEL = 0;
+    ANSELH = 0;
+    TRISB = 0b00000111;
+    PORTB = 0;
+    TRISC = 0;
+    PORTC = 0;
+    TRISD = 0;
+    PORTD = 0;
+    TRISA = 0;
+    PORTA = 0;
+}
+
+
+
+
+
 char counter = 0;
 
 
@@ -2517,6 +2571,9 @@ char counter = 0;
 
 void setup(void);
 void semaforo(void);
+void verde (void);
+void jugador_1 (void);
+void jugador_2 (void);
 
 
 
@@ -2530,31 +2587,18 @@ void main(void) {
 
 
     while (1) {
+        if (PORTBbits.RB0 == 0){
+            if (PORTAbits.RA2 == 0){
+                semaforo();
+                verde();
+                PORTAbits.RA2 = 1;
+            }
+        jugador_1();
+        jugador_2();
+        }
 
 
-
-
-
-
-        if (PORTBbits.RB0 == 1)
-            semaforo();
     }
-# 83 "Juego_Carrera.c"
-}
-
-
-
-
-
-void setup(void) {
-    TRISE = 0;
-    PORTE = 0;
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISB = 0b00000111;
-    PORTB = 0;
-    TRISC = 0;
-    PORTC = 0;
 }
 
 
@@ -2568,15 +2612,38 @@ void semaforo(void) {
     PORTEbits.RE1 = 1;
     _delay((unsigned long)((700)*(8000000/4000.0)));
     PORTEbits.RE1 = 0;
-    PORTEbits.RE2 = 1;
-    _delay((unsigned long)((700)*(8000000/4000.0)));
-    PORTEbits.RE2 = 0;
+    return;
+
 }
 
-void delay(unsigned char n) {
+void verde(void) {
+    PORTEbits.RE2 = 1;
+    PORTEbits.RE0 = 0;
+    PORTEbits.RE1 = 0;
+}
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < 255; j++) {
+void jugador_1(void) {
+    if (PORTAbits.RA2 == 1);{
+        if (PORTBbits.RB1 == 0){
+            for (int i = 0; i < 7; i++){
+                PORTC = pow (2,i);
+                if (PORTC > 127){
+                    PORTAbits.RA0 = 1;
+                }
+            }
+        }
+    }
+}
+
+void jugador_2(void) {
+    if (PORTAbits.RA2 == 1);{
+        if (PORTBbits.RB2 == 0){
+            for (int i = 0; i < 7; i++){
+                PORTD = 128;
+                if (PORTD > 127){
+                    PORTAbits.RA1 = 1;
+                }
+            }
         }
     }
 }

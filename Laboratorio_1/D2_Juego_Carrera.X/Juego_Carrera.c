@@ -11,6 +11,7 @@
 //============================================================================*/
 
 #include <xc.h>
+#include <math.h>
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION
@@ -36,6 +37,25 @@
 #define LED_verde PORTEbits.RE2
 
 //============================================================================*/
+// CONFIGURACION
+//============================================================================*/
+
+void setup(void) {
+    TRISE = 0;                  //Puerto E como salida
+    PORTE = 0;                  //Puerto E apagado
+    ANSEL = 0;                  //Puerto A digital
+    ANSELH = 0;                 //Puerto B digital
+    TRISB = 0b00000111;         //Puerto B entrada para botones
+    PORTB = 0;                  //Puerto B apagado
+    TRISC = 0;                  //Puerto C como salida
+    PORTC = 0;                  //Puerto C apagado
+    TRISD = 0;                  //Puerto C como salida
+    PORTD = 0;                  //Puerto C apagado
+    TRISA = 0;                  //Puerto A como salida
+    PORTA = 0;                  //Puerto A apagado
+}
+
+//============================================================================*/
 // VARIABLES
 //============================================================================*/
 
@@ -47,6 +67,9 @@ char counter = 0;
 
 void setup(void);
 void semaforo(void);
+void verde (void);
+void jugador_1 (void);
+void jugador_2 (void);
 
 //============================================================================*/
 // CICLO PRINCIPAL
@@ -60,41 +83,18 @@ void main(void) {
     //**************************************************************************
 
     while (1) {
-        //if (PORTB == 0b00000110)
-        //    semaforo();
-
-        //if (PORTB == 0x06)
-        //    semaforo();
-
-        if (PORTBbits.RB0 == 1)
-            semaforo();
+        if (PORTBbits.RB0 == 0){
+            if (PORTAbits.RA2 == 0){
+                semaforo();
+                verde();
+                PORTAbits.RA2 = 1;
+            }
+        jugador_1();
+        jugador_2();
+        }
+        
+        
     }
-    /*
-       0000_0110 (PORTB)
-       0000_0111 (const)
-     & ---------
-       0000_0110
-        0000_0110 (PORTB)
-        0000_0000 (const)
-     && ---------
-        False
-           */
-
-}
-
-//============================================================================*/
-// CONFIGURACION
-//============================================================================*/
-
-void setup(void) {
-    TRISE = 0;
-    PORTE = 0;
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISB = 0b00000111;
-    PORTB = 0;
-    TRISC = 0;
-    PORTC = 0;
 }
 
 //============================================================================*/
@@ -108,16 +108,40 @@ void semaforo(void) {
     LED_amarillo = 1;
     __delay_ms(700);
     LED_amarillo = 0;
-    LED_verde = 1;
-    __delay_ms(700);
-    LED_verde = 0;
+    return;      
+    
 }
 
-void delay(unsigned char n) { // void, no devuelve nada
+void verde(void) {
+    LED_verde = 1;
+    LED_rojo = 0;
+    LED_amarillo = 0;
+}
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < 255; j++) {
-        }
+void jugador_1(void) {
+    if (PORTAbits.RA2 == 1);{
+        if (PORTBbits.RB1 == 0){
+            for (int i = 0; i < 7; i++){
+                PORTC = pow (2,i);
+                if (PORTC > 127){
+                    PORTAbits.RA0 = 1;
+                }
+            }
+        } 
     }
 }
+
+void jugador_2(void) {
+    if (PORTAbits.RA2 == 1);{
+        if (PORTBbits.RB2 == 0){
+            for (int i = 0; i < 7; i++){
+                PORTD = 128;
+                if (PORTD > 127){
+                    PORTAbits.RA1 = 1;
+                }
+            }
+        } 
+    }
+}
+
 

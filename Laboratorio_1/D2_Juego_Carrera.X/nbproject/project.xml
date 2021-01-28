@@ -23,5 +23,11 @@
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
         </data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>apagado</word>
+            <word>apagar</word>
+            <word>botones</word>
+            <word>entrada</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>
