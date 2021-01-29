@@ -28,6 +28,7 @@
             <word>apagar</word>
             <word>botones</word>
             <word>entrada</word>
+            <word>Jugador</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

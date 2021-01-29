@@ -43,15 +43,15 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "43 C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
 [v _setup setup `(v  1 e 1 0 ]
-"78
+"87
 [v _main main `(v  1 e 1 0 ]
-"104
+"129
 [v _semaforo semaforo `(v  1 e 1 0 ]
-"115
+"140
 [v _verde verde `(v  1 e 1 0 ]
-"121
+"148
 [v _jugador_1 jugador_1 `(v  1 e 1 0 ]
-"134
+"184
 [v _jugador_2 jugador_2 `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -111,39 +111,51 @@
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
-"78 C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+"62 C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+[v _pressed_ok pressed_ok `i  1 e 2 0 ]
+"63
+[v _released_ok released_ok `i  1 e 2 0 ]
+"64
+[v _presionado presionado `i  1 e 2 0 ]
+"65
+[v _i i `i  1 e 2 0 ]
+"67
+[v _pressed_ok2 pressed_ok2 `i  1 e 2 0 ]
+"68
+[v _released_ok2 released_ok2 `i  1 e 2 0 ]
+"69
+[v _presionado2 presionado2 `i  1 e 2 0 ]
+"70
+[v _i2 i2 `i  1 e 2 0 ]
+"87
 [v _main main `(v  1 e 1 0 ]
 {
-"98
+"123
 } 0
-"115
+"140
 [v _verde verde `(v  1 e 1 0 ]
 {
-"119
+"144
 } 0
 "43
 [v _setup setup `(v  1 e 1 0 ]
 {
 "56
 } 0
-"104
+"129
 [v _semaforo semaforo `(v  1 e 1 0 ]
 {
-"113
+"138
 } 0
-"134
+"184
 [v _jugador_2 jugador_2 `(v  1 e 1 0 ]
 {
-"137
-[v jugador_2@i i `i  1 a 2 0 ]
-"145
+"218
 } 0
-"121
+"148
 [v _jugador_1 jugador_1 `(v  1 e 1 0 ]
 {
-"124
-[v jugador_1@i i `i  1 a 2 52 ]
-"132
+"182
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\pow.c
 [v _pow pow `(d  1 e 4 0 ]
@@ -161,7 +173,7 @@
 [v _log log `(d  1 e 4 0 ]
 {
 "7
-[v log@exponent exponent `i  1 a 2 8 ]
+[v log@exponent exponent `i  1 a 2 78 ]
 "5
 [v log@x x `d  1 p 4 4 ]
 "9
@@ -259,21 +271,21 @@
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S448 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S453 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S453 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S456 . 4 `l 1 i 4 0 `d 1 f 4 0 `S448 1 fAsBytes 4 0 `S453 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S456  1 a 4 39 ]
+[s S458 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S461 . 4 `l 1 i 4 0 `d 1 f 4 0 `S453 1 fAsBytes 4 0 `S458 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S461  1 a 4 39 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 33 ]
-[s S525 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 34 ]
+[s S530 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S528 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S525 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S528  1 a 2 43 ]
+[u S533 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S530 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S533  1 a 2 43 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 38 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 37 ]
+[v ___flmul@aexp aexp `uc  1 a 1 33 ]
 "9
 [v ___flmul@sign sign `uc  1 a 1 32 ]
 "8

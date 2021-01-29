@@ -2563,7 +2563,16 @@ void setup(void) {
 
 
 
-char counter = 0;
+int pressed_ok = 0;
+int released_ok = 0;
+int presionado = 0;
+int i = 0;
+
+int pressed_ok2 = 0;
+int released_ok2 = 0;
+int presionado2 = 0;
+int i2 = 0;
+
 
 
 
@@ -2587,14 +2596,30 @@ void main(void) {
 
 
     while (1) {
-        if (PORTBbits.RB0 == 0){
-            if (PORTAbits.RA2 == 0){
+        if (PORTBbits.RB0 == 0)
+        {
+            if (PORTAbits.RA2 == 0)
+            {
                 semaforo();
                 verde();
                 PORTAbits.RA2 = 1;
             }
-        jugador_1();
-        jugador_2();
+        }
+        if (PORTAbits.RA0 == 0 && PORTAbits.RA1 == 0)
+        {
+            if (PORTAbits.RA0 == 1)
+            {
+                PORTBbits.RB2 = 0;
+            }
+            else if (PORTAbits.RA1 == 1)
+            {
+                PORTBbits.RB1 = 0;
+            }
+            else
+            {
+                jugador_1();
+                jugador_2();
+            }
         }
 
 
@@ -2622,27 +2647,75 @@ void verde(void) {
     PORTEbits.RE1 = 0;
 }
 
-void jugador_1(void) {
-    if (PORTAbits.RA2 == 1);{
-        if (PORTBbits.RB1 == 0){
-            for (int i = 0; i < 7; i++){
-                PORTC = pow (2,i);
-                if (PORTC > 127){
-                    PORTAbits.RA0 = 1;
+
+
+void jugador_1(void)
+{
+    if (PORTAbits.RA2 == 1)
+    {
+        if (PORTBbits.RB1 == 0)
+        {
+            pressed_ok = pressed_ok + 1;
+            released_ok = 0;
+            if (pressed_ok > 500)
+            {
+                if (presionado == 0)
+                {
+                    PORTC = pow(2,i);
+                    i = i + 1;
+                    presionado = 1;
+                    if (i == 8)
+                    {
+                        PORTAbits.RA0 = 1;
+                    }
                 }
+                pressed_ok = 0;
+            }
+        }
+        else
+        {
+            released_ok = released_ok + 1;
+            pressed_ok = 0;
+            if (released_ok > 500)
+            {
+                presionado = 0;
+                released_ok = 0;
             }
         }
     }
 }
 
-void jugador_2(void) {
-    if (PORTAbits.RA2 == 1);{
-        if (PORTBbits.RB2 == 0){
-            for (int i = 0; i < 7; i++){
-                PORTD = 128;
-                if (PORTD > 127){
-                    PORTAbits.RA1 = 1;
+void jugador_2(void)
+{
+    if (PORTAbits.RA2 == 1)
+    {
+        if (PORTBbits.RB2 == 0)
+        {
+            pressed_ok2 = pressed_ok2 + 1;
+            released_ok2 = 0;
+            if (pressed_ok2 > 500)
+            {
+                if (presionado2 == 0)
+                {
+                    PORTD = pow(2,i2);
+                    i2 = i2 + 1;
+                    presionado2 = 1;
+                    if (i2 == 8)
+                    {
+                        PORTAbits.RA1 = 1;
+                    }
                 }
+                pressed_ok2 = 0;
+            }
+        }
+        else
+        {
+            released_ok2 = released_ok2 + 1;
+            pressed_ok2 = 0;
+            if (released_ok2 > 500)
+            {
+                presionado2 = 0;
+                released_ok2 = 0;
             }
         }
     }
