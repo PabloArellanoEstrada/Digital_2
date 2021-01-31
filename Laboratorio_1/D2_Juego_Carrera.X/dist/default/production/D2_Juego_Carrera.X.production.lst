@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Thu Jan 28 23:06:06 2021
+                                                                                               Sun Jan 31 00:57:49 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -819,7 +819,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    805 ;;
    806 ;; *************** function _main *****************
    807 ;; Defined at:
-   808 ;;		line 87 in file "Juego_Carrera.c"
+   808 ;;		line 88 in file "Juego_Carrera.c"
    809 ;; Parameters:    Size  Location     Type
    810 ;;		None
    811 ;; Auto vars:     Size  Location     Type
@@ -858,11 +858,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    844                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
    845                           
    846                           
-   847                           ;Juego_Carrera.c: 88:     setup();
+   847                           ;Juego_Carrera.c: 89:     setup();
    848  137D  120A  118A  2003  160A  118A  	fcall	_setup
    849  1382                     l3405:
    850                           
-   851                           ;Juego_Carrera.c: 95:         if (PORTBbits.RB0 == 0)
+   851                           ;Juego_Carrera.c: 96:         if (PORTBbits.RB0 == 0)
    852  1382  1283               	bcf	3,5	;RP0=0, select bank0
    853  1383  1303               	bcf	3,6	;RP1=0, select bank0
    854  1384  1806               	btfsc	6,0	;volatile
@@ -873,7 +873,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    859  1388                     u5450:
    860  1388                     l3407:
    861                           
-   862                           ;Juego_Carrera.c: 96:         {;Juego_Carrera.c: 97:             if (PORTAbits.RA2 == 0)
+   862                           ;Juego_Carrera.c: 97:         {;Juego_Carrera.c: 98:             if (PORTAbits.RA2 == 0)
    863  1388  1905               	btfsc	5,2	;volatile
    864  1389  2B8B               	goto	u5461
    865  138A  2B8C               	goto	u5460
@@ -882,21 +882,21 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    868  138C                     u5460:
    869  138C                     l3409:
    870                           
-   871                           ;Juego_Carrera.c: 98:             {;Juego_Carrera.c: 99:                 semaforo();
+   871                           ;Juego_Carrera.c: 99:             {;Juego_Carrera.c: 100:                 semaforo();
    872  138C  160A  118A  2333  160A  118A  	fcall	_semaforo
    873  1391                     l3411:
    874                           
-   875                           ;Juego_Carrera.c: 100:                 verde();
+   875                           ;Juego_Carrera.c: 101:                 verde();
    876  1391  160A  118A  231A  160A  118A  	fcall	_verde
    877  1396                     l3413:
    878                           
-   879                           ;Juego_Carrera.c: 101:                 PORTAbits.RA2 = 1;
+   879                           ;Juego_Carrera.c: 102:                 PORTAbits.RA2 = 1;
    880  1396  1283               	bcf	3,5	;RP0=0, select bank0
    881  1397  1303               	bcf	3,6	;RP1=0, select bank0
    882  1398  1505               	bsf	5,2	;volatile
    883  1399                     l3415:
    884                           
-   885                           ;Juego_Carrera.c: 104:         if (PORTAbits.RA0 == 0 && PORTAbits.RA1 == 0)
+   885                           ;Juego_Carrera.c: 110:         if (PORTAbits.RA0 == 0 && PORTAbits.RA1 == 0)
    886  1399  1805               	btfsc	5,0	;volatile
    887  139A  2B9C               	goto	u5471
    888  139B  2B9D               	goto	u5470
@@ -912,7 +912,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    898  13A1                     u5480:
    899  13A1                     l3419:
    900                           
-   901                           ;Juego_Carrera.c: 105:         {;Juego_Carrera.c: 106:             if (PORTAbits.RA0 == 
+   901                           ;Juego_Carrera.c: 111:         {;Juego_Carrera.c: 112:             if (PORTAbits.RA0 == 
       +                          1)
    902  13A1  1C05               	btfss	5,0	;volatile
    903  13A2  2BA4               	goto	u5491
@@ -922,14 +922,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    907  13A5                     u5490:
    908  13A5                     l3421:
    909                           
-   910                           ;Juego_Carrera.c: 107:             {;Juego_Carrera.c: 108:                 PORTBbits.RB2
+   910                           ;Juego_Carrera.c: 113:             {;Juego_Carrera.c: 114:                 PORTBbits.RB2
       +                           = 0;
    911  13A5  1106               	bcf	6,2	;volatile
    912                           
-   913                           ;Juego_Carrera.c: 109:             }
+   913                           ;Juego_Carrera.c: 115:             }
    914  13A6  2B82               	goto	l3405
    915  13A7                     l72:	
-   916                           ;Juego_Carrera.c: 110:             else if (PORTAbits.RA1 == 1)
+   916                           ;Juego_Carrera.c: 116:             else if (PORTAbits.RA1 == 1)
    917                           
    918  13A7  1C85               	btfss	5,1	;volatile
    919  13A8  2BAA               	goto	u5501
@@ -939,18 +939,18 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    923  13AB                     u5500:
    924  13AB                     l3423:
    925                           
-   926                           ;Juego_Carrera.c: 111:             {;Juego_Carrera.c: 112:                 PORTBbits.RB1
+   926                           ;Juego_Carrera.c: 117:             {;Juego_Carrera.c: 118:                 PORTBbits.RB1
       +                           = 0;
    927  13AB  1086               	bcf	6,1	;volatile
    928                           
-   929                           ;Juego_Carrera.c: 113:             }
+   929                           ;Juego_Carrera.c: 119:             }
    930  13AC  2B82               	goto	l3405
    931  13AD                     l3425:
    932                           
-   933                           ;Juego_Carrera.c: 115:             {;Juego_Carrera.c: 116:                 jugador_1();
+   933                           ;Juego_Carrera.c: 121:             {;Juego_Carrera.c: 122:                 jugador_1();
    934  13AD  160A  118A  2682  160A  118A  	fcall	_jugador_1
    935                           
-   936                           ;Juego_Carrera.c: 117:                 jugador_2();
+   936                           ;Juego_Carrera.c: 123:                 jugador_2();
    937  13B2  160A  118A  2741  160A  118A  	fcall	_jugador_2
    938  13B7  2B82               	goto	l3405
    939  13B8  120A  118A  2800   	ljmp	start
@@ -960,7 +960,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    943  131A                     __ptext1:	
    944 ;; *************** function _verde *****************
    945 ;; Defined at:
-   946 ;;		line 140 in file "Juego_Carrera.c"
+   946 ;;		line 150 in file "Juego_Carrera.c"
    947 ;; Parameters:    Size  Location     Type
    948 ;;		None
    949 ;; Auto vars:     Size  Location     Type
@@ -995,15 +995,15 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    978                           ; Regs used in _verde: []
    979                           
    980                           
-   981                           ;Juego_Carrera.c: 141:     PORTEbits.RE2 = 1;
+   981                           ;Juego_Carrera.c: 156:     PORTEbits.RE2 = 1;
    982  131A  1283               	bcf	3,5	;RP0=0, select bank0
    983  131B  1303               	bcf	3,6	;RP1=0, select bank0
    984  131C  1509               	bsf	9,2	;volatile
    985                           
-   986                           ;Juego_Carrera.c: 142:     PORTEbits.RE0 = 0;
+   986                           ;Juego_Carrera.c: 157:     PORTEbits.RE0 = 0;
    987  131D  1009               	bcf	9,0	;volatile
    988                           
-   989                           ;Juego_Carrera.c: 143:     PORTEbits.RE1 = 0;
+   989                           ;Juego_Carrera.c: 158:     PORTEbits.RE1 = 0;
    990  131E  1089               	bcf	9,1	;volatile
    991  131F                     l84:
    992  131F  0008               	return
@@ -1013,7 +1013,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    996  0003                     __ptext2:	
    997 ;; *************** function _setup *****************
    998 ;; Defined at:
-   999 ;;		line 43 in file "Juego_Carrera.c"
+   999 ;;		line 44 in file "Juego_Carrera.c"
   1000 ;; Parameters:    Size  Location     Type
   1001 ;;		None
   1002 ;; Auto vars:     Size  Location     Type
@@ -1048,69 +1048,69 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1031                           ; Regs used in _setup: [wreg+status,2]
   1032                           
   1033                           
-  1034                           ;Juego_Carrera.c: 44:     TRISE = 0;
+  1034                           ;Juego_Carrera.c: 45:     TRISE = 0;
   1035  0003  1683               	bsf	3,5	;RP0=1, select bank1
   1036  0004  1303               	bcf	3,6	;RP1=0, select bank1
   1037  0005  0189               	clrf	9	;volatile
   1038                           
-  1039                           ;Juego_Carrera.c: 45:     PORTE = 0;
+  1039                           ;Juego_Carrera.c: 46:     PORTE = 0;
   1040  0006  1283               	bcf	3,5	;RP0=0, select bank0
   1041  0007  1303               	bcf	3,6	;RP1=0, select bank0
   1042  0008  0189               	clrf	9	;volatile
   1043                           
-  1044                           ;Juego_Carrera.c: 46:     ANSEL = 0;
+  1044                           ;Juego_Carrera.c: 47:     ANSEL = 0;
   1045  0009  1683               	bsf	3,5	;RP0=1, select bank3
   1046  000A  1703               	bsf	3,6	;RP1=1, select bank3
   1047  000B  0188               	clrf	8	;volatile
   1048                           
-  1049                           ;Juego_Carrera.c: 47:     ANSELH = 0;
+  1049                           ;Juego_Carrera.c: 48:     ANSELH = 0;
   1050  000C  0189               	clrf	9	;volatile
   1051  000D                     l1639:
   1052                           
-  1053                           ;Juego_Carrera.c: 48:     TRISB = 0b00000111;
+  1053                           ;Juego_Carrera.c: 49:     TRISB = 0b00000111;
   1054  000D  3007               	movlw	7
   1055  000E  1683               	bsf	3,5	;RP0=1, select bank1
   1056  000F  1303               	bcf	3,6	;RP1=0, select bank1
   1057  0010  0086               	movwf	6	;volatile
   1058  0011                     l1641:
   1059                           
-  1060                           ;Juego_Carrera.c: 49:     PORTB = 0;
+  1060                           ;Juego_Carrera.c: 50:     PORTB = 0;
   1061  0011  1283               	bcf	3,5	;RP0=0, select bank0
   1062  0012  1303               	bcf	3,6	;RP1=0, select bank0
   1063  0013  0186               	clrf	6	;volatile
   1064  0014                     l1643:
   1065                           
-  1066                           ;Juego_Carrera.c: 50:     TRISC = 0;
+  1066                           ;Juego_Carrera.c: 51:     TRISC = 0;
   1067  0014  1683               	bsf	3,5	;RP0=1, select bank1
   1068  0015  1303               	bcf	3,6	;RP1=0, select bank1
   1069  0016  0187               	clrf	7	;volatile
   1070  0017                     l1645:
   1071                           
-  1072                           ;Juego_Carrera.c: 51:     PORTC = 0;
+  1072                           ;Juego_Carrera.c: 52:     PORTC = 0;
   1073  0017  1283               	bcf	3,5	;RP0=0, select bank0
   1074  0018  1303               	bcf	3,6	;RP1=0, select bank0
   1075  0019  0187               	clrf	7	;volatile
   1076  001A                     l1647:
   1077                           
-  1078                           ;Juego_Carrera.c: 52:     TRISD = 0;
+  1078                           ;Juego_Carrera.c: 53:     TRISD = 0;
   1079  001A  1683               	bsf	3,5	;RP0=1, select bank1
   1080  001B  1303               	bcf	3,6	;RP1=0, select bank1
   1081  001C  0188               	clrf	8	;volatile
   1082  001D                     l1649:
   1083                           
-  1084                           ;Juego_Carrera.c: 53:     PORTD = 0;
+  1084                           ;Juego_Carrera.c: 54:     PORTD = 0;
   1085  001D  1283               	bcf	3,5	;RP0=0, select bank0
   1086  001E  1303               	bcf	3,6	;RP1=0, select bank0
   1087  001F  0188               	clrf	8	;volatile
   1088  0020                     l1651:
   1089                           
-  1090                           ;Juego_Carrera.c: 54:     TRISA = 0;
+  1090                           ;Juego_Carrera.c: 55:     TRISA = 0;
   1091  0020  1683               	bsf	3,5	;RP0=1, select bank1
   1092  0021  1303               	bcf	3,6	;RP1=0, select bank1
   1093  0022  0185               	clrf	5	;volatile
   1094  0023                     l1653:
   1095                           
-  1096                           ;Juego_Carrera.c: 55:     PORTA = 0;
+  1096                           ;Juego_Carrera.c: 56:     PORTA = 0;
   1097  0023  1283               	bcf	3,5	;RP0=0, select bank0
   1098  0024  1303               	bcf	3,6	;RP1=0, select bank0
   1099  0025  0185               	clrf	5	;volatile
@@ -1122,7 +1122,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1105  1333                     __ptext3:	
   1106 ;; *************** function _semaforo *****************
   1107 ;; Defined at:
-  1108 ;;		line 129 in file "Juego_Carrera.c"
+  1108 ;;		line 133 in file "Juego_Carrera.c"
   1109 ;; Parameters:    Size  Location     Type
   1110 ;;		None
   1111 ;; Auto vars:     Size  Location     Type
@@ -1157,13 +1157,13 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1140                           ; Regs used in _semaforo: [wreg]
   1141                           
   1142                           
-  1143                           ;Juego_Carrera.c: 130:     PORTEbits.RE0 = 1;
+  1143                           ;Juego_Carrera.c: 141:     PORTEbits.RE0 = 1;
   1144  1333  1283               	bcf	3,5	;RP0=0, select bank0
   1145  1334  1303               	bcf	3,6	;RP1=0, select bank0
   1146  1335  1409               	bsf	9,0	;volatile
   1147  1336                     l1657:
   1148                           
-  1149                           ;Juego_Carrera.c: 131:     _delay((unsigned long)((700)*(8000000/4000.0)));
+  1149                           ;Juego_Carrera.c: 142:     _delay((unsigned long)((700)*(8000000/4000.0)));
   1150  1336  3008               	movlw	8
   1151  1337  00F2               	movwf	??_semaforo+2
   1152  1338  301B               	movlw	27
@@ -1179,16 +1179,16 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1162  1341  2B3C               	goto	u5517
   1163  1342                     l1659:
   1164                           
-  1165                           ;Juego_Carrera.c: 132:     PORTEbits.RE0 = 0;
+  1165                           ;Juego_Carrera.c: 143:     PORTEbits.RE0 = 0;
   1166  1342  1283               	bcf	3,5	;RP0=0, select bank0
   1167  1343  1303               	bcf	3,6	;RP1=0, select bank0
   1168  1344  1009               	bcf	9,0	;volatile
   1169  1345                     l1661:
   1170                           
-  1171                           ;Juego_Carrera.c: 133:     PORTEbits.RE1 = 1;
+  1171                           ;Juego_Carrera.c: 144:     PORTEbits.RE1 = 1;
   1172  1345  1489               	bsf	9,1	;volatile
   1173                           
-  1174                           ;Juego_Carrera.c: 134:     _delay((unsigned long)((700)*(8000000/4000.0)));
+  1174                           ;Juego_Carrera.c: 145:     _delay((unsigned long)((700)*(8000000/4000.0)));
   1175  1346  3008               	movlw	8
   1176  1347  00F2               	movwf	??_semaforo+2
   1177  1348  301B               	movlw	27
@@ -1204,7 +1204,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1187  1351  2B4C               	goto	u5527
   1188  1352                     l1663:
   1189                           
-  1190                           ;Juego_Carrera.c: 135:     PORTEbits.RE1 = 0;
+  1190                           ;Juego_Carrera.c: 146:     PORTEbits.RE1 = 0;
   1191  1352  1283               	bcf	3,5	;RP0=0, select bank0
   1192  1353  1303               	bcf	3,6	;RP1=0, select bank0
   1193  1354  1089               	bcf	9,1	;volatile
@@ -1216,7 +1216,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1199  1741                     __ptext4:	
   1200 ;; *************** function _jugador_2 *****************
   1201 ;; Defined at:
-  1202 ;;		line 184 in file "Juego_Carrera.c"
+  1202 ;;		line 202 in file "Juego_Carrera.c"
   1203 ;; Parameters:    Size  Location     Type
   1204 ;;		None
   1205 ;; Auto vars:     Size  Location     Type
@@ -1254,7 +1254,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1237                           ; Regs used in _jugador_2: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
   1238                           
   1239                           
-  1240                           ;Juego_Carrera.c: 186:     if (PORTAbits.RA2 == 1)
+  1240                           ;Juego_Carrera.c: 208:     if (PORTAbits.RA2 == 1)
   1241  1741  1283               	bcf	3,5	;RP0=0, select bank0
   1242  1742  1303               	bcf	3,6	;RP1=0, select bank0
   1243  1743  1D05               	btfss	5,2	;volatile
@@ -1265,7 +1265,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1248  1747                     u5390:
   1249  1747                     l3369:
   1250                           
-  1251                           ;Juego_Carrera.c: 187:     {;Juego_Carrera.c: 188:         if (PORTBbits.RB2 == 0)
+  1251                           ;Juego_Carrera.c: 209:     {;Juego_Carrera.c: 210:         if (PORTBbits.RB2 == 0)
   1252  1747  1906               	btfsc	6,2	;volatile
   1253  1748  2F4A               	goto	u5401
   1254  1749  2F4B               	goto	u5400
@@ -1274,7 +1274,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1257  174B                     u5400:
   1258  174B                     l3371:
   1259                           
-  1260                           ;Juego_Carrera.c: 189:         {;Juego_Carrera.c: 190:             pressed_ok2 = pressed
+  1260                           ;Juego_Carrera.c: 211:         {;Juego_Carrera.c: 212:             pressed_ok2 = pressed
       +                          _ok2 + 1;
   1261  174B  1683               	bsf	3,5	;RP0=1, select bank1
   1262  174C  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1288,12 +1288,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1270  1754  00DD               	movwf	(_pressed_ok2+1)^(0+128)
   1271  1755                     l3373:
   1272                           
-  1273                           ;Juego_Carrera.c: 191:             released_ok2 = 0;
+  1273                           ;Juego_Carrera.c: 213:             released_ok2 = 0;
   1274  1755  01DA               	clrf	_released_ok2^(0+128)
   1275  1756  01DB               	clrf	(_released_ok2+1)^(0+128)
   1276  1757                     l3375:
   1277                           
-  1278                           ;Juego_Carrera.c: 192:             if (pressed_ok2 > 500)
+  1278                           ;Juego_Carrera.c: 214:             if (pressed_ok2 > 500)
   1279  1757  085D               	movf	(_pressed_ok2+1)^(0+128),w
   1280  1758  3A80               	xorlw	128
   1281  1759  00FF               	movwf	btemp+1
@@ -1312,7 +1312,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1294  1764                     u5410:
   1295  1764                     l3377:
   1296                           
-  1297                           ;Juego_Carrera.c: 193:             {;Juego_Carrera.c: 194:                 if (presionad
+  1297                           ;Juego_Carrera.c: 215:             {;Juego_Carrera.c: 216:                 if (presionad
       +                          o2 == 0)
   1298  1764  1683               	bsf	3,5	;RP0=1, select bank1
   1299  1765  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1326,7 +1326,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1307  176C                     u5420:
   1308  176C                     l3379:
   1309                           
-  1310                           ;Juego_Carrera.c: 195:                 {;Juego_Carrera.c: 196:                     PORTD
+  1310                           ;Juego_Carrera.c: 217:                 {;Juego_Carrera.c: 218:                     PORTD
       +                           = pow(2,i2);
   1311  176C  0856               	movf	_i2^(0+128),w
   1312  176D  00F0               	movwf	___xxtofl@val
@@ -1351,7 +1351,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1331  1784  00CC               	movwf	_jugador_2$855^(0+128)
   1332  1785                     l3381:
   1333                           
-  1334                           ;Juego_Carrera.c: 195:                 {;Juego_Carrera.c: 196:                     PORTD
+  1334                           ;Juego_Carrera.c: 217:                 {;Juego_Carrera.c: 218:                     PORTD
       +                           = pow(2,i2);
   1335  1785  084F               	movf	(_jugador_2$855+3)^(0+128),w
   1336  1786  00BD               	movwf	(pow@y+3)^(0+128)
@@ -1382,7 +1382,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1361  17A3  00D0               	movwf	_jugador_2$856^(0+128)
   1362  17A4                     l3383:
   1363                           
-  1364                           ;Juego_Carrera.c: 195:                 {;Juego_Carrera.c: 196:                     PORTD
+  1364                           ;Juego_Carrera.c: 217:                 {;Juego_Carrera.c: 218:                     PORTD
       +                           = pow(2,i2);
   1365  17A4  0853               	movf	(_jugador_2$856+3)^(0+128),w
   1366  17A5  1283               	bcf	3,5	;RP0=0, select bank0
@@ -1413,7 +1413,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1391  17C2  0088               	movwf	8	;volatile
   1392  17C3                     l3385:
   1393                           
-  1394                           ;Juego_Carrera.c: 197:                     i2 = i2 + 1;
+  1394                           ;Juego_Carrera.c: 219:                     i2 = i2 + 1;
   1395  17C3  1683               	bsf	3,5	;RP0=1, select bank1
   1396  17C4  1303               	bcf	3,6	;RP1=0, select bank1
   1397  17C5  0856               	movf	_i2^(0+128),w
@@ -1426,14 +1426,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1404  17CC  00D7               	movwf	(_i2+1)^(0+128)
   1405  17CD                     l3387:
   1406                           
-  1407                           ;Juego_Carrera.c: 198:                     presionado2 = 1;
+  1407                           ;Juego_Carrera.c: 220:                     presionado2 = 1;
   1408  17CD  3001               	movlw	1
   1409  17CE  00D8               	movwf	_presionado2^(0+128)
   1410  17CF  3000               	movlw	0
   1411  17D0  00D9               	movwf	(_presionado2^(0+128)+1)
   1412  17D1                     l3389:
   1413                           
-  1414                           ;Juego_Carrera.c: 199:                     if (i2 == 8)
+  1414                           ;Juego_Carrera.c: 221:                     if (i2 == 8)
   1415  17D1  3008               	movlw	8
   1416  17D2  0656               	xorwf	_i2^(0+128),w
   1417  17D3  0457               	iorwf	(_i2+1)^(0+128),w
@@ -1445,14 +1445,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1423  17D8                     u5430:
   1424  17D8                     l3391:
   1425                           
-  1426                           ;Juego_Carrera.c: 200:                     {;Juego_Carrera.c: 201:                      
+  1426                           ;Juego_Carrera.c: 222:                     {;Juego_Carrera.c: 223:                      
       +                             PORTAbits.RA1 = 1;
   1427  17D8  1283               	bcf	3,5	;RP0=0, select bank0
   1428  17D9  1303               	bcf	3,6	;RP1=0, select bank0
   1429  17DA  1485               	bsf	5,1	;volatile
   1430  17DB                     l3393:
   1431                           
-  1432                           ;Juego_Carrera.c: 204:                 pressed_ok2 = 0;
+  1432                           ;Juego_Carrera.c: 226:                 pressed_ok2 = 0;
   1433  17DB  1683               	bsf	3,5	;RP0=1, select bank1
   1434  17DC  1303               	bcf	3,6	;RP1=0, select bank1
   1435  17DD  01DC               	clrf	_pressed_ok2^(0+128)
@@ -1460,7 +1460,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1437  17DF  2FFF               	goto	l104
   1438  17E0                     l3395:
   1439                           
-  1440                           ;Juego_Carrera.c: 208:         {;Juego_Carrera.c: 209:             released_ok2 = releas
+  1440                           ;Juego_Carrera.c: 230:         {;Juego_Carrera.c: 231:             released_ok2 = releas
       +                          ed_ok2 + 1;
   1441  17E0  1683               	bsf	3,5	;RP0=1, select bank1
   1442  17E1  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1474,12 +1474,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1450  17E9  00DB               	movwf	(_released_ok2+1)^(0+128)
   1451  17EA                     l3397:
   1452                           
-  1453                           ;Juego_Carrera.c: 210:             pressed_ok2 = 0;
+  1453                           ;Juego_Carrera.c: 232:             pressed_ok2 = 0;
   1454  17EA  01DC               	clrf	_pressed_ok2^(0+128)
   1455  17EB  01DD               	clrf	(_pressed_ok2+1)^(0+128)
   1456  17EC                     l3399:
   1457                           
-  1458                           ;Juego_Carrera.c: 211:             if (released_ok2 > 500)
+  1458                           ;Juego_Carrera.c: 233:             if (released_ok2 > 500)
   1459  17EC  085B               	movf	(_released_ok2+1)^(0+128),w
   1460  17ED  3A80               	xorlw	128
   1461  17EE  00FF               	movwf	btemp+1
@@ -1498,14 +1498,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1474  17F9                     u5440:
   1475  17F9                     l3401:
   1476                           
-  1477                           ;Juego_Carrera.c: 212:             {;Juego_Carrera.c: 213:                 presionado2 =
+  1477                           ;Juego_Carrera.c: 234:             {;Juego_Carrera.c: 235:                 presionado2 =
       +                           0;
   1478  17F9  1683               	bsf	3,5	;RP0=1, select bank1
   1479  17FA  1303               	bcf	3,6	;RP1=0, select bank1
   1480  17FB  01D8               	clrf	_presionado2^(0+128)
   1481  17FC  01D9               	clrf	(_presionado2+1)^(0+128)
   1482                           
-  1483                           ;Juego_Carrera.c: 214:                 released_ok2 = 0;
+  1483                           ;Juego_Carrera.c: 236:                 released_ok2 = 0;
   1484  17FD  01DA               	clrf	_released_ok2^(0+128)
   1485  17FE  01DB               	clrf	(_released_ok2+1)^(0+128)
   1486  17FF                     l104:
@@ -1516,7 +1516,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1491  1682                     __ptext5:	
   1492 ;; *************** function _jugador_1 *****************
   1493 ;; Defined at:
-  1494 ;;		line 148 in file "Juego_Carrera.c"
+  1494 ;;		line 161 in file "Juego_Carrera.c"
   1495 ;; Parameters:    Size  Location     Type
   1496 ;;		None
   1497 ;; Auto vars:     Size  Location     Type
@@ -1554,7 +1554,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1529                           ; Regs used in _jugador_1: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
   1530                           
   1531                           
-  1532                           ;Juego_Carrera.c: 150:     if (PORTAbits.RA2 == 1)
+  1532                           ;Juego_Carrera.c: 168:     if (PORTAbits.RA2 == 1)
   1533  1682  1283               	bcf	3,5	;RP0=0, select bank0
   1534  1683  1303               	bcf	3,6	;RP1=0, select bank0
   1535  1684  1D05               	btfss	5,2	;volatile
@@ -1565,7 +1565,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1540  1688                     u5330:
   1541  1688                     l3333:
   1542                           
-  1543                           ;Juego_Carrera.c: 151:     {;Juego_Carrera.c: 152:         if (PORTBbits.RB1 == 0)
+  1543                           ;Juego_Carrera.c: 169:     {;Juego_Carrera.c: 170:         if (PORTBbits.RB1 == 0)
   1544  1688  1886               	btfsc	6,1	;volatile
   1545  1689  2E8B               	goto	u5341
   1546  168A  2E8C               	goto	u5340
@@ -1574,7 +1574,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1549  168C                     u5340:
   1550  168C                     l3335:
   1551                           
-  1552                           ;Juego_Carrera.c: 153:         {;Juego_Carrera.c: 154:             pressed_ok = pressed_
+  1552                           ;Juego_Carrera.c: 171:         {;Juego_Carrera.c: 172:             pressed_ok = pressed_
       +                          ok + 1;
   1553  168C  1683               	bsf	3,5	;RP0=1, select bank1
   1554  168D  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1588,12 +1588,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1562  1695  00E5               	movwf	(_pressed_ok+1)^(0+128)
   1563  1696                     l3337:
   1564                           
-  1565                           ;Juego_Carrera.c: 155:             released_ok = 0;
+  1565                           ;Juego_Carrera.c: 173:             released_ok = 0;
   1566  1696  01E2               	clrf	_released_ok^(0+128)
   1567  1697  01E3               	clrf	(_released_ok+1)^(0+128)
   1568  1698                     l3339:
   1569                           
-  1570                           ;Juego_Carrera.c: 156:             if (pressed_ok > 500)
+  1570                           ;Juego_Carrera.c: 174:             if (pressed_ok > 500)
   1571  1698  0865               	movf	(_pressed_ok+1)^(0+128),w
   1572  1699  3A80               	xorlw	128
   1573  169A  00FF               	movwf	btemp+1
@@ -1612,7 +1612,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1586  16A5                     u5350:
   1587  16A5                     l3341:
   1588                           
-  1589                           ;Juego_Carrera.c: 157:             {;Juego_Carrera.c: 158:                 if (presionad
+  1589                           ;Juego_Carrera.c: 175:             {;Juego_Carrera.c: 176:                 if (presionad
       +                          o == 0)
   1590  16A5  1683               	bsf	3,5	;RP0=1, select bank1
   1591  16A6  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1626,7 +1626,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1599  16AD                     u5360:
   1600  16AD                     l3343:
   1601                           
-  1602                           ;Juego_Carrera.c: 159:                 {;Juego_Carrera.c: 160:                     PORTC
+  1602                           ;Juego_Carrera.c: 177:                 {;Juego_Carrera.c: 178:                     PORTC
       +                           = pow(2,i);
   1603  16AD  085E               	movf	_i^(0+128),w
   1604  16AE  00F0               	movwf	___xxtofl@val
@@ -1651,7 +1651,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1623  16C5  00CC               	movwf	_jugador_1$853^(0+128)
   1624  16C6                     l3345:
   1625                           
-  1626                           ;Juego_Carrera.c: 159:                 {;Juego_Carrera.c: 160:                     PORTC
+  1626                           ;Juego_Carrera.c: 177:                 {;Juego_Carrera.c: 178:                     PORTC
       +                           = pow(2,i);
   1627  16C6  084F               	movf	(_jugador_1$853+3)^(0+128),w
   1628  16C7  00BD               	movwf	(pow@y+3)^(0+128)
@@ -1682,7 +1682,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1653  16E4  00D0               	movwf	_jugador_1$854^(0+128)
   1654  16E5                     l3347:
   1655                           
-  1656                           ;Juego_Carrera.c: 159:                 {;Juego_Carrera.c: 160:                     PORTC
+  1656                           ;Juego_Carrera.c: 177:                 {;Juego_Carrera.c: 178:                     PORTC
       +                           = pow(2,i);
   1657  16E5  0853               	movf	(_jugador_1$854+3)^(0+128),w
   1658  16E6  1283               	bcf	3,5	;RP0=0, select bank0
@@ -1713,7 +1713,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1683  1703  0087               	movwf	7	;volatile
   1684  1704                     l3349:
   1685                           
-  1686                           ;Juego_Carrera.c: 161:                     i = i + 1;
+  1686                           ;Juego_Carrera.c: 179:                     i = i + 1;
   1687  1704  1683               	bsf	3,5	;RP0=1, select bank1
   1688  1705  1303               	bcf	3,6	;RP1=0, select bank1
   1689  1706  085E               	movf	_i^(0+128),w
@@ -1726,14 +1726,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1696  170D  00DF               	movwf	(_i+1)^(0+128)
   1697  170E                     l3351:
   1698                           
-  1699                           ;Juego_Carrera.c: 162:                     presionado = 1;
+  1699                           ;Juego_Carrera.c: 180:                     presionado = 1;
   1700  170E  3001               	movlw	1
   1701  170F  00E0               	movwf	_presionado^(0+128)
   1702  1710  3000               	movlw	0
   1703  1711  00E1               	movwf	(_presionado^(0+128)+1)
   1704  1712                     l3353:
   1705                           
-  1706                           ;Juego_Carrera.c: 163:                     if (i == 8)
+  1706                           ;Juego_Carrera.c: 181:                     if (i == 8)
   1707  1712  3008               	movlw	8
   1708  1713  065E               	xorwf	_i^(0+128),w
   1709  1714  045F               	iorwf	(_i+1)^(0+128),w
@@ -1745,14 +1745,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1715  1719                     u5370:
   1716  1719                     l3355:
   1717                           
-  1718                           ;Juego_Carrera.c: 164:                     {;Juego_Carrera.c: 165:                      
+  1718                           ;Juego_Carrera.c: 182:                     {;Juego_Carrera.c: 183:                      
       +                             PORTAbits.RA0 = 1;
   1719  1719  1283               	bcf	3,5	;RP0=0, select bank0
   1720  171A  1303               	bcf	3,6	;RP1=0, select bank0
   1721  171B  1405               	bsf	5,0	;volatile
   1722  171C                     l3357:
   1723                           
-  1724                           ;Juego_Carrera.c: 168:                 pressed_ok = 0;
+  1724                           ;Juego_Carrera.c: 186:                 pressed_ok = 0;
   1725  171C  1683               	bsf	3,5	;RP0=1, select bank1
   1726  171D  1303               	bcf	3,6	;RP1=0, select bank1
   1727  171E  01E4               	clrf	_pressed_ok^(0+128)
@@ -1760,7 +1760,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1729  1720  2F40               	goto	l94
   1730  1721                     l3359:
   1731                           
-  1732                           ;Juego_Carrera.c: 172:         {;Juego_Carrera.c: 173:             released_ok = release
+  1732                           ;Juego_Carrera.c: 190:         {;Juego_Carrera.c: 191:             released_ok = release
       +                          d_ok + 1;
   1733  1721  1683               	bsf	3,5	;RP0=1, select bank1
   1734  1722  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1774,12 +1774,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1742  172A  00E3               	movwf	(_released_ok+1)^(0+128)
   1743  172B                     l3361:
   1744                           
-  1745                           ;Juego_Carrera.c: 174:             pressed_ok = 0;
+  1745                           ;Juego_Carrera.c: 192:             pressed_ok = 0;
   1746  172B  01E4               	clrf	_pressed_ok^(0+128)
   1747  172C  01E5               	clrf	(_pressed_ok+1)^(0+128)
   1748  172D                     l3363:
   1749                           
-  1750                           ;Juego_Carrera.c: 175:             if (released_ok > 500)
+  1750                           ;Juego_Carrera.c: 193:             if (released_ok > 500)
   1751  172D  0863               	movf	(_released_ok+1)^(0+128),w
   1752  172E  3A80               	xorlw	128
   1753  172F  00FF               	movwf	btemp+1
@@ -1798,14 +1798,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1766  173A                     u5380:
   1767  173A                     l3365:
   1768                           
-  1769                           ;Juego_Carrera.c: 176:             {;Juego_Carrera.c: 177:                 presionado = 
+  1769                           ;Juego_Carrera.c: 194:             {;Juego_Carrera.c: 195:                 presionado = 
       +                          0;
   1770  173A  1683               	bsf	3,5	;RP0=1, select bank1
   1771  173B  1303               	bcf	3,6	;RP1=0, select bank1
   1772  173C  01E0               	clrf	_presionado^(0+128)
   1773  173D  01E1               	clrf	(_presionado+1)^(0+128)
   1774                           
-  1775                           ;Juego_Carrera.c: 178:                 released_ok = 0;
+  1775                           ;Juego_Carrera.c: 196:                 released_ok = 0;
   1776  173E  01E2               	clrf	_released_ok^(0+128)
   1777  173F  01E3               	clrf	(_released_ok+1)^(0+128)
   1778  1740                     l94:
@@ -8573,7 +8573,7 @@ DATA                 0      0      A4      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Thu Jan 28 23:06:06 2021
+Symbol Table                                                                                   Sun Jan 31 00:57:49 2021
 
            ___fldiv@aexp 002C             ___fldiv@bexp 002B                        _i 00DE  
                       pc 0002             ___fldiv@sign 0024                       l47 0026  

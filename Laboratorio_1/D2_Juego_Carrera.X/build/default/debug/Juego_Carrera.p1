@@ -1,26 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"48 Juego_Carrera.c
-[; ;Juego_Carrera.c: 48: void setup(void);
-[v _setup `(v ~T0 @X0 0 ef ]
-"228 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"49 Juego_Carrera.c
-[; ;Juego_Carrera.c: 49: void semaforo(void);
-[v _semaforo `(v ~T0 @X0 0 ef ]
-"234 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 234:     struct {
-[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"233
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 233: typedef union {
-[u S7 `S8 1 ]
-[n S7 . . ]
-"245
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
-[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
-"1664
+"1664 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
 [v _TRISE `Vuc ~T0 @X0 0 e@137 ]
 "414
@@ -35,13 +14,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1478
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"228
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "1540
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
 "290
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"420
+"1602
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"352
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1416
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"166
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+[p mainexit ]
+"77 Juego_Carrera.c
+[; ;Juego_Carrera.c: 77: void setup(void);
+[v _setup `(v ~T0 @X0 0 ef ]
+"234 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 234:     struct {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"233
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 233: typedef union {
+[u S7 `S8 1 ]
+[n S7 . . ]
+"245
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
+[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"172
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 172:     struct {
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"171
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 171: typedef union {
+[u S5 `S6 1 ]
+[n S5 . . ]
+"183
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
+"78 Juego_Carrera.c
+[; ;Juego_Carrera.c: 78: void semaforo(void);
+[v _semaforo `(v ~T0 @X0 0 ef ]
+"79
+[; ;Juego_Carrera.c: 79: void verde (void);
+[v _verde `(v ~T0 @X0 0 ef ]
+"80
+[; ;Juego_Carrera.c: 80: void jugador_1 (void);
+[v _jugador_1 `(v ~T0 @X0 0 ef ]
+"81
+[; ;Juego_Carrera.c: 81: void jugador_2 (void);
+[v _jugador_2 `(v ~T0 @X0 0 ef ]
+"420 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 420:     struct {
 [s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S14 . RE0 RE1 RE2 RE3 ]
@@ -56,6 +88,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
+"45 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\math.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\math.h: 45: extern double pow(double, double) ;
+[v _pow `(d ~T0 @X0 0 ef2`d`d ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -290,192 +325,508 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"19 Juego_Carrera.c
+"20 Juego_Carrera.c
 [p x FOSC  =  XT         ]
-"20
-[p x WDTE  =  OFF        ]
 "21
-[p x PWRTE  =  OFF       ]
+[p x WDTE  =  OFF        ]
 "22
-[p x MCLRE  =  OFF       ]
+[p x PWRTE  =  OFF       ]
 "23
-[p x CP  =  OFF          ]
+[p x MCLRE  =  OFF       ]
 "24
-[p x CPD  =  OFF         ]
+[p x CP  =  OFF          ]
 "25
-[p x BOREN  =  OFF       ]
+[p x CPD  =  OFF         ]
 "26
-[p x IESO  =  OFF        ]
+[p x BOREN  =  OFF       ]
 "27
-[p x FCMEN  =  OFF       ]
+[p x IESO  =  OFF        ]
 "28
+[p x FCMEN  =  OFF       ]
+"29
 [p x LVP  =  OFF         ]
-"30
-[p x BOR4V  =  BOR40V    ]
 "31
+[p x BOR4V  =  BOR40V    ]
+"32
 [p x WRT  =  OFF         ]
-"42
-[; ;Juego_Carrera.c: 42: char counter = 0;
-[v _counter `uc ~T0 @X0 1 e ]
-[i _counter
--> -> 0 `i `uc
-]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"55
-[; ;Juego_Carrera.c: 55: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"56
-[; ;Juego_Carrera.c: 56:     setup();
-[e ( _setup ..  ]
-"62
-[; ;Juego_Carrera.c: 62:     while (1) {
-[e :U 140 ]
-{
-"63
-[; ;Juego_Carrera.c: 63:         if (PORTB == 0b00000110)
-[e $ ! == -> _PORTB `i -> 6 `i 142  ]
-"64
-[; ;Juego_Carrera.c: 64:             semaforo();
-[e ( _semaforo ..  ]
-[e :U 142 ]
-"66
-[; ;Juego_Carrera.c: 66:         if (PORTB == 0x06)
-[e $ ! == -> _PORTB `i -> 6 `i 143  ]
-"67
-[; ;Juego_Carrera.c: 67:             semaforo();
-[e ( _semaforo ..  ]
-[e :U 143 ]
-"69
-[; ;Juego_Carrera.c: 69:         if (PORTBbits.RB0 == 1)
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 144  ]
-"70
-[; ;Juego_Carrera.c: 70:             semaforo();
-[e ( _semaforo ..  ]
-[e :U 144 ]
-"71
-[; ;Juego_Carrera.c: 71:     }
-}
-[e :U 139 ]
-[e $U 140  ]
-[e :U 141 ]
-"83
-[; ;Juego_Carrera.c: 83: }
-[e :UE 138 ]
-}
-"89
-[; ;Juego_Carrera.c: 89: void setup(void) {
+"43
+[; ;Juego_Carrera.c: 43: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"90
-[; ;Juego_Carrera.c: 90:     TRISE = 0;
+"44
+[; ;Juego_Carrera.c: 44:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
-"91
-[; ;Juego_Carrera.c: 91:     PORTE = 0;
+"45
+[; ;Juego_Carrera.c: 45:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"92
-[; ;Juego_Carrera.c: 92:     ANSEL = 0;
+"46
+[; ;Juego_Carrera.c: 46:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"93
-[; ;Juego_Carrera.c: 93:     ANSELH = 0;
+"47
+[; ;Juego_Carrera.c: 47:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"94
-[; ;Juego_Carrera.c: 94:     TRISB = 0b00000111;
+"48
+[; ;Juego_Carrera.c: 48:     TRISB = 0b00000111;
 [e = _TRISB -> -> 7 `i `uc ]
-"95
-[; ;Juego_Carrera.c: 95:     PORTB = 0;
+"49
+[; ;Juego_Carrera.c: 49:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"96
-[; ;Juego_Carrera.c: 96:     TRISC = 0;
+"50
+[; ;Juego_Carrera.c: 50:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"97
-[; ;Juego_Carrera.c: 97:     PORTC = 0;
+"51
+[; ;Juego_Carrera.c: 51:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"98
-[; ;Juego_Carrera.c: 98: }
-[e :UE 145 ]
+"52
+[; ;Juego_Carrera.c: 52:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"53
+[; ;Juego_Carrera.c: 53:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"54
+[; ;Juego_Carrera.c: 54:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
+"55
+[; ;Juego_Carrera.c: 55:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"56
+[; ;Juego_Carrera.c: 56: }
+[e :UE 138 ]
 }
+"62
+[; ;Juego_Carrera.c: 62: int pressed_ok = 0;
+[v _pressed_ok `i ~T0 @X0 1 e ]
+[i _pressed_ok
+-> 0 `i
+]
+"63
+[; ;Juego_Carrera.c: 63: int released_ok = 0;
+[v _released_ok `i ~T0 @X0 1 e ]
+[i _released_ok
+-> 0 `i
+]
+"64
+[; ;Juego_Carrera.c: 64: int presionado = 0;
+[v _presionado `i ~T0 @X0 1 e ]
+[i _presionado
+-> 0 `i
+]
+"65
+[; ;Juego_Carrera.c: 65: int i = 0;
+[v _i `i ~T0 @X0 1 e ]
+[i _i
+-> 0 `i
+]
+"67
+[; ;Juego_Carrera.c: 67: int pressed_ok2 = 0;
+[v _pressed_ok2 `i ~T0 @X0 1 e ]
+[i _pressed_ok2
+-> 0 `i
+]
+"68
+[; ;Juego_Carrera.c: 68: int released_ok2 = 0;
+[v _released_ok2 `i ~T0 @X0 1 e ]
+[i _released_ok2
+-> 0 `i
+]
+"69
+[; ;Juego_Carrera.c: 69: int presionado2 = 0;
+[v _presionado2 `i ~T0 @X0 1 e ]
+[i _presionado2
+-> 0 `i
+]
+"70
+[; ;Juego_Carrera.c: 70: int i2 = 0;
+[v _i2 `i ~T0 @X0 1 e ]
+[i _i2
+-> 0 `i
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"87
+[; ;Juego_Carrera.c: 87: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"88
+[; ;Juego_Carrera.c: 88:     setup();
+[e ( _setup ..  ]
+"94
+[; ;Juego_Carrera.c: 94:     while (1) {
+[e :U 141 ]
+{
+"95
+[; ;Juego_Carrera.c: 95:         if (PORTBbits.RB0 == 0)
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 143  ]
+"96
+[; ;Juego_Carrera.c: 96:         {
+{
+"97
+[; ;Juego_Carrera.c: 97:             if (PORTAbits.RA2 == 0)
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 0 `i 144  ]
+"98
+[; ;Juego_Carrera.c: 98:             {
+{
+"99
+[; ;Juego_Carrera.c: 99:                 semaforo();
+[e ( _semaforo ..  ]
+"100
+[; ;Juego_Carrera.c: 100:                 verde();
+[e ( _verde ..  ]
+"101
+[; ;Juego_Carrera.c: 101:                 PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+"102
+[; ;Juego_Carrera.c: 102:             }
+}
+[e :U 144 ]
+"103
+[; ;Juego_Carrera.c: 103:         }
+}
+[e :U 143 ]
 "104
-[; ;Juego_Carrera.c: 104: void semaforo(void) {
+[; ;Juego_Carrera.c: 104:         if (PORTAbits.RA0 == 0 && PORTAbits.RA1 == 0)
+[e $ ! && == -> . . _PORTAbits 0 0 `i -> 0 `i == -> . . _PORTAbits 0 1 `i -> 0 `i 145  ]
+"105
+[; ;Juego_Carrera.c: 105:         {
+{
+"106
+[; ;Juego_Carrera.c: 106:             if (PORTAbits.RA0 == 1)
+[e $ ! == -> . . _PORTAbits 0 0 `i -> 1 `i 146  ]
+"107
+[; ;Juego_Carrera.c: 107:             {
+{
+"108
+[; ;Juego_Carrera.c: 108:                 PORTBbits.RB2 = 0;
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+"109
+[; ;Juego_Carrera.c: 109:             }
+}
+[e $U 147  ]
+"110
+[; ;Juego_Carrera.c: 110:             else if (PORTAbits.RA1 == 1)
+[e :U 146 ]
+[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 148  ]
+"111
+[; ;Juego_Carrera.c: 111:             {
+{
+"112
+[; ;Juego_Carrera.c: 112:                 PORTBbits.RB1 = 0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"113
+[; ;Juego_Carrera.c: 113:             }
+}
+[e $U 149  ]
+"114
+[; ;Juego_Carrera.c: 114:             else
+[e :U 148 ]
+"115
+[; ;Juego_Carrera.c: 115:             {
+{
+"116
+[; ;Juego_Carrera.c: 116:                 jugador_1();
+[e ( _jugador_1 ..  ]
+"117
+[; ;Juego_Carrera.c: 117:                 jugador_2();
+[e ( _jugador_2 ..  ]
+"118
+[; ;Juego_Carrera.c: 118:             }
+}
+[e :U 149 ]
+[e :U 147 ]
+"119
+[; ;Juego_Carrera.c: 119:         }
+}
+[e :U 145 ]
+"120
+[; ;Juego_Carrera.c: 120:     }
+}
+[e :U 140 ]
+[e $U 141  ]
+[e :U 142 ]
+"121
+[; ;Juego_Carrera.c: 121: }
+[e :UE 139 ]
+}
+"127
+[; ;Juego_Carrera.c: 127: void semaforo(void) {
 [v _semaforo `(v ~T0 @X0 1 ef ]
 {
 [e :U _semaforo ]
 [f ]
-"105
-[; ;Juego_Carrera.c: 105:     PORTEbits.RE0 = 1;
+"128
+[; ;Juego_Carrera.c: 128:     PORTEbits.RE0 = 1;
 [e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-"106
-[; ;Juego_Carrera.c: 106:     _delay((unsigned long)((700)*(8000000/4000.0)));
+"129
+[; ;Juego_Carrera.c: 129:     _delay((unsigned long)((700)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 700 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"107
-[; ;Juego_Carrera.c: 107:     PORTEbits.RE0 = 0;
+"130
+[; ;Juego_Carrera.c: 130:     PORTEbits.RE0 = 0;
 [e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-"108
-[; ;Juego_Carrera.c: 108:     PORTEbits.RE1 = 1;
+"131
+[; ;Juego_Carrera.c: 131:     PORTEbits.RE1 = 1;
 [e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
-"109
-[; ;Juego_Carrera.c: 109:     _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"110
-[; ;Juego_Carrera.c: 110:     PORTEbits.RE1 = 0;
+"132
+[; ;Juego_Carrera.c: 132:     _delay((unsigned long)((700)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 700 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"133
+[; ;Juego_Carrera.c: 133:     PORTEbits.RE1 = 0;
 [e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
-"111
-[; ;Juego_Carrera.c: 111:     PORTEbits.RE2 = 1;
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-"112
-[; ;Juego_Carrera.c: 112:     _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"113
-[; ;Juego_Carrera.c: 113:     PORTEbits.RE2 = 0;
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
-"114
-[; ;Juego_Carrera.c: 114: }
-[e :UE 146 ]
+"134
+[; ;Juego_Carrera.c: 134:     return;
+[e $UE 150  ]
+"135
+[; ;Juego_Carrera.c: 135: }
+[e :UE 150 ]
 }
-"116
-[; ;Juego_Carrera.c: 116: void delay(unsigned char n) {
-[v _delay `(v ~T0 @X0 1 ef1`uc ]
+"137
+[; ;Juego_Carrera.c: 137: void verde(void) {
+[v _verde `(v ~T0 @X0 1 ef ]
 {
-[e :U _delay ]
-[v _n `uc ~T0 @X0 1 r1 ]
+[e :U _verde ]
 [f ]
-"118
-[; ;Juego_Carrera.c: 118:     for (int i = 0; i < n; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 151  ]
-[e :U 148 ]
-{
-"119
-[; ;Juego_Carrera.c: 119:         for (int j = 0; j < 255; j++) {
-{
-[v _j `i ~T0 @X0 1 a ]
-[e = _j -> 0 `i ]
-[e $ < _j -> 255 `i 152  ]
-[e $U 153  ]
-[e :U 152 ]
-{
-"120
-[; ;Juego_Carrera.c: 120:         }
+"138
+[; ;Juego_Carrera.c: 138:     PORTEbits.RE2 = 1;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
+"139
+[; ;Juego_Carrera.c: 139:     PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
+"140
+[; ;Juego_Carrera.c: 140:     PORTEbits.RE1 = 0;
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
+"141
+[; ;Juego_Carrera.c: 141: }
+[e :UE 151 ]
 }
-[e ++ _j -> 1 `i ]
-[e $ < _j -> 255 `i 152  ]
+"143
+[; ;Juego_Carrera.c: 143: void jugador_1(void)
+[v _jugador_1 `(v ~T0 @X0 1 ef ]
+"144
+[; ;Juego_Carrera.c: 144: {
+{
+[e :U _jugador_1 ]
+[f ]
+"145
+[; ;Juego_Carrera.c: 145:     if (PORTAbits.RA2 == 1)
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 153  ]
+"146
+[; ;Juego_Carrera.c: 146:     {
+{
+"147
+[; ;Juego_Carrera.c: 147:         if (PORTBbits.RB1 == 0)
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 154  ]
+"148
+[; ;Juego_Carrera.c: 148:         {
+{
+"149
+[; ;Juego_Carrera.c: 149:             pressed_ok = pressed_ok + 1;
+[e = _pressed_ok + _pressed_ok -> 1 `i ]
+"150
+[; ;Juego_Carrera.c: 150:             released_ok = 0;
+[e = _released_ok -> 0 `i ]
+"151
+[; ;Juego_Carrera.c: 151:             if (pressed_ok > 500)
+[e $ ! > _pressed_ok -> 500 `i 155  ]
+"152
+[; ;Juego_Carrera.c: 152:             {
+{
+"153
+[; ;Juego_Carrera.c: 153:                 if (presionado == 0)
+[e $ ! == _presionado -> 0 `i 156  ]
+"154
+[; ;Juego_Carrera.c: 154:                 {
+{
+"155
+[; ;Juego_Carrera.c: 155:                     PORTC = pow(2,i);
+[e = _PORTC -> ( _pow (2 , -> -> 2 `i `d -> _i `d `uc ]
+"156
+[; ;Juego_Carrera.c: 156:                     i = i + 1;
+[e = _i + _i -> 1 `i ]
+"157
+[; ;Juego_Carrera.c: 157:                     presionado = 1;
+[e = _presionado -> 1 `i ]
+"158
+[; ;Juego_Carrera.c: 158:                     if (i == 8)
+[e $ ! == _i -> 8 `i 157  ]
+"159
+[; ;Juego_Carrera.c: 159:                     {
+{
+"160
+[; ;Juego_Carrera.c: 160:                         PORTAbits.RA0 = 1;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+"161
+[; ;Juego_Carrera.c: 161:                     }
+}
+[e :U 157 ]
+"162
+[; ;Juego_Carrera.c: 162:                 }
+}
+[e :U 156 ]
+"163
+[; ;Juego_Carrera.c: 163:                 pressed_ok = 0;
+[e = _pressed_ok -> 0 `i ]
+"164
+[; ;Juego_Carrera.c: 164:             }
+}
+[e :U 155 ]
+"165
+[; ;Juego_Carrera.c: 165:         }
+}
+[e $U 158  ]
+"166
+[; ;Juego_Carrera.c: 166:         else
+[e :U 154 ]
+"167
+[; ;Juego_Carrera.c: 167:         {
+{
+"168
+[; ;Juego_Carrera.c: 168:             released_ok = released_ok + 1;
+[e = _released_ok + _released_ok -> 1 `i ]
+"169
+[; ;Juego_Carrera.c: 169:             pressed_ok = 0;
+[e = _pressed_ok -> 0 `i ]
+"170
+[; ;Juego_Carrera.c: 170:             if (released_ok > 500)
+[e $ ! > _released_ok -> 500 `i 159  ]
+"171
+[; ;Juego_Carrera.c: 171:             {
+{
+"172
+[; ;Juego_Carrera.c: 172:                 presionado = 0;
+[e = _presionado -> 0 `i ]
+"173
+[; ;Juego_Carrera.c: 173:                 released_ok = 0;
+[e = _released_ok -> 0 `i ]
+"174
+[; ;Juego_Carrera.c: 174:             }
+}
+[e :U 159 ]
+"175
+[; ;Juego_Carrera.c: 175:         }
+}
+[e :U 158 ]
+"176
+[; ;Juego_Carrera.c: 176:     }
+}
 [e :U 153 ]
+"177
+[; ;Juego_Carrera.c: 177: }
+[e :UE 152 ]
 }
-"121
-[; ;Juego_Carrera.c: 121:     }
+"179
+[; ;Juego_Carrera.c: 179: void jugador_2(void)
+[v _jugador_2 `(v ~T0 @X0 1 ef ]
+"180
+[; ;Juego_Carrera.c: 180: {
+{
+[e :U _jugador_2 ]
+[f ]
+"181
+[; ;Juego_Carrera.c: 181:     if (PORTAbits.RA2 == 1)
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 161  ]
+"182
+[; ;Juego_Carrera.c: 182:     {
+{
+"183
+[; ;Juego_Carrera.c: 183:         if (PORTBbits.RB2 == 0)
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 162  ]
+"184
+[; ;Juego_Carrera.c: 184:         {
+{
+"185
+[; ;Juego_Carrera.c: 185:             pressed_ok2 = pressed_ok2 + 1;
+[e = _pressed_ok2 + _pressed_ok2 -> 1 `i ]
+"186
+[; ;Juego_Carrera.c: 186:             released_ok2 = 0;
+[e = _released_ok2 -> 0 `i ]
+"187
+[; ;Juego_Carrera.c: 187:             if (pressed_ok2 > 500)
+[e $ ! > _pressed_ok2 -> 500 `i 163  ]
+"188
+[; ;Juego_Carrera.c: 188:             {
+{
+"189
+[; ;Juego_Carrera.c: 189:                 if (presionado2 == 0)
+[e $ ! == _presionado2 -> 0 `i 164  ]
+"190
+[; ;Juego_Carrera.c: 190:                 {
+{
+"191
+[; ;Juego_Carrera.c: 191:                     PORTD = pow(2,i2);
+[e = _PORTD -> ( _pow (2 , -> -> 2 `i `d -> _i2 `d `uc ]
+"192
+[; ;Juego_Carrera.c: 192:                     i2 = i2 + 1;
+[e = _i2 + _i2 -> 1 `i ]
+"193
+[; ;Juego_Carrera.c: 193:                     presionado2 = 1;
+[e = _presionado2 -> 1 `i ]
+"194
+[; ;Juego_Carrera.c: 194:                     if (i2 == 8)
+[e $ ! == _i2 -> 8 `i 165  ]
+"195
+[; ;Juego_Carrera.c: 195:                     {
+{
+"196
+[; ;Juego_Carrera.c: 196:                         PORTAbits.RA1 = 1;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+"197
+[; ;Juego_Carrera.c: 197:                     }
 }
-[e ++ _i -> 1 `i ]
-[e :U 151 ]
-[e $ < _i -> _n `i 148  ]
-[e :U 149 ]
+[e :U 165 ]
+"198
+[; ;Juego_Carrera.c: 198:                 }
 }
-"122
-[; ;Juego_Carrera.c: 122: }
-[e :UE 147 ]
+[e :U 164 ]
+"199
+[; ;Juego_Carrera.c: 199:                 pressed_ok2 = 0;
+[e = _pressed_ok2 -> 0 `i ]
+"200
+[; ;Juego_Carrera.c: 200:             }
+}
+[e :U 163 ]
+"201
+[; ;Juego_Carrera.c: 201:         }
+}
+[e $U 166  ]
+"202
+[; ;Juego_Carrera.c: 202:         else
+[e :U 162 ]
+"203
+[; ;Juego_Carrera.c: 203:         {
+{
+"204
+[; ;Juego_Carrera.c: 204:             released_ok2 = released_ok2 + 1;
+[e = _released_ok2 + _released_ok2 -> 1 `i ]
+"205
+[; ;Juego_Carrera.c: 205:             pressed_ok2 = 0;
+[e = _pressed_ok2 -> 0 `i ]
+"206
+[; ;Juego_Carrera.c: 206:             if (released_ok2 > 500)
+[e $ ! > _released_ok2 -> 500 `i 167  ]
+"207
+[; ;Juego_Carrera.c: 207:             {
+{
+"208
+[; ;Juego_Carrera.c: 208:                 presionado2 = 0;
+[e = _presionado2 -> 0 `i ]
+"209
+[; ;Juego_Carrera.c: 209:                 released_ok2 = 0;
+[e = _released_ok2 -> 0 `i ]
+"210
+[; ;Juego_Carrera.c: 210:             }
+}
+[e :U 167 ]
+"211
+[; ;Juego_Carrera.c: 211:         }
+}
+[e :U 166 ]
+"212
+[; ;Juego_Carrera.c: 212:     }
+}
+[e :U 161 ]
+"213
+[; ;Juego_Carrera.c: 213: }
+[e :UE 160 ]
 }

@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\pablo\AppData\Local\Temp\s4f4.o
+$C:\Users\pablo\AppData\Local\Temp\sshs.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\D2_Juego_Carrera.X.production.o
@@ -89,16 +89,16 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\D2_Juego_Carrera.X.production.o
-7F3 cinit CODE >640:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7F3 cinit CODE >643:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7F3 cinit CODE >693:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7F4 cinit CODE >694:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7F5 cinit CODE >695:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7F6 cinit CODE >696:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7F7 cinit CODE >697:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7FC cinit CODE >703:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7FC cinit CODE >705:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-7FD cinit CODE >706:C:\Users\pablo\AppData\Local\Temp\s4f4.s
+7F3 cinit CODE >640:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7F3 cinit CODE >643:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7F3 cinit CODE >693:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7F4 cinit CODE >694:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7F5 cinit CODE >695:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7F6 cinit CODE >696:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7F7 cinit CODE >697:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7FC cinit CODE >703:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7FC cinit CODE >705:C:\Users\pablo\AppData\Local\Temp\sshs.s
+7FD cinit CODE >706:C:\Users\pablo\AppData\Local\Temp\sshs.s
 27 text22 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
 27 text22 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
 2E text22 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
@@ -582,97 +582,97 @@ D0E text6 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\p
 D89 text6 CODE >28:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\pow.c
 D8E text6 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\pow.c
 DA6 text6 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\pow.c
-1682 text5 CODE >148:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1682 text5 CODE >150:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1688 text5 CODE >152:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-168C text5 CODE >154:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1696 text5 CODE >155:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1698 text5 CODE >156:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-16A5 text5 CODE >158:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-16AD text5 CODE >160:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1704 text5 CODE >161:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-170E text5 CODE >162:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1712 text5 CODE >163:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1719 text5 CODE >165:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-171C text5 CODE >168:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1721 text5 CODE >173:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-172B text5 CODE >174:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-172D text5 CODE >175:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-173A text5 CODE >177:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-173E text5 CODE >178:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1740 text5 CODE >182:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1741 text4 CODE >184:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1741 text4 CODE >186:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1747 text4 CODE >188:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-174B text4 CODE >190:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1755 text4 CODE >191:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1757 text4 CODE >192:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1764 text4 CODE >194:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-176C text4 CODE >196:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17C3 text4 CODE >197:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17CD text4 CODE >198:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17D1 text4 CODE >199:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17D8 text4 CODE >201:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17DB text4 CODE >204:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17E0 text4 CODE >209:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17EA text4 CODE >210:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17EC text4 CODE >211:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17F9 text4 CODE >213:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17FD text4 CODE >214:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17FF text4 CODE >218:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1333 text3 CODE >129:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1333 text3 CODE >130:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1336 text3 CODE >131:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1342 text3 CODE >132:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1345 text3 CODE >133:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1346 text3 CODE >134:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1352 text3 CODE >135:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1355 text3 CODE >138:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-3 text2 CODE >43:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1682 text5 CODE >161:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1682 text5 CODE >168:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1688 text5 CODE >170:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+168C text5 CODE >172:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1696 text5 CODE >173:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1698 text5 CODE >174:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+16A5 text5 CODE >176:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+16AD text5 CODE >178:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1704 text5 CODE >179:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+170E text5 CODE >180:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1712 text5 CODE >181:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1719 text5 CODE >183:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+171C text5 CODE >186:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1721 text5 CODE >191:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+172B text5 CODE >192:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+172D text5 CODE >193:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+173A text5 CODE >195:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+173E text5 CODE >196:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1740 text5 CODE >200:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1741 text4 CODE >202:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1741 text4 CODE >208:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1747 text4 CODE >210:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+174B text4 CODE >212:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1755 text4 CODE >213:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1757 text4 CODE >214:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1764 text4 CODE >216:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+176C text4 CODE >218:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17C3 text4 CODE >219:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17CD text4 CODE >220:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17D1 text4 CODE >221:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17D8 text4 CODE >223:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17DB text4 CODE >226:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17E0 text4 CODE >231:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17EA text4 CODE >232:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17EC text4 CODE >233:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17F9 text4 CODE >235:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17FD text4 CODE >236:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17FF text4 CODE >240:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1333 text3 CODE >133:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1333 text3 CODE >141:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1336 text3 CODE >142:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1342 text3 CODE >143:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1345 text3 CODE >144:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1346 text3 CODE >145:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1352 text3 CODE >146:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1355 text3 CODE >148:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
 3 text2 CODE >44:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-6 text2 CODE >45:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-9 text2 CODE >46:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-C text2 CODE >47:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-D text2 CODE >48:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-11 text2 CODE >49:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-14 text2 CODE >50:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-17 text2 CODE >51:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1A text2 CODE >52:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1D text2 CODE >53:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-20 text2 CODE >54:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-23 text2 CODE >55:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-26 text2 CODE >56:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-131A text1 CODE >140:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-131A text1 CODE >141:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-131D text1 CODE >142:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-131E text1 CODE >143:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-131F text1 CODE >144:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-137D maintext CODE >87:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+3 text2 CODE >45:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+6 text2 CODE >46:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+9 text2 CODE >47:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+C text2 CODE >48:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+D text2 CODE >49:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+11 text2 CODE >50:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+14 text2 CODE >51:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+17 text2 CODE >52:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1A text2 CODE >53:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1D text2 CODE >54:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+20 text2 CODE >55:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+23 text2 CODE >56:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+26 text2 CODE >57:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+131A text1 CODE >150:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+131A text1 CODE >156:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+131D text1 CODE >157:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+131E text1 CODE >158:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+131F text1 CODE >159:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
 137D maintext CODE >88:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1382 maintext CODE >95:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1388 maintext CODE >97:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-138C maintext CODE >99:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1391 maintext CODE >100:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1396 maintext CODE >101:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1399 maintext CODE >104:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-13A1 maintext CODE >106:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-13A5 maintext CODE >108:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-13A6 maintext CODE >109:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-13A7 maintext CODE >110:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-13AB maintext CODE >112:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-13AC maintext CODE >113:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-13AD maintext CODE >116:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-13B2 maintext CODE >117:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
-1320 clrtext CODE >680:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1320 clrtext CODE >681:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1321 clrtext CODE >682:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1321 clrtext CODE >683:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1322 clrtext CODE >684:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1323 clrtext CODE >685:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1324 clrtext CODE >686:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1325 clrtext CODE >687:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1326 clrtext CODE >688:C:\Users\pablo\AppData\Local\Temp\s4f4.s
-1327 clrtext CODE >689:C:\Users\pablo\AppData\Local\Temp\s4f4.s
+137D maintext CODE >89:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1382 maintext CODE >96:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1388 maintext CODE >98:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+138C maintext CODE >100:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1391 maintext CODE >101:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1396 maintext CODE >102:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1399 maintext CODE >110:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+13A1 maintext CODE >112:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+13A5 maintext CODE >114:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+13A6 maintext CODE >115:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+13A7 maintext CODE >116:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+13AB maintext CODE >118:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+13AC maintext CODE >119:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+13AD maintext CODE >122:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+13B2 maintext CODE >123:C:\Users\pablo\Desktop\Digital_2\Laboratorio_1\D2_Juego_Carrera.X\Juego_Carrera.c
+1320 clrtext CODE >680:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1320 clrtext CODE >681:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1321 clrtext CODE >682:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1321 clrtext CODE >683:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1322 clrtext CODE >684:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1323 clrtext CODE >685:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1324 clrtext CODE >686:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1325 clrtext CODE >687:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1326 clrtext CODE >688:C:\Users\pablo\AppData\Local\Temp\sshs.s
+1327 clrtext CODE >689:C:\Users\pablo\AppData\Local\Temp\sshs.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -700,14 +700,14 @@ _i2 D6 0 BANK1 1 bssBANK1 dist/default/production\D2_Juego_Carrera.X.production.
 ?_log A4 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 ?_pow B6 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s4f4.o
+___sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\sshs.o
 _main 26FA 0 CODE 0 maintext dist/default/production\D2_Juego_Carrera.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\D2_Juego_Carrera.X.production.o
 exp@x AA 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 log@x A4 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 pow@x B6 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 pow@y BA 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
-start 0 0 CODE 0 init C:\Users\pablo\AppData\Local\Temp\s4f4.o
+start 0 0 CODE 0 init C:\Users\pablo\AppData\Local\Temp\sshs.o
 ___flmul@aexp 41 0 BANK0 1 cstackBANK0 dist/default/production\D2_Juego_Carrera.X.production.o
 ___flmul@bexp 46 0 BANK0 1 cstackBANK0 dist/default/production\D2_Juego_Carrera.X.production.o
 ___flmul@prod 47 0 BANK0 1 cstackBANK0 dist/default/production\D2_Juego_Carrera.X.production.o
@@ -724,12 +724,12 @@ pow@yi C8 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.produ
 _released_ok E2 0 BANK1 1 bssBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 log@coeff 205C 0 STRING 0 strings dist/default/production\D2_Juego_Carrera.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4f4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4f4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4f4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4f4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4f4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4f4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sshs.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sshs.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sshs.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sshs.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sshs.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sshs.o
 __end_oflog@coeff 20A4 0 STRING 0 strings dist/default/production\D2_Juego_Carrera.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\D2_Juego_Carrera.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -752,8 +752,8 @@ __end_of___flsub 1048 0 CODE 0 text19 dist/default/production\D2_Juego_Carrera.X
 __end_of___fltol 1140 0 CODE 0 text14 dist/default/production\D2_Juego_Carrera.X.production.o
 __Umul8_16@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production\D2_Juego_Carrera.X.production.o
 _pressed_ok2 DC 0 BANK1 1 bssBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s4f4.o
-___stacklo 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s4f4.o
+___stackhi 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\sshs.o
+___stacklo 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\sshs.o
 ?_eval_poly 61 0 BANK0 1 cstackBANK0 dist/default/production\D2_Juego_Carrera.X.production.o
 __size_of_floor 0 0 ABS 0 - dist/default/production\D2_Juego_Carrera.X.production.o
 __size_of_frexp 0 0 ABS 0 - dist/default/production\D2_Juego_Carrera.X.production.o
@@ -774,7 +774,7 @@ clear_ram0 2640 0 CODE 0 clrtext dist/default/production\D2_Juego_Carrera.X.prod
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\D2_Juego_Carrera.X.production.o
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 _presionado2 D8 0 BANK1 1 bssBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s4f4.o
+___int_sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\sshs.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -839,7 +839,7 @@ _jugador_1$853 CC 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera
 _jugador_1$854 D0 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 _jugador_2$855 CC 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
 _jugador_2$856 D0 0 BANK1 1 cstackBANK1 dist/default/production\D2_Juego_Carrera.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\pablo\AppData\Local\Temp\s4f4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\pablo\AppData\Local\Temp\sshs.o
 __end_of___xxtofl 2B86 0 CODE 0 text13 dist/default/production\D2_Juego_Carrera.X.production.o
 __size_of_semaforo 0 0 ABS 0 - dist/default/production\D2_Juego_Carrera.X.production.o
 __size_of___fleq 0 0 ABS 0 - dist/default/production\D2_Juego_Carrera.X.production.o

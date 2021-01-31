@@ -10,8 +10,8 @@
 // LIBRERIAS
 //============================================================================*/
 
-#include <xc.h>
-#include <math.h>
+#include <xc.h>    
+#include <math.h>               // Libreria matematica para usar potencia
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION
@@ -30,10 +30,11 @@
 // CONFIG2
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
+
 // DEFINE
-#define _XTAL_FREQ 8000000
-#define LED_rojo PORTEbits.RE0
-#define LED_amarillo PORTEbits.RE1
+#define _XTAL_FREQ 8000000      // Configuracion para usar delay de compilador en micro-segundos
+#define LED_rojo PORTEbits.RE0  // Uso de defines para mejor identificacion de color de semaforo
+#define LED_amarillo PORTEbits.RE1  
 #define LED_verde PORTEbits.RE2
 
 //============================================================================*/
@@ -59,12 +60,12 @@ void setup(void) {
 // VARIABLES
 //============================================================================*/
 
-int pressed_ok = 0;     //Jugador 1
+int pressed_ok = 0;             //Jugador 1 variables tipo entero
 int released_ok = 0;
 int presionado = 0;
 int i = 0;
 
-int pressed_ok2 = 0;     //Jugador 2
+int pressed_ok2 = 0;            //Jugador 2 variables tipo entero
 int released_ok2 = 0;
 int presionado2 = 0;
 int i2 = 0;
@@ -88,30 +89,35 @@ void main(void) {
     setup();
 
     //**************************************************************************
-    // Loop principal
+    // Loop principal semaforo
     //**************************************************************************
 
     while (1) {
-        if (PORTBbits.RB0 == 0)
+        if (PORTBbits.RB0 == 0)                          // Si boton de semaforo es presionado procede a encender
         {
-            if (PORTAbits.RA2 == 0)
+            if (PORTAbits.RA2 == 0)                      // Verifica puerto RA2 para el jugador pueda presionar boton
             {
-                semaforo();
+                semaforo();                              // Corre semaforo y luego deja encendido color verde
                 verde();
-                PORTAbits.RA2 = 1;
+                PORTAbits.RA2 = 1;                       // Enciende puerto RA2 para permitir al jugador presionar boton de juego
             }
         }
-        if (PORTAbits.RA0 == 0 && PORTAbits.RA1 == 0)
+        
+    //**************************************************************************
+    // Loop principal ganador
+    //**************************************************************************    
+        
+        if (PORTAbits.RA0 == 0 && PORTAbits.RA1 == 0)    // Revisa si leds de ganador todavia estan apagados para no bloquear juego
         {
-            if (PORTAbits.RA0 == 1)
+            if (PORTAbits.RA0 == 1)                      // Si jugador 1 enciende led ganador ...
             {
-                PORTBbits.RB2 = 0;
+                PORTBbits.RB2 = 0;                       // Se bloquea el boton de jugador 2
             }
-            else if (PORTAbits.RA1 == 1)
+            else if (PORTAbits.RA1 == 1)                 // Si jugador 2 enciende led ganador ...
             {
-                PORTBbits.RB1 = 0;
+                PORTBbits.RB1 = 0;                       // Se bloquea el boton de jugador 1
             }
-            else
+            else                                         // Si nadie ha ganado, el juego continua
             {
                 jugador_1();
                 jugador_2();
@@ -124,7 +130,14 @@ void main(void) {
 // FUNCIONES
 //============================================================================*/
 
-void semaforo(void) {
+void semaforo(void) 
+{
+    //*************************************************************************
+    // Enciende y apaga el led rojo y amarillo del semaforo con un delay de 
+    // 700ms para que cada color este encendido ese tiempo, luego regresa 
+    // al loop principal
+    //*************************************************************************
+    
     LED_rojo = 1;
     __delay_ms(700);
     LED_rojo = 0;
@@ -134,7 +147,12 @@ void semaforo(void) {
     return;      
 }
 
-void verde(void) {
+void verde(void) 
+{    
+    //*************************************************************************
+    // Enciende el led verde y apaga el rojo y amarillo durante el juego
+    //*************************************************************************
+    
     LED_verde = 1;
     LED_rojo = 0;
     LED_amarillo = 0;
@@ -142,35 +160,40 @@ void verde(void) {
 
 void jugador_1(void) 
 {
-    if (PORTAbits.RA2 == 1)
+    //*************************************************************************
+    // Incremento de contador de decadas al presionar un push button
+    // el cual esta en pull up y tiene anti-rebote
+    //*************************************************************************
+    
+    if (PORTAbits.RA2 == 1)                     // Verifica que el led ya este en verde
     {
-        if (PORTBbits.RB1 == 0)
+        if (PORTBbits.RB1 == 0)                 // Verifica que el boton este presionado 
         {
-            pressed_ok = pressed_ok + 1;
-            released_ok = 0;
-            if (pressed_ok > 500)
+            pressed_ok = pressed_ok + 1;        // Se incrementa variable que verifica que el boton este presionado con rango de seguridad 
+            released_ok = 0;                    // Variable de boton libre se reduce a cero porque boton se esta presionando
+            if (pressed_ok > 500)               // Si el boton esta seguramente presionado
             {
-                if (presionado == 0)
+                if (presionado == 0)            // Verifica que el boton esta en posicion presionado
                 {    
-                    PORTC = pow(2,i);
-                    i = i + 1;
-                    presionado = 1;
-                    if (i == 8)
+                    PORTC = pow(2,i);           // Incrementa el contaodr de decada del puerto
+                    i = i + 1;                  // Incrementa el entero i para calcular el siguiente valor
+                    presionado = 1;             // Coloca el boton como ya presionado para no volver a repetir este ciclo
+                    if (i == 8)                 // Si i no llega hasta 8...
                     {
-                        PORTAbits.RA0 = 1;
+                        PORTAbits.RA0 = 1;      // El led del ganador no se enciende
                     }
                 }
-                pressed_ok = 0;
+                pressed_ok = 0;                 // Se reduce contador de boton de seguridad presionado para siguiente ciclo
             }
         }
-        else
+        else                                    // Si el boton no esta presionado
         {
-            released_ok = released_ok + 1;
-            pressed_ok = 0;
-            if (released_ok > 500)
+            released_ok = released_ok + 1;      // Se incrementa variable que verifica que el boton este libre con rango de seguridad 
+            pressed_ok = 0;                     // Variale de boton presionado se reduce a cero porque boton esta libre
+            if (released_ok > 500)              // Verifica que el boton este libre ...
             {
-                presionado = 0;
-                released_ok = 0;
+                presionado = 0;                 // Coloca el boton como libre para siguiente ciclo
+                released_ok = 0;                // Variable de boton libre se reduce a cero para siguiente ciclo
             }
         }
     }
@@ -178,35 +201,39 @@ void jugador_1(void)
 
 void jugador_2(void) 
 {
-    if (PORTAbits.RA2 == 1)
+    //*************************************************************************
+    // Incremento de contador de decadas al presionar un push button
+    // el cual esta en pull up y tiene anti-rebote
+    //*************************************************************************
+    if (PORTAbits.RA2 == 1)                      // Verifica que el led ya este en verde
     {
-        if (PORTBbits.RB2 == 0)
+        if (PORTBbits.RB2 == 0)                  // Verifica que el boton este presionado 
         {
-            pressed_ok2 = pressed_ok2 + 1;
-            released_ok2 = 0;
-            if (pressed_ok2 > 500)
+            pressed_ok2 = pressed_ok2 + 1;       // Se incrementa variable que verifica que el boton este presionado con rango de seguridad 
+            released_ok2 = 0;                    // Variable de boton libre se reduce a cero porque boton se esta presionando
+            if (pressed_ok2 > 500)               // Si el boton esta seguramente presionado
             {
-                if (presionado2 == 0)
+                if (presionado2 == 0)            // Verifica que el boton esta en posicion presionado
                 {    
-                    PORTD = pow(2,i2);
-                    i2 = i2 + 1;
-                    presionado2 = 1;
-                    if (i2 == 8)
+                    PORTD = pow(2,i2);           // Incrementa el contaodr de decada del puerto
+                    i2 = i2 + 1;                 // Incrementa el entero i para calcular el siguiente valor
+                    presionado2 = 1;             // Coloca el boton como ya presionado para no volver a repetir este ciclo
+                    if (i2 == 8)                 // Si i no llega hasta 8...
                     {
-                        PORTAbits.RA1 = 1;
+                        PORTAbits.RA1 = 1;       // El led del ganador no se enciende
                     }
                 }
-                pressed_ok2 = 0;
+                pressed_ok2 = 0;                 // Se reduce contador de boton de seguridad presionado para siguiente ciclo
             }
         }
-        else
+        else                                     // Si el boton no esta presionado
         {
-            released_ok2 = released_ok2 + 1;
-            pressed_ok2 = 0;
-            if (released_ok2 > 500)
+            released_ok2 = released_ok2 + 1;     // Se incrementa variable que verifica que el boton este libre con rango de seguridad 
+            pressed_ok2 = 0;                     // Variale de boton presionado se reduce a cero porque boton esta libre
+            if (released_ok2 > 500)              // Verifica que el boton este libre ...
             {
-                presionado2 = 0;
-                released_ok2 = 0;
+                presionado2 = 0;                 // Coloca el boton como libre para siguiente ciclo
+                released_ok2 = 0;                // Variable de boton libre se reduce a cero para siguiente ciclo
             }
         }
     }

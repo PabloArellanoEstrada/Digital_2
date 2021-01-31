@@ -24,11 +24,50 @@
             </formatting>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>al</word>
+            <word>amarillo</word>
+            <word>apaga</word>
             <word>apagado</word>
+            <word>apagados</word>
             <word>apagar</word>
+            <word>bloquea</word>
+            <word>bloquear</word>
+            <word>boton</word>
             <word>botones</word>
+            <word>cada</word>
+            <word>Corre</word>
+            <word>del</word>
+            <word>durante</word>
+            <word>encender</word>
+            <word>encendido</word>
+            <word>Enciende</word>
+            <word>entero</word>
             <word>entrada</word>
+            <word>ese</word>
+            <word>estan</word>
+            <word>ganado</word>
+            <word>ganador</word>
+            <word>indefinidamente</word>
+            <word>juego</word>
             <word>Jugador</word>
+            <word>leds</word>
+            <word>luego</word>
+            <word>nadie</word>
+            <word>presionado</word>
+            <word>procede</word>
+            <word>puerto</word>
+            <word>que</word>
+            <word>regresa</word>
+            <word>repita</word>
+            <word>Revisa</word>
+            <word>rojo</word>
+            <word>Se</word>
+            <word>semaforo</word>
+            <word>tiempo</word>
+            <word>tipo</word>
+            <word>todavia</word>
+            <word>verde</word>
+            <word>Verifica</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

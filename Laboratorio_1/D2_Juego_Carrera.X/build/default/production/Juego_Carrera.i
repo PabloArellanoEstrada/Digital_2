@@ -2543,7 +2543,7 @@ extern double round(double);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 43 "Juego_Carrera.c"
+# 44 "Juego_Carrera.c"
 void setup(void) {
     TRISE = 0;
     PORTE = 0;
@@ -2605,6 +2605,11 @@ void main(void) {
                 PORTAbits.RA2 = 1;
             }
         }
+
+
+
+
+
         if (PORTAbits.RA0 == 0 && PORTAbits.RA1 == 0)
         {
             if (PORTAbits.RA0 == 1)
@@ -2621,8 +2626,6 @@ void main(void) {
                 jugador_2();
             }
         }
-
-
     }
 }
 
@@ -2630,7 +2633,14 @@ void main(void) {
 
 
 
-void semaforo(void) {
+void semaforo(void)
+{
+
+
+
+
+
+
     PORTEbits.RE0 = 1;
     _delay((unsigned long)((700)*(8000000/4000.0)));
     PORTEbits.RE0 = 0;
@@ -2638,19 +2648,26 @@ void semaforo(void) {
     _delay((unsigned long)((700)*(8000000/4000.0)));
     PORTEbits.RE1 = 0;
     return;
-
 }
 
-void verde(void) {
+void verde(void)
+{
+
+
+
+
     PORTEbits.RE2 = 1;
     PORTEbits.RE0 = 0;
     PORTEbits.RE1 = 0;
 }
 
-
-
 void jugador_1(void)
 {
+
+
+
+
+
     if (PORTAbits.RA2 == 1)
     {
         if (PORTBbits.RB1 == 0)
@@ -2687,6 +2704,10 @@ void jugador_1(void)
 
 void jugador_2(void)
 {
+
+
+
+
     if (PORTAbits.RA2 == 1)
     {
         if (PORTBbits.RB2 == 0)
