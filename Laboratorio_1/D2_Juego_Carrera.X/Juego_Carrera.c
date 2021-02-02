@@ -169,13 +169,13 @@ void jugador_1(void)
     {
         if (PORTBbits.RB1 == 0)                 // Verifica que el boton este presionado 
         {
-            pressed_ok = pressed_ok + 1;        // Se incrementa variable que verifica que el boton este presionado con rango de seguridad 
+            pressed_ok = pressed_ok + 1;        // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
             released_ok = 0;                    // Variable de boton libre se reduce a cero porque boton se esta presionando
             if (pressed_ok > 500)               // Si el boton esta seguramente presionado
             {
                 if (presionado == 0)            // Verifica que el boton esta en posicion presionado
                 {    
-                    PORTC = pow(2,i);           // Incrementa el contaodr de decada del puerto
+                    PORTC = pow(2,i);           // Incrementa el contador de decada del puerto
                     i = i + 1;                  // Incrementa el entero i para calcular el siguiente valor
                     presionado = 1;             // Coloca el boton como ya presionado para no volver a repetir este ciclo
                     if (i == 8)                 // Si i no llega hasta 8...
@@ -188,8 +188,8 @@ void jugador_1(void)
         }
         else                                    // Si el boton no esta presionado
         {
-            released_ok = released_ok + 1;      // Se incrementa variable que verifica que el boton este libre con rango de seguridad 
-            pressed_ok = 0;                     // Variale de boton presionado se reduce a cero porque boton esta libre
+            released_ok = released_ok + 1;      // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
+            pressed_ok = 0;                     // Contador de boton presionado se reduce a cero porque boton esta libre
             if (released_ok > 500)              // Verifica que el boton este libre ...
             {
                 presionado = 0;                 // Coloca el boton como libre para siguiente ciclo

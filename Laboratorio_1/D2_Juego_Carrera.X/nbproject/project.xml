@@ -35,6 +35,7 @@
             <word>boton</word>
             <word>botones</word>
             <word>cada</word>
+            <word>contador</word>
             <word>Corre</word>
             <word>del</word>
             <word>durante</word>
@@ -47,27 +48,34 @@
             <word>estan</word>
             <word>ganado</word>
             <word>ganador</word>
+            <word>incrementa</word>
             <word>indefinidamente</word>
             <word>juego</word>
             <word>Jugador</word>
             <word>leds</word>
+            <word>libre</word>
             <word>luego</word>
             <word>nadie</word>
+            <word>porque</word>
             <word>presionado</word>
             <word>procede</word>
             <word>puerto</word>
             <word>que</word>
+            <word>rango</word>
             <word>regresa</word>
             <word>repita</word>
             <word>Revisa</word>
             <word>rojo</word>
             <word>Se</word>
+            <word>seguridad</word>
             <word>semaforo</word>
+            <word>siguiente</word>
             <word>tiempo</word>
             <word>tipo</word>
             <word>todavia</word>
             <word>verde</word>
             <word>Verifica</word>
+            <word>ya</word>
         </spellchecker-wordlist>
     </configuration>
 </project>
