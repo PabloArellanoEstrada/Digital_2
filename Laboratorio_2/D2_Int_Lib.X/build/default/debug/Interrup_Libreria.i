@@ -2760,7 +2760,6 @@ void osc_config (void);
 void interrup_config (void);
 void tmr0_config(void);
 void incrementar(void);
-void decrementar(void);
 
 
 
@@ -2789,13 +2788,16 @@ void main(void)
 
 void __attribute__((picinterrupt(("")))) isr(void)
 {
-# 98 "Interrup_Libreria.c"
+# 97 "Interrup_Libreria.c"
      if (INTCONbits.RBIF == 1)
     {
         uint8_t a;
         a = PORTB;
         incrementar();
-        decrementar();
+        PORTDbits.RD7 = 1;
+
+
+
         INTCONbits.RBIF = 0;
     }
 
@@ -2821,6 +2823,10 @@ void setup(void)
     TRISE = 0;
     PORTE = 0;
 }
+
+
+
+
 
 void interrup_config (void)
 {
@@ -2862,12 +2868,9 @@ void tmr0_config (void)
     TMR0 = 150;
 }
 
-
-
-
-
 void incrementar(void)
 {
+
 
 
 
@@ -2883,43 +2886,6 @@ void incrementar(void)
             if (presionado == 0)
             {
                 PORTD = PORTD + 1;
-                presionado = 1;
-            }
-        }
-        pressed_ok = 0;
-        }
-    else
-    {
-        for (int e = 0; e < 501; e++){
-        released_ok = released_ok + 1;}
-
-        pressed_ok = 0;
-        if (released_ok > 500)
-        {
-            presionado = 0;
-            released_ok = 0;
-        }
-    }
-    return;
-}
-
-void decrementar(void)
-{
-
-
-
-
-
-    if (PORTBbits.RB1 == 1)
-    {
-        for (int e = 0; e < 501; e++){
-        pressed_ok = pressed_ok + 1; }
-        released_ok = 0;
-        if (pressed_ok > 500)
-        {
-            if (presionado == 0)
-            {
-                PORTD = PORTD - 1;
                 presionado = 1;
             }
         }
