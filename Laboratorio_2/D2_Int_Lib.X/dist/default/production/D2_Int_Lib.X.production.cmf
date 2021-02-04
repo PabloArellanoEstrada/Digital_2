@@ -12,21 +12,24 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\D2_Int_Lib.X.production.o
-cinit CODE 0 13 13 10 2
-text1 CODE 0 176 176 D 2
-text2 CODE 0 10D 10D 28 2
-text3 CODE 0 168 168 E 2
-text4 CODE 0 183 183 D 2
-text5 CODE 0 135 135 1B 2
-text6 CODE 0 23 23 75 2
-text7 CODE 0 98 98 75 2
-maintext CODE 0 150 150 18 2
+cinit CODE 0 13 13 19 2
+text1 CODE 0 225 225 D 2
+text2 CODE 0 1DB 1DB 28 2
+text3 CODE 0 23F 23F A 2
+text4 CODE 0 232 232 D 2
+text5 CODE 0 249 249 7 2
+text6 CODE 0 2C 2C 8D 2
+text7 CODE 0 203 203 22 2
+text8 CODE 0 12C 12C 6F 2
+text9 CODE 0 B9 B9 73 2
+maintext CODE 0 19B 19B 40 2
 cstackCOMMON COMMON 1 70 70 7 1
+cstackBANK0 BANK0 1 2E 2E 5 1
 intentry CODE 0 4 4 C 2
-bssBANK0 BANK0 1 20 20 4 1
-bssCOMMON COMMON 1 77 77 6 1
+bssBANK0 BANK0 1 20 20 E 1
+bssCOMMON COMMON 1 77 77 5 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\pablo\AppData\Local\Temp\s1fm4.o
+$C:\Users\pablo\AppData\Local\Temp\s1tlg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 10 10 3 2
 config CONFIG 4 2007 2007 2 2
@@ -36,32 +39,32 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 24-6F 1
+RAM 33-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 24-6F 1
+BANK0 33-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 190-1FFF 2
+CONST 250-1FFF 2
 ENTRY 3-3 2
-ENTRY 190-1FFF 2
+ENTRY 250-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 190-1FFF 2
+CODE 250-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 7D-7D 1
+COMMON 7C-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 190-1FFF 2
+STRCODE 250-1FFF 2
 STRING 3-3 2
-STRING 190-1FFF 2
+STRING 250-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -76,118 +79,238 @@ STRING 190-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\D2_Int_Lib.X.production.o
-13 cinit CODE >471:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-13 cinit CODE >474:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-13 cinit CODE >500:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-14 cinit CODE >501:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-15 cinit CODE >502:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-16 cinit CODE >503:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-17 cinit CODE >504:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-18 cinit CODE >505:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-19 cinit CODE >508:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-1A cinit CODE >509:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-1B cinit CODE >510:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-1C cinit CODE >511:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-1D cinit CODE >512:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-1E cinit CODE >513:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-1F cinit CODE >519:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-1F cinit CODE >521:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-20 cinit CODE >522:C:\Users\pablo\AppData\Local\Temp\s1fm4.s
-4 intentry CODE >87:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-98 text7 CODE >211:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-98 text7 CODE >218:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-9E text7 CODE >220:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-A0 text7 CODE >221:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-BB text7 CODE >222:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-BD text7 CODE >223:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-CA text7 CODE >225:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-D0 text7 CODE >227:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-D5 text7 CODE >228:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-D9 text7 CODE >231:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-DB text7 CODE >232:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-DC text7 CODE >235:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-DE text7 CODE >236:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-F9 text7 CODE >238:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-FB text7 CODE >239:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-108 text7 CODE >241:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-10A text7 CODE >242:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-10C text7 CODE >246:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-23 text6 CODE >174:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-23 text6 CODE >181:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-29 text6 CODE >183:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-2B text6 CODE >184:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-46 text6 CODE >185:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-48 text6 CODE >186:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-55 text6 CODE >188:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-5B text6 CODE >190:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-60 text6 CODE >191:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-64 text6 CODE >194:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-66 text6 CODE >195:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-67 text6 CODE >198:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-69 text6 CODE >199:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-84 text6 CODE >201:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-86 text6 CODE >202:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-93 text6 CODE >204:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-95 text6 CODE >205:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-97 text6 CODE >209:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-135 text5 CODE >87:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-135 text5 CODE >98:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-139 text5 CODE >101:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-13A text5 CODE >102:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-13F text5 CODE >103:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-144 text5 CODE >104:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-145 text5 CODE >107:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-183 text4 CODE >130:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-183 text4 CODE >133:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-184 text4 CODE >134:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-185 text4 CODE >135:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-186 text4 CODE >136:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-187 text4 CODE >137:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-188 text4 CODE >138:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-189 text4 CODE >139:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-18A text4 CODE >140:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-18B text4 CODE >141:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-18F text4 CODE >142:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-168 text3 CODE >144:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-168 text3 CODE >147:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-16E text3 CODE >148:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-16F text3 CODE >149:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-170 text3 CODE >150:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-171 text3 CODE >151:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-172 text3 CODE >152:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-173 text3 CODE >153:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-174 text3 CODE >154:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-175 text3 CODE >156:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-10D text2 CODE >113:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-10D text2 CODE >116:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-111 text2 CODE >117:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-115 text2 CODE >118:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-118 text2 CODE >119:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-11B text2 CODE >120:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-11F text2 CODE >121:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-122 text2 CODE >122:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-125 text2 CODE >123:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-128 text2 CODE >124:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-12B text2 CODE >125:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-12E text2 CODE >126:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-131 text2 CODE >127:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-134 text2 CODE >128:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-176 text1 CODE >158:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-176 text1 CODE >161:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-179 text1 CODE >162:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-17A text1 CODE >163:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-17B text1 CODE >164:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-17C text1 CODE >165:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-17D text1 CODE >166:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-17E text1 CODE >167:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-182 text1 CODE >168:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-150 maintext CODE >67:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-150 maintext CODE >69:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-155 maintext CODE >70:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-15A maintext CODE >71:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-15F maintext CODE >72:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-164 maintext CODE >77:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
-164 maintext CODE >80:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+13 cinit CODE >639:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+13 cinit CODE >642:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+13 cinit CODE >683:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+14 cinit CODE >684:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+15 cinit CODE >685:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+16 cinit CODE >686:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+17 cinit CODE >687:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+18 cinit CODE >690:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+19 cinit CODE >691:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+1A cinit CODE >692:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+1B cinit CODE >693:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+1C cinit CODE >694:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+1D cinit CODE >695:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+1E cinit CODE >696:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+1F cinit CODE >697:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+20 cinit CODE >698:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+21 cinit CODE >699:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+22 cinit CODE >700:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+23 cinit CODE >701:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+24 cinit CODE >702:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+25 cinit CODE >703:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+26 cinit CODE >704:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+27 cinit CODE >705:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+28 cinit CODE >711:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+28 cinit CODE >713:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+29 cinit CODE >714:C:\Users\pablo\AppData\Local\Temp\s1tlg.s
+4 intentry CODE >72:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+B9 text9 CODE >235:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+B9 text9 CODE >242:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+BF text9 CODE >244:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+C1 text9 CODE >245:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+DE text9 CODE >246:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+E2 text9 CODE >247:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+EB text9 CODE >249:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+F1 text9 CODE >251:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+F4 text9 CODE >252:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+F8 text9 CODE >255:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+FA text9 CODE >256:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+FB text9 CODE >259:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+FD text9 CODE >260:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+11A text9 CODE >262:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+11E text9 CODE >263:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+127 text9 CODE >265:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+129 text9 CODE >266:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+12B text9 CODE >270:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+12C text8 CODE >198:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+12C text8 CODE >205:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+132 text8 CODE >207:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+134 text8 CODE >208:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+14F text8 CODE >209:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+151 text8 CODE >210:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+15A text8 CODE >212:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+162 text8 CODE >214:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+165 text8 CODE >215:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+169 text8 CODE >218:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+16B text8 CODE >219:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+16C text8 CODE >222:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+16E text8 CODE >223:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+189 text8 CODE >225:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+18B text8 CODE >226:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+194 text8 CODE >228:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+198 text8 CODE >229:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+19A text8 CODE >233:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+203 text7 CODE >72:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+203 text7 CODE >78:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+207 text7 CODE >80:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+208 text7 CODE >81:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+20A text7 CODE >85:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+20E text7 CODE >88:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+20F text7 CODE >89:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+214 text7 CODE >90:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+219 text7 CODE >91:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+21A text7 CODE >95:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+2C text6 CODE >3:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+2F text6 CODE >5:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+30 text6 CODE >7:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+30 text6 CODE >8:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+31 text6 CODE >9:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+32 text6 CODE >10:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+33 text6 CODE >11:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+34 text6 CODE >12:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+35 text6 CODE >13:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+35 text6 CODE >14:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+36 text6 CODE >15:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+37 text6 CODE >16:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+38 text6 CODE >17:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+39 text6 CODE >18:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+3A text6 CODE >20:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+3A text6 CODE >21:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+3B text6 CODE >22:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+3C text6 CODE >23:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+3D text6 CODE >24:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+3E text6 CODE >25:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+3F text6 CODE >27:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+3F text6 CODE >28:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+40 text6 CODE >29:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+41 text6 CODE >30:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+42 text6 CODE >31:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+43 text6 CODE >32:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+44 text6 CODE >34:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+44 text6 CODE >35:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+45 text6 CODE >36:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+46 text6 CODE >37:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+47 text6 CODE >38:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+48 text6 CODE >39:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+49 text6 CODE >41:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+49 text6 CODE >42:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+4A text6 CODE >43:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+4B text6 CODE >44:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+4C text6 CODE >45:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+4D text6 CODE >46:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+4E text6 CODE >48:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+4E text6 CODE >49:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+4F text6 CODE >50:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+50 text6 CODE >51:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+51 text6 CODE >52:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+52 text6 CODE >53:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+53 text6 CODE >55:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+53 text6 CODE >56:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+54 text6 CODE >57:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+55 text6 CODE >58:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+56 text6 CODE >59:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+57 text6 CODE >60:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+58 text6 CODE >62:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+58 text6 CODE >63:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+59 text6 CODE >64:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+5A text6 CODE >65:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+5B text6 CODE >66:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+5C text6 CODE >67:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+5D text6 CODE >69:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+5D text6 CODE >70:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+5E text6 CODE >71:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+5F text6 CODE >72:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+60 text6 CODE >73:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+61 text6 CODE >74:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+62 text6 CODE >76:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+62 text6 CODE >77:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+63 text6 CODE >78:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+64 text6 CODE >79:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+65 text6 CODE >80:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+66 text6 CODE >81:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+67 text6 CODE >83:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+67 text6 CODE >84:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+68 text6 CODE >85:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+69 text6 CODE >86:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+6A text6 CODE >87:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+6B text6 CODE >88:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+6C text6 CODE >90:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+6C text6 CODE >91:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+6D text6 CODE >92:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+6E text6 CODE >93:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+6F text6 CODE >94:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+70 text6 CODE >95:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+71 text6 CODE >97:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+71 text6 CODE >98:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+72 text6 CODE >99:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+73 text6 CODE >100:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+74 text6 CODE >101:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+75 text6 CODE >102:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+76 text6 CODE >104:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+76 text6 CODE >105:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+77 text6 CODE >106:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+78 text6 CODE >107:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+79 text6 CODE >108:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+7A text6 CODE >109:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+7B text6 CODE >110:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+AF text6 CODE >111:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+B0 text6 CODE >112:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+B1 text6 CODE >113:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+B2 text6 CODE >114:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+B3 text6 CODE >116:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+B6 text6 CODE >117:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+B7 text6 CODE >118:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+B8 text6 CODE >119:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+249 text5 CODE >189:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+249 text5 CODE >191:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+24F text5 CODE >192:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+232 text4 CODE >150:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+232 text4 CODE >153:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+233 text4 CODE >154:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+234 text4 CODE >155:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+235 text4 CODE >156:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+236 text4 CODE >157:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+237 text4 CODE >158:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+238 text4 CODE >159:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+239 text4 CODE >160:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+23A text4 CODE >161:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+23E text4 CODE >162:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+23F text3 CODE >164:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+23F text3 CODE >167:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+242 text3 CODE >168:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+243 text3 CODE >169:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+244 text3 CODE >170:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+245 text3 CODE >171:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+246 text3 CODE >172:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+247 text3 CODE >173:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+248 text3 CODE >175:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1DB text2 CODE >133:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1DB text2 CODE >136:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1DF text2 CODE >137:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1E3 text2 CODE >138:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1E6 text2 CODE >139:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1E9 text2 CODE >140:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1ED text2 CODE >141:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1F0 text2 CODE >142:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1F3 text2 CODE >143:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1F6 text2 CODE >144:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1F9 text2 CODE >145:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1FC text2 CODE >146:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1FF text2 CODE >147:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+202 text2 CODE >148:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+225 text1 CODE >177:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+225 text1 CODE >180:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+228 text1 CODE >181:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+229 text1 CODE >182:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+22A text1 CODE >183:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+22B text1 CODE >184:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+22C text1 CODE >185:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+22D text1 CODE >186:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+231 text1 CODE >187:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+19B maintext CODE >101:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+19B maintext CODE >103:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1A0 maintext CODE >104:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1A5 maintext CODE >105:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1AA maintext CODE >106:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1AF maintext CODE >107:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1B4 maintext CODE >115:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1B7 maintext CODE >116:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1C2 maintext CODE >118:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1C8 maintext CODE >120:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1C9 maintext CODE >121:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+1CF maintext CODE >122:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -202,8 +325,9 @@ FB text7 CODE >239:C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\I
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 __size_of_tmr0_config 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-__Hspace_0 190 0 ABS 0 - -
-__Hspace_1 7D 0 ABS 0 - -
+_released_ok2 24 0 BANK0 1 bssBANK0 dist/default/production\D2_Int_Lib.X.production.o
+__Hspace_0 250 0 ABS 0 - -
+__Hspace_1 7C 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
@@ -211,52 +335,60 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _IOCB 96 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s1fm4.o
-_main 2A0 0 CODE 0 maintext dist/default/production\D2_Int_Lib.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s1tlg.o
+_main 336 0 CODE 0 maintext dist/default/production\D2_Int_Lib.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-start 20 0 CODE 0 init C:\Users\pablo\AppData\Local\Temp\s1fm4.o
+start 20 0 CODE 0 init C:\Users\pablo\AppData\Local\Temp\s1tlg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 decrementar@e 70 0 COMMON 1 cstackCOMMON dist/default/production\D2_Int_Lib.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-_released_ok 79 0 COMMON 1 bssCOMMON dist/default/production\D2_Int_Lib.X.production.o
+_released_ok 77 0 COMMON 1 bssCOMMON dist/default/production\D2_Int_Lib.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1fm4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1fm4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1fm4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1fm4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1fm4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1fm4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1tlg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1tlg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1tlg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1tlg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1tlg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s1tlg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-__end_of_interrup_config 320 0 CODE 0 text4 dist/default/production\D2_Int_Lib.X.production.o
+__end_of_interrup_config 47E 0 CODE 0 text4 dist/default/production\D2_Int_Lib.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-incrementar@e_221 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_Int_Lib.X.production.o
+incrementar@e_295 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_Int_Lib.X.production.o
+_ADRESL 9E 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
+__size_of_initADC 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_decrementar 21A 0 CODE 0 text7 dist/default/production\D2_Int_Lib.X.production.o
+__end_of_decrementar 258 0 CODE 0 text9 dist/default/production\D2_Int_Lib.X.production.o
 __size_of_incrementar 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-_interrup_config 306 0 CODE 0 text4 dist/default/production\D2_Int_Lib.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s1fm4.o
-___stacklo 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s1fm4.o
+_interrup_config 464 0 CODE 0 text4 dist/default/production\D2_Int_Lib.X.production.o
+_pressed_ok2 26 0 BANK0 1 bssBANK0 dist/default/production\D2_Int_Lib.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s1tlg.o
+___stacklo 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s1tlg.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
+_adc_config 492 0 CODE 0 text5 dist/default/production\D2_Int_Lib.X.production.o
 start_initialization 26 0 CODE 0 cinit dist/default/production\D2_Int_Lib.X.production.o
-_tmr0_config 2EC 0 CODE 0 text1 dist/default/production\D2_Int_Lib.X.production.o
+_tmr0_config 44A 0 CODE 0 text1 dist/default/production\D2_Int_Lib.X.production.o
 incrementar@e 70 0 COMMON 1 cstackCOMMON dist/default/production\D2_Int_Lib.X.production.o
-_osc_config 2D0 0 CODE 0 text3 dist/default/production\D2_Int_Lib.X.production.o
-__pcstackBANK0 0 0 BANK0 1 cstackBANK0 dist/default/production\D2_Int_Lib.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s1fm4.o
+_osc_config 47E 0 CODE 0 text3 dist/default/production\D2_Int_Lib.X.production.o
+__pcstackBANK0 2E 0 BANK0 1 cstackBANK0 dist/default/production\D2_Int_Lib.X.production.o
+_presionado2 22 0 BANK0 1 bssBANK0 dist/default/production\D2_Int_Lib.X.production.o
+initADC@CHS 30 0 BANK0 1 cstackBANK0 dist/default/production\D2_Int_Lib.X.production.o
+__end_of_initADC 172 0 CODE 0 text6 dist/default/production\D2_Int_Lib.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s1tlg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
-__Hcinit 46 0 CODE 0 cinit -
+__Hcinit 58 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
+__end_of_adc_config 4A0 0 CODE 0 text5 dist/default/production\D2_Int_Lib.X.production.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -284,22 +416,24 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 190 0 ABS 0 - -
-__S1 7D 0 ABS 0 - -
+_ISR 406 0 CODE 0 text7 dist/default/production\D2_Int_Lib.X.production.o
+__S0 250 0 ABS 0 - -
+__S1 7C 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 26A 0 CODE 0 text5 dist/default/production\D2_Int_Lib.X.production.o
-__end_of_osc_config 2EC 0 CODE 0 text3 dist/default/production\D2_Int_Lib.X.production.o
+__end_of_osc_config 492 0 CODE 0 text3 dist/default/production\D2_Int_Lib.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 __size_of_decrementar 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-__end_of_isr 2A0 0 CODE 0 text5 dist/default/production\D2_Int_Lib.X.production.o
+__end_of_ISR 44A 0 CODE 0 text7 dist/default/production\D2_Int_Lib.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\pablo\AppData\Local\Temp\s1fm4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\pablo\AppData\Local\Temp\s1tlg.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-_incrementar 46 0 CODE 0 text6 dist/default/production\D2_Int_Lib.X.production.o
-__pmaintext 2A0 0 CODE 0 maintext dist/default/production\D2_Int_Lib.X.production.o
+_incrementar 258 0 CODE 0 text8 dist/default/production\D2_Int_Lib.X.production.o
+__pmaintext 336 0 CODE 0 maintext dist/default/production\D2_Int_Lib.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
+_ADCON0bits 1F 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
+_ADCON1bits 9F 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -309,34 +443,39 @@ __pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production\D2_Int_Lib.X.produc
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 20 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization 3E 0 CODE 0 cinit dist/default/production\D2_Int_Lib.X.production.o
-__end_of_tmr0_config 306 0 CODE 0 text1 dist/default/production\D2_Int_Lib.X.production.o
+end_of_initialization 50 0 CODE 0 cinit dist/default/production\D2_Int_Lib.X.production.o
+__end_of_tmr0_config 464 0 CODE 0 text1 dist/default/production\D2_Int_Lib.X.production.o
 __Hintentry 20 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
+__size_of_adc_config 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 2EC 0 CODE 0 text1 dist/default/production\D2_Int_Lib.X.production.o
-__ptext2 21A 0 CODE 0 text2 dist/default/production\D2_Int_Lib.X.production.o
-__ptext3 2D0 0 CODE 0 text3 dist/default/production\D2_Int_Lib.X.production.o
-__ptext4 306 0 CODE 0 text4 dist/default/production\D2_Int_Lib.X.production.o
-__ptext5 26A 0 CODE 0 text5 dist/default/production\D2_Int_Lib.X.production.o
-__ptext6 46 0 CODE 0 text6 dist/default/production\D2_Int_Lib.X.production.o
-__ptext7 130 0 CODE 0 text7 dist/default/production\D2_Int_Lib.X.production.o
+_initADC 58 0 CODE 0 text6 dist/default/production\D2_Int_Lib.X.production.o
+__ptext1 44A 0 CODE 0 text1 dist/default/production\D2_Int_Lib.X.production.o
+__ptext2 3B6 0 CODE 0 text2 dist/default/production\D2_Int_Lib.X.production.o
+__ptext3 47E 0 CODE 0 text3 dist/default/production\D2_Int_Lib.X.production.o
+__ptext4 464 0 CODE 0 text4 dist/default/production\D2_Int_Lib.X.production.o
+__ptext5 492 0 CODE 0 text5 dist/default/production\D2_Int_Lib.X.production.o
+__ptext6 58 0 CODE 0 text6 dist/default/production\D2_Int_Lib.X.production.o
+__ptext7 406 0 CODE 0 text7 dist/default/production\D2_Int_Lib.X.production.o
+__ptext8 258 0 CODE 0 text8 dist/default/production\D2_Int_Lib.X.production.o
+__ptext9 172 0 CODE 0 text9 dist/default/production\D2_Int_Lib.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __size_of_osc_config 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
+_adc_value 7B 0 COMMON 1 bssCOMMON dist/default/production\D2_Int_Lib.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-_presionado 77 0 COMMON 1 bssCOMMON dist/default/production\D2_Int_Lib.X.production.o
-__end_of__initialization 3E 0 CODE 0 cinit dist/default/production\D2_Int_Lib.X.production.o
+_presionado 2A 0 BANK0 1 bssBANK0 dist/default/production\D2_Int_Lib.X.production.o
+__end_of__initialization 50 0 CODE 0 cinit dist/default/production\D2_Int_Lib.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-_decrementar 130 0 CODE 0 text7 dist/default/production\D2_Int_Lib.X.production.o
+_decrementar 172 0 CODE 0 text9 dist/default/production\D2_Int_Lib.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
-decrementar@e_224 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_Int_Lib.X.production.o
+decrementar@e_298 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_Int_Lib.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\D2_Int_Lib.X.production.o
 __Hend_init 26 0 CODE 0 end_init -
-__end_of_main 2D0 0 CODE 0 maintext dist/default/production\D2_Int_Lib.X.production.o
+__end_of_main 3B6 0 CODE 0 maintext dist/default/production\D2_Int_Lib.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-_pressed_ok 7B 0 COMMON 1 bssCOMMON dist/default/production\D2_Int_Lib.X.production.o
+_pressed_ok 79 0 COMMON 1 bssCOMMON dist/default/production\D2_Int_Lib.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
@@ -347,16 +486,16 @@ _TRISB 86 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
-__end_of_setup 26A 0 CODE 0 text2 dist/default/production\D2_Int_Lib.X.production.o
+__end_of_setup 406 0 CODE 0 text2 dist/default/production\D2_Int_Lib.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\D2_Int_Lib.X.production.o
-_setup 21A 0 CODE 0 text2 dist/default/production\D2_Int_Lib.X.production.o
+_setup 3B6 0 CODE 0 text2 dist/default/production\D2_Int_Lib.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\D2_Int_Lib.X.production.o
-__size_of_isr 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
+__size_of_ISR 0 0 ABS 0 - dist/default/production\D2_Int_Lib.X.production.o
 __initialization 26 0 CODE 0 cinit dist/default/production\D2_Int_Lib.X.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\D2_Int_Lib.X.production.o
-__end_of_incrementar 130 0 CODE 0 text6 dist/default/production\D2_Int_Lib.X.production.o
+__end_of_incrementar 336 0 CODE 0 text8 dist/default/production\D2_Int_Lib.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -382,10 +521,10 @@ __end_of_incrementar 130 0 CODE 0 text6 dist/default/production\D2_Int_Lib.X.pro
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cstackCOMMON 1 70 70 D 1
-intentry 0 4 8 18C 2
+cstackCOMMON 1 70 70 C 1
+intentry 0 4 8 24C 2
 reset_vec 0 0 0 3 2
-bssBANK0 1 20 20 4 1
+bssBANK0 1 20 20 13 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

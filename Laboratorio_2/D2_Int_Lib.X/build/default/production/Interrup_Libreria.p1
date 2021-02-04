@@ -1,17 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"55 Interrup_Libreria.c
-[; ;Interrup_Libreria.c: 55: void setup(void);
-[v _setup `(v ~T0 @X0 0 ef ]
-"56
-[; ;Interrup_Libreria.c: 56: void osc_config (void);
-[v _osc_config `(v ~T0 @X0 0 ef ]
-"57
-[; ;Interrup_Libreria.c: 57: void interrup_config (void);
-[v _interrup_config `(v ~T0 @X0 0 ef ]
-"58
-[; ;Interrup_Libreria.c: 58: void tmr0_config(void);
-[v _tmr0_config `(v ~T0 @X0 0 ef ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "465 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
@@ -29,16 +16,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "482
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"59
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
 "228
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"59 Interrup_Libreria.c
-[; ;Interrup_Libreria.c: 59: void incrementar(void);
+"64 Interrup_Libreria.c
+[; ;Interrup_Libreria.c: 64: 
 [v _incrementar `(v ~T0 @X0 0 ef ]
-"60
-[; ;Interrup_Libreria.c: 60: void decrementar(void);
+"65
+[; ;Interrup_Libreria.c: 65: void main(void)
 [v _decrementar `(v ~T0 @X0 0 ef ]
-"3387 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[p mainexit ]
+"60
+[; ;Interrup_Libreria.c: 60: 
+[v _setup `(v ~T0 @X0 0 ef ]
+"61
+[; ;Interrup_Libreria.c: 61: 
+[v _osc_config `(v ~T0 @X0 0 ef ]
+"62
+[; ;Interrup_Libreria.c: 62: 
+[v _interrup_config `(v ~T0 @X0 0 ef ]
+"63
+[; ;Interrup_Libreria.c: 63: 
+[v _tmr0_config `(v ~T0 @X0 0 ef ]
+"66
+[; ;Interrup_Libreria.c: 66: {
+[v _adc_config `(v ~T0 @X0 0 ef ]
+"1251 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1251:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S45 . ADON GO_nDONE CHS ADCS ]
+"1257
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1257:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . . GO CHS0 CHS1 CHS2 CHS3 ADCS0 ADCS1 ]
+"1267
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1267:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 ]
+[n S47 . . nDONE ]
+"1271
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1271:     struct {
+[s S48 :1 `uc 1 :1 `uc 1 ]
+[n S48 . . GO_DONE ]
+"1250
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1250: typedef union {
+[u S44 `S45 1 `S46 1 `S47 1 `S48 1 ]
+[n S44 . . . . . ]
+"1276
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
+[v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"290 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"2970
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2970: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+"3387
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "1416
@@ -56,9 +95,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1540
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
-"290
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "1602
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
@@ -104,10 +140,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1366
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1366: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
 [v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
-"59
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
-[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
-"234
+"17 ./ADC_lib.h
+[; ;./ADC_lib.h: 17: void initADC (uint8_t CHS);
+[v _initADC `(v ~T0 @X0 0 ef1`uc ]
+"234 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 234:     struct {
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -352,528 +388,596 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"21 Interrup_Libreria.c
-[p x FOSC  =  XT         ]
-"22
-[p x WDTE  =  OFF        ]
+"22 Interrup_Libreria.c
+[; ;Interrup_Libreria.c: 22: 
+[p x FOSC  =  INTRC_NOCLKOUT          ]
 "23
-[p x PWRTE  =  OFF       ]
+[; ;Interrup_Libreria.c: 23: 
+[p x WDTE  =  OFF        ]
 "24
-[p x MCLRE  =  OFF       ]
+[; ;Interrup_Libreria.c: 24: void setup(void);
+[p x PWRTE  =  OFF       ]
 "25
-[p x CP  =  OFF          ]
+[; ;Interrup_Libreria.c: 25: void osc_config (void);
+[p x MCLRE  =  OFF       ]
 "26
-[p x CPD  =  OFF         ]
+[; ;Interrup_Libreria.c: 26: void interrup_config (void);
+[p x CP  =  OFF          ]
 "27
-[p x BOREN  =  OFF       ]
+[; ;Interrup_Libreria.c: 27: void tmr0_config(void);
+[p x CPD  =  OFF         ]
 "28
-[p x IESO  =  OFF        ]
+[; ;Interrup_Libreria.c: 28: void incrementar(void);
+[p x BOREN  =  OFF       ]
 "29
-[p x FCMEN  =  OFF       ]
+[; ;Interrup_Libreria.c: 29: void decrementar(void);
+[p x IESO  =  OFF        ]
 "30
+[; ;Interrup_Libreria.c: 30: void adc_config (void);
+[p x FCMEN  =  OFF       ]
+"31
+[; ;Interrup_Libreria.c: 31: 
 [p x LVP  =  OFF         ]
-"32
-[p x BOR4V  =  BOR40V    ]
 "33
+[; ;Interrup_Libreria.c: 33: 
+[p x BOR4V  =  BOR40V    ]
+"34
+[; ;Interrup_Libreria.c: 34: 
 [p x WRT  =  OFF         ]
 "43
-[; ;Interrup_Libreria.c: 43: int contador = 0;
-[v _contador `i ~T0 @X0 1 e ]
+[; ;Interrup_Libreria.c: 43:     {
+[v _contador `ui ~T0 @X0 1 e ]
 [i _contador
--> 0 `i
+-> -> 0 `i `ui
+]
+"44
+[; ;Interrup_Libreria.c: 44:         INTCONbits.TMR0IF = 0;
+[v _pressed_ok `ui ~T0 @X0 1 e ]
+[i _pressed_ok
+-> -> 0 `i `ui
+]
+"45
+[; ;Interrup_Libreria.c: 45:         TMR0 = 150;
+[v _released_ok `ui ~T0 @X0 1 e ]
+[i _released_ok
+-> -> 0 `i `ui
 ]
 "46
-[; ;Interrup_Libreria.c: 46: int pressed_ok = 0;
-[v _pressed_ok `i ~T0 @X0 1 e ]
-[i _pressed_ok
--> 0 `i
-]
-"47
-[; ;Interrup_Libreria.c: 47: int released_ok = 0;
-[v _released_ok `i ~T0 @X0 1 e ]
-[i _released_ok
--> 0 `i
+[; ;Interrup_Libreria.c: 46:     }
+[v _presionado `ui ~T0 @X0 1 e ]
+[i _presionado
+-> -> 0 `i `ui
 ]
 "48
-[; ;Interrup_Libreria.c: 48: int presionado = 0;
-[v _presionado `i ~T0 @X0 1 e ]
-[i _presionado
--> 0 `i
+[; ;Interrup_Libreria.c: 48: 
+[v _contador2 `ui ~T0 @X0 1 e ]
+[i _contador2
+-> -> 0 `i `ui
 ]
 "49
-[; ;Interrup_Libreria.c: 49: int i = 0;
-[v _i `i ~T0 @X0 1 e ]
-[i _i
--> 0 `i
+[; ;Interrup_Libreria.c: 49:      if (INTCONbits.RBIF == 1)
+[v _pressed_ok2 `ui ~T0 @X0 1 e ]
+[i _pressed_ok2
+-> -> 0 `i `ui
 ]
+"50
+[; ;Interrup_Libreria.c: 50:     {
+[v _released_ok2 `ui ~T0 @X0 1 e ]
+[i _released_ok2
+-> -> 0 `i `ui
+]
+"51
+[; ;Interrup_Libreria.c: 51:         uint8_t a;
+[v _presionado2 `ui ~T0 @X0 1 e ]
+[i _presionado2
+-> -> 0 `i `ui
+]
+"53
+[; ;Interrup_Libreria.c: 53:         incrementar();
+[v _i `ui ~T0 @X0 1 e ]
+[i _i
+-> -> 0 `i `ui
+]
+"54
+[; ;Interrup_Libreria.c: 54:         decrementar();
+[v _adc_value `uc ~T0 @X0 1 e ]
+[i _adc_value
+-> -> 0 `i `uc
+]
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"72
+[; ;Interrup_Libreria.c: 72: 
+[v _ISR `(v ~T1 @X0 1 ef ]
+"73
+[; ;Interrup_Libreria.c: 73: 
+{
+[e :U _ISR ]
+[f ]
+"78
+[; ;Interrup_Libreria.c: 78:     {
+[e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 140  ]
+"79
+[; ;Interrup_Libreria.c: 79:        ADCON0bits.GO_DONE = 1;
+{
+"80
+[; ;Interrup_Libreria.c: 80:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+"81
+[; ;Interrup_Libreria.c: 81: 
+[e = _TMR0 -> -> 150 `i `uc ]
+"82
+[; ;Interrup_Libreria.c: 82:         if (ADCON0bits.GO_DONE == 0)
+}
+[e :U 140 ]
+"85
+[; ;Interrup_Libreria.c: 85:             PORTC = ADRESL;
+[e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 141  ]
+"86
+[; ;Interrup_Libreria.c: 86:             adc_value = ADRESL;
+{
+"87
+[; ;Interrup_Libreria.c: 87:         }
+[v _a `uc ~T0 @X0 1 a ]
+"88
+[; ;Interrup_Libreria.c: 88:     }
+[e = _a _PORTB ]
+"89
+[; ;Interrup_Libreria.c: 89: }
+[e ( _incrementar ..  ]
+"90
+[; ;Interrup_Libreria.c: 90: 
+[e ( _decrementar ..  ]
+"91
+[; ;Interrup_Libreria.c: 91: 
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"92
+[; ;Interrup_Libreria.c: 92: 
+}
+[e :U 141 ]
+"95
+[; ;Interrup_Libreria.c: 95: 
+[e :UE 139 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"67
-[; ;Interrup_Libreria.c: 67: void main(void)
+"101
+[; ;Interrup_Libreria.c: 101:     TRISA = 1;
 [v _main `(v ~T0 @X0 1 ef ]
-"68
-[; ;Interrup_Libreria.c: 68: {
+"102
+[; ;Interrup_Libreria.c: 102:     PORTA = 0;
 {
 [e :U _main ]
 [f ]
-"69
-[; ;Interrup_Libreria.c: 69:     setup();
-[e ( _setup ..  ]
-"70
-[; ;Interrup_Libreria.c: 70:     osc_config();
-[e ( _osc_config ..  ]
-"71
-[; ;Interrup_Libreria.c: 71:     interrup_config();
-[e ( _interrup_config ..  ]
-"72
-[; ;Interrup_Libreria.c: 72:     tmr0_config();
-[e ( _tmr0_config ..  ]
-"77
-[; ;Interrup_Libreria.c: 77:     while (1)
-[e :U 141 ]
-"78
-[; ;Interrup_Libreria.c: 78:     {
-{
-"80
-[; ;Interrup_Libreria.c: 80:     }
-}
-[e :U 140 ]
-[e $U 141  ]
-[e :U 142 ]
-"81
-[; ;Interrup_Libreria.c: 81: }
-[e :UE 139 ]
-}
-[v $root$_isr `(v ~T0 @X0 0 e ]
-"87
-[; ;Interrup_Libreria.c: 87: void __attribute__((picinterrupt(("")))) isr(void)
-[v _isr `(v ~T1 @X0 1 ef ]
-"88
-[; ;Interrup_Libreria.c: 88: {
-{
-[e :U _isr ]
-[f ]
-"98
-[; ;Interrup_Libreria.c: 98:      if (INTCONbits.RBIF == 1)
-[e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 144  ]
-"99
-[; ;Interrup_Libreria.c: 99:     {
-{
-"100
-[; ;Interrup_Libreria.c: 100:         uint8_t a;
-[v _a `uc ~T0 @X0 1 a ]
-"101
-[; ;Interrup_Libreria.c: 101:         a = PORTB;
-[e = _a _PORTB ]
-"102
-[; ;Interrup_Libreria.c: 102:         incrementar();
-[e ( _incrementar ..  ]
 "103
-[; ;Interrup_Libreria.c: 103:         decrementar();
-[e ( _decrementar ..  ]
+[; ;Interrup_Libreria.c: 103:     ANSELH = 0;
+[e ( _setup ..  ]
 "104
-[; ;Interrup_Libreria.c: 104:         INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[; ;Interrup_Libreria.c: 104:     TRISB = 0b00000011;
+[e ( _osc_config ..  ]
 "105
-[; ;Interrup_Libreria.c: 105:     }
-}
-[e :U 144 ]
+[; ;Interrup_Libreria.c: 105:     PORTB = 0;
+[e ( _interrup_config ..  ]
+"106
+[; ;Interrup_Libreria.c: 106:     TRISC = 0;
+[e ( _tmr0_config ..  ]
 "107
-[; ;Interrup_Libreria.c: 107:  }
-[e :UE 143 ]
-}
+[; ;Interrup_Libreria.c: 107:     PORTC = 0;
+[e ( _adc_config ..  ]
 "113
-[; ;Interrup_Libreria.c: 113: void setup(void)
-[v _setup `(v ~T0 @X0 1 ef ]
+[; ;Interrup_Libreria.c: 113: 
+[e :U 144 ]
 "114
-[; ;Interrup_Libreria.c: 114: {
+[; ;Interrup_Libreria.c: 114: void interrup_config (void)
+{
+"115
+[; ;Interrup_Libreria.c: 115: {
+[e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
+"116
+[; ;Interrup_Libreria.c: 116: 
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"118
+[; ;Interrup_Libreria.c: 118:     INTCONbits.PEIE = 0;
+[e $ ! == -> . . _ADCON0bits 3 1 `i -> 0 `i 146  ]
+"119
+[; ;Interrup_Libreria.c: 119:     INTCONbits.T0IE = 1;
+{
+"120
+[; ;Interrup_Libreria.c: 120:     INTCONbits.INTE = 0;
+[e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
+"121
+[; ;Interrup_Libreria.c: 121:     INTCONbits.RBIE = 1;
+[e = _PORTC _ADRESL ]
+"122
+[; ;Interrup_Libreria.c: 122:     INTCONbits.T0IF = 0;
+[e = _adc_value _ADRESL ]
+"123
+[; ;Interrup_Libreria.c: 123:     INTCONbits.INTF = 0;
+}
+[e :U 146 ]
+"124
+[; ;Interrup_Libreria.c: 124:     INTCONbits.RBIF = 0;
+}
+[e :U 143 ]
+[e $U 144  ]
+[e :U 145 ]
+"125
+[; ;Interrup_Libreria.c: 125:     IOCB = 0b00000011;
+[e :UE 142 ]
+}
+"133
+[; ;Interrup_Libreria.c: 133:     OSCCONbits.IRCF2 = 0;
+[v _setup `(v ~T0 @X0 1 ef ]
+"134
+[; ;Interrup_Libreria.c: 134:     OSCCONbits.OSTS = 0;
 {
 [e :U _setup ]
 [f ]
-"116
-[; ;Interrup_Libreria.c: 116:     ANSEL = 1;
+"136
+[; ;Interrup_Libreria.c: 136:     OSCCONbits.LTS = 1;
 [e = _ANSEL -> -> 1 `i `uc ]
-"117
-[; ;Interrup_Libreria.c: 117:     TRISA = 1;
+"137
+[; ;Interrup_Libreria.c: 137:     OSCCONbits.SCS = 0;
 [e = _TRISA -> -> 1 `i `uc ]
-"118
-[; ;Interrup_Libreria.c: 118:     PORTA = 0;
+"138
+[; ;Interrup_Libreria.c: 138: 
 [e = _PORTA -> -> 0 `i `uc ]
-"119
-[; ;Interrup_Libreria.c: 119:     ANSELH = 0;
+"139
+[; ;Interrup_Libreria.c: 139: }
 [e = _ANSELH -> -> 0 `i `uc ]
-"120
-[; ;Interrup_Libreria.c: 120:     TRISB = 0b11111111;
-[e = _TRISB -> -> 255 `i `uc ]
-"121
-[; ;Interrup_Libreria.c: 121:     PORTB = 0;
+"140
+[; ;Interrup_Libreria.c: 140: 
+[e = _TRISB -> -> 3 `i `uc ]
+"141
+[; ;Interrup_Libreria.c: 141: void tmr0_config (void)
 [e = _PORTB -> -> 0 `i `uc ]
-"122
-[; ;Interrup_Libreria.c: 122:     TRISC = 0;
+"142
+[; ;Interrup_Libreria.c: 142: {
 [e = _TRISC -> -> 0 `i `uc ]
-"123
-[; ;Interrup_Libreria.c: 123:     PORTC = 0;
+"143
+[; ;Interrup_Libreria.c: 143: 
 [e = _PORTC -> -> 0 `i `uc ]
-"124
-[; ;Interrup_Libreria.c: 124:     TRISD = 0;
+"144
+[; ;Interrup_Libreria.c: 144:     OPTION_REGbits.nRBPU = 1;
 [e = _TRISD -> -> 0 `i `uc ]
-"125
-[; ;Interrup_Libreria.c: 125:     PORTD = 0;
+"145
+[; ;Interrup_Libreria.c: 145:     OPTION_REGbits.T0CS = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"126
-[; ;Interrup_Libreria.c: 126:     TRISE = 0;
+"146
+[; ;Interrup_Libreria.c: 146:     OPTION_REGbits.PSA = 1;
 [e = _TRISE -> -> 0 `i `uc ]
-"127
-[; ;Interrup_Libreria.c: 127:     PORTE = 0;
+"147
+[; ;Interrup_Libreria.c: 147:     OPTION_REGbits.PS2 = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"128
-[; ;Interrup_Libreria.c: 128: }
-[e :UE 145 ]
+"148
+[; ;Interrup_Libreria.c: 148:     OPTION_REGbits.PS1 = 0;
+[e :UE 147 ]
 }
-"130
-[; ;Interrup_Libreria.c: 130: void interrup_config (void)
+"150
+[; ;Interrup_Libreria.c: 150:     TMR0 = 150;
 [v _interrup_config `(v ~T0 @X0 1 ef ]
-"131
-[; ;Interrup_Libreria.c: 131: {
+"151
+[; ;Interrup_Libreria.c: 151: }
 {
 [e :U _interrup_config ]
 [f ]
-"133
-[; ;Interrup_Libreria.c: 133:     INTCONbits.GIE = 1;
+"153
+[; ;Interrup_Libreria.c: 153: void adc_config (void)
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"134
-[; ;Interrup_Libreria.c: 134:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"135
-[; ;Interrup_Libreria.c: 135:     INTCONbits.T0IE = 1;
+"154
+[; ;Interrup_Libreria.c: 154: {
+[e = . . _INTCONbits 0 6 -> -> 0 `i `uc ]
+"155
+[; ;Interrup_Libreria.c: 155:     initADC (0);
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"136
-[; ;Interrup_Libreria.c: 136:     INTCONbits.INTE = 1;
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"137
-[; ;Interrup_Libreria.c: 137:     INTCONbits.RBIE = 1;
+"156
+[; ;Interrup_Libreria.c: 156: }
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+"157
+[; ;Interrup_Libreria.c: 157: 
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"138
-[; ;Interrup_Libreria.c: 138:     INTCONbits.T0IF = 0;
+"158
+[; ;Interrup_Libreria.c: 158: 
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"139
-[; ;Interrup_Libreria.c: 139:     INTCONbits.INTF = 0;
+"159
+[; ;Interrup_Libreria.c: 159: 
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"140
-[; ;Interrup_Libreria.c: 140:     INTCONbits.RBIF = 0;
+"160
+[; ;Interrup_Libreria.c: 160: 
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"141
-[; ;Interrup_Libreria.c: 141:     IOCB = 0b11111111;
-[e = _IOCB -> -> 255 `i `uc ]
-"142
-[; ;Interrup_Libreria.c: 142: }
-[e :UE 146 ]
+"161
+[; ;Interrup_Libreria.c: 161: 
+[e = _IOCB -> -> 3 `i `uc ]
+"162
+[; ;Interrup_Libreria.c: 162: void incrementar(void)
+[e :UE 148 ]
 }
-"144
-[; ;Interrup_Libreria.c: 144: void osc_config (void)
+"164
+[; ;Interrup_Libreria.c: 164: 
 [v _osc_config `(v ~T0 @X0 1 ef ]
-"145
-[; ;Interrup_Libreria.c: 145: {
+"165
+[; ;Interrup_Libreria.c: 165: 
 {
 [e :U _osc_config ]
 [f ]
-"147
-[; ;Interrup_Libreria.c: 147:     OSCCONbits.IRCF = 1;
-[e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
-"148
-[; ;Interrup_Libreria.c: 148:     OSCCONbits.IRCF2 = 1;
+"167
+[; ;Interrup_Libreria.c: 167: 
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"149
-[; ;Interrup_Libreria.c: 149:     OSCCONbits.IRCF1 = 1;
+"168
+[; ;Interrup_Libreria.c: 168: 
 [e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"150
-[; ;Interrup_Libreria.c: 150:     OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"151
-[; ;Interrup_Libreria.c: 151:     OSCCONbits.OSTS = 0;
+"169
+[; ;Interrup_Libreria.c: 169:     if (PORTBbits.RB0 == 1)
+[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"170
+[; ;Interrup_Libreria.c: 170:     {
 [e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
-"152
-[; ;Interrup_Libreria.c: 152:     OSCCONbits.HTS = 0;
+"171
+[; ;Interrup_Libreria.c: 171:         for (int e = 0; e < 201; e++){
 [e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
-"153
-[; ;Interrup_Libreria.c: 153:     OSCCONbits.LTS = 1;
+"172
+[; ;Interrup_Libreria.c: 172:         pressed_ok = pressed_ok + 1; }
 [e = . . _OSCCONbits 0 1 -> -> 1 `i `uc ]
-"154
-[; ;Interrup_Libreria.c: 154:     OSCCONbits.SCS = 0;
+"173
+[; ;Interrup_Libreria.c: 173:         released_ok = 0;
 [e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
-"156
-[; ;Interrup_Libreria.c: 156: }
-[e :UE 147 ]
+"175
+[; ;Interrup_Libreria.c: 175:         {
+[e :UE 149 ]
 }
-"158
-[; ;Interrup_Libreria.c: 158: void tmr0_config (void)
+"177
+[; ;Interrup_Libreria.c: 177:             {
 [v _tmr0_config `(v ~T0 @X0 1 ef ]
-"159
-[; ;Interrup_Libreria.c: 159: {
+"178
+[; ;Interrup_Libreria.c: 178:                 PORTD = PORTD + 1;
 {
 [e :U _tmr0_config ]
 [f ]
-"161
-[; ;Interrup_Libreria.c: 161:     OPTION_REGbits.nRBPU = 1;
+"180
+[; ;Interrup_Libreria.c: 180:             }
 [e = . . _OPTION_REGbits 0 5 -> -> 1 `i `uc ]
-"162
-[; ;Interrup_Libreria.c: 162:     OPTION_REGbits.T0CS = 0;
+"181
+[; ;Interrup_Libreria.c: 181:         }
 [e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-"163
-[; ;Interrup_Libreria.c: 163:     OPTION_REGbits.PSA = 1;
+"182
+[; ;Interrup_Libreria.c: 182:         pressed_ok = 0;
 [e = . . _OPTION_REGbits 0 1 -> -> 1 `i `uc ]
-"164
-[; ;Interrup_Libreria.c: 164:     OPTION_REGbits.PS2 = 0;
+"183
+[; ;Interrup_Libreria.c: 183:         }
 [e = . . _OPTION_REGbits 1 2 -> -> 0 `i `uc ]
-"165
-[; ;Interrup_Libreria.c: 165:     OPTION_REGbits.PS1 = 0;
+"184
+[; ;Interrup_Libreria.c: 184:     else
 [e = . . _OPTION_REGbits 1 1 -> -> 0 `i `uc ]
-"166
-[; ;Interrup_Libreria.c: 166:     OPTION_REGbits.PS0 = 0;
+"185
+[; ;Interrup_Libreria.c: 185:     {
 [e = . . _OPTION_REGbits 1 0 -> -> 0 `i `uc ]
-"167
-[; ;Interrup_Libreria.c: 167:     TMR0 = 150;
+"186
+[; ;Interrup_Libreria.c: 186:         for (int e = 0; e < 201; e++){
 [e = _TMR0 -> -> 150 `i `uc ]
-"168
-[; ;Interrup_Libreria.c: 168: }
-[e :UE 148 ]
+"187
+[; ;Interrup_Libreria.c: 187:         released_ok = released_ok + 1;}
+[e :UE 150 ]
 }
-"174
-[; ;Interrup_Libreria.c: 174: void incrementar(void)
+"189
+[; ;Interrup_Libreria.c: 189:         pressed_ok = 0;
+[v _adc_config `(v ~T0 @X0 1 ef ]
+"190
+[; ;Interrup_Libreria.c: 190:         if (released_ok > 200)
+{
+[e :U _adc_config ]
+[f ]
+"191
+[; ;Interrup_Libreria.c: 191:         {
+[e ( _initADC (1 -> -> 0 `i `uc ]
+"192
+[; ;Interrup_Libreria.c: 192:             presionado = 0;
+[e :UE 151 ]
+}
+"198
+[; ;Interrup_Libreria.c: 198: 
 [v _incrementar `(v ~T0 @X0 1 ef ]
-"175
-[; ;Interrup_Libreria.c: 175: {
+"199
+[; ;Interrup_Libreria.c: 199: void decrementar(void)
 {
 [e :U _incrementar ]
 [f ]
-"181
-[; ;Interrup_Libreria.c: 181:     if (PORTBbits.RB0 == 1)
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 150  ]
-"182
-[; ;Interrup_Libreria.c: 182:     {
-{
-"183
-[; ;Interrup_Libreria.c: 183:         for (int e = 0; e < 501; e++){
-{
-[v _e `i ~T0 @X0 1 a ]
-[e = _e -> 0 `i ]
-[e $ < _e -> 501 `i 151  ]
-[e $U 152  ]
-[e :U 151 ]
-{
-"184
-[; ;Interrup_Libreria.c: 184:         pressed_ok = pressed_ok + 1; }
-[e = _pressed_ok + _pressed_ok -> 1 `i ]
-}
-[e ++ _e -> 1 `i ]
-[e $ < _e -> 501 `i 151  ]
-[e :U 152 ]
-}
-"185
-[; ;Interrup_Libreria.c: 185:         released_ok = 0;
-[e = _released_ok -> 0 `i ]
-"186
-[; ;Interrup_Libreria.c: 186:         if (pressed_ok > 500)
-[e $ ! > _pressed_ok -> 500 `i 154  ]
-"187
-[; ;Interrup_Libreria.c: 187:         {
-{
-"188
-[; ;Interrup_Libreria.c: 188:             if (presionado == 0)
-[e $ ! == _presionado -> 0 `i 155  ]
-"189
-[; ;Interrup_Libreria.c: 189:             {
-{
-"190
-[; ;Interrup_Libreria.c: 190:                 PORTD = PORTD + 1;
-[e = _PORTD -> + -> _PORTD `i -> 1 `i `uc ]
-"191
-[; ;Interrup_Libreria.c: 191:                 presionado = 1;
-[e = _presionado -> 1 `i ]
-"192
-[; ;Interrup_Libreria.c: 192:             }
-}
-[e :U 155 ]
-"193
-[; ;Interrup_Libreria.c: 193:         }
-}
-[e :U 154 ]
-"194
-[; ;Interrup_Libreria.c: 194:         pressed_ok = 0;
-[e = _pressed_ok -> 0 `i ]
-"195
-[; ;Interrup_Libreria.c: 195:         }
-}
-[e $U 156  ]
-"196
-[; ;Interrup_Libreria.c: 196:     else
-[e :U 150 ]
-"197
-[; ;Interrup_Libreria.c: 197:     {
-{
-"198
-[; ;Interrup_Libreria.c: 198:         for (int e = 0; e < 501; e++){
-{
-[v _e `i ~T0 @X0 1 a ]
-[e = _e -> 0 `i ]
-[e $ < _e -> 501 `i 157  ]
-[e $U 158  ]
-[e :U 157 ]
-{
-"199
-[; ;Interrup_Libreria.c: 199:         released_ok = released_ok + 1;}
-[e = _released_ok + _released_ok -> 1 `i ]
-}
-[e ++ _e -> 1 `i ]
-[e $ < _e -> 501 `i 157  ]
-[e :U 158 ]
-}
-"201
-[; ;Interrup_Libreria.c: 201:         pressed_ok = 0;
-[e = _pressed_ok -> 0 `i ]
-"202
-[; ;Interrup_Libreria.c: 202:         if (released_ok > 500)
-[e $ ! > _released_ok -> 500 `i 160  ]
-"203
-[; ;Interrup_Libreria.c: 203:         {
-{
-"204
-[; ;Interrup_Libreria.c: 204:             presionado = 0;
-[e = _presionado -> 0 `i ]
 "205
-[; ;Interrup_Libreria.c: 205:             released_ok = 0;
-[e = _released_ok -> 0 `i ]
+[; ;Interrup_Libreria.c: 205: 
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 153  ]
 "206
-[; ;Interrup_Libreria.c: 206:         }
-}
-[e :U 160 ]
+[; ;Interrup_Libreria.c: 206:     if (PORTBbits.RB1 == 1)
+{
 "207
-[; ;Interrup_Libreria.c: 207:     }
-}
-[e :U 156 ]
+[; ;Interrup_Libreria.c: 207:     {
+{
+[v _e `i ~T0 @X0 1 a ]
+[e = _e -> 0 `i ]
+[e $ < _e -> 201 `i 154  ]
+[e $U 155  ]
+[e :U 154 ]
+{
 "208
-[; ;Interrup_Libreria.c: 208:     return;
-[e $UE 149  ]
-"209
-[; ;Interrup_Libreria.c: 209: }
-[e :UE 149 ]
+[; ;Interrup_Libreria.c: 208:         for (int e = 0; e < 201; e++){
+[e = _pressed_ok + _pressed_ok -> -> 1 `i `ui ]
 }
+[e ++ _e -> 1 `i ]
+[e $ < _e -> 201 `i 154  ]
+[e :U 155 ]
+}
+"209
+[; ;Interrup_Libreria.c: 209:         pressed_ok2 = pressed_ok2 + 1; }
+[e = _released_ok -> -> 0 `i `ui ]
+"210
+[; ;Interrup_Libreria.c: 210:         released_ok2 = 0;
+[e $ ! > _pressed_ok -> -> 200 `i `ui 157  ]
 "211
-[; ;Interrup_Libreria.c: 211: void decrementar(void)
-[v _decrementar `(v ~T0 @X0 1 ef ]
+[; ;Interrup_Libreria.c: 211:         if (pressed_ok2 > 200)
+{
 "212
-[; ;Interrup_Libreria.c: 212: {
+[; ;Interrup_Libreria.c: 212:         {
+[e $ ! == _presionado -> -> 0 `i `ui 158  ]
+"213
+[; ;Interrup_Libreria.c: 213:             if (presionado2 == 0)
+{
+"214
+[; ;Interrup_Libreria.c: 214:             {
+[e = _PORTD -> + -> _PORTD `i -> 1 `i `uc ]
+"215
+[; ;Interrup_Libreria.c: 215:                 PORTD = PORTD - 1;
+[e = _presionado -> -> 1 `i `ui ]
+"216
+[; ;Interrup_Libreria.c: 216:                 presionado2 = 1;
+}
+[e :U 158 ]
+"217
+[; ;Interrup_Libreria.c: 217:             }
+}
+[e :U 157 ]
+"218
+[; ;Interrup_Libreria.c: 218:         }
+[e = _pressed_ok -> -> 0 `i `ui ]
+"219
+[; ;Interrup_Libreria.c: 219:         pressed_ok2 = 0;
+}
+[e $U 159  ]
+"220
+[; ;Interrup_Libreria.c: 220:         }
+[e :U 153 ]
+"221
+[; ;Interrup_Libreria.c: 221:     else
+{
+"222
+[; ;Interrup_Libreria.c: 222:     {
+{
+[v _e `i ~T0 @X0 1 a ]
+[e = _e -> 0 `i ]
+[e $ < _e -> 201 `i 160  ]
+[e $U 161  ]
+[e :U 160 ]
+{
+"223
+[; ;Interrup_Libreria.c: 223:         for (int e = 0; e < 201; e++){
+[e = _released_ok + _released_ok -> -> 1 `i `ui ]
+}
+[e ++ _e -> 1 `i ]
+[e $ < _e -> 201 `i 160  ]
+[e :U 161 ]
+}
+"225
+[; ;Interrup_Libreria.c: 225: 
+[e = _pressed_ok -> -> 0 `i `ui ]
+"226
+[; ;Interrup_Libreria.c: 226:         pressed_ok2 = 0;
+[e $ ! > _released_ok -> -> 200 `i `ui 163  ]
+"227
+[; ;Interrup_Libreria.c: 227:         if (released_ok2 > 200)
+{
+"228
+[; ;Interrup_Libreria.c: 228:         {
+[e = _presionado -> -> 0 `i `ui ]
+"229
+[; ;Interrup_Libreria.c: 229:             presionado2 = 0;
+[e = _released_ok -> -> 0 `i `ui ]
+"230
+[; ;Interrup_Libreria.c: 230:             released_ok = 0;
+}
+[e :U 163 ]
+"231
+[; ;Interrup_Libreria.c: 231:         }
+}
+[e :U 159 ]
+"232
+[; ;Interrup_Libreria.c: 232:     }
+[e $UE 152  ]
+"233
+[; ;Interrup_Libreria.c: 233:     return;
+[e :UE 152 ]
+}
+"235
+[v _decrementar `(v ~T0 @X0 1 ef ]
+"236
 {
 [e :U _decrementar ]
 [f ]
-"218
-[; ;Interrup_Libreria.c: 218:     if (PORTBbits.RB1 == 1)
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 162  ]
-"219
-[; ;Interrup_Libreria.c: 219:     {
-{
-"220
-[; ;Interrup_Libreria.c: 220:         for (int e = 0; e < 501; e++){
-{
-[v _e `i ~T0 @X0 1 a ]
-[e = _e -> 0 `i ]
-[e $ < _e -> 501 `i 163  ]
-[e $U 164  ]
-[e :U 163 ]
-{
-"221
-[; ;Interrup_Libreria.c: 221:         pressed_ok = pressed_ok + 1; }
-[e = _pressed_ok + _pressed_ok -> 1 `i ]
-}
-[e ++ _e -> 1 `i ]
-[e $ < _e -> 501 `i 163  ]
-[e :U 164 ]
-}
-"222
-[; ;Interrup_Libreria.c: 222:         released_ok = 0;
-[e = _released_ok -> 0 `i ]
-"223
-[; ;Interrup_Libreria.c: 223:         if (pressed_ok > 500)
-[e $ ! > _pressed_ok -> 500 `i 166  ]
-"224
-[; ;Interrup_Libreria.c: 224:         {
-{
-"225
-[; ;Interrup_Libreria.c: 225:             if (presionado == 0)
-[e $ ! == _presionado -> 0 `i 167  ]
-"226
-[; ;Interrup_Libreria.c: 226:             {
-{
-"227
-[; ;Interrup_Libreria.c: 227:                 PORTD = PORTD - 1;
-[e = _PORTD -> - -> _PORTD `i -> 1 `i `uc ]
-"228
-[; ;Interrup_Libreria.c: 228:                 presionado = 1;
-[e = _presionado -> 1 `i ]
-"229
-[; ;Interrup_Libreria.c: 229:             }
-}
-[e :U 167 ]
-"230
-[; ;Interrup_Libreria.c: 230:         }
-}
-[e :U 166 ]
-"231
-[; ;Interrup_Libreria.c: 231:         pressed_ok = 0;
-[e = _pressed_ok -> 0 `i ]
-"232
-[; ;Interrup_Libreria.c: 232:         }
-}
-[e $U 168  ]
-"233
-[; ;Interrup_Libreria.c: 233:     else
-[e :U 162 ]
-"234
-[; ;Interrup_Libreria.c: 234:     {
-{
-"235
-[; ;Interrup_Libreria.c: 235:         for (int e = 0; e < 501; e++){
-{
-[v _e `i ~T0 @X0 1 a ]
-[e = _e -> 0 `i ]
-[e $ < _e -> 501 `i 169  ]
-[e $U 170  ]
-[e :U 169 ]
-{
-"236
-[; ;Interrup_Libreria.c: 236:         released_ok = released_ok + 1;}
-[e = _released_ok + _released_ok -> 1 `i ]
-}
-[e ++ _e -> 1 `i ]
-[e $ < _e -> 501 `i 169  ]
-[e :U 170 ]
-}
-"238
-[; ;Interrup_Libreria.c: 238:         pressed_ok = 0;
-[e = _pressed_ok -> 0 `i ]
-"239
-[; ;Interrup_Libreria.c: 239:         if (released_ok > 500)
-[e $ ! > _released_ok -> 500 `i 172  ]
-"240
-[; ;Interrup_Libreria.c: 240:         {
-{
-"241
-[; ;Interrup_Libreria.c: 241:             presionado = 0;
-[e = _presionado -> 0 `i ]
 "242
-[; ;Interrup_Libreria.c: 242:             released_ok = 0;
-[e = _released_ok -> 0 `i ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 165  ]
 "243
-[; ;Interrup_Libreria.c: 243:         }
-}
-[e :U 172 ]
+{
 "244
-[; ;Interrup_Libreria.c: 244:     }
-}
-[e :U 168 ]
+{
+[v _e `i ~T0 @X0 1 a ]
+[e = _e -> 0 `i ]
+[e $ < _e -> 201 `i 166  ]
+[e $U 167  ]
+[e :U 166 ]
+{
 "245
-[; ;Interrup_Libreria.c: 245:     return;
-[e $UE 161  ]
+[e = _pressed_ok2 + _pressed_ok2 -> -> 1 `i `ui ]
+}
+[e ++ _e -> 1 `i ]
+[e $ < _e -> 201 `i 166  ]
+[e :U 167 ]
+}
 "246
-[; ;Interrup_Libreria.c: 246: }
-[e :UE 161 ]
+[e = _released_ok2 -> -> 0 `i `ui ]
+"247
+[e $ ! > _pressed_ok2 -> -> 200 `i `ui 169  ]
+"248
+{
+"249
+[e $ ! == _presionado2 -> -> 0 `i `ui 170  ]
+"250
+{
+"251
+[e = _PORTD -> - -> _PORTD `i -> 1 `i `uc ]
+"252
+[e = _presionado2 -> -> 1 `i `ui ]
+"253
+}
+[e :U 170 ]
+"254
+}
+[e :U 169 ]
+"255
+[e = _pressed_ok2 -> -> 0 `i `ui ]
+"256
+}
+[e $U 171  ]
+"257
+[e :U 165 ]
+"258
+{
+"259
+{
+[v _e `i ~T0 @X0 1 a ]
+[e = _e -> 0 `i ]
+[e $ < _e -> 201 `i 172  ]
+[e $U 173  ]
+[e :U 172 ]
+{
+"260
+[e = _released_ok2 + _released_ok2 -> -> 1 `i `ui ]
+}
+[e ++ _e -> 1 `i ]
+[e $ < _e -> 201 `i 172  ]
+[e :U 173 ]
+}
+"262
+[e = _pressed_ok2 -> -> 0 `i `ui ]
+"263
+[e $ ! > _released_ok2 -> -> 200 `i `ui 175  ]
+"264
+{
+"265
+[e = _presionado2 -> -> 0 `i `ui ]
+"266
+[e = _released_ok -> -> 0 `i `ui ]
+"267
+}
+[e :U 175 ]
+"268
+}
+[e :U 171 ]
+"269
+[e $UE 164  ]
+"270
+[e :UE 164 ]
 }

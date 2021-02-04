@@ -2724,12 +2724,21 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 # 15 "Interrup_Libreria.c" 2
 
+# 1 "./ADC_lib.h" 1
+# 15 "./ADC_lib.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 15 "./ADC_lib.h" 2
+
+
+void initADC (uint8_t CHS);
+# 16 "Interrup_Libreria.c" 2
 
 
 
 
 
-#pragma config FOSC = XT
+
+#pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -2742,14 +2751,26 @@ extern int printf(const char *, ...);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 43 "Interrup_Libreria.c"
-int contador = 0;
 
 
-int pressed_ok = 0;
-int released_ok = 0;
-int presionado = 0;
-int i = 0;
+
+
+
+
+
+
+uint16_t contador = 0;
+uint16_t pressed_ok = 0;
+uint16_t released_ok = 0;
+uint16_t presionado = 0;
+
+uint16_t contador2 = 0;
+uint16_t pressed_ok2 = 0;
+uint16_t released_ok2 = 0;
+uint16_t presionado2 = 0;
+
+uint16_t i = 0;
+uint8_t adc_value = 0;
 
 
 
@@ -2761,7 +2782,36 @@ void interrup_config (void);
 void tmr0_config(void);
 void incrementar(void);
 void decrementar(void);
+void adc_config (void);
 
+
+
+
+
+void __attribute__((picinterrupt(("")))) ISR(void)
+{
+
+
+
+
+    if (INTCONbits.TMR0IF == 1)
+    {
+        INTCONbits.TMR0IF = 0;
+        TMR0 = 150;
+    }
+
+
+     if (INTCONbits.RBIF == 1)
+    {
+        uint8_t a;
+        a = PORTB;
+        incrementar();
+        decrementar();
+        INTCONbits.RBIF = 0;
+    }
+
+
+ }
 
 
 
@@ -2773,33 +2823,27 @@ void main(void)
     osc_config();
     interrup_config();
     tmr0_config();
+    adc_config ();
+
 
 
 
 
     while (1)
     {
+       ADCON0bits.GO_DONE = 1;
+        _delay((unsigned long)((10)*(8000000/4000.0)));
 
+        if (ADCON0bits.GO_DONE == 0)
+        {
+            ADCON0bits.GO_DONE = 1;
+            PORTC = ADRESL;
+            adc_value = ADRESL;
+        }
     }
 }
 
 
-
-
-
-void __attribute__((picinterrupt(("")))) isr(void)
-{
-# 98 "Interrup_Libreria.c"
-     if (INTCONbits.RBIF == 1)
-    {
-        uint8_t a;
-        a = PORTB;
-        incrementar();
-        decrementar();
-        INTCONbits.RBIF = 0;
-    }
-
- }
 
 
 
@@ -2812,7 +2856,7 @@ void setup(void)
     TRISA = 1;
     PORTA = 0;
     ANSELH = 0;
-    TRISB = 0b11111111;
+    TRISB = 0b00000011;
     PORTB = 0;
     TRISC = 0;
     PORTC = 0;
@@ -2826,23 +2870,22 @@ void interrup_config (void)
 {
 
     INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+    INTCONbits.PEIE = 0;
     INTCONbits.T0IE = 1;
-    INTCONbits.INTE = 1;
+    INTCONbits.INTE = 0;
     INTCONbits.RBIE = 1;
     INTCONbits.T0IF = 0;
     INTCONbits.INTF = 0;
     INTCONbits.RBIF = 0;
-    IOCB = 0b11111111;
+    IOCB = 0b00000011;
 }
 
 void osc_config (void)
 {
 
-    OSCCONbits.IRCF = 1;
     OSCCONbits.IRCF2 = 1;
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF2 = 1;
+    OSCCONbits.IRCF2 = 0;
     OSCCONbits.OSTS = 0;
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 1;
@@ -2862,6 +2905,11 @@ void tmr0_config (void)
     TMR0 = 150;
 }
 
+void adc_config (void)
+{
+    initADC (0);
+}
+
 
 
 
@@ -2875,10 +2923,10 @@ void incrementar(void)
 
     if (PORTBbits.RB0 == 1)
     {
-        for (int e = 0; e < 501; e++){
+        for (int e = 0; e < 201; e++){
         pressed_ok = pressed_ok + 1; }
         released_ok = 0;
-        if (pressed_ok > 500)
+        if (pressed_ok > 200)
         {
             if (presionado == 0)
             {
@@ -2890,11 +2938,11 @@ void incrementar(void)
         }
     else
     {
-        for (int e = 0; e < 501; e++){
+        for (int e = 0; e < 201; e++){
         released_ok = released_ok + 1;}
 
         pressed_ok = 0;
-        if (released_ok > 500)
+        if (released_ok > 200)
         {
             presionado = 0;
             released_ok = 0;
@@ -2912,28 +2960,28 @@ void decrementar(void)
 
     if (PORTBbits.RB1 == 1)
     {
-        for (int e = 0; e < 501; e++){
-        pressed_ok = pressed_ok + 1; }
-        released_ok = 0;
-        if (pressed_ok > 500)
+        for (int e = 0; e < 201; e++){
+        pressed_ok2 = pressed_ok2 + 1; }
+        released_ok2 = 0;
+        if (pressed_ok2 > 200)
         {
-            if (presionado == 0)
+            if (presionado2 == 0)
             {
                 PORTD = PORTD - 1;
-                presionado = 1;
+                presionado2 = 1;
             }
         }
-        pressed_ok = 0;
+        pressed_ok2 = 0;
         }
     else
     {
-        for (int e = 0; e < 501; e++){
-        released_ok = released_ok + 1;}
+        for (int e = 0; e < 201; e++){
+        released_ok2 = released_ok2 + 1;}
 
-        pressed_ok = 0;
-        if (released_ok > 500)
+        pressed_ok2 = 0;
+        if (released_ok2 > 200)
         {
-            presionado = 0;
+            presionado2 = 0;
             released_ok = 0;
         }
     }

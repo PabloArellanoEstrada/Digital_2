@@ -13,12 +13,13 @@
 #include <xc.h>                 // 
 #include <stdint.h>             // Variables de ancho definico
 #include <stdio.h>             // Variables de ancho definico
+#include "ADC_lib.h"
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION
 //============================================================================*/
 // CONFIG1
-#pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = INTRC_NOCLKOUT         // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -39,14 +40,18 @@
 // VARIABLES
 //============================================================================*/
 
-//char counter = 0;               // unsigned char counter; uint8_t;
-int contador = 0;                 // unsigned int counter;  uint16_t;  
-//uint8_t contador;                 // unsigned int counter;  uint16_t; 
+uint16_t contador = 0;                 // unsigned int counter;  uint16_t;  
+uint16_t pressed_ok = 0;             //Jugador 1 variables tipo entero
+uint16_t released_ok = 0;
+uint16_t presionado = 0;
 
-int pressed_ok = 0;             //Jugador 1 variables tipo entero
-int released_ok = 0;
-int presionado = 0;
-int i = 0;
+uint16_t contador2 = 0;                 // unsigned int counter;  uint16_t;  
+uint16_t pressed_ok2 = 0;             //Jugador 1 variables tipo entero
+uint16_t released_ok2 = 0;
+uint16_t presionado2 = 0;
+
+uint16_t i = 0;
+uint8_t adc_value = 0;
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -58,7 +63,36 @@ void interrup_config (void);
 void tmr0_config(void);
 void incrementar(void);
 void decrementar(void);
+void adc_config (void);
 
+//============================================================================*/
+// INTERRUPCIONES
+//============================================================================*/
+
+void __interrupt() ISR(void) 
+{
+    //INTCONbits.GIE = 0;
+    //if (INTCONbits.T0IF == 1)      
+    
+    
+    if (INTCONbits.TMR0IF == 1)
+    {
+        INTCONbits.TMR0IF = 0;
+        TMR0 = 150;
+    }
+  
+    
+     if (INTCONbits.RBIF == 1)                 // Verifica que el boton este presionado 
+    {
+        uint8_t  a;
+        a = PORTB; 
+        incrementar();
+        decrementar();
+        INTCONbits.RBIF = 0;
+    }
+    // GIE = 1;por defecto
+  
+ }
 
 //============================================================================*/
 // CICLO PRINCIPAL
@@ -70,41 +104,27 @@ void main(void)
     osc_config();
     interrup_config();
     tmr0_config();
+    adc_config ();
+    
     //**************************************************************************
     // Loop principal
     //**************************************************************************
-
+   
     while (1) 
     {
-          //PORTD  = contador; 
+       ADCON0bits.GO_DONE = 1;
+        __delay_ms(10);
+        
+        if (ADCON0bits.GO_DONE == 0)
+        {
+            ADCON0bits.GO_DONE = 1;
+            PORTC = ADRESL;
+            adc_value = ADRESL;
+        }
     }
 }
 
-//============================================================================*/
-// INTERRUPCIONES
-//============================================================================*/
 
-void __interrupt() isr(void) 
-{
-    // GIE = 0; por defecto
-    //INTCONbits.GIE = 0;
-    //if (INTCONbits.T0IF == 1)               // Interrupcion o Timer
-    //{
-    //    PORTC = PORTC + 1;
-    //    TMR0 = 150;   
-    //    INTCONbits.T0IF = 0; 
-    //}
-    
-     if (INTCONbits.RBIF == 1)                 // Verifica que el boton este presionado 
-    {
-        uint8_t  a;
-        a = PORTB; 
-        incrementar();
-        decrementar();
-        INTCONbits.RBIF = 0;
-    }
-    // GIE = 1;por defecto
- }
     
 //============================================================================*/
 // CONFIGURACION
@@ -117,7 +137,7 @@ void setup(void)
     TRISA = 1;                 // Puerto A como entrada analogica
     PORTA = 0;                // Puerto A entrada apagado
     ANSELH = 0;               // Puerto B digital
-    TRISB = 0b11111111;       // salida B RB0 y RB1 para botones y los demas de salida
+    TRISB = 0b00000011;       // salida B RB0 y RB1 para botones y los demas de salida
     PORTB = 0;                // Puerto B RB0 y RB1 entrada igual a 0
     TRISC = 0;                // Puerto C salida leds
     PORTC = 0;                // Puerto C salida leds apagados
@@ -131,23 +151,22 @@ void interrup_config (void)
 {
     //INTCON = 0b10100000;       // activa interrupciones y TMR0
     INTCONbits.GIE = 1;          // Interrupt enable or ei(); 
-    INTCONbits.PEIE = 1;
+    INTCONbits.PEIE = 0;
     INTCONbits.T0IE = 1;
-    INTCONbits.INTE = 1;
+    INTCONbits.INTE = 0;
     INTCONbits.RBIE = 1;
     INTCONbits.T0IF = 0;
     INTCONbits.INTF = 0;
     INTCONbits.RBIF = 0; 
-    IOCB = 0b11111111;
+    IOCB = 0b00000011;
 }
 
 void osc_config (void) 
 {
-    //OSCCON = 0b01110010;       // Oscilador interno a 8MHz
-    OSCCONbits.IRCF  = 1;
+    //OSCCON = 0b01110010;      
     OSCCONbits.IRCF2 = 1;
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF2 = 1;
+    OSCCONbits.IRCF2 = 0;
     OSCCONbits.OSTS = 0;
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 1;
@@ -167,6 +186,11 @@ void tmr0_config (void)
     TMR0 = 150;
 }
 
+void adc_config (void)
+{
+    initADC (0);               // En libreria
+}
+
 //============================================================================*/
 // FUNCIONES
 //============================================================================*/
@@ -180,10 +204,10 @@ void incrementar(void)
   
     if (PORTBbits.RB0 == 1)                 // Verifica que el boton este presionado 
     {
-        for (int e = 0; e < 501; e++){
+        for (int e = 0; e < 201; e++){
         pressed_ok = pressed_ok + 1; }       // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
         released_ok = 0;                    // Variable de boton libre se reduce a cero porque boton se esta presionando
-        if (pressed_ok > 500)               // Si el boton esta seguramente presionado
+        if (pressed_ok > 200)               // Si el boton esta seguramente presionado
         {
             if (presionado == 0)            // Verifica que el boton esta en posicion presionado
             {    
@@ -195,11 +219,11 @@ void incrementar(void)
         }
     else                                    // Si el boton no esta presionado
     {
-        for (int e = 0; e < 501; e++){
+        for (int e = 0; e < 201; e++){
         released_ok = released_ok + 1;} 
               // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
         pressed_ok = 0;                     // Contador de boton presionado se reduce a cero porque boton esta libre
-        if (released_ok > 500)              // Verifica que el boton este libre ...
+        if (released_ok > 200)              // Verifica que el boton este libre ...
         {
             presionado = 0;                 // Coloca el boton como libre para siguiente ciclo
             released_ok = 0;                // Variable de boton libre se reduce a cero para siguiente ciclo
@@ -217,28 +241,28 @@ void decrementar(void)
   
     if (PORTBbits.RB1 == 1)                 // Verifica que el boton este presionado 
     {
-        for (int e = 0; e < 501; e++){
-        pressed_ok = pressed_ok + 1; }       // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
-        released_ok = 0;                    // Variable de boton libre se reduce a cero porque boton se esta presionando
-        if (pressed_ok > 500)               // Si el boton esta seguramente presionado
+        for (int e = 0; e < 201; e++){
+        pressed_ok2 = pressed_ok2 + 1; }       // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
+        released_ok2 = 0;                    // Variable de boton libre se reduce a cero porque boton se esta presionando
+        if (pressed_ok2 > 200)               // Si el boton esta seguramente presionado
         {
-            if (presionado == 0)            // Verifica que el boton esta en posicion presionado
+            if (presionado2 == 0)            // Verifica que el boton esta en posicion presionado
             {    
                 PORTD = PORTD - 1;          // Incrementa el contador de decada del puerto
-                presionado = 1;             // Coloca el boton como ya presionado para no volver a repetir este ciclo
+                presionado2 = 1;             // Coloca el boton como ya presionado para no volver a repetir este ciclo
             }
         }
-        pressed_ok = 0;                     // Se reduce contador de boton de seguridad presionado para siguiente ciclo
+        pressed_ok2 = 0;                     // Se reduce contador de boton de seguridad presionado para siguiente ciclo
         }
     else                                    // Si el boton no esta presionado
     {
-        for (int e = 0; e < 501; e++){
-        released_ok = released_ok + 1;} 
+        for (int e = 0; e < 201; e++){
+        released_ok2 = released_ok2 + 1;} 
               // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
-        pressed_ok = 0;                     // Contador de boton presionado se reduce a cero porque boton esta libre
-        if (released_ok > 500)              // Verifica que el boton este libre ...
+        pressed_ok2 = 0;                     // Contador de boton presionado se reduce a cero porque boton esta libre
+        if (released_ok2 > 200)              // Verifica que el boton este libre ...
         {
-            presionado = 0;                 // Coloca el boton como libre para siguiente ciclo
+            presionado2 = 0;                 // Coloca el boton como libre para siguiente ciclo
             released_ok = 0;                // Variable de boton libre se reduce a cero para siguiente ciclo
         }
     }
