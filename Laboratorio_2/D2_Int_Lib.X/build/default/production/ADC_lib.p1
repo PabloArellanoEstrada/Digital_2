@@ -578,11 +578,11 @@ Version 4.0 HI-TECH Software Intermediate Code
  155 ]
 [e :U 139 ]
 "111
-[; ;ADC_lib.c: 111:     ADCON0bits.ADCS1 = 0;
-[e = . . _ADCON0bits 1 7 -> -> 0 `i `uc ]
+[; ;ADC_lib.c: 111:     ADCON0bits.ADCS1 = 1;
+[e = . . _ADCON0bits 1 7 -> -> 1 `i `uc ]
 "112
-[; ;ADC_lib.c: 112:     ADCON0bits.ADCS0 = 1;
-[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
+[; ;ADC_lib.c: 112:     ADCON0bits.ADCS0 = 0;
+[e = . . _ADCON0bits 1 6 -> -> 0 `i `uc ]
 "113
 [; ;ADC_lib.c: 113:     ADCON0bits.GO_DONE= 0;
 [e = . . _ADCON0bits 3 1 -> -> 0 `i `uc ]

@@ -2771,6 +2771,11 @@ uint16_t presionado2 = 0;
 
 uint16_t i = 0;
 uint8_t adc_value = 0;
+uint8_t timer_contador = 0;
+uint8_t show = 0;
+uint8_t unidad;
+uint8_t decena;
+uint8_t toogle;
 
 
 
@@ -2783,6 +2788,10 @@ void tmr0_config(void);
 void incrementar(void);
 void decrementar(void);
 void adc_config (void);
+void multiplexar (void);
+void division (void);
+void hexadecimal();
+void big (void);
 
 
 
@@ -2791,15 +2800,13 @@ void adc_config (void);
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
 
-
-
-
     if (INTCONbits.TMR0IF == 1)
     {
         INTCONbits.TMR0IF = 0;
-        TMR0 = 150;
-    }
+        TMR0 = 10;
+        division ();
 
+    }
 
      if (INTCONbits.RBIF == 1)
     {
@@ -2809,7 +2816,6 @@ void __attribute__((picinterrupt(("")))) ISR(void)
         decrementar();
         INTCONbits.RBIF = 0;
     }
-
 
  }
 
@@ -2829,17 +2835,17 @@ void main(void)
 
 
 
-    while (1)
-    {
-       ADCON0bits.GO_DONE = 1;
-        _delay((unsigned long)((10)*(8000000/4000.0)));
 
+     while (1)
+    {
+        ADCON0bits.GO_DONE = 1;
+        _delay((unsigned long)((10)*(8000000/4000.0)));
         if (ADCON0bits.GO_DONE == 0)
         {
             ADCON0bits.GO_DONE = 1;
-            PORTC = ADRESL;
             adc_value = ADRESL;
         }
+        big();
     }
 }
 
@@ -2868,7 +2874,6 @@ void setup(void)
 
 void interrup_config (void)
 {
-
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 0;
     INTCONbits.T0IE = 1;
@@ -2882,7 +2887,6 @@ void interrup_config (void)
 
 void osc_config (void)
 {
-
     OSCCONbits.IRCF2 = 1;
     OSCCONbits.IRCF1 = 1;
     OSCCONbits.IRCF2 = 0;
@@ -2890,19 +2894,17 @@ void osc_config (void)
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 1;
     OSCCONbits.SCS = 0;
-
 }
 
 void tmr0_config (void)
 {
-
     OPTION_REGbits.nRBPU = 1;
     OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.PSA = 1;
+    OPTION_REGbits.PSA = 0;
     OPTION_REGbits.PS2 = 0;
-    OPTION_REGbits.PS1 = 0;
+    OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 0;
-    TMR0 = 150;
+    TMR0 = 10;
 }
 
 void adc_config (void)
@@ -2914,6 +2916,111 @@ void adc_config (void)
 
 
 
+void division (void)
+{
+    PORTEbits.RE0 = 0;
+    PORTEbits.RE1 = 0;
+
+    decena = adc_value/16;
+    unidad = adc_value%16;
+
+    if (toogle == 0)
+    {
+        show = decena;
+        hexadecimal (show);
+        PORTEbits.RE0 = 1;
+    }
+    else
+    {
+        show = unidad;
+        hexadecimal (show);
+        PORTEbits.RE1 = 1;
+    }
+    multiplexar();
+}
+
+void multiplexar (void)
+{
+    if (toogle == 0)
+    {
+        toogle = 1;
+    }
+    else
+    {
+        toogle = 0;
+    }
+}
+
+void hexadecimal (show)
+{
+    switch (show)
+    {
+        case 0:
+            PORTC = 0b00111111;
+            break;
+        case 1:
+            PORTC = 0b00000110;
+            break;
+        case 2:
+            PORTC = 0b01011011;
+            break;
+        case 3:
+            PORTC = 0b01001111;
+            break;
+        case 4:
+            PORTC = 0b01100110;
+            break;
+        case 5:
+            PORTC = 0b01101101;
+            break;
+        case 6:
+            PORTC = 0b01111101;
+            break;
+        case 7:
+            PORTC = 0b00000111;
+            break;
+        case 8:
+            PORTC = 0b01111111;
+            break;
+        case 9:
+            PORTC = 0b01101111;
+            break;
+        case 10:
+            PORTC = 0b01110111;
+            break;
+        case 11:
+            PORTC = 0b01111100;
+            break;
+        case 12:
+            PORTC = 0b00111001;
+            break;
+        case 13:
+            PORTC = 0b01011110;
+            break;
+        case 14:
+            PORTC = 0b01111001;
+            break;
+        case 15:
+            PORTC = 0b01110001;
+            break;
+        default:
+            PORTC = 0b00000000;
+            break;
+    }
+}
+
+void big (void)
+{
+    if (adc_value > PORTD)
+    {
+        PORTEbits.RE2 = 1;
+    }
+    else
+    {
+        PORTEbits.RE2 = 0;
+    }
+}
+
 void incrementar(void)
 {
 
@@ -2923,10 +3030,10 @@ void incrementar(void)
 
     if (PORTBbits.RB0 == 1)
     {
-        for (int e = 0; e < 201; e++){
+        for (int e = 0; e < 11; e++){
         pressed_ok = pressed_ok + 1; }
         released_ok = 0;
-        if (pressed_ok > 200)
+        if (pressed_ok > 10)
         {
             if (presionado == 0)
             {
@@ -2938,11 +3045,11 @@ void incrementar(void)
         }
     else
     {
-        for (int e = 0; e < 201; e++){
+        for (int e = 0; e < 11; e++){
         released_ok = released_ok + 1;}
 
         pressed_ok = 0;
-        if (released_ok > 200)
+        if (released_ok > 10)
         {
             presionado = 0;
             released_ok = 0;
@@ -2960,10 +3067,10 @@ void decrementar(void)
 
     if (PORTBbits.RB1 == 1)
     {
-        for (int e = 0; e < 201; e++){
+        for (int e = 0; e < 11; e++){
         pressed_ok2 = pressed_ok2 + 1; }
         released_ok2 = 0;
-        if (pressed_ok2 > 200)
+        if (pressed_ok2 > 10)
         {
             if (presionado2 == 0)
             {
@@ -2975,11 +3082,11 @@ void decrementar(void)
         }
     else
     {
-        for (int e = 0; e < 201; e++){
+        for (int e = 0; e < 11; e++){
         released_ok2 = released_ok2 + 1;}
 
         pressed_ok2 = 0;
-        if (released_ok2 > 200)
+        if (released_ok2 > 10)
         {
             presionado2 = 0;
             released_ok = 0;

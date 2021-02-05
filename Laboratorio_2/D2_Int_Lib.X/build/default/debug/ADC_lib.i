@@ -2740,7 +2740,7 @@ void initADC (uint8_t CHS)
             break;
     }
     ADCON0bits.ADCS1 = 0;
-    ADCON0bits.ADCS0 = 1;
+    ADCON0bits.ADCS0 = 0;
     ADCON0bits.GO_DONE= 0;
     ADCON0bits.ADON = 1;
 

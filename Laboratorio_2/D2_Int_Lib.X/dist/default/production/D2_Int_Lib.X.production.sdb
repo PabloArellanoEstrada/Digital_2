@@ -5,6 +5,8 @@
 [d frameptr 0 ]
 "3 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
 [v _initADC initADC `(v  1 e 1 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
@@ -13,23 +15,31 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"72 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+"81 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"101
+"107
 [v _main main `(v  1 e 1 0 ]
-"133
+"139
 [v _setup setup `(v  1 e 1 0 ]
-"150
+"156
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
-"164
+"169
 [v _osc_config osc_config `(v  1 e 1 0 ]
-"177
+"180
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
-"189
+"191
 [v _adc_config adc_config `(v  1 e 1 0 ]
-"198
-[v _incrementar incrementar `(v  1 e 1 0 ]
+"200
+[v _division division `(v  1 e 1 0 ]
+"223
+[v _multiplexar multiplexar `(v  1 e 1 0 ]
 "235
+[v _hexadecimal hexadecimal `(v  1 e 1 0 ]
+"293
+[v _big big `(v  1 e 1 0 ]
+"305
+[v _incrementar incrementar `(v  1 e 1 0 ]
+"342
 [v _decrementar decrementar `(v  1 e 1 0 ]
 "59 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -37,7 +47,7 @@
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S206 . 1 `uc 1 RB0 1 0 :1:0 
+[s S235 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -47,14 +57,22 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S215 . 1 `S206 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES215  1 e 1 @6 ]
+[u S244 . 1 `S235 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES244  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S214 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S219 . 1 `S214 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES219  1 e 1 @9 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -72,13 +90,13 @@
 ]
 [u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
-[s S84 . 1 `uc 1 ADON 1 0 :1:0 
+[s S88 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S89 . 1 `uc 1 . 1 0 :1:0 
+[s S93 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -87,15 +105,15 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S98 . 1 `uc 1 . 1 0 :1:0 
+[s S102 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S101 . 1 `uc 1 . 1 0 :1:0 
+[s S105 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S104 . 1 `S84 1 . 1 0 `S89 1 . 1 0 `S98 1 . 1 0 `S101 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES104  1 e 1 @31 ]
-[s S175 . 1 `uc 1 PS 1 0 :3:0 
+[u S108 . 1 `S88 1 . 1 0 `S93 1 . 1 0 `S102 1 . 1 0 `S105 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES108  1 e 1 @31 ]
+[s S183 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -103,12 +121,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S182 . 1 `uc 1 PS0 1 0 :1:0 
+[s S190 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S186 . 1 `S175 1 . 1 0 `S182 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES186  1 e 1 @129 ]
+[u S194 . 1 `S183 1 . 1 0 `S190 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES194  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
@@ -119,33 +137,33 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S149 . 1 `uc 1 SCS 1 0 :1:0 
+[s S157 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S155 . 1 `uc 1 . 1 0 :4:0 
+[s S163 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S160 . 1 `S149 1 . 1 0 `S155 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES160  1 e 1 @143 ]
+[u S168 . 1 `S157 1 . 1 0 `S163 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES168  1 e 1 @143 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
 "2970
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-[s S325 . 1 `uc 1 . 1 0 :4:0 
+[s S368 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S331 . 1 `S325 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES331  1 e 1 @159 ]
+[u S374 . 1 `S368 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES374  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -164,64 +182,106 @@
 [v _presionado2 presionado2 `ui  1 e 2 0 ]
 "54
 [v _adc_value adc_value `uc  1 e 1 0 ]
-"101
+"56
+[v _show show `uc  1 e 1 0 ]
+"57
+[v _unidad unidad `uc  1 e 1 0 ]
+"58
+[v _decena decena `uc  1 e 1 0 ]
+"59
+[v _toogle toogle `uc  1 e 1 0 ]
+"107
 [v _main main `(v  1 e 1 0 ]
 {
-"125
+"131
 } 0
-"177
+"180
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
 {
-"187
+"189
 } 0
-"133
+"139
 [v _setup setup `(v  1 e 1 0 ]
 {
-"148
+"154
 } 0
-"164
+"169
 [v _osc_config osc_config `(v  1 e 1 0 ]
 {
-"175
+"178
 } 0
-"150
+"156
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
 {
-"162
+"167
 } 0
-"189
+"293
+[v _big big `(v  1 e 1 0 ]
+{
+"303
+} 0
+"191
 [v _adc_config adc_config `(v  1 e 1 0 ]
 {
-"192
+"194
 } 0
 "3 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
 [v _initADC initADC `(v  1 e 1 0 ]
 {
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
-[v initADC@CHS CHS `uc  1 a 1 2 ]
+[v initADC@CHS CHS `uc  1 a 1 6 ]
 "119
 } 0
-"72 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+"81 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"95
+"101
 } 0
-"198
+"305
 [v _incrementar incrementar `(v  1 e 1 0 ]
 {
-"222
-[v incrementar@e_295 e `i  1 a 2 2 ]
-"207
+"329
+[v incrementar@e_338 e `i  1 a 2 2 ]
+"314
 [v incrementar@e e `i  1 a 2 0 ]
+"340
+} 0
+"200
+[v _division division `(v  1 e 1 0 ]
+{
+"221
+} 0
+"223
+[v _multiplexar multiplexar `(v  1 e 1 0 ]
+{
 "233
 } 0
 "235
+[v _hexadecimal hexadecimal `(v  1 e 1 0 ]
+{
+[v hexadecimal@show show `i  1 p 2 0 ]
+"291
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"342 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
 [v _decrementar decrementar `(v  1 e 1 0 ]
 {
-"259
-[v decrementar@e_298 e `i  1 a 2 2 ]
-"244
+"366
+[v decrementar@e_341 e `i  1 a 2 2 ]
+"351
 [v decrementar@e e `i  1 a 2 0 ]
-"270
+"377
 } 0
