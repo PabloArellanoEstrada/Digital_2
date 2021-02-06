@@ -1,20 +1,22 @@
-
 /* 
- * File:   
- * Author: 
- * Comments:
- * Revision history: 
+ * Project: Interrupciones y Librerias
+ * File:    ADC_lib.h
+ * Author:  Pablo Rene Arellano Estrada
+ * Carnet:  151379
+ * Created: February 9, 2021,
  */
 
-// This is a guard condition so that contents of this file are not included
-// more than once.  
 #ifndef ADC_lib_H
 #define	ADC_lib_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
-#include <stdint.h>
+//------------------------------------------------------------------------------
+// Funciones de Conversion ADC
+//------------------------------------------------------------------------------
 
-void initADC (uint8_t CHS);
+#include <xc.h>                // include processor files - each processor file is guarded.  
+#include <stdint.h>            // Variables de ancho definido
+
+void initADC (uint8_t CHS);    // Prototipo de funcion
 
 #endif	/* ADC_lib_H */
 

@@ -1,4 +1,4 @@
-# 1 "ADC_lib.c"
+# 1 "multiplex_lib.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ADC_lib.c" 2
+# 1 "multiplex_lib.c" 2
 
 
 
@@ -15,8 +15,8 @@
 
 
 
-# 1 "./ADC_lib.h" 1
-# 16 "./ADC_lib.h"
+# 1 "./multiplex_lib.h" 1
+# 12 "./multiplex_lib.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2497,7 +2497,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 16 "./ADC_lib.h" 2
+# 12 "./multiplex_lib.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2632,127 +2632,113 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 17 "./ADC_lib.h" 2
+# 13 "./multiplex_lib.h" 2
 
 
-void initADC (uint8_t CHS);
-# 9 "ADC_lib.c" 2
 
 
-void initADC (uint8_t CHS)
+
+
+void division (void);
+void multiplexar (void);
+void hexadecimal (uint8_t show);
+# 9 "multiplex_lib.c" 2
+
+
+uint8_t adc_value = 0;
+uint8_t show;
+uint8_t unidad;
+uint8_t decena;
+uint8_t toogle;
+
+void division (void)
 {
-    switch (CHS)
+    PORTEbits.RE0 = 0;
+    PORTEbits.RE1 = 0;
+
+    decena = adc_value/16;
+    unidad = adc_value%16;
+
+    if (toogle == 0)
+    {
+        show = decena;
+        hexadecimal (show);
+        PORTEbits.RE0 = 1;
+    }
+    else
+    {
+        show = unidad;
+        hexadecimal (show);
+        PORTEbits.RE1 = 1;
+    }
+}
+
+void multiplexar (void)
+{
+    if (toogle == 0)
+    {
+        toogle = 1;
+    }
+    else
+    {
+        toogle = 0;
+    }
+}
+
+void hexadecimal (uint8_t show)
+{
+    switch (show)
     {
         case 0:
-            ADCON0bits.CHS3 = 0;
-            ADCON0bits.CHS2 = 0;
-            ADCON0bits.CHS1 = 0;
-            ADCON0bits.CHS0 = 0;
+            PORTC = 0b00111111;
             break;
         case 1:
-            ADCON0bits.CHS3 = 0;
-            ADCON0bits.CHS2 = 0;
-            ADCON0bits.CHS1 = 0;
-            ADCON0bits.CHS0 = 1;
+            PORTC = 0b00000110;
             break;
-
         case 2:
-            ADCON0bits.CHS3 = 0;
-            ADCON0bits.CHS2 = 0;
-            ADCON0bits.CHS1 = 1;
-            ADCON0bits.CHS0 = 0;
+            PORTC = 0b01011011;
             break;
-
         case 3:
-            ADCON0bits.CHS3 = 0;
-            ADCON0bits.CHS2 = 0;
-            ADCON0bits.CHS1 = 1;
-            ADCON0bits.CHS0 = 1;
+            PORTC = 0b01001111;
             break;
-
         case 4:
-            ADCON0bits.CHS3 = 0;
-            ADCON0bits.CHS2 = 1;
-            ADCON0bits.CHS1 = 0;
-            ADCON0bits.CHS0 = 0;
+            PORTC = 0b01100110;
             break;
-
         case 5:
-            ADCON0bits.CHS3 = 0;
-            ADCON0bits.CHS2 = 1;
-            ADCON0bits.CHS1 = 0;
-            ADCON0bits.CHS0 = 1;
+            PORTC = 0b01101101;
             break;
-
         case 6:
-            ADCON0bits.CHS3 = 0;
-            ADCON0bits.CHS2 = 1;
-            ADCON0bits.CHS1 = 1;
-            ADCON0bits.CHS0 = 0;
+            PORTC = 0b01111101;
             break;
-
         case 7:
-            ADCON0bits.CHS3 = 0;
-            ADCON0bits.CHS2 = 1;
-            ADCON0bits.CHS1 = 1;
-            ADCON0bits.CHS0 = 1;
+            PORTC = 0b00000111;
             break;
-
         case 8:
-            ADCON0bits.CHS3 = 1;
-            ADCON0bits.CHS2 = 0;
-            ADCON0bits.CHS1 = 0;
-            ADCON0bits.CHS0 = 0;
+            PORTC = 0b01111111;
             break;
-
         case 9:
-            ADCON0bits.CHS3 = 1;
-            ADCON0bits.CHS2 = 0;
-            ADCON0bits.CHS1 = 0;
-            ADCON0bits.CHS0 = 1;
+            PORTC = 0b01101111;
             break;
-
         case 10:
-            ADCON0bits.CHS3 = 1;
-            ADCON0bits.CHS2 = 0;
-            ADCON0bits.CHS1 = 1;
-            ADCON0bits.CHS0 = 0;
+            PORTC = 0b01110111;
             break;
-
         case 11:
-            ADCON0bits.CHS3 = 1;
-            ADCON0bits.CHS2 = 0;
-            ADCON0bits.CHS1 = 1;
-            ADCON0bits.CHS0 = 1;
+            PORTC = 0b01111100;
             break;
-
         case 12:
-            ADCON0bits.CHS3 = 1;
-            ADCON0bits.CHS2 = 1;
-            ADCON0bits.CHS1 = 0;
-            ADCON0bits.CHS0 = 0;
+            PORTC = 0b00111001;
             break;
-
         case 13:
-            ADCON0bits.CHS3 = 1;
-            ADCON0bits.CHS2 = 1;
-            ADCON0bits.CHS1 = 0;
-            ADCON0bits.CHS0 = 1;
+            PORTC = 0b01011110;
             break;
-
+        case 14:
+            PORTC = 0b01111001;
+            break;
+        case 15:
+            PORTC = 0b01110001;
+            break;
         default:
-            ADCON0bits.CHS3 = 1;
-            ADCON0bits.CHS2 = 1;
-            ADCON0bits.CHS1 = 1;
-            ADCON0bits.CHS0 = 0;
+            PORTC = 0b00000000;
             break;
     }
-    ADCON0bits.ADCS1 = 1;
-    ADCON0bits.ADCS0 = 0;
-    ADCON0bits.GO_DONE= 0;
-    ADCON0bits.ADON = 1;
-
-    ADCON1bits.ADFM = 1;
-    ADCON1bits.VCFG1 = 0;
-    ADCON1bits.VCFG0 = 0;
 }

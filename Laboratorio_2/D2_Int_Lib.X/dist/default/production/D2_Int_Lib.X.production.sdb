@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"3 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+"11 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
 [v _initADC initADC `(v  1 e 1 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -15,39 +15,41 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"81 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+"79 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"107
+"104
 [v _main main `(v  1 e 1 0 ]
-"139
+"129
 [v _setup setup `(v  1 e 1 0 ]
-"156
+"145
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
-"169
+"158
 [v _osc_config osc_config `(v  1 e 1 0 ]
-"180
+"169
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
-"191
+"184
 [v _adc_config adc_config `(v  1 e 1 0 ]
+"189
+[v _multiplex_config multiplex_config `(v  1 e 1 0 ]
 "200
-[v _division division `(v  1 e 1 0 ]
-"223
-[v _multiplexar multiplexar `(v  1 e 1 0 ]
-"235
-[v _hexadecimal hexadecimal `(v  1 e 1 0 ]
-"293
 [v _big big `(v  1 e 1 0 ]
-"305
+"212
 [v _incrementar incrementar `(v  1 e 1 0 ]
-"342
+"243
 [v _decrementar decrementar `(v  1 e 1 0 ]
+"17 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\multiplex_lib.c
+[v _division division `(v  1 e 1 0 ]
+"39
+[v _multiplexar multiplexar `(v  1 e 1 0 ]
+"51
+[v _hexadecimal hexadecimal `(v  1 e 1 0 ]
 "59 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "166
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S235 . 1 `uc 1 RB0 1 0 :1:0 
+[s S240 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -57,22 +59,22 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S244 . 1 `S235 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES244  1 e 1 @6 ]
+[u S249 . 1 `S240 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES249  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S214 . 1 `uc 1 RE0 1 0 :1:0 
+[s S227 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S219 . 1 `S214 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES219  1 e 1 @9 ]
+[u S232 . 1 `S227 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES232  1 e 1 @9 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -155,15 +157,15 @@
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
 "2970
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-[s S368 . 1 `uc 1 . 1 0 :4:0 
+[s S369 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S374 . 1 `S368 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES374  1 e 1 @159 ]
+[u S375 . 1 `S369 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES375  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -180,88 +182,86 @@
 [v _released_ok2 released_ok2 `ui  1 e 2 0 ]
 "51
 [v _presionado2 presionado2 `ui  1 e 2 0 ]
-"54
+"11 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\multiplex_lib.c
 [v _adc_value adc_value `uc  1 e 1 0 ]
-"56
+"12
 [v _show show `uc  1 e 1 0 ]
-"57
+"13
 [v _unidad unidad `uc  1 e 1 0 ]
-"58
+"14
 [v _decena decena `uc  1 e 1 0 ]
-"59
+"15
 [v _toogle toogle `uc  1 e 1 0 ]
-"107
+"104 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
 [v _main main `(v  1 e 1 0 ]
 {
-"131
-} 0
-"180
-[v _tmr0_config tmr0_config `(v  1 e 1 0 ]
-{
-"189
-} 0
-"139
-[v _setup setup `(v  1 e 1 0 ]
-{
-"154
+"123
 } 0
 "169
-[v _osc_config osc_config `(v  1 e 1 0 ]
+[v _tmr0_config tmr0_config `(v  1 e 1 0 ]
 {
 "178
 } 0
-"156
-[v _interrup_config interrup_config `(v  1 e 1 0 ]
+"129
+[v _setup setup `(v  1 e 1 0 ]
+{
+"143
+} 0
+"158
+[v _osc_config osc_config `(v  1 e 1 0 ]
 {
 "167
 } 0
-"293
+"145
+[v _interrup_config interrup_config `(v  1 e 1 0 ]
+{
+"156
+} 0
+"200
 [v _big big `(v  1 e 1 0 ]
 {
-"303
+"210
 } 0
-"191
+"184
 [v _adc_config adc_config `(v  1 e 1 0 ]
 {
-"194
+"187
 } 0
-"3 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
+"11 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\ADC_lib.c
 [v _initADC initADC `(v  1 e 1 0 ]
 {
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
 [v initADC@CHS CHS `uc  1 a 1 6 ]
-"119
+"127
 } 0
-"81 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+"79 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"101
+"98
 } 0
-"305
-[v _incrementar incrementar `(v  1 e 1 0 ]
+"189
+[v _multiplex_config multiplex_config `(v  1 e 1 0 ]
 {
-"329
-[v incrementar@e_338 e `i  1 a 2 2 ]
-"314
-[v incrementar@e e `i  1 a 2 0 ]
-"340
+"194
 } 0
-"200
-[v _division division `(v  1 e 1 0 ]
-{
-"221
-} 0
-"223
+"39 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\multiplex_lib.c
 [v _multiplexar multiplexar `(v  1 e 1 0 ]
 {
-"233
+"49
 } 0
-"235
+"17
+[v _division division `(v  1 e 1 0 ]
+{
+"37
+} 0
+"51
 [v _hexadecimal hexadecimal `(v  1 e 1 0 ]
 {
-[v hexadecimal@show show `i  1 p 2 0 ]
-"291
+[v hexadecimal@show show `uc  1 a 1 wreg ]
+[v hexadecimal@show show `uc  1 a 1 wreg ]
+[v hexadecimal@show show `uc  1 a 1 2 ]
+"107
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -276,12 +276,21 @@
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"342 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+"212 C:\Users\pablo\Desktop\Digital_2\Laboratorio_2\D2_Int_Lib.X\Interrup_Libreria.c
+[v _incrementar incrementar `(v  1 e 1 0 ]
+{
+"231
+[v incrementar@e_339 e `i  1 a 2 2 ]
+"216
+[v incrementar@e e `i  1 a 2 0 ]
+"241
+} 0
+"243
 [v _decrementar decrementar `(v  1 e 1 0 ]
 {
-"366
-[v decrementar@e_341 e `i  1 a 2 2 ]
-"351
+"262
+[v decrementar@e_342 e `i  1 a 2 2 ]
+"247
 [v decrementar@e e `i  1 a 2 0 ]
-"377
+"272
 } 0

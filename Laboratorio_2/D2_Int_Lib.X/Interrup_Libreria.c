@@ -11,15 +11,16 @@
 //============================================================================*/
 
 #include <xc.h>                 // 
-#include <stdint.h>             // Variables de ancho definico
-#include <stdio.h>             // Variables de ancho definico
-#include "ADC_lib.h"
+#include <stdint.h>             // Variables de ancho definido
+#include <stdio.h>              // Variables
+#include "ADC_lib.h"            // Libreria Personalizada ADC
+#include "multiplex_lib.h"      // Libreria Personalizada Multiplexacion
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION
 //============================================================================*/
 // CONFIG1
-#pragma config FOSC = INTRC_NOCLKOUT         // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = INTRC_NOCLKOUT// Oscilador interno
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -34,26 +35,25 @@
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 // DEFINE
 #define _XTAL_FREQ 8000000
-//#define LED_rojo PORTEbits.RE0
 
 //============================================================================*/
 // VARIABLES
 //============================================================================*/
 
-uint16_t contador = 0;               
+uint16_t contador = 0;           // Variables Boton 1        
 uint16_t pressed_ok = 0;           
 uint16_t released_ok = 0;
 uint16_t presionado = 0;
 
-uint16_t contador2 = 0;                
+uint16_t contador2 = 0;          // Variables Boton 2        
 uint16_t pressed_ok2 = 0;            
 uint16_t released_ok2 = 0;
 uint16_t presionado2 = 0;
 
-uint16_t i = 0;
+uint16_t i = 0;                  // Variables Configuracion ADC
 uint8_t adc_value = 0;
-uint8_t timer_contador = 0;
-uint8_t show = 0;
+
+uint8_t show = 0;                // Variables Multiplexacion
 uint8_t unidad;
 uint8_t decena;
 uint8_t toogle;
@@ -66,12 +66,10 @@ void setup(void);
 void osc_config (void);
 void interrup_config (void);
 void tmr0_config(void);
+void adc_config (void);
 void incrementar(void);
 void decrementar(void);
-void adc_config (void);
-void multiplexar (void);
-void division (void);
-void hexadecimal();
+void multiplex_config();
 void big (void);
 
 //============================================================================*/
@@ -80,24 +78,23 @@ void big (void);
 
 void __interrupt() ISR(void) 
 {
-    //INTCONbits.GIE = 0;
-    if (INTCONbits.TMR0IF == 1)
+                                 // La interrupcion global GIE inicia automaticamente con GIE = 0
+    if (INTCONbits.TMR0IF == 1)  // Si hay desboradmiento de TIMER0 la bandera se levanta y se revisa
     {
-        INTCONbits.TMR0IF = 0;
-        TMR0 = 10;
-        division ();
-       
+        INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
+        TMR0 = 10;                
+        multiplex_config();      // Se llama a funcion para multiplexar y mostrar
     }
   
-     if (INTCONbits.RBIF == 1)                 
+     if (INTCONbits.RBIF == 1)   // Si se presiona un boton con Interruption on Change               
     {
-        uint8_t  a;
+        uint8_t  a;              // Para evitar Mismatch se sobre-escribe al Puerto B
         a = PORTB; 
-        incrementar();
-        decrementar();
-        INTCONbits.RBIF = 0;
+        incrementar();           // Se llama funcion de incrementar
+        decrementar();           // Se llama funcion de decrementar
+        INTCONbits.RBIF = 0;     // La bandera se apaga manualmente
     }
-    // GIE = 1;por defecto
+                                 // La interrupcion global GIE finaliza automaticamente con GIE = 1 para la siguiente
  }
 
 //============================================================================*/
@@ -106,41 +103,33 @@ void __interrupt() ISR(void)
 
 void main(void) 
 {
-    setup();
+    setup();                            // Funciones de Configuracion
     osc_config();
     interrup_config();
     tmr0_config();
     adc_config ();
   
-    
-    //**************************************************************************
-    // Loop principal
-    //**************************************************************************
-   
-     while (1) 
+    while (1)                           // LOOP PRINCIPAL **********************
     {
-        ADCON0bits.GO_DONE = 1; 
-        __delay_ms(10);
-        if (ADCON0bits.GO_DONE == 0)
+        ADCON0bits.GO_DONE = 1;         // Se inicia el GO_DONE para iniciar conversion
+        __delay_ms(10);                 // Se da tiempo para el Acquisition Time Example
+        if (ADCON0bits.GO_DONE == 0)    // Si ya termino la conversion
         {
-            ADCON0bits.GO_DONE = 1;
-            adc_value = ADRESL;
+            ADCON0bits.GO_DONE = 1;     // Se inicia el GO_DONE para iniciar nuevamente
+            adc_value = ADRESL;         // Se Coloca el valor del registro de la conversion en una variable
         }
         big();
     }
 }
 
-
-    
 //============================================================================*/
 // CONFIGURACION
 //============================================================================*/
 
 void setup(void) 
 {
-    
     ANSEL = 1;                // Puerto A analogico
-    TRISA = 1;                 // Puerto A como entrada analogica
+    TRISA = 1;                // Puerto A como entrada analogica
     PORTA = 0;                // Puerto A entrada apagado
     ANSELH = 0;               // Puerto B digital
     TRISB = 0b00000011;       // salida B RB0 y RB1 para botones y los demas de salida
@@ -155,185 +144,97 @@ void setup(void)
 
 void interrup_config (void) 
 {
-    INTCONbits.GIE = 1;          
-    INTCONbits.PEIE = 0;
-    INTCONbits.T0IE = 1;
-    INTCONbits.INTE = 0;
-    INTCONbits.RBIE = 1;
-    INTCONbits.T0IF = 0;
-    INTCONbits.INTF = 0;
-    INTCONbits.RBIF = 0; 
-    IOCB = 0b00000011;
+    INTCONbits.GIE = 1;       // Interrupciones globales habilitadas
+    INTCONbits.PEIE = 0;      // Interrupciones periferias deshabilidatas
+    INTCONbits.T0IE = 1;      // Interrupcion del Timer0 habilitada
+    INTCONbits.INTE = 0;      // Interrupcion externa INT deshabilitada
+    INTCONbits.RBIE = 1;      // Interrupcion del Puerto B habilitadas
+    INTCONbits.T0IF = 0;      // Bandera de Interrupcion del Timer 0
+    INTCONbits.INTF = 0;      // Bandera de interrupcion del INT
+    INTCONbits.RBIF = 0;      // Bandera de interrrupcion del Puerto B
+    IOCB = 0b00000011;        // Interrup on Change enable
 }
 
 void osc_config (void) 
 {  
-    OSCCONbits.IRCF2 = 1;
+    OSCCONbits.IRCF2 = 1;     // Oscilador en 4Mhz
     OSCCONbits.IRCF1 = 1;
     OSCCONbits.IRCF2 = 0;
-    OSCCONbits.OSTS = 0;
-    OSCCONbits.HTS = 0;
+    OSCCONbits.OSTS = 0;      // Oscilador interno
+    OSCCONbits.HTS = 0;       
     OSCCONbits.LTS = 1;
-    OSCCONbits.SCS = 0;
+    OSCCONbits.SCS = 0;       // Oscilador basado en el reloj
 }
 
 void tmr0_config (void) 
 {
-    OPTION_REGbits.nRBPU = 1;   
-    OPTION_REGbits.T0CS = 0; 
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.PS2 = 0;
+    OPTION_REGbits.nRBPU = 1; // PORTB pull-ups habilitados
+    OPTION_REGbits.T0CS = 0;  // TIMER0 como temporizador, no contador
+    OPTION_REGbits.PSA = 0;   // Modulo de TIMER con prescaler, no se usa WDT
+    OPTION_REGbits.PS2 = 0;   // Prescaler en 8
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 0;
-    TMR0 = 10;
+    TMR0 = 10;                // Valor del TIMER0 para un delay de 0.246 seg.
 }
+
+//============================================================================*/
+// FUNCIONES CON LIBRERIA
+//============================================================================*/
 
 void adc_config (void)
 {
-    initADC (0);               // En libreria
+    initADC (0);              // Configuracion de ADC en libreria
+}
+
+void multiplex_config()
+{
+    division();               // Determina unidades y decenas
+    multiplexar();            // Enciende y apaga bits de transistores
+    hexadecimal(show);        // Muestra el valor segun calculo anterior 
 }
 
 //============================================================================*/
 // FUNCIONES
 //============================================================================*/
 
-void division (void)
-{
-    PORTEbits.RE0 = 0;
-    PORTEbits.RE1 = 0;
-    
-    decena = adc_value/16;
-    unidad = adc_value%16;
-    
-    if (toogle == 0)
-    {
-        show = decena;
-        hexadecimal (show);
-        PORTEbits.RE0 = 1;
-    }
-    else
-    {
-        show = unidad;
-        hexadecimal (show);
-        PORTEbits.RE1 = 1;
-    }
-    multiplexar();
-}
-
-void multiplexar (void)
-{
-    if (toogle == 0)
-    {
-        toogle = 1;
-    }
-    else
-    {
-        toogle = 0;
-    }
-}
-
-void hexadecimal (show)
-{
-    switch (show)
-    {
-        case 0: //0
-            PORTC = 0b00111111;        
-            break;
-        case 1: //1
-            PORTC = 0b00000110; 
-            break;
-        case 2: //2
-            PORTC = 0b01011011; 
-            break; 
-        case 3: //3
-            PORTC = 0b01001111; 
-            break;  
-        case 4: //4
-            PORTC = 0b01100110;
-            break;
-        case 5: //5
-            PORTC = 0b01101101;
-            break;  
-        case 6: //6
-            PORTC = 0b01111101;
-            break; 
-        case 7: //7
-            PORTC = 0b00000111;
-            break; 
-        case 8: //8
-            PORTC = 0b01111111;
-            break;  
-        case 9: //9
-            PORTC = 0b01101111;
-            break;   
-        case 10: //A
-            PORTC = 0b01110111;
-            break;   
-        case 11: //B
-            PORTC = 0b01111100;
-            break;
-        case 12: //C
-            PORTC = 0b00111001;
-            break;
-        case 13: //D
-            PORTC = 0b01011110;
-            break;
-        case 14: //E
-            PORTC = 0b01111001;
-            break;
-        case 15: //F
-            PORTC = 0b01110001;
-            break;
-        default:
-            PORTC = 0b00000000;
-            break;
-    }
-}
-
 void big (void)
 {
-    if (adc_value > PORTD)
+    if (adc_value > PORTD)    // Si el numero de la conversion analogica es mayor al contador
     {
-        PORTEbits.RE2 = 1;
+        PORTEbits.RE2 = 1;    // Enciende alarma
     }
     else
     {
-        PORTEbits.RE2 = 0;
+        PORTEbits.RE2 = 0;    // Apaga alarma
     }
 }
 
 void incrementar(void) 
 {
-    //*************************************************************************
-    // Incremento de contador de decadas al presionar un push button
-    // el cual esta en pull up y tiene anti-rebote
-    //*************************************************************************
-  
-    if (PORTBbits.RB0 == 1)                 // Verifica que el boton este presionado 
+    if (PORTBbits.RB0 == 1)                // Verifica que el boton este presionado 
     {
         for (int e = 0; e < 11; e++){
-        pressed_ok = pressed_ok + 1; }       // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
-        released_ok = 0;                    // Variable de boton libre se reduce a cero porque boton se esta presionando
+        pressed_ok = pressed_ok + 1; }     // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
+        released_ok = 0;                   // Variable de boton libre se reduce a cero porque boton se esta presionando
         if (pressed_ok > 10)               // Si el boton esta seguramente presionado
         {
-            if (presionado == 0)            // Verifica que el boton esta en posicion presionado
+            if (presionado == 0)           // Verifica que el boton esta en posicion presionado
             {    
-                PORTD = PORTD + 1;          // Incrementa el contador de decada del puerto
-                presionado = 1;             // Coloca el boton como ya presionado para no volver a repetir este ciclo
+                PORTD = PORTD + 1;         // Incrementa el contador de decada del puerto
+                presionado = 1;            // Coloca el boton como ya presionado para no volver a repetir este ciclo
             }
         }
-        pressed_ok = 0;                     // Se reduce contador de boton de seguridad presionado para siguiente ciclo
+        pressed_ok = 0;                    // Se reduce contador de boton de seguridad presionado para siguiente ciclo
         }
-    else                                    // Si el boton no esta presionado
+    else                                   // Si el boton no esta presionado
     {
         for (int e = 0; e < 11; e++){
-        released_ok = released_ok + 1;} 
-              // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
-        pressed_ok = 0;                     // Contador de boton presionado se reduce a cero porque boton esta libre
+        released_ok = released_ok + 1;}    // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
+        pressed_ok = 0;                    // Contador de boton presionado se reduce a cero porque boton esta libre
         if (released_ok > 10)              // Verifica que el boton este libre ...
         {
-            presionado = 0;                 // Coloca el boton como libre para siguiente ciclo
-            released_ok = 0;                // Variable de boton libre se reduce a cero para siguiente ciclo
+            presionado = 0;                // Coloca el boton como libre para siguiente ciclo
+            released_ok = 0;               // Variable de boton libre se reduce a cero para siguiente ciclo
         }
     }
     return;
@@ -341,35 +242,29 @@ void incrementar(void)
 
 void decrementar(void) 
 {
-    //*************************************************************************
-    // Incremento de contador de decadas al presionar un push button
-    // el cual esta en pull up y tiene anti-rebote
-    //*************************************************************************
-  
-    if (PORTBbits.RB1 == 1)                 // Verifica que el boton este presionado 
+    if (PORTBbits.RB1 == 1)                // Verifica que el boton este presionado 
     {
         for (int e = 0; e < 11; e++){
-        pressed_ok2 = pressed_ok2 + 1; }       // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
-        released_ok2 = 0;                    // Variable de boton libre se reduce a cero porque boton se esta presionando
-        if (pressed_ok2 > 10)               // Si el boton esta seguramente presionado
+        pressed_ok2 = pressed_ok2 + 1; }   // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
+        released_ok2 = 0;                  // Variable de boton libre se reduce a cero porque boton se esta presionando
+        if (pressed_ok2 > 10)              // Si el boton esta seguramente presionado
         {
-            if (presionado2 == 0)            // Verifica que el boton esta en posicion presionado
+            if (presionado2 == 0)          // Verifica que el boton esta en posicion presionado
             {    
-                PORTD = PORTD - 1;          // Incrementa el contador de decada del puerto
-                presionado2 = 1;             // Coloca el boton como ya presionado para no volver a repetir este ciclo
+                PORTD = PORTD - 1;         // Decrementa el contador de decada del puerto
+                presionado2 = 1;           // Coloca el boton como ya presionado para no volver a repetir este ciclo
             }
         }
-        pressed_ok2 = 0;                     // Se reduce contador de boton de seguridad presionado para siguiente ciclo
+        pressed_ok2 = 0;                    // Se reduce contador de boton de seguridad presionado para siguiente ciclo
         }
     else                                    // Si el boton no esta presionado
     {
         for (int e = 0; e < 11; e++){
-        released_ok2 = released_ok2 + 1;} 
-              // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
-        pressed_ok2 = 0;                     // Contador de boton presionado se reduce a cero porque boton esta libre
+        released_ok2 = released_ok2 + 1;}   // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
+        pressed_ok2 = 0;                    // Contador de boton presionado se reduce a cero porque boton esta libre
         if (released_ok2 > 10)              // Verifica que el boton este libre ...
         {
-            presionado2 = 0;                 // Coloca el boton como libre para siguiente ciclo
+            presionado2 = 0;                // Coloca el boton como libre para siguiente ciclo
             released_ok = 0;                // Variable de boton libre se reduce a cero para siguiente ciclo
         }
     }

@@ -1,38 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1251 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1251:     struct {
-[s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
-[n S45 . ADON GO_nDONE CHS ADCS ]
-"1257
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1257:     struct {
-[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S46 . . GO CHS0 CHS1 CHS2 CHS3 ADCS0 ADCS1 ]
-"1267
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1267:     struct {
-[s S47 :1 `uc 1 :1 `uc 1 ]
-[n S47 . . nDONE ]
-"1271
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1271:     struct {
-[s S48 :1 `uc 1 :1 `uc 1 ]
-[n S48 . . GO_DONE ]
-"1250
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1250: typedef union {
-[u S44 `S45 1 `S46 1 `S47 1 `S48 1 ]
-[n S44 . . . . . ]
-"1276
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
-[v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
-"2983
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2983:     struct {
-[s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S116 . . VCFG0 VCFG1 . ADFM ]
-"2982
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2982: typedef union {
-[u S115 `S116 1 ]
-[n S115 . . ]
-"2991
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2991: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
-[v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
+"420 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 420:     struct {
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . RE0 RE1 RE2 RE3 ]
+"419
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 419: typedef union {
+[u S13 `S14 1 ]
+[n S13 . . ]
+"427
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 427: extern volatile PORTEbits_t PORTEbits __attribute__((address(0x009)));
+[v _PORTEbits `VS13 ~T0 @X0 0 e@9 ]
+"21 ./multiplex_lib.h
+[; ;./multiplex_lib.h: 21: void hexadecimal (uint8_t show);
+[v _hexadecimal `(v ~T0 @X0 0 ef1`uc ]
+"290 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -267,338 +250,320 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"11 ADC_lib.c
-[; ;ADC_lib.c: 11: void initADC (uint8_t CHS)
-[v _initADC `(v ~T0 @X0 1 ef1`uc ]
+"11 multiplex_lib.c
+[; ;multiplex_lib.c: 11: uint8_t adc_value = 0;
+[v _adc_value `uc ~T0 @X0 1 e ]
+[i _adc_value
+-> -> 0 `i `uc
+]
 "12
-[; ;ADC_lib.c: 12: {
-{
-[e :U _initADC ]
-"11
-[; ;ADC_lib.c: 11: void initADC (uint8_t CHS)
-[v _CHS `uc ~T0 @X0 1 r1 ]
-"12
-[; ;ADC_lib.c: 12: {
-[f ]
+[; ;multiplex_lib.c: 12: uint8_t show;
+[v _show `uc ~T0 @X0 1 e ]
 "13
-[; ;ADC_lib.c: 13:     switch (CHS)
-[e $U 140  ]
+[; ;multiplex_lib.c: 13: uint8_t unidad;
+[v _unidad `uc ~T0 @X0 1 e ]
 "14
-[; ;ADC_lib.c: 14:     {
-{
+[; ;multiplex_lib.c: 14: uint8_t decena;
+[v _decena `uc ~T0 @X0 1 e ]
 "15
-[; ;ADC_lib.c: 15:         case 0:
-[e :U 141 ]
-"16
-[; ;ADC_lib.c: 16:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+[; ;multiplex_lib.c: 15: uint8_t toogle;
+[v _toogle `uc ~T0 @X0 1 e ]
 "17
-[; ;ADC_lib.c: 17:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+[; ;multiplex_lib.c: 17: void division (void)
+[v _division `(v ~T0 @X0 1 ef ]
 "18
-[; ;ADC_lib.c: 18:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+[; ;multiplex_lib.c: 18: {
+{
+[e :U _division ]
+[f ]
 "19
-[; ;ADC_lib.c: 19:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+[; ;multiplex_lib.c: 19:     PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
 "20
-[; ;ADC_lib.c: 20:             break;
-[e $U 139  ]
-"21
-[; ;ADC_lib.c: 21:         case 1:
-[e :U 142 ]
+[; ;multiplex_lib.c: 20:     PORTEbits.RE1 = 0;
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
 "22
-[; ;ADC_lib.c: 22:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+[; ;multiplex_lib.c: 22:     decena = adc_value/16;
+[e = _decena -> / -> _adc_value `i -> 16 `i `uc ]
 "23
-[; ;ADC_lib.c: 23:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"24
-[; ;ADC_lib.c: 24:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+[; ;multiplex_lib.c: 23:     unidad = adc_value%16;
+[e = _unidad -> % -> _adc_value `i -> 16 `i `uc ]
 "25
-[; ;ADC_lib.c: 25:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+[; ;multiplex_lib.c: 25:     if (toogle == 0)
+[e $ ! == -> _toogle `i -> 0 `i 139  ]
 "26
-[; ;ADC_lib.c: 26:             break;
-[e $U 139  ]
+[; ;multiplex_lib.c: 26:     {
+{
+"27
+[; ;multiplex_lib.c: 27:         show = decena;
+[e = _show _decena ]
 "28
-[; ;ADC_lib.c: 28:         case 2:
-[e :U 143 ]
+[; ;multiplex_lib.c: 28:         hexadecimal (show);
+[e ( _hexadecimal (1 _show ]
 "29
-[; ;ADC_lib.c: 29:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+[; ;multiplex_lib.c: 29:         PORTEbits.RE0 = 1;
+[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
 "30
-[; ;ADC_lib.c: 30:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"31
-[; ;ADC_lib.c: 31:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"32
-[; ;ADC_lib.c: 32:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"33
-[; ;ADC_lib.c: 33:             break;
-[e $U 139  ]
-"35
-[; ;ADC_lib.c: 35:         case 3:
-[e :U 144 ]
-"36
-[; ;ADC_lib.c: 36:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"37
-[; ;ADC_lib.c: 37:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"38
-[; ;ADC_lib.c: 38:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"39
-[; ;ADC_lib.c: 39:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"40
-[; ;ADC_lib.c: 40:             break;
-[e $U 139  ]
-"42
-[; ;ADC_lib.c: 42:         case 4:
-[e :U 145 ]
-"43
-[; ;ADC_lib.c: 43:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"44
-[; ;ADC_lib.c: 44:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"45
-[; ;ADC_lib.c: 45:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"46
-[; ;ADC_lib.c: 46:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"47
-[; ;ADC_lib.c: 47:             break;
-[e $U 139  ]
-"49
-[; ;ADC_lib.c: 49:         case 5:
-[e :U 146 ]
-"50
-[; ;ADC_lib.c: 50:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"51
-[; ;ADC_lib.c: 51:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"52
-[; ;ADC_lib.c: 52:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"53
-[; ;ADC_lib.c: 53:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"54
-[; ;ADC_lib.c: 54:             break;
-[e $U 139  ]
-"56
-[; ;ADC_lib.c: 56:         case 6:
-[e :U 147 ]
-"57
-[; ;ADC_lib.c: 57:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"58
-[; ;ADC_lib.c: 58:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"59
-[; ;ADC_lib.c: 59:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"60
-[; ;ADC_lib.c: 60:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"61
-[; ;ADC_lib.c: 61:             break;
-[e $U 139  ]
-"63
-[; ;ADC_lib.c: 63:         case 7:
-[e :U 148 ]
-"64
-[; ;ADC_lib.c: 64:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"65
-[; ;ADC_lib.c: 65:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"66
-[; ;ADC_lib.c: 66:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"67
-[; ;ADC_lib.c: 67:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"68
-[; ;ADC_lib.c: 68:             break;
-[e $U 139  ]
-"70
-[; ;ADC_lib.c: 70:         case 8:
-[e :U 149 ]
-"71
-[; ;ADC_lib.c: 71:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"72
-[; ;ADC_lib.c: 72:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"73
-[; ;ADC_lib.c: 73:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"74
-[; ;ADC_lib.c: 74:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"75
-[; ;ADC_lib.c: 75:             break;
-[e $U 139  ]
-"77
-[; ;ADC_lib.c: 77:         case 9:
-[e :U 150 ]
-"78
-[; ;ADC_lib.c: 78:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"79
-[; ;ADC_lib.c: 79:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"80
-[; ;ADC_lib.c: 80:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"81
-[; ;ADC_lib.c: 81:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"82
-[; ;ADC_lib.c: 82:             break;
-[e $U 139  ]
-"84
-[; ;ADC_lib.c: 84:         case 10:
-[e :U 151 ]
-"85
-[; ;ADC_lib.c: 85:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"86
-[; ;ADC_lib.c: 86:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"87
-[; ;ADC_lib.c: 87:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"88
-[; ;ADC_lib.c: 88:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"89
-[; ;ADC_lib.c: 89:             break;
-[e $U 139  ]
-"91
-[; ;ADC_lib.c: 91:         case 11:
-[e :U 152 ]
-"92
-[; ;ADC_lib.c: 92:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"93
-[; ;ADC_lib.c: 93:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"94
-[; ;ADC_lib.c: 94:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"95
-[; ;ADC_lib.c: 95:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"96
-[; ;ADC_lib.c: 96:             break;
-[e $U 139  ]
-"98
-[; ;ADC_lib.c: 98:         case 12:
-[e :U 153 ]
-"99
-[; ;ADC_lib.c: 99:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"100
-[; ;ADC_lib.c: 100:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"101
-[; ;ADC_lib.c: 101:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"102
-[; ;ADC_lib.c: 102:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"103
-[; ;ADC_lib.c: 103:             break;
-[e $U 139  ]
-"105
-[; ;ADC_lib.c: 105:         case 13:
-[e :U 154 ]
-"106
-[; ;ADC_lib.c: 106:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"107
-[; ;ADC_lib.c: 107:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"108
-[; ;ADC_lib.c: 108:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"109
-[; ;ADC_lib.c: 109:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"110
-[; ;ADC_lib.c: 110:             break;
-[e $U 139  ]
-"112
-[; ;ADC_lib.c: 112:         default:
-[e :U 155 ]
-"113
-[; ;ADC_lib.c: 113:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"114
-[; ;ADC_lib.c: 114:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"115
-[; ;ADC_lib.c: 115:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"116
-[; ;ADC_lib.c: 116:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"117
-[; ;ADC_lib.c: 117:             break;
-[e $U 139  ]
-"118
-[; ;ADC_lib.c: 118:     }
+[; ;multiplex_lib.c: 30:     }
 }
-[e $U 139  ]
-[e :U 140 ]
-[e [\ -> _CHS `i , $ -> 0 `i 141
- , $ -> 1 `i 142
- , $ -> 2 `i 143
- , $ -> 3 `i 144
- , $ -> 4 `i 145
- , $ -> 5 `i 146
- , $ -> 6 `i 147
- , $ -> 7 `i 148
- , $ -> 8 `i 149
- , $ -> 9 `i 150
- , $ -> 10 `i 151
- , $ -> 11 `i 152
- , $ -> 12 `i 153
- , $ -> 13 `i 154
- 155 ]
+[e $U 140  ]
+"31
+[; ;multiplex_lib.c: 31:     else
 [e :U 139 ]
-"119
-[; ;ADC_lib.c: 119:     ADCON0bits.ADCS1 = 1;
-[e = . . _ADCON0bits 1 7 -> -> 1 `i `uc ]
-"120
-[; ;ADC_lib.c: 120:     ADCON0bits.ADCS0 = 0;
-[e = . . _ADCON0bits 1 6 -> -> 0 `i `uc ]
-"121
-[; ;ADC_lib.c: 121:     ADCON0bits.GO_DONE= 0;
-[e = . . _ADCON0bits 3 1 -> -> 0 `i `uc ]
-"122
-[; ;ADC_lib.c: 122:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"124
-[; ;ADC_lib.c: 124:     ADCON1bits.ADFM = 1;
-[e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
-"125
-[; ;ADC_lib.c: 125:     ADCON1bits.VCFG1 = 0;
-[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-"126
-[; ;ADC_lib.c: 126:     ADCON1bits.VCFG0 = 0;
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-"127
-[; ;ADC_lib.c: 127: }
+"32
+[; ;multiplex_lib.c: 32:     {
+{
+"33
+[; ;multiplex_lib.c: 33:         show = unidad;
+[e = _show _unidad ]
+"34
+[; ;multiplex_lib.c: 34:         hexadecimal (show);
+[e ( _hexadecimal (1 _show ]
+"35
+[; ;multiplex_lib.c: 35:         PORTEbits.RE1 = 1;
+[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
+"36
+[; ;multiplex_lib.c: 36:     }
+}
+[e :U 140 ]
+"37
+[; ;multiplex_lib.c: 37: }
 [e :UE 138 ]
+}
+"39
+[; ;multiplex_lib.c: 39: void multiplexar (void)
+[v _multiplexar `(v ~T0 @X0 1 ef ]
+"40
+[; ;multiplex_lib.c: 40: {
+{
+[e :U _multiplexar ]
+[f ]
+"41
+[; ;multiplex_lib.c: 41:     if (toogle == 0)
+[e $ ! == -> _toogle `i -> 0 `i 142  ]
+"42
+[; ;multiplex_lib.c: 42:     {
+{
+"43
+[; ;multiplex_lib.c: 43:         toogle = 1;
+[e = _toogle -> -> 1 `i `uc ]
+"44
+[; ;multiplex_lib.c: 44:     }
+}
+[e $U 143  ]
+"45
+[; ;multiplex_lib.c: 45:     else
+[e :U 142 ]
+"46
+[; ;multiplex_lib.c: 46:     {
+{
+"47
+[; ;multiplex_lib.c: 47:         toogle = 0;
+[e = _toogle -> -> 0 `i `uc ]
+"48
+[; ;multiplex_lib.c: 48:     }
+}
+[e :U 143 ]
+"49
+[; ;multiplex_lib.c: 49: }
+[e :UE 141 ]
+}
+"51
+[; ;multiplex_lib.c: 51: void hexadecimal (uint8_t show)
+[v _hexadecimal `(v ~T0 @X0 1 ef1`uc ]
+"52
+[; ;multiplex_lib.c: 52: {
+{
+[e :U _hexadecimal ]
+"51
+[; ;multiplex_lib.c: 51: void hexadecimal (uint8_t show)
+[v _show `uc ~T0 @X0 1 r1 ]
+"52
+[; ;multiplex_lib.c: 52: {
+[f ]
+"53
+[; ;multiplex_lib.c: 53:     switch (show)
+[e $U 146  ]
+"54
+[; ;multiplex_lib.c: 54:     {
+{
+"55
+[; ;multiplex_lib.c: 55:         case 0:
+[e :U 147 ]
+"56
+[; ;multiplex_lib.c: 56:             PORTC = 0b00111111;
+[e = _PORTC -> -> 63 `i `uc ]
+"57
+[; ;multiplex_lib.c: 57:             break;
+[e $U 145  ]
+"58
+[; ;multiplex_lib.c: 58:         case 1:
+[e :U 148 ]
+"59
+[; ;multiplex_lib.c: 59:             PORTC = 0b00000110;
+[e = _PORTC -> -> 6 `i `uc ]
+"60
+[; ;multiplex_lib.c: 60:             break;
+[e $U 145  ]
+"61
+[; ;multiplex_lib.c: 61:         case 2:
+[e :U 149 ]
+"62
+[; ;multiplex_lib.c: 62:             PORTC = 0b01011011;
+[e = _PORTC -> -> 91 `i `uc ]
+"63
+[; ;multiplex_lib.c: 63:             break;
+[e $U 145  ]
+"64
+[; ;multiplex_lib.c: 64:         case 3:
+[e :U 150 ]
+"65
+[; ;multiplex_lib.c: 65:             PORTC = 0b01001111;
+[e = _PORTC -> -> 79 `i `uc ]
+"66
+[; ;multiplex_lib.c: 66:             break;
+[e $U 145  ]
+"67
+[; ;multiplex_lib.c: 67:         case 4:
+[e :U 151 ]
+"68
+[; ;multiplex_lib.c: 68:             PORTC = 0b01100110;
+[e = _PORTC -> -> 102 `i `uc ]
+"69
+[; ;multiplex_lib.c: 69:             break;
+[e $U 145  ]
+"70
+[; ;multiplex_lib.c: 70:         case 5:
+[e :U 152 ]
+"71
+[; ;multiplex_lib.c: 71:             PORTC = 0b01101101;
+[e = _PORTC -> -> 109 `i `uc ]
+"72
+[; ;multiplex_lib.c: 72:             break;
+[e $U 145  ]
+"73
+[; ;multiplex_lib.c: 73:         case 6:
+[e :U 153 ]
+"74
+[; ;multiplex_lib.c: 74:             PORTC = 0b01111101;
+[e = _PORTC -> -> 125 `i `uc ]
+"75
+[; ;multiplex_lib.c: 75:             break;
+[e $U 145  ]
+"76
+[; ;multiplex_lib.c: 76:         case 7:
+[e :U 154 ]
+"77
+[; ;multiplex_lib.c: 77:             PORTC = 0b00000111;
+[e = _PORTC -> -> 7 `i `uc ]
+"78
+[; ;multiplex_lib.c: 78:             break;
+[e $U 145  ]
+"79
+[; ;multiplex_lib.c: 79:         case 8:
+[e :U 155 ]
+"80
+[; ;multiplex_lib.c: 80:             PORTC = 0b01111111;
+[e = _PORTC -> -> 127 `i `uc ]
+"81
+[; ;multiplex_lib.c: 81:             break;
+[e $U 145  ]
+"82
+[; ;multiplex_lib.c: 82:         case 9:
+[e :U 156 ]
+"83
+[; ;multiplex_lib.c: 83:             PORTC = 0b01101111;
+[e = _PORTC -> -> 111 `i `uc ]
+"84
+[; ;multiplex_lib.c: 84:             break;
+[e $U 145  ]
+"85
+[; ;multiplex_lib.c: 85:         case 10:
+[e :U 157 ]
+"86
+[; ;multiplex_lib.c: 86:             PORTC = 0b01110111;
+[e = _PORTC -> -> 119 `i `uc ]
+"87
+[; ;multiplex_lib.c: 87:             break;
+[e $U 145  ]
+"88
+[; ;multiplex_lib.c: 88:         case 11:
+[e :U 158 ]
+"89
+[; ;multiplex_lib.c: 89:             PORTC = 0b01111100;
+[e = _PORTC -> -> 124 `i `uc ]
+"90
+[; ;multiplex_lib.c: 90:             break;
+[e $U 145  ]
+"91
+[; ;multiplex_lib.c: 91:         case 12:
+[e :U 159 ]
+"92
+[; ;multiplex_lib.c: 92:             PORTC = 0b00111001;
+[e = _PORTC -> -> 57 `i `uc ]
+"93
+[; ;multiplex_lib.c: 93:             break;
+[e $U 145  ]
+"94
+[; ;multiplex_lib.c: 94:         case 13:
+[e :U 160 ]
+"95
+[; ;multiplex_lib.c: 95:             PORTC = 0b01011110;
+[e = _PORTC -> -> 94 `i `uc ]
+"96
+[; ;multiplex_lib.c: 96:             break;
+[e $U 145  ]
+"97
+[; ;multiplex_lib.c: 97:         case 14:
+[e :U 161 ]
+"98
+[; ;multiplex_lib.c: 98:             PORTC = 0b01111001;
+[e = _PORTC -> -> 121 `i `uc ]
+"99
+[; ;multiplex_lib.c: 99:             break;
+[e $U 145  ]
+"100
+[; ;multiplex_lib.c: 100:         case 15:
+[e :U 162 ]
+"101
+[; ;multiplex_lib.c: 101:             PORTC = 0b01110001;
+[e = _PORTC -> -> 113 `i `uc ]
+"102
+[; ;multiplex_lib.c: 102:             break;
+[e $U 145  ]
+"103
+[; ;multiplex_lib.c: 103:         default:
+[e :U 163 ]
+"104
+[; ;multiplex_lib.c: 104:             PORTC = 0b00000000;
+[e = _PORTC -> -> 0 `i `uc ]
+"105
+[; ;multiplex_lib.c: 105:             break;
+[e $U 145  ]
+"106
+[; ;multiplex_lib.c: 106:     }
+}
+[e $U 145  ]
+[e :U 146 ]
+[e [\ -> _show `i , $ -> 0 `i 147
+ , $ -> 1 `i 148
+ , $ -> 2 `i 149
+ , $ -> 3 `i 150
+ , $ -> 4 `i 151
+ , $ -> 5 `i 152
+ , $ -> 6 `i 153
+ , $ -> 7 `i 154
+ , $ -> 8 `i 155
+ , $ -> 9 `i 156
+ , $ -> 10 `i 157
+ , $ -> 11 `i 158
+ , $ -> 12 `i 159
+ , $ -> 13 `i 160
+ , $ -> 14 `i 161
+ , $ -> 15 `i 162
+ 163 ]
+[e :U 145 ]
+"107
+[; ;multiplex_lib.c: 107: }
+[e :UE 144 ]
 }

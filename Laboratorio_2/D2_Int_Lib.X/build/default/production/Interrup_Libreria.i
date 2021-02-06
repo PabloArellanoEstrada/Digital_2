@@ -2725,13 +2725,28 @@ extern int printf(const char *, ...);
 # 15 "Interrup_Libreria.c" 2
 
 # 1 "./ADC_lib.h" 1
-# 15 "./ADC_lib.h"
+# 17 "./ADC_lib.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 15 "./ADC_lib.h" 2
+# 17 "./ADC_lib.h" 2
 
 
 void initADC (uint8_t CHS);
 # 16 "Interrup_Libreria.c" 2
+
+# 1 "./multiplex_lib.h" 1
+# 13 "./multiplex_lib.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "./multiplex_lib.h" 2
+
+
+
+
+
+
+void division (void);
+void multiplexar (void);
+void hexadecimal (uint8_t show);
+# 17 "Interrup_Libreria.c" 2
 
 
 
@@ -2758,7 +2773,6 @@ void initADC (uint8_t CHS);
 
 
 
-
 uint16_t contador = 0;
 uint16_t pressed_ok = 0;
 uint16_t released_ok = 0;
@@ -2771,7 +2785,7 @@ uint16_t presionado2 = 0;
 
 uint16_t i = 0;
 uint8_t adc_value = 0;
-uint8_t timer_contador = 0;
+
 uint8_t show = 0;
 uint8_t unidad;
 uint8_t decena;
@@ -2785,12 +2799,10 @@ void setup(void);
 void osc_config (void);
 void interrup_config (void);
 void tmr0_config(void);
+void adc_config (void);
 void incrementar(void);
 void decrementar(void);
-void adc_config (void);
-void multiplexar (void);
-void division (void);
-void hexadecimal();
+void multiplex_config();
 void big (void);
 
 
@@ -2804,8 +2816,7 @@ void __attribute__((picinterrupt(("")))) ISR(void)
     {
         INTCONbits.TMR0IF = 0;
         TMR0 = 10;
-        division ();
-
+        multiplex_config();
     }
 
      if (INTCONbits.RBIF == 1)
@@ -2831,12 +2842,7 @@ void main(void)
     tmr0_config();
     adc_config ();
 
-
-
-
-
-
-     while (1)
+    while (1)
     {
         ADCON0bits.GO_DONE = 1;
         _delay((unsigned long)((10)*(8000000/4000.0)));
@@ -2853,11 +2859,8 @@ void main(void)
 
 
 
-
-
 void setup(void)
 {
-
     ANSEL = 1;
     TRISA = 1;
     PORTA = 0;
@@ -2907,107 +2910,25 @@ void tmr0_config (void)
     TMR0 = 10;
 }
 
+
+
+
+
 void adc_config (void)
 {
     initADC (0);
 }
 
-
-
-
-
-void division (void)
+void multiplex_config()
 {
-    PORTEbits.RE0 = 0;
-    PORTEbits.RE1 = 0;
-
-    decena = adc_value/16;
-    unidad = adc_value%16;
-
-    if (toogle == 0)
-    {
-        show = decena;
-        hexadecimal (show);
-        PORTEbits.RE0 = 1;
-    }
-    else
-    {
-        show = unidad;
-        hexadecimal (show);
-        PORTEbits.RE1 = 1;
-    }
+    division();
     multiplexar();
+    hexadecimal(show);
 }
 
-void multiplexar (void)
-{
-    if (toogle == 0)
-    {
-        toogle = 1;
-    }
-    else
-    {
-        toogle = 0;
-    }
-}
 
-void hexadecimal (show)
-{
-    switch (show)
-    {
-        case 0:
-            PORTC = 0b00111111;
-            break;
-        case 1:
-            PORTC = 0b00000110;
-            break;
-        case 2:
-            PORTC = 0b01011011;
-            break;
-        case 3:
-            PORTC = 0b01001111;
-            break;
-        case 4:
-            PORTC = 0b01100110;
-            break;
-        case 5:
-            PORTC = 0b01101101;
-            break;
-        case 6:
-            PORTC = 0b01111101;
-            break;
-        case 7:
-            PORTC = 0b00000111;
-            break;
-        case 8:
-            PORTC = 0b01111111;
-            break;
-        case 9:
-            PORTC = 0b01101111;
-            break;
-        case 10:
-            PORTC = 0b01110111;
-            break;
-        case 11:
-            PORTC = 0b01111100;
-            break;
-        case 12:
-            PORTC = 0b00111001;
-            break;
-        case 13:
-            PORTC = 0b01011110;
-            break;
-        case 14:
-            PORTC = 0b01111001;
-            break;
-        case 15:
-            PORTC = 0b01110001;
-            break;
-        default:
-            PORTC = 0b00000000;
-            break;
-    }
-}
+
+
 
 void big (void)
 {
@@ -3023,11 +2944,6 @@ void big (void)
 
 void incrementar(void)
 {
-
-
-
-
-
     if (PORTBbits.RB0 == 1)
     {
         for (int e = 0; e < 11; e++){
@@ -3047,7 +2963,6 @@ void incrementar(void)
     {
         for (int e = 0; e < 11; e++){
         released_ok = released_ok + 1;}
-
         pressed_ok = 0;
         if (released_ok > 10)
         {
@@ -3060,11 +2975,6 @@ void incrementar(void)
 
 void decrementar(void)
 {
-
-
-
-
-
     if (PORTBbits.RB1 == 1)
     {
         for (int e = 0; e < 11; e++){
@@ -3084,7 +2994,6 @@ void decrementar(void)
     {
         for (int e = 0; e < 11; e++){
         released_ok2 = released_ok2 + 1;}
-
         pressed_ok2 = 0;
         if (released_ok2 > 10)
         {
