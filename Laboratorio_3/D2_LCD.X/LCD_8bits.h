@@ -12,6 +12,19 @@
 #ifndef LCD_8bits_H
 #define	LCD_8bits_H
 
+#define	RS PORTCbits.RC0
+#define	RW PORTCbits.RC1
+#define	E  PORTCbits.RC2
+
+#define D0 PORTDbits.RD0
+#define D1 PORTDbits.RD1
+#define D2 PORTDbits.RD2
+#define D3 PORTDbits.RD3
+#define D4 PORTDbits.RD4
+#define D5 PORTDbits.RD5
+#define D6 PORTDbits.RD6
+#define D7 PORTDbits.RD7
+
 
 #ifndef _XTAL_FREQ
 #define	_XTAL_FREQ 8000000

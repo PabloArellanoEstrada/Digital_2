@@ -2734,9 +2734,9 @@ void initADC (uint8_t CHS);
 # 29 "LCD.c" 2
 
 # 1 "./LCD_8bits.h" 1
-# 69 "./LCD_8bits.h"
+# 82 "./LCD_8bits.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 69 "./LCD_8bits.h" 2
+# 82 "./LCD_8bits.h" 2
 
 
 void Lcd_Port (char a);
@@ -2751,6 +2751,15 @@ void Lcd_Shift_Right();
 void Lcd_Write_Char(char a);
 void Lcd_Write_Char_4(char a);
 # 30 "LCD.c" 2
+
+# 1 "./USART.h" 1
+# 17 "./USART.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 17 "./USART.h" 2
+
+
+void USART_lib_config();
+# 31 "LCD.c" 2
 
 
 
@@ -2780,6 +2789,7 @@ void Lcd_Write_Char_4(char a);
 
 uint16_t i = 0;
 uint8_t adc_value = 0;
+uint8_t voltaje;
 
 
 
@@ -2790,65 +2800,53 @@ void osc_config (void);
 void interrup_config (void);
 void tmr0_config(void);
 void adc_config (void);
-# 88 "LCD.c"
+void USART_config(void);
+void lcd (void);
+void Conversion (void);
+
+
+
+
+
+void __attribute__((picinterrupt(("")))) ISR(void)
+{
+
+    if (INTCONbits.TMR0IF == 1)
+    {
+        INTCONbits.TMR0IF = 0;
+        TMR0 = 231;
+
+
+    }
+}
+
+
+
+
+
 void main(void)
 {
     setup();
     osc_config();
     interrup_config();
+    Lcd_Init();
     tmr0_config();
     adc_config ();
-    unsigned int a;
-    TRISD = 0b00000000;
-    Lcd_Init();
-
+    USART_config();
     while (1)
     {
+        lcd ();
         ADCON0bits.GO_DONE = 1;
         _delay((unsigned long)((10)*(8000000/4000.0)));
         if (ADCON0bits.GO_DONE == 0)
         {
             ADCON0bits.GO_DONE = 1;
-            adc_value = ADRESL;
+            adc_value = ADRESH;
+            if (PIR1bits.TXIF == 1)
+            {
+                TXREG = ADRESH;
+            }
         }
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("LCD Library for");
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_String("MPLAB XC8");
-        _delay((unsigned long)((2000)*(8000000/4000.0)));
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("Developed By");
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_String("electroSome");
-        _delay((unsigned long)((2000)*(8000000/4000.0)));
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("www.electroSome.com");
-
-        for(a=0;a<15;a++)
-        {
-            _delay((unsigned long)((300)*(8000000/4000.0)));
-            Lcd_Shift_Left();
-        }
-
-        for(a=0;a<15;a++)
-        {
-            _delay((unsigned long)((300)*(8000000/4000.0)));
-            Lcd_Shift_Right();
-        }
-
-        Lcd_Clear();
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_Char('H');
-        Lcd_Write_Char('o');
-        Lcd_Write_Char('l');
-        Lcd_Write_Char('a');
-
-
-
-        _delay((unsigned long)((2000)*(8000000/4000.0)));
     }
 }
 
@@ -2878,18 +2876,18 @@ void interrup_config (void)
     INTCONbits.PEIE = 0;
     INTCONbits.T0IE = 1;
     INTCONbits.INTE = 0;
-    INTCONbits.RBIE = 1;
+    INTCONbits.RBIE = 0;
     INTCONbits.T0IF = 0;
     INTCONbits.INTF = 0;
     INTCONbits.RBIF = 0;
-    IOCB = 0b00000011;
+    IOCB = 0b00000000;
 }
 
 void osc_config (void)
 {
     OSCCONbits.IRCF2 = 1;
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF2 = 0;
+    OSCCONbits.IRCF0 = 0;
     OSCCONbits.OSTS = 0;
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 1;
@@ -2904,7 +2902,7 @@ void tmr0_config (void)
     OPTION_REGbits.PS2 = 0;
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 0;
-    TMR0 = 10;
+    TMR0 = 231;
 }
 
 
@@ -2914,4 +2912,40 @@ void tmr0_config (void)
 void adc_config (void)
 {
     initADC (0);
+}
+
+void USART_config(void)
+{
+    USART_lib_config();
+}
+# 197 "LCD.c"
+void lcd (void)
+{
+    unsigned int a;
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("S1:   S2:   S3: ");
+    Lcd_Set_Cursor(2,0);
+    Conversion ();
+    Lcd_Set_Cursor(2,6);
+    Conversion ();
+
+
+}
+
+void Conversion ()
+{
+    voltaje = ADRESH * 2;
+    char unidad = voltaje / 100;
+
+    char x1 = voltaje % 100;
+    char x2 = x1 / 10;
+
+    char y1 = x1 % 10;
+    char y2 = y1 / 1;
+
+    Lcd_Write_Char(unidad+48);
+    Lcd_Write_Char(46);
+    Lcd_Write_Char(x2+48);
+    Lcd_Write_Char(y2+48);
+    Lcd_Write_Char(86);
 }

@@ -2752,7 +2752,7 @@ void initADC (uint8_t CHS)
     ADCON0bits.GO_DONE= 0;
     ADCON0bits.ADON = 1;
 
-    ADCON1bits.ADFM = 0;
+    ADCON1bits.ADFM = 1;
     ADCON1bits.VCFG1 = 0;
     ADCON1bits.VCFG0 = 0;
 }

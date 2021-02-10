@@ -121,7 +121,7 @@ void initADC (uint8_t CHS)
     ADCON0bits.GO_DONE= 0;              // Conversion apagada al principio
     ADCON0bits.ADON  = 1;               // La conversion esta habilitada
     
-    ADCON1bits.ADFM  = 1;               // Justificado a la derecha 
+    ADCON1bits.ADFM  = 0;               // Justificado a la derecha 
     ADCON1bits.VCFG1 = 0;               // Voltaje = 5V
     ADCON1bits.VCFG0 = 0;               // Tierra  = 0V
 }

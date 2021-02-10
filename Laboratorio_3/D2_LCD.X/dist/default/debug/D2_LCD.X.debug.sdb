@@ -5,10 +5,6 @@
 [d frameptr 0 ]
 "11 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
 [v _initADC initADC `(v  1 e 1 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
@@ -17,32 +13,34 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"79 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"77 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"95
+"92
 [v _main main `(v  1 e 1 0 ]
-"125
+"119
 [v _setup setup `(v  1 e 1 0 ]
-"141
+"135
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
-"154
+"148
 [v _osc_config osc_config `(v  1 e 1 0 ]
-"165
+"159
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
-"180
+"174
 [v _adc_config adc_config `(v  1 e 1 0 ]
-"185
+"179
 [v _USART_config USART_config `(v  1 e 1 0 ]
-"197
+"184
 [v _lcd lcd `(v  1 e 1 0 ]
-"210
-[v _Conversion Conversion `(v  1 e 1 0 ]
 "14 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+[v i1_Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "19
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+[v i1_Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
 "28
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+"49
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
 "54
 [v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
 "69
@@ -59,7 +57,7 @@
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S382 . 1 `uc 1 RC0 1 0 :1:0 
+[s S344 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -69,8 +67,8 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S391 . 1 `S382 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES391  1 e 1 @7 ]
+[u S353 . 1 `S344 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES353  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
@@ -92,7 +90,7 @@
 ]
 [u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
-[s S140 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S482 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -101,9 +99,9 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S148 . 1 `S140 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES148  1 e 1 @12 ]
-[s S472 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S490 . 1 `S482 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES490  1 e 1 @12 ]
+[s S438 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -113,22 +111,18 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S481 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S447 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S485 . 1 `uc 1 . 1 0 :6:0 
+[s S451 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S488 . 1 `uc 1 . 1 0 :6:0 
+[s S454 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S491 . 1 `S472 1 . 1 0 `S481 1 . 1 0 `S485 1 . 1 0 `S488 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES491  1 e 1 @24 ]
-"1133
-[v _TXREG TXREG `VEuc  1 e 1 @25 ]
-"1238
-[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[u S457 . 1 `S438 1 . 1 0 `S447 1 . 1 0 `S451 1 . 1 0 `S454 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES457  1 e 1 @24 ]
 [s S87 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
@@ -152,7 +146,7 @@
 ]
 [u S107 . 1 `S87 1 . 1 0 `S92 1 . 1 0 `S101 1 . 1 0 `S104 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES107  1 e 1 @31 ]
-[s S199 . 1 `uc 1 PS 1 0 :3:0 
+[s S179 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -160,12 +154,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S206 . 1 `uc 1 PS0 1 0 :1:0 
+[s S186 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S210 . 1 `S199 1 . 1 0 `S206 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES210  1 e 1 @129 ]
+[u S190 . 1 `S179 1 . 1 0 `S186 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES190  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
@@ -176,23 +170,23 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S173 . 1 `uc 1 SCS 1 0 :1:0 
+[s S153 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S179 . 1 `uc 1 . 1 0 :4:0 
+[s S159 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S184 . 1 `S173 1 . 1 0 `S179 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES184  1 e 1 @143 ]
+[u S164 . 1 `S153 1 . 1 0 `S159 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES164  1 e 1 @143 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
-[s S433 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S399 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -202,156 +196,78 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S442 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S408 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S446 . 1 `uc 1 . 1 0 :6:0 
+[s S412 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S449 . 1 `S433 1 . 1 0 `S442 1 . 1 0 `S446 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES449  1 e 1 @152 ]
+[u S415 . 1 `S399 1 . 1 0 `S408 1 . 1 0 `S412 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES415  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2704
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
-[s S347 . 1 `uc 1 . 1 0 :4:0 
+"2970
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+[s S309 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S353 . 1 `S347 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES353  1 e 1 @159 ]
+[u S315 . 1 `S309 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES315  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "59 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _adc_value adc_value `uc  1 e 1 0 ]
-"60
-[v _voltaje voltaje `uc  1 e 1 0 ]
-"95
+"92
 [v _main main `(v  1 e 1 0 ]
 {
-"119
+"113
 } 0
-"165
+"159
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
 {
-"174
+"168
 } 0
-"125
+"119
 [v _setup setup `(v  1 e 1 0 ]
 {
-"139
+"133
 } 0
-"154
+"148
 [v _osc_config osc_config `(v  1 e 1 0 ]
 {
-"163
+"157
 } 0
-"197
-[v _lcd lcd `(v  1 e 1 0 ]
-{
-"208
-} 0
-"69 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
-[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-{
-[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
-"71
-[v Lcd_Write_String@i i `i  1 a 2 5 ]
-"69
-[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
-"72
-[v Lcd_Write_String@a a `*.24uc  1 a 1 7 ]
-"74
-} 0
-"54
-[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
-{
-[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
-"56
-[v Lcd_Set_Cursor@temp temp `uc  1 a 1 9 ]
-"54
-[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
-[v Lcd_Set_Cursor@b b `uc  1 p 1 6 ]
-"57
-[v Lcd_Set_Cursor@a a `uc  1 a 1 8 ]
-"67
-} 0
-"210 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-[v _Conversion Conversion `(v  1 e 1 0 ]
-{
-"215
-[v Conversion@x1 x1 `uc  1 a 1 7 ]
-"219
-[v Conversion@y2 y2 `uc  1 a 1 6 ]
-"218
-[v Conversion@y1 y1 `uc  1 a 1 5 ]
-"216
-[v Conversion@x2 x2 `uc  1 a 1 4 ]
-"213
-[v Conversion@unidad unidad `uc  1 a 1 3 ]
-"226
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 8 ]
-[v ___awmod@counter counter `uc  1 a 1 7 ]
-"5
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-[v ___awmod@dividend dividend `i  1 p 2 4 ]
-"34
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 9 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 8 ]
-[v ___awdiv@counter counter `uc  1 a 1 7 ]
-"5
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-[v ___awdiv@dividend dividend `i  1 p 2 4 ]
-"41
-} 0
-"86 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
-[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
-{
-[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
-[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
-"88
-[v Lcd_Write_Char@a a `uc  1 a 1 4 ]
-"93
-} 0
-"141 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"135
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
 {
-"152
+"146
 } 0
-"180
+"174
 [v _adc_config adc_config `(v  1 e 1 0 ]
 {
-"183
+"177
 } 0
 "11 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
 [v _initADC initADC `(v  1 e 1 0 ]
 {
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
-[v initADC@CHS CHS `uc  1 a 1 4 ]
+[v initADC@CHS CHS `uc  1 a 1 2 ]
 "127
 } 0
-"185 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"179 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _USART_config USART_config `(v  1 e 1 0 ]
 {
-"188
+"182
 } 0
 "15 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\USART.c
 [v _USART_lib_config USART_lib_config `(v  1 e 1 0 ]
@@ -369,7 +285,7 @@
 [v Lcd_Cmd@a a `uc  1 a 1 wreg ]
 [v Lcd_Cmd@a a `uc  1 a 1 wreg ]
 "21
-[v Lcd_Cmd@a a `uc  1 a 1 5 ]
+[v Lcd_Cmd@a a `uc  1 a 1 3 ]
 "26
 } 0
 "14
@@ -378,11 +294,73 @@
 [v Lcd_Port@a a `uc  1 a 1 wreg ]
 [v Lcd_Port@a a `uc  1 a 1 wreg ]
 "16
-[v Lcd_Port@a a `uc  1 a 1 2 ]
+[v Lcd_Port@a a `uc  1 a 1 0 ]
 "17
 } 0
-"79 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"77 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"89
+"86
+} 0
+"184
+[v _lcd lcd `(v  1 e 1 0 ]
+{
+"192
+} 0
+"69 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+{
+[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
+"71
+[v Lcd_Write_String@i i `i  1 a 2 3 ]
+"69
+[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
+"72
+[v Lcd_Write_String@a a `*.24uc  1 a 1 5 ]
+"74
+} 0
+"86
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+{
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+"88
+[v Lcd_Write_Char@a a `uc  1 a 1 2 ]
+"93
+} 0
+"54
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+"56
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 7 ]
+"54
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+[v Lcd_Set_Cursor@b b `uc  1 p 1 4 ]
+"57
+[v Lcd_Set_Cursor@a a `uc  1 a 1 6 ]
+"67
+} 0
+"49
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"52
+} 0
+"19
+[v i1_Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v i1Lcd_Cmd@a a `uc  1 a 1 wreg ]
+[v i1Lcd_Cmd@a a `uc  1 a 1 wreg ]
+"21
+[v i1Lcd_Cmd@a a `uc  1 a 1 3 ]
+"26
+} 0
+"14
+[v i1_Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+{
+[v i1Lcd_Port@a a `uc  1 a 1 wreg ]
+[v i1Lcd_Port@a a `uc  1 a 1 wreg ]
+"16
+[v i1Lcd_Port@a a `uc  1 a 1 0 ]
+"17
 } 0

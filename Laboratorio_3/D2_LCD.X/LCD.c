@@ -27,7 +27,8 @@
 #include <stdint.h>             // Variables de ancho definido
 #include <stdio.h>              // Variables
 #include "ADC_lib.h"            // Libreria Personalizada ADC
-#include "LCD_8bits.h"          
+#include "LCD_8bits.h"     
+#include "USART.h"
 
 
 //============================================================================*/
@@ -56,6 +57,7 @@
 
 uint16_t i = 0;                  // Variables Configuracion ADC
 uint8_t adc_value = 0;
+uint8_t voltaje;
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -67,20 +69,24 @@ void interrup_config (void);
 void tmr0_config(void);
 void adc_config (void);
 void USART_config(void); 
+void lcd (void);
+void Conversion (void); 
 
 //============================================================================*/
 // INTERRUPCIONES
 //============================================================================*/
 
-//void __interrupt() ISR(void) 
-//{
+void __interrupt() ISR(void) 
+{
                                  // La interrupcion global GIE inicia automaticamente con GIE = 0
-    //if (INTCONbits.TMR0IF == 1)  // Si hay desboradmiento de TIMER0 la bandera se levanta y se revisa
-    //{
-    //    INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
-    //    TMR0 = 10;               
-    //}                            // La interrupcion global GIE finaliza automaticamente con GIE = 1 para la siguiente
- //}
+    if (INTCONbits.TMR0IF == 1)  // Si hay desboradmiento de TIMER0 la bandera se levanta y se revisa
+    {
+        INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
+        TMR0 = 231; 
+        
+        
+    }                            // La interrupcion global GIE finaliza automaticamente con GIE = 1 para la siguiente
+}
 
 //============================================================================*/
 // CICLO PRINCIPAL
@@ -91,52 +97,24 @@ void main(void)
     setup();                            // Funciones de Configuracion
     osc_config();
     interrup_config();
+    Lcd_Init();
     tmr0_config();
     adc_config ();
-    unsigned int a;
-    TRISD = 0b00000000;
-    Lcd_Init();
-  
+    USART_config();
     while (1)                           // LOOP PRINCIPAL **********************
     {
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("LCD Library for");
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_String("MPLAB XC8");
-        __delay_ms(2000);
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("Developed By");
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_String("electroSome");
-        __delay_ms(2000);
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("www.electroSome.com");
-
-        for(a=0;a<15;a++)
+        lcd ();
+        ADCON0bits.GO_DONE = 1;         // Se inicia el GO_DONE para iniciar conversion
+        __delay_ms(10);                 // Se da tiempo para el Acquisition Time Example
+        if (ADCON0bits.GO_DONE == 0)    // Si ya termino la conversion
         {
-            __delay_ms(300);
-            Lcd_Shift_Left();
+            ADCON0bits.GO_DONE = 1;     // Se inicia el GO_DONE para iniciar nuevamente
+            adc_value = ADRESH;         // Se Coloca el valor del registro de la conversion en una variable     
+            if (PIR1bits.TXIF == 1)
+            {
+                TXREG  = ADRESH;
+            }
         }
-
-        for(a=0;a<15;a++)
-        {
-            __delay_ms(300);
-            Lcd_Shift_Right();
-        }
-
-        Lcd_Clear();
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_Char('H');
-        Lcd_Write_Char('o');
-        Lcd_Write_Char('l');
-        Lcd_Write_Char('a');
-        
-        //Lcd_Set_Cursor(1,1);
-        //Lcd_Write_String('Hola Mundo');
-        __delay_ms(2000);
     }
 }
 
@@ -166,18 +144,18 @@ void interrup_config (void)
     INTCONbits.PEIE = 0;      // Interrupciones periferias deshabilidatas
     INTCONbits.T0IE = 1;      // Interrupcion del Timer0 habilitada
     INTCONbits.INTE = 0;      // Interrupcion externa INT deshabilitada
-    INTCONbits.RBIE = 1;      // Interrupcion del Puerto B habilitadas
+    INTCONbits.RBIE = 0;      // Interrupcion del Puerto B habilitadas
     INTCONbits.T0IF = 0;      // Bandera de Interrupcion del Timer 0
     INTCONbits.INTF = 0;      // Bandera de interrupcion del INT
     INTCONbits.RBIF = 0;      // Bandera de interrrupcion del Puerto B
-    IOCB = 0b00000011;        // Interrup on Change enable
+    IOCB = 0b00000000;        // Interrup on Change enable
 }
 
 void osc_config (void) 
 {  
     OSCCONbits.IRCF2 = 1;     // Oscilador en 4Mhz
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF2 = 0;
+    OSCCONbits.IRCF0 = 0;     
     OSCCONbits.OSTS = 0;      // Oscilador interno
     OSCCONbits.HTS = 0;       
     OSCCONbits.LTS = 1;
@@ -192,7 +170,7 @@ void tmr0_config (void)
     OPTION_REGbits.PS2 = 0;   // Prescaler en 8
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 0;
-    TMR0 = 10;                // Valor del TIMER0 para un delay de 0.246 seg.
+    TMR0 = 231;                // Valor del TIMER0 para un delay de 0.246 seg.
 }
 
 //============================================================================*/
@@ -209,15 +187,44 @@ void  USART_config(void)                       // Valor del pic a compu de dos p
     USART_lib_config();
 }
 
+
+
+
 //============================================================================*/
 // FUNCIONES
 //============================================================================*/
 
-// void ADRESL_voltaje ()              // Conversion de Binario a Voltaje
-//{
-    // int voltaje;
-    // voltaje = ADRESL * 5 / 256;
-//}
+void  lcd (void)                       // Valor del pic a compu de dos potensiometros
+{
+    unsigned int a;
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("S1:   S2:   S3: ");
+    Lcd_Set_Cursor(2,0);
+    Conversion (); 
+    Lcd_Set_Cursor(2,6);
+    Conversion (); 
+    
+    
+}
+
+void Conversion ()              // Conversion de Binario a Voltaje
+{
+    voltaje = ADRESH * 2;
+    char unidad = voltaje / 100;
+    
+    char x1 = voltaje % 100;
+    char x2 = x1 / 10;
+    
+    char y1 = x1 % 10;
+    char y2 = y1 / 1;
+    
+    Lcd_Write_Char(unidad+48); 
+    Lcd_Write_Char(46);
+    Lcd_Write_Char(x2+48);
+    Lcd_Write_Char(y2+48);  
+    Lcd_Write_Char(86);
+}
+
 
 
 // void USART ()                       // Valor del pic a compu de dos potensiometros
@@ -252,6 +259,9 @@ void  USART_config(void)                       // Valor del pic a compu de dos p
     //      }
     // } 
 //}
+
+
+
 
 // void contador ()                    // Valor de Compu a LCD
 //{

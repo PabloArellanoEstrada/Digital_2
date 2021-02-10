@@ -590,8 +590,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ADC_lib.c: 122:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "124
-[; ;ADC_lib.c: 124:     ADCON1bits.ADFM = 1;
-[e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
+[; ;ADC_lib.c: 124:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
 "125
 [; ;ADC_lib.c: 125:     ADCON1bits.VCFG1 = 0;
 [e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
