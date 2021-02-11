@@ -8,15 +8,18 @@
 
 #ifndef USART_H
 #define	USART_H
+#define _XTAL_FREQ 4000000
 
 //------------------------------------------------------------------------------
 // Funciones de Conversion ADC
 //------------------------------------------------------------------------------
 
-#include <xc.h>                // include processor files - each processor file is guarded.  
-#include <stdint.h>            // Variables de ancho definido
+#include <xc.h>                 // 
+#include <stdint.h>             // Variables de ancho definido
+#include <stdio.h>              // Variables
 
-void USART_lib_config();         // Prototipo de funcion
+
+void USART_lib_config(void);         // Prototipo de funcion
 
 #endif	/* ADC_lib_H */
 

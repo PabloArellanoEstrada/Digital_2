@@ -297,8 +297,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD_8bits.c: 23:     PORTCbits.RC2 = 1;
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
 "24
-[; ;LCD_8bits.c: 24:     _delay((unsigned long)((5)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;LCD_8bits.c: 24:     _delay((unsigned long)((5)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "25
 [; ;LCD_8bits.c: 25:     PORTCbits.RC2 = 0;
 [e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
@@ -318,8 +318,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD_8bits.c: 30:     Lcd_Port(0b0000000);
 [e ( _Lcd_Port (1 -> -> 0 `i `uc ]
 "31
-[; ;LCD_8bits.c: 31:     _delay((unsigned long)((20)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;LCD_8bits.c: 31:     _delay((unsigned long)((20)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "32
 [; ;LCD_8bits.c: 32:     Lcd_Cmd(0b00110000);
 [e ( _Lcd_Cmd (1 -> -> 48 `i `uc ]
@@ -330,8 +330,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD_8bits.c: 34:     PORTCbits.RC1 = 0;
 [e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
 "35
-[; ;LCD_8bits.c: 35:     _delay((unsigned long)((5)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;LCD_8bits.c: 35:     _delay((unsigned long)((5)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "36
 [; ;LCD_8bits.c: 36:     Lcd_Cmd(0b00110000);
 [e ( _Lcd_Cmd (1 -> -> 48 `i `uc ]
@@ -342,8 +342,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD_8bits.c: 38:     PORTCbits.RC1 = 0;
 [e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
 "39
-[; ;LCD_8bits.c: 39:     _delay((unsigned long)((11)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 11 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;LCD_8bits.c: 39:     _delay((unsigned long)((11)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 11 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "40
 [; ;LCD_8bits.c: 40:     Lcd_Cmd(0b00110000);
 [e ( _Lcd_Cmd (1 -> -> 48 `i `uc ]
@@ -526,8 +526,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD_8bits.c: 90:     PORTCbits.RC2 = 1;
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
 "91
-[; ;LCD_8bits.c: 91:     _delay((unsigned long)((40)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;LCD_8bits.c: 91:     _delay((unsigned long)((40)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "92
 [; ;LCD_8bits.c: 92:     PORTCbits.RC2 = 0;
 [e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]

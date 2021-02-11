@@ -2652,22 +2652,22 @@ void Lcd_Cmd (char a)
     PORTCbits.RC0 = 0;
     Lcd_Port(a);
     PORTCbits.RC2 = 1;
-    _delay((unsigned long)((5)*(8000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
     PORTCbits.RC2 = 0;
 }
 
 void Lcd_Init()
 {
     Lcd_Port(0b0000000);
-    _delay((unsigned long)((20)*(8000000/4000.0)));
+    _delay((unsigned long)((20)*(4000000/4000.0)));
     Lcd_Cmd(0b00110000);
     PORTCbits.RC0 = 0;
     PORTCbits.RC1 = 0;
-    _delay((unsigned long)((5)*(8000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
     Lcd_Cmd(0b00110000);
      PORTCbits.RC0 = 0;
     PORTCbits.RC1 = 0;
-    _delay((unsigned long)((11)*(8000000/4000.0)));
+    _delay((unsigned long)((11)*(4000000/4000.0)));
     Lcd_Cmd(0b00110000);
     PORTCbits.RC0 = 0;
     PORTCbits.RC1 = 0;
@@ -2719,6 +2719,6 @@ void Lcd_Write_Char(char a)
     PORTCbits.RC0 = 1;
     Lcd_Port(a);
     PORTCbits.RC2 = 1;
-    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    _delay((unsigned long)((40)*(4000000/4000000.0)));
     PORTCbits.RC2 = 0;
 }

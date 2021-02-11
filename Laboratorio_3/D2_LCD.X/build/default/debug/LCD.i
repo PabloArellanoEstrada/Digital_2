@@ -2753,9 +2753,11 @@ void Lcd_Write_Char_4(char a);
 # 30 "LCD.c" 2
 
 # 1 "./USART.h" 1
-# 17 "./USART.h"
+# 18 "./USART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 17 "./USART.h" 2
+# 18 "./USART.h" 2
+
+
 
 
 void USART_lib_config();
@@ -2787,13 +2789,19 @@ void USART_lib_config();
 
 
 
+
 uint16_t i = 0;
 uint8_t adc_value = 0;
 
-
-
-
-
+uint8_t voltaje;
+uint8_t unidad;
+uint8_t x1;
+uint8_t y1;
+uint8_t x2;
+uint8_t y2;
+uint8_t leer;
+uint8_t contador = 0;
+# 78 "LCD.c"
 void setup(void);
 void osc_config (void);
 void interrup_config (void);
@@ -2801,6 +2809,12 @@ void tmr0_config(void);
 void adc_config (void);
 void USART_config(void);
 void lcd (void);
+void Conversion (void);
+void escribir_char (uint8_t valor);
+char leer_char(void);
+void contador_lcd(void) ;
+void virtual (void);
+
 
 
 
@@ -2809,13 +2823,12 @@ void lcd (void);
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
 
-    if (INTCONbits.TMR0IF == 1)
+    if (PIR1bits.RCIF == 1)
     {
-        INTCONbits.TMR0IF = 0;
-        TMR0 = 10;
-        lcd ();
+        leer = leer_char();
+        PIR1bits.RCIF = 0;
     }
- }
+}
 
 
 
@@ -2826,21 +2839,22 @@ void main(void)
     setup();
     osc_config();
     interrup_config();
+    Lcd_Init();
     tmr0_config();
     adc_config ();
     USART_config();
-
-    Lcd_Init();
-
+    virtual ();
     while (1)
     {
+        lcd ();
+        contador_lcd();
         ADCON0bits.GO_DONE = 1;
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         if (ADCON0bits.GO_DONE == 0)
         {
             ADCON0bits.GO_DONE = 1;
-            adc_value = ADRESL;
-            PORTE = 1; }
+            adc_value = ADRESH;
+        }
     }
 }
 
@@ -2857,6 +2871,8 @@ void setup(void)
     TRISB = 0;
     PORTB = 0;
     TRISC = 0;
+    TRISCbits.TRISC6 = 0;
+    TRISCbits.TRISC7 = 1;
     PORTC = 0;
     TRISD = 0;
     PORTD = 0;
@@ -2867,10 +2883,10 @@ void setup(void)
 void interrup_config (void)
 {
     INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 0;
-    INTCONbits.T0IE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.T0IE = 0;
     INTCONbits.INTE = 0;
-    INTCONbits.RBIE = 1;
+    INTCONbits.RBIE = 0;
     INTCONbits.T0IF = 0;
     INTCONbits.INTF = 0;
     INTCONbits.RBIF = 0;
@@ -2881,7 +2897,7 @@ void osc_config (void)
 {
     OSCCONbits.IRCF2 = 1;
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF2 = 0;
+    OSCCONbits.IRCF0 = 0;
     OSCCONbits.OSTS = 0;
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 1;
@@ -2896,7 +2912,7 @@ void tmr0_config (void)
     OPTION_REGbits.PS2 = 0;
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 0;
-    TMR0 = 10;
+    TMR0 = 231;
 }
 
 
@@ -2913,12 +2929,86 @@ void USART_config(void)
     USART_lib_config();
 }
 
+
+
+
+
 void lcd (void)
 {
     unsigned int a;
-    Lcd_Clear();
     Lcd_Set_Cursor(1,1);
-    Lcd_Write_String(" S1:  S2:  S3:  ");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("MPLAB XC8");
+    Lcd_Write_String("S1:   S2:   S3: ");
+    Lcd_Set_Cursor(2,0);
+    Conversion ();
+    Lcd_Set_Cursor(2,6);
+    Conversion ();
+    Lcd_Set_Cursor(2,13);
+    contador_lcd();
+
+}
+
+void Conversion (void)
+{
+    voltaje = ADRESH * 2;
+    unidad = voltaje / 100;
+
+    x1 = voltaje % 100;
+    x2 = x1 / 10;
+
+    y1 = x1 % 10;
+    y2 = y1 / 1;
+
+    Lcd_Write_Char(unidad+48);
+    Lcd_Write_Char(46);
+    Lcd_Write_Char(x2+48);
+    Lcd_Write_Char(y2+48);
+    Lcd_Write_Char(86);
+
+
+}
+
+void virtual (void)
+{
+    escribir_char (unidad);
+    escribir_char (46);
+    escribir_char (x2);
+    escribir_char (y2);
+    escribir_char (86);
+    escribir_char ('0');
+    escribir_char ('H');
+}
+
+void escribir_char (uint8_t valor)
+{
+    TXREG = valor;
+    while (PIR1bits.TXIF == 0);
+}
+
+char leer_char(void)
+{
+    if (RCSTAbits.OERR ==0)
+    {
+        CREN = 0;
+        __nop();
+        CREN = 1;
+    }
+    return (RCREG);
+}
+
+void contador_lcd (void)
+{
+    if (leer == '+')
+    {
+        contador = contador + 1;
+        Lcd_Write_Char(contador+48);
+    }
+    else if (leer == '-')
+    {
+        contador = contador - 1;
+        Lcd_Write_Char(contador+48);
+    }
+    else
+    {
+        Lcd_Write_Char(contador+48);
+    }
 }

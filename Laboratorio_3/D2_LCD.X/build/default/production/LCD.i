@@ -2742,23 +2742,25 @@ void initADC (uint8_t CHS);
 void Lcd_Port (char a);
 void Lcd_Cmd (char a);
 
-void Lcd_Init();
-void Lcd_Clear();
+void Lcd_Init(void);
+void Lcd_Clear(void);
 void Lcd_Set_Cursor(char a, char b);
 void Lcd_Write_String(char *a);
-void Lcd_Shift_Left();
-void Lcd_Shift_Right();
+void Lcd_Shift_Left(void);
+void Lcd_Shift_Right(void);
 void Lcd_Write_Char(char a);
 void Lcd_Write_Char_4(char a);
 # 30 "LCD.c" 2
 
 # 1 "./USART.h" 1
-# 17 "./USART.h"
+# 18 "./USART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 17 "./USART.h" 2
+# 18 "./USART.h" 2
 
 
-void USART_lib_config();
+
+
+void USART_lib_config(void);
 # 31 "LCD.c" 2
 
 
@@ -2787,9 +2789,38 @@ void USART_lib_config();
 
 
 
+
 uint16_t i = 0;
-uint8_t adc_value = 0;
+uint8_t adc_value1 = 0;
+uint8_t adc_value2 = 0;
+
 uint8_t voltaje;
+uint8_t unidad;
+uint8_t x1;
+uint8_t y1;
+uint8_t x2;
+uint8_t y2;
+
+uint8_t voltajez;
+uint8_t unidadz;
+uint8_t x1z;
+uint8_t y1z;
+uint8_t x2z;
+uint8_t y2z;
+
+
+uint8_t leer;
+uint8_t contador;
+
+uint8_t compu_valor1;
+uint8_t compu_valor2;
+uint8_t aux1;
+uint8_t aux2;
+
+
+uint16_t pressed_ok2 = 0;
+uint16_t pressed_ok1 = 0;
+
 
 
 
@@ -2798,11 +2829,19 @@ uint8_t voltaje;
 void setup(void);
 void osc_config (void);
 void interrup_config (void);
-void tmr0_config(void);
 void adc_config (void);
 void USART_config(void);
 void lcd (void);
-void Conversion (void);
+void Conversion1 (void);
+void Conversion2 (void);
+void escribir_char (uint8_t valor);
+char leer_char(void);
+void contador_lcd(void) ;
+void virtual_display1 (void);
+void virtual_display2 (void);
+void adc_conversion1 (void);
+void adc_conversion2 (void);
+void tmr0_config (void);
 
 
 
@@ -2811,13 +2850,22 @@ void Conversion (void);
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
 
-    if (INTCONbits.TMR0IF == 1)
+    if (PIR1bits.RCIF == 1)
+    {
+        leer = leer_char();
+        PIR1bits.RCIF = 0;
+    }
+
+      if (INTCONbits.TMR0IF == 1)
     {
         INTCONbits.TMR0IF = 0;
-        TMR0 = 231;
+        unidad = unidad;
+        x2 = x2;
+        y2 = y2;
 
+        TMR0 = 10;
 
-    }
+      }
 }
 
 
@@ -2829,24 +2877,21 @@ void main(void)
     setup();
     osc_config();
     interrup_config();
-    Lcd_Init();
     tmr0_config();
+    Lcd_Init();
     adc_config ();
     USART_config();
+
     while (1)
     {
         lcd ();
-        ADCON0bits.GO_DONE = 1;
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-        if (ADCON0bits.GO_DONE == 0)
-        {
-            ADCON0bits.GO_DONE = 1;
-            adc_value = ADRESH;
-            if (PIR1bits.TXIF == 1)
-            {
-                TXREG = ADRESH;
-            }
-        }
+        pressed_ok1 = pressed_ok1 + 1;
+        pressed_ok2 = pressed_ok2 + 1;
+
+        initADC (0);
+        adc_conversion1 ();
+        initADC (1);
+        adc_conversion2 ();
     }
 }
 
@@ -2856,13 +2901,18 @@ void main(void)
 
 void setup(void)
 {
-    ANSEL = 1;
+    ANSELbits.ANS0 = 1;
+    ANSELbits.ANS1 = 1;
     TRISA = 1;
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
     PORTA = 0;
     ANSELH = 0;
     TRISB = 0;
     PORTB = 0;
     TRISC = 0;
+    TRISCbits.TRISC6 = 0;
+    TRISCbits.TRISC7 = 1;
     PORTC = 0;
     TRISD = 0;
     PORTD = 0;
@@ -2873,7 +2923,7 @@ void setup(void)
 void interrup_config (void)
 {
     INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 0;
+    INTCONbits.PEIE = 1;
     INTCONbits.T0IE = 1;
     INTCONbits.INTE = 0;
     INTCONbits.RBIE = 0;
@@ -2902,7 +2952,7 @@ void tmr0_config (void)
     OPTION_REGbits.PS2 = 0;
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 0;
-    TMR0 = 231;
+    TMR0 = 200;
 }
 
 
@@ -2918,34 +2968,161 @@ void USART_config(void)
 {
     USART_lib_config();
 }
-# 197 "LCD.c"
+
+
+
+
+
+void adc_conversion1 (void)
+{
+    ADCON0bits.GO_DONE = 1;
+        _delay((unsigned long)((10)*(4000000/4000.0)));
+        if (ADCON0bits.GO_DONE == 0)
+        {
+            ADCON0bits.GO_DONE = 1;
+            adc_value1 = ADRESH;
+        }
+}
+
+void adc_conversion2 (void)
+{
+    ADCON0bits.GO_DONE = 1;
+        _delay((unsigned long)((10)*(4000000/4000.0)));
+        if (ADCON0bits.GO_DONE == 0)
+        {
+            ADCON0bits.GO_DONE = 1;
+            adc_value2 = ADRESH;
+        }
+}
+
 void lcd (void)
 {
     unsigned int a;
     Lcd_Set_Cursor(1,1);
     Lcd_Write_String("S1:   S2:   S3: ");
     Lcd_Set_Cursor(2,0);
-    Conversion ();
+    Conversion1 ();
     Lcd_Set_Cursor(2,6);
-    Conversion ();
-
-
+    Conversion2 ();
+    contador_lcd();
+    if (contador < 10)
+    {
+        Lcd_Set_Cursor(2,14);
+        Lcd_Write_Char(contador + 48);
+    }
+    else if (contador >= 10)
+    {
+        char w1 = contador/10;
+        char w2 = contador % 10;
+        Lcd_Set_Cursor(2,13);
+        Lcd_Write_Char(w1+48);
+        Lcd_Write_Char(w2+48);
+    }
 }
 
-void Conversion ()
+void Conversion1 ()
 {
-    voltaje = ADRESH * 2;
-    char unidad = voltaje / 100;
+    voltaje = adc_value1 * 2;
+    unidad = voltaje / 100;
 
-    char x1 = voltaje % 100;
-    char x2 = x1 / 10;
+    x1 = voltaje % 100;
+    x2 = x1 / 10;
 
-    char y1 = x1 % 10;
-    char y2 = y1 / 1;
+    y1 = x1 % 10;
+    y2 = y1 / 1;
 
     Lcd_Write_Char(unidad+48);
     Lcd_Write_Char(46);
     Lcd_Write_Char(x2+48);
     Lcd_Write_Char(y2+48);
     Lcd_Write_Char(86);
+    virtual_display1();
+}
+
+void Conversion2 ()
+{
+    voltajez = adc_value2 * 2;
+    unidadz = voltajez / 100;
+
+    x1z = voltajez % 100;
+    x2z = x1z / 10;
+
+    y1z = x1z % 10;
+    y2z = y1z / 1;
+
+    Lcd_Write_Char(unidadz+48);
+    Lcd_Write_Char(46);
+    Lcd_Write_Char(x2z+48);
+    Lcd_Write_Char(y2z+48);
+    Lcd_Write_Char(86);
+    virtual_display2();
+}
+
+void virtual_display1 (void)
+{
+
+    if (pressed_ok1 > 25)
+        {
+            escribir_char (83);
+            escribir_char (49);
+            escribir_char (58);
+            escribir_char (unidad+48);
+            escribir_char (46);
+            escribir_char (x2+48);
+            escribir_char (y2+48);
+            escribir_char (86);
+            escribir_char (32);
+            escribir_char (32);
+            pressed_ok1 = 0;
+        }
+}
+
+void virtual_display2 (void)
+{
+    if (pressed_ok2 > 25)
+        {
+            escribir_char (83);
+            escribir_char (50);
+            escribir_char (58);
+            escribir_char (unidadz+48);
+            escribir_char (46);
+            escribir_char (x2z+48);
+            escribir_char (y2z+48);
+            escribir_char (86);
+            escribir_char (32);
+            escribir_char (32);
+            pressed_ok2 = 0;
+        }
+
+}
+
+void escribir_char (uint8_t valor)
+{
+    TXREG = valor;
+    while (PIR1bits.TXIF == 0);
+}
+
+char leer_char(void)
+{
+    if (RCSTAbits.OERR ==0)
+    {
+        CREN = 0;
+        __nop();
+        CREN = 1;
+    }
+    return (RCREG);
+}
+
+void contador_lcd (void)
+{
+    if (leer == '+')
+    {
+        contador = contador + 1;
+        leer = 0;
+    }
+    else if (leer == '-')
+    {
+        contador = contador - 1;
+        leer = 0;
+    }
 }

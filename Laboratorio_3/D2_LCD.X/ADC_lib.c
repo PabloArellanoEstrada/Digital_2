@@ -126,3 +126,5 @@ void initADC (uint8_t CHS)
     ADCON1bits.VCFG0 = 0;               // Tierra  = 0V
 }
 
+
+
