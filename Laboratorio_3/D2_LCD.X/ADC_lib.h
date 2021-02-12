@@ -1,22 +1,25 @@
 /* 
- * Project: Interrupciones y Librerias
+ * Project: LCD
  * File:    ADC_lib.h
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
  * Created: February 9, 2021,
  */
 
+//============================================================================*/
+// LIBRERIA
+//============================================================================*/
+
 #ifndef ADC_lib_H
 #define	ADC_lib_H
+#include <xc.h>                
+#include <stdint.h>  
 
-//------------------------------------------------------------------------------
-// Funciones de Conversion ADC
-//------------------------------------------------------------------------------
+//============================================================================*/
+// PROTOTIPO DE FUNCIONES
+//============================================================================*/
 
-#include <xc.h>                // include processor files - each processor file is guarded.  
-#include <stdint.h>            // Variables de ancho definido
-
-void initADC (uint8_t CHS);    // Prototipo de funcion
+void initADC (uint8_t CHS);    
 
 #endif	/* ADC_lib_H */
 

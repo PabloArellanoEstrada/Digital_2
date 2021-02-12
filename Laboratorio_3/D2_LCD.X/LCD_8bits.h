@@ -1,5 +1,5 @@
 /* 
- * Project: Interrupciones y Librerias
+ * Project: LCD
  * File:    ADC_lib.h
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
@@ -8,6 +8,10 @@
  * Autor:   Ligo George
  * Autor 2: Pablo Mazariegos (Canvas)
  */
+
+//============================================================================*/
+// LIBRERIA
+//============================================================================*/
 
 #ifndef LCD_8bits_H
 #define	LCD_8bits_H
@@ -25,66 +29,19 @@
 #define D6 PORTDbits.RD6
 #define D7 PORTDbits.RD7
 
-
 #ifndef _XTAL_FREQ
 #define	_XTAL_FREQ 4000000
 #endif
+#include <xc.h>                         
+#include <stdint.h>     
 
-#ifndef RS
-#define	RS PORTCbits.RC0
-#endif
-
-#ifndef RW
-#define	RW PORTCbits.RC1
-#endif
-
-#ifndef E
-#define	E  PORTCbits.RC2
-#endif
-
-#ifndef D0
-#define D0 PORTDbits.RD0
-#endif
-
-#ifndef D1
-#define D1 PORTDbits.RD1
-#endif
-
-#ifndef D2
-#define D2 PORTDbits.RD2
-#endif
-
-#ifndef D3
-#define D3 PORTDbits.RD3
-#endif
-
-#ifndef D4
-#define D4 PORTDbits.RD4
-#endif
-
-#ifndef D5
-#define D5 PORTDbits.RD5
-#endif
-
-#ifndef D6
-#define D6 PORTDbits.RD6
-#endif
-
-#ifndef D7
-#define D7 PORTDbits.RD7
-#endif
-
-//------------------------------------------------------------------------------
-// Funciones de Conversion ADC
-//------------------------------------------------------------------------------
-
-#include <xc.h>                        // include processor files - each processor file is guarded.  
-#include <stdint.h>                    // Variables de ancho definido
+//============================================================================*/
+// PROTOTIPO DE FUNCIONES 
+//============================================================================*/
 
 void Lcd_Port (char a);
 void Lcd_Cmd (char a);
-
-void Lcd_Init(void);                       // Prototipo de funcion
+void Lcd_Init(void);                       
 void Lcd_Clear(void);
 void Lcd_Set_Cursor(char a, char b);
 void Lcd_Write_String(char *a);

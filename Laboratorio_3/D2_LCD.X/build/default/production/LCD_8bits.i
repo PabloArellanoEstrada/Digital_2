@@ -7,9 +7,9 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "LCD_8bits.c" 2
-# 12 "LCD_8bits.c"
+# 16 "LCD_8bits.c"
 # 1 "./LCD_8bits.h" 1
-# 81 "./LCD_8bits.h"
+# 35 "./LCD_8bits.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2490,7 +2490,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 81 "./LCD_8bits.h" 2
+# 35 "./LCD_8bits.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2625,12 +2625,15 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 82 "./LCD_8bits.h" 2
+# 36 "./LCD_8bits.h" 2
+
+
+
+
 
 
 void Lcd_Port (char a);
 void Lcd_Cmd (char a);
-
 void Lcd_Init(void);
 void Lcd_Clear(void);
 void Lcd_Set_Cursor(char a, char b);
@@ -2639,7 +2642,11 @@ void Lcd_Shift_Left(void);
 void Lcd_Shift_Right(void);
 void Lcd_Write_Char(char a);
 void Lcd_Write_Char_4(char a);
-# 12 "LCD_8bits.c" 2
+# 16 "LCD_8bits.c" 2
+
+
+
+
 
 
 void Lcd_Port (char a)

@@ -6,20 +6,22 @@
  * Created: February 9, 2021,
  */
 
+//============================================================================*/
+// LIBRERIA
+//============================================================================*/
+
 #ifndef USART_H
 #define	USART_H
 #define _XTAL_FREQ 4000000
+#include <xc.h>               
+#include <stdint.h>          
+#include <stdio.h>     
 
-//------------------------------------------------------------------------------
-// Funciones de Conversion ADC
-//------------------------------------------------------------------------------
+//============================================================================*/
+// PROTOTIPO DE FUNCIONES
+//============================================================================*/
 
-#include <xc.h>                 // 
-#include <stdint.h>             // Variables de ancho definido
-#include <stdio.h>              // Variables
+void USART_lib_config(void);         
 
-
-void USART_lib_config(void);         // Prototipo de funcion
-
-#endif	/* ADC_lib_H */
+#endif	/* USART_H */
 

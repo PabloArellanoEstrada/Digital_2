@@ -10,26 +10,12 @@
 // LIBRERIAS
 //============================================================================*/
 
-#define	RS PORTCbits.RC0
-#define	RW PORTCbits.RC1
-#define	E  PORTCbits.RC2
-
-#define D0 PORTDbits.RD0
-#define D1 PORTDbits.RD1
-#define D2 PORTDbits.RD2
-#define D3 PORTDbits.RD3
-#define D4 PORTDbits.RD4
-#define D5 PORTDbits.RD5
-#define D6 PORTDbits.RD6
-#define D7 PORTDbits.RD7
-
-#include <xc.h>                 // 
+#include <xc.h>                 // XC8 libreria
 #include <stdint.h>             // Variables de ancho definido
-#include <stdio.h>              // Variables
+#include <stdio.h>              // Tipos de variables, macros, entradas y salidas
 #include "ADC_lib.h"            // Libreria Personalizada ADC
-#include "LCD_8bits.h"     
-#include "USART.h"
-
+#include "LCD_8bits.h"          // Libreria Personalizada LCD
+#include "USART.h"              // Libreria Personalizada comunicacion serial
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION
@@ -51,88 +37,75 @@
 // DEFINE
 #define _XTAL_FREQ 4000000
 
-
 //============================================================================*/
 // VARIABLES
 //============================================================================*/
 
-uint16_t i = 0;                  // Variables Configuracion ADC
+uint8_t i = 0;                  // ADC
 uint8_t adc_value1 = 0; 
 uint8_t adc_value2 = 0; 
 
-uint8_t voltaje;
+uint8_t voltaje;                // Conversion a LCD1
 uint8_t unidad;
 uint8_t x1;
 uint8_t y1;
 uint8_t x2;
 uint8_t y2;
 
-uint8_t voltajez;
+uint8_t voltajez;               // Conversion a LCD2
 uint8_t unidadz;
 uint8_t x1z;
 uint8_t y1z;
 uint8_t x2z;
 uint8_t y2z;
 
-
-uint8_t leer;  
+uint8_t leer;                   // Comunicacion Serial
 uint8_t contador;
 
-uint8_t compu_valor1;
-uint8_t compu_valor2;
-uint8_t aux1;
-uint8_t aux2;
-
-
-uint16_t pressed_ok2 = 0;       
-uint16_t pressed_ok1 = 0;   
-
+uint8_t w1;                     // Conversion Terminal Virtual
+uint8_t w2;
+uint8_t a;
+uint8_t velocidad1 = 0;         
+uint8_t velocidad2 = 0;   
+uint8_t velocidad3 = 0; 
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
 //============================================================================*/
 
-void setup(void);
+void setup(void);                    // Configuracion inicial
 void osc_config (void);
 void interrup_config (void);
 void adc_config (void);
 void USART_config(void); 
-void lcd (void);
+
+void adc_conversion1 (void);         // ADC
+void adc_conversion2 (void);
+
+char leer_char(void);                // USART
+void escribir_char (uint8_t valor);
+
+void lcd (void);                     // LCD
 void Conversion1 (void); 
 void Conversion2 (void); 
-void escribir_char (uint8_t valor);
-char leer_char(void);
 void contador_lcd(void) ;
-void virtual_display1 (void);
+
+void virtual_display1 (void);        // Terminal virtual
 void virtual_display2 (void);
-void adc_conversion1 (void);
-void adc_conversion2 (void);
-void tmr0_config (void); 
+void virtual_display3 (void);
 
 //============================================================================*/
 // INTERRUPCIONES
 //============================================================================*/
 
-void __interrupt() ISR(void) 
-{
-    // La interrupcion global GIE inicia automaticamente con GIE = 0
-    if (PIR1bits.RCIF == 1)                                                    ///////////////////
+void __interrupt() ISR(void)    
+{                               // GIE = 0
+    if (PIR1bits.RCIF == 1)     // Se puede leer?                                            
     {
-        leer = leer_char();
-        PIR1bits.RCIF = 0;      
+        leer = leer_char();     // Se lee dato
+        PIR1bits.RCIF = 0;      // Se apaga bandera
     } 
-    
-      if (INTCONbits.TMR0IF == 1)  // Si hay desboradmiento de TIMER0 la bandera se levanta y se revisa
-    {
-        INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
-        unidad = unidad;
-        x2 = x2;
-        y2 = y2;
-        
-        TMR0 = 10;      
-        
-      }
-}
+}                               // GIE = 1
 
 //============================================================================*/
 // CICLO PRINCIPAL
@@ -143,21 +116,19 @@ void main(void)
     setup();                            // Funciones de Configuracion
     osc_config();
     interrup_config();
-    tmr0_config();
     Lcd_Init();
     adc_config ();
     USART_config();  
-    
-    while (1)                           // LOOP PRINCIPAL **********************
+    while (1)                           // Loop principal
     {
-        lcd ();
-        pressed_ok1 = pressed_ok1 + 1;
-        pressed_ok2 = pressed_ok2 + 1;
-       
-        initADC (0);
-        adc_conversion1 ();
-        initADC (1);
-        adc_conversion2 ();
+        lcd ();                         // LCD
+        velocidad1 = velocidad1 + 1;    // Velocidad terminal
+        velocidad2 = velocidad2 + 1;
+        velocidad3 = velocidad3 + 1;
+        initADC (0);                    // Canal 0
+        adc_conversion1 ();             // Conversion canal 0
+        initADC (1);                    // Canal 1
+        adc_conversion2 ();             // Conversion canal 1
     }
 }
 
@@ -167,14 +138,14 @@ void main(void)
 
 void setup(void) 
 {
-    ANSELbits.ANS0 = 1;       // Puerto A analogico
-    ANSELbits.ANS1 = 1;       // Puerto A analogico
+    ANSELbits.ANS0 = 1;       // Bit 0 analogico
+    ANSELbits.ANS1 = 1;       // Bit 1 analogico
     TRISA = 1;                // Puerto A como entrada 
-    TRISAbits.TRISA0 = 1;
-    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA0 = 1;     // Bit 0 entrada
+    TRISAbits.TRISA1 = 1;     // Bit 1 entrada
     PORTA = 0;                // Puerto A entrada apagado
     ANSELH = 0;               // Puerto B digital
-    TRISB = 0;                // 
+    TRISB = 0;                // Puerto B salida
     PORTB = 0;                // Puerto B RB0 y RB1 entrada igual a 0
     TRISC = 0;                // Puerto C salida leds
     TRISCbits.TRISC6 = 0;     // TX salida
@@ -189,8 +160,8 @@ void setup(void)
 void interrup_config (void) 
 {
     INTCONbits.GIE = 1;       // Interrupciones globales habilitadas
-    INTCONbits.PEIE = 1;      // Interrupciones periferias deshabilidatas
-    INTCONbits.T0IE = 1;      // Interrupcion del Timer0 habilitada
+    INTCONbits.PEIE = 1;      // Interrupciones periferias habilidatas
+    INTCONbits.T0IE = 0;      // Interrupcion del Timer0 deshabilitada
     INTCONbits.INTE = 0;      // Interrupcion externa INT deshabilitada
     INTCONbits.RBIE = 0;      // Interrupcion del Puerto B habilitadas
     INTCONbits.T0IF = 0;      // Bandera de Interrupcion del Timer 0
@@ -204,21 +175,10 @@ void osc_config (void)
     OSCCONbits.IRCF2 = 1;     // Oscilador en 4Mhz
     OSCCONbits.IRCF1 = 1;
     OSCCONbits.IRCF0 = 0;     
-    OSCCONbits.OSTS = 0;      // Oscilador interno
-    OSCCONbits.HTS = 0;       
-    OSCCONbits.LTS = 1;
-    OSCCONbits.SCS = 0;       // Oscilador basado en el reloj
-}
-
-void tmr0_config (void) 
-{
-    OPTION_REGbits.nRBPU = 1; // PORTB pull-ups habilitados
-    OPTION_REGbits.T0CS = 0;  // TIMER0 como temporizador, no contador
-    OPTION_REGbits.PSA = 0;   // Modulo de TIMER con prescaler, no se usa WDT
-    OPTION_REGbits.PS2 = 0;   // Prescaler en 8
-    OPTION_REGbits.PS1 = 1;
-    OPTION_REGbits.PS0 = 0;
-    TMR0 = 200;                // Valor del TIMER0 para un delay de 0.246 seg.
+    OSCCONbits.OSTS  = 0;     // Oscilador interno
+    OSCCONbits.HTS   = 0;       
+    OSCCONbits.LTS   = 1;
+    OSCCONbits.SCS   = 0;     // Oscilador basado en el reloj
 }
 
 //============================================================================*/
@@ -227,12 +187,12 @@ void tmr0_config (void)
 
 void adc_config (void)
 {
-    initADC (0);              // Configuracion de ADC en libreria
+    initADC (0);              // ADC
 }
 
-void  USART_config(void)                       // Valor del pic a compu de dos potensiometros
+void  USART_config(void)      
 {
-    USART_lib_config();
+    USART_lib_config();       // USART
 }
 
 //============================================================================*/
@@ -241,155 +201,174 @@ void  USART_config(void)                       // Valor del pic a compu de dos p
 
 void adc_conversion1 (void)
 {
-    ADCON0bits.GO_DONE = 1;         // Se inicia el GO_DONE para iniciar conversion
-        __delay_ms(10);                 // Se da tiempo para el Acquisition Time Example
-        if (ADCON0bits.GO_DONE == 0)    // Si ya termino la conversion
-        {
-            ADCON0bits.GO_DONE = 1;     // Se inicia el GO_DONE para iniciar nuevamente
-            adc_value1 = ADRESH;         // Se Coloca el valor del registro de la conversion en una variable     
-        }
+    ADCON0bits.GO_DONE = 1;            // GO_DONE para iniciar conversion
+    __delay_ms(10);                    // Se da tiempo para el Acquisition Time Example
+    if (ADCON0bits.GO_DONE == 0)       // Si ya termino la conversion
+    {
+        ADCON0bits.GO_DONE = 1;        // Se inicia el GO_DONE para iniciar nuevamente
+        adc_value1 = ADRESH;           // Registro de la conversion en una variable     
+    }
 }
 
 void adc_conversion2 (void)
 {
-    ADCON0bits.GO_DONE = 1;         // Se inicia el GO_DONE para iniciar conversion
-        __delay_ms(10);                 // Se da tiempo para el Acquisition Time Example
-        if (ADCON0bits.GO_DONE == 0)    // Si ya termino la conversion
-        {
-            ADCON0bits.GO_DONE = 1;     // Se inicia el GO_DONE para iniciar nuevamente
-            adc_value2 = ADRESH;         // Se Coloca el valor del registro de la conversion en una variable     
-        }
+    ADCON0bits.GO_DONE = 1;            // GO_DONE para iniciar conversion
+    __delay_ms(10);                    // Se da tiempo para el Acquisition Time Example
+    if (ADCON0bits.GO_DONE == 0)       // Si ya termino la conversion
+    {
+        ADCON0bits.GO_DONE = 1;        // Se inicia el GO_DONE para iniciar nuevamente
+        adc_value2 = ADRESH;           // Registro de la conversion en una variable     
+    }
 }
 
 void  lcd (void)
 {
-    unsigned int a;
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("S1:   S2:   S3: ");
-    Lcd_Set_Cursor(2,0);
-    Conversion1 (); 
-    Lcd_Set_Cursor(2,6);
-    Conversion2 (); 
-    contador_lcd();
-    if (contador < 10)
+    Lcd_Set_Cursor(1,1);                     // Cursor
+    Lcd_Write_String("S1:   S2:   S3: ");    // Titulos
+    Lcd_Set_Cursor(2,0);                     // Cursor
+    Conversion1 ();                          // Converion a Char Pot 1
+    Lcd_Set_Cursor(2,6);                     // Cursor
+    Conversion2 ();                          // Converion a Char Pot 2
+    contador_lcd();                          // Contador
+    if (contador < 10)                       // Menor a 10?
     {
-        Lcd_Set_Cursor(2,14);
-        Lcd_Write_Char(contador + 48);
+        Lcd_Set_Cursor(2,14);                // Cursor en columna 14
+        Lcd_Write_Char(contador + 48);       // Se escribe
     }
-    else if (contador >= 10)
+    else if (contador >= 10)                 // Mayor a 10?
     {
-        char w1 = contador/10; 
-        char w2 = contador % 10; 
-        Lcd_Set_Cursor(2,13);
-        Lcd_Write_Char(w1+48);
+        w1 = contador/10;                    // Decena
+        w2 = contador % 10;                  // Unidad
+        Lcd_Set_Cursor(2,13);                // Cursor en columna 13
+        Lcd_Write_Char(w1+48);               // Se escriben valores
         Lcd_Write_Char(w2+48);
     }
 }
 
-void Conversion1 ()              // Conversion de Binario a Voltaje
+void Conversion1 ()              
 {
-    voltaje = adc_value1 * 2;
-    unidad = voltaje / 100;
-    
+    voltaje = adc_value1 * 2;                  
+    unidad = voltaje / 100;           // Unidad sobre 5V
     x1 = voltaje % 100;
-    x2 = x1 / 10;
-    
+    x2 = x1 / 10;                     // Primera posicion despues de punto
     y1 = x1 % 10;
-    y2 = y1 / 1;
-    
-    Lcd_Write_Char(unidad+48); 
-    Lcd_Write_Char(46);
-    Lcd_Write_Char(x2+48);
-    Lcd_Write_Char(y2+48);  
-    Lcd_Write_Char(86);
-    virtual_display1();
+    y2 = y1 / 1;                      // Segunda posicion despues de punto
+    Lcd_Write_Char(unidad+48);        // Unidad
+    Lcd_Write_Char(46);               // .
+    Lcd_Write_Char(x2+48);            // Primer numero
+    Lcd_Write_Char(y2+48);            // Segundo numero
+    Lcd_Write_Char(86);               // V
+    virtual_display1();               // Valores a terminal virtual
 }
 
-void Conversion2 ()              // Conversion de Binario a Voltaje
+void Conversion2 ()              
 {
     voltajez = adc_value2 * 2;
-    unidadz = voltajez / 100;
-    
+    unidadz = voltajez / 100;         // Unidad sobre 5V
     x1z = voltajez % 100;
-    x2z = x1z / 10;
-    
+    x2z = x1z / 10;                   // Primera posicion despues de punto
     y1z = x1z % 10;
-    y2z = y1z / 1;
-    
-    Lcd_Write_Char(unidadz+48); 
-    Lcd_Write_Char(46);
-    Lcd_Write_Char(x2z+48);
-    Lcd_Write_Char(y2z+48);  
-    Lcd_Write_Char(86);
-    virtual_display2();
+    y2z = y1z / 1;                    // Segunda posicion despues de punto
+    Lcd_Write_Char(unidadz+48);       // Unidad
+    Lcd_Write_Char(46);               // .
+    Lcd_Write_Char(x2z+48);           // Primer numero
+    Lcd_Write_Char(y2z+48);           // Segundo numero 
+    Lcd_Write_Char(86);               // V
+    virtual_display2();               // Valores a terminal virtual
+    virtual_display3();               // Valores de contador
 }
 
 void virtual_display1 (void)
 {
-   
-    if (pressed_ok1 > 25)              // Si el boton esta seguramente presionado
-        {
-            escribir_char (83); 
-            escribir_char (49); 
-            escribir_char (58);     
-            escribir_char (unidad+48);                                                     /////////////
-            escribir_char (46);
-            escribir_char (x2+48);
-            escribir_char (y2+48);
-            escribir_char (86);
-            escribir_char (32);
-            escribir_char (32);
-            pressed_ok1 = 0;
-        }
+    if (velocidad1 > 15)              // Velocidad > 15?
+    {
+        escribir_char (83);           // S
+        escribir_char (49);           // 1
+        escribir_char (58);           // :
+        escribir_char (unidad+48);    // Unidad en ASCII                                               
+        escribir_char (46);           // .
+        escribir_char (x2+48);        // Primer numero
+        escribir_char (y2+48);        // Segundo numero
+        escribir_char (86);           // V
+        escribir_char (32);           // espacio en blanco
+        escribir_char (32);           // espacio en blanco    
+        velocidad1 = 0;               // se reinicia Velocidad
+    }
 }
        
 void virtual_display2 (void)
 {
-    if (pressed_ok2 > 25)              // Si el boton esta seguramente presionado
-        {
-            escribir_char (83); 
-            escribir_char (50); 
-            escribir_char (58);     
-            escribir_char (unidadz+48);                                                     /////////////
-            escribir_char (46);
-            escribir_char (x2z+48);
-            escribir_char (y2z+48);
-            escribir_char (86);
-            escribir_char (32);
-            escribir_char (32);
-            pressed_ok2 = 0;
-        }
-   
+    if (velocidad2 > 15)              // Velocidad > 15?       
+    {
+        escribir_char (83);           // Velocidad > 15?
+        escribir_char (50);           // 1
+        escribir_char (58);           // :
+        escribir_char (unidadz+48);   // Unidad en ASCII                                                    
+        escribir_char (46);           // .
+        escribir_char (x2z+48);       // Primer numero
+        escribir_char (y2z+48);       // Segundo numero
+        escribir_char (86);           // V
+        escribir_char (32);           // espacio en blanco
+        escribir_char (32);           // espacio en blanco 
+        velocidad2 = 0;               // se reinicia Velocidad
+    }
 }
+
+void virtual_display3 (void)
+{
+    if (velocidad3 > 15)                   // Velocidad > 15?
+    {
+        if (contador  < 10)                // Contador < 10?
+        {
+            escribir_char (67);            // C
+            escribir_char (58);            // :
+            escribir_char (48);            // 0
+            escribir_char (contador+48);   // Contador en ASCII       
+            escribir_char ('\r');          // Enter
+            velocidad3 = 0;                
+        }
+        else
+        {
+            escribir_char (67);            // C
+            escribir_char (58);            // :
+            escribir_char (w1+48);         // Decena en ASCII 
+            escribir_char (w2+48);         // Unidad en ASCII 
+            escribir_char ('\r');          // Enter
+            velocidad3 = 0;
+        }
+    }
+}
+
+void contador_lcd (void)                   
+{
+    if (leer == '+')                  // +?
+    {
+        contador = contador + 1;      // Se incrementa Contador
+        leer = 0;                     // Se iguala a 0 para dejar de contar
+    }
+    else if (leer == '-')             // -?
+    {
+        contador = contador - 1;      // Se incrementa Contador
+        leer = 0;                     // Se iguala a 0 para dejar de contar
+    }
+}
+
 
 void escribir_char (uint8_t valor)
 {
-    TXREG = valor;
-    while (PIR1bits.TXIF == 0);
+    TXREG = valor;                     // Se envia Byte a TXREG
+    while (PIR1bits.TXIF == 0);        // Espera a que se haya enviado dato
 }
 
 char leer_char(void)
 {
-    if (RCSTAbits.OERR ==0)
+    if (RCSTAbits.OERR ==0)            // Hay error?
     {
-        CREN = 0;
+        CREN = 0;                      // Apagar modulo para apagar error
         NOP();
-        CREN = 1;
+        CREN = 1;                      // Enciende una vez no haya error
     }
-    return (RCREG);
+    return (RCREG);                    // Se envia valor a RCREG
 } 
 
-void contador_lcd (void)                   
-{
-    if (leer == '+')
-    {
-        contador = contador + 1;
-        leer = 0;
-    }
-    else if (leer == '-')
-    {
-        contador = contador - 1;
-        leer = 0;
-    }
-}
 

@@ -7,7 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "LCD.c" 2
-# 26 "LCD.c"
+# 13 "LCD.c"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,7 +2488,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 26 "LCD.c" 2
+# 13 "LCD.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2623,7 +2623,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 27 "LCD.c" 2
+# 14 "LCD.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2722,26 +2722,33 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 28 "LCD.c" 2
+# 15 "LCD.c" 2
 
 # 1 "./ADC_lib.h" 1
-# 17 "./ADC_lib.h"
+# 16 "./ADC_lib.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 17 "./ADC_lib.h" 2
+# 16 "./ADC_lib.h" 2
+
+
+
+
 
 
 void initADC (uint8_t CHS);
-# 29 "LCD.c" 2
+# 16 "LCD.c" 2
 
 # 1 "./LCD_8bits.h" 1
-# 82 "./LCD_8bits.h"
+# 36 "./LCD_8bits.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 82 "./LCD_8bits.h" 2
+# 36 "./LCD_8bits.h" 2
+
+
+
+
 
 
 void Lcd_Port (char a);
 void Lcd_Cmd (char a);
-
 void Lcd_Init(void);
 void Lcd_Clear(void);
 void Lcd_Set_Cursor(char a, char b);
@@ -2750,19 +2757,21 @@ void Lcd_Shift_Left(void);
 void Lcd_Shift_Right(void);
 void Lcd_Write_Char(char a);
 void Lcd_Write_Char_4(char a);
-# 30 "LCD.c" 2
+# 17 "LCD.c" 2
 
 # 1 "./USART.h" 1
-# 18 "./USART.h"
+# 17 "./USART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 18 "./USART.h" 2
+# 17 "./USART.h" 2
+
+
+
 
 
 
 
 void USART_lib_config(void);
-# 31 "LCD.c" 2
-
+# 18 "LCD.c" 2
 
 
 
@@ -2789,8 +2798,7 @@ void USART_lib_config(void);
 
 
 
-
-uint16_t i = 0;
+uint8_t i = 0;
 uint8_t adc_value1 = 0;
 uint8_t adc_value2 = 0;
 
@@ -2808,19 +2816,15 @@ uint8_t y1z;
 uint8_t x2z;
 uint8_t y2z;
 
-
 uint8_t leer;
 uint8_t contador;
 
-uint8_t compu_valor1;
-uint8_t compu_valor2;
-uint8_t aux1;
-uint8_t aux2;
-
-
-uint16_t pressed_ok2 = 0;
-uint16_t pressed_ok1 = 0;
-
+uint8_t w1;
+uint8_t w2;
+uint8_t a;
+uint8_t velocidad1 = 0;
+uint8_t velocidad2 = 0;
+uint8_t velocidad3 = 0;
 
 
 
@@ -2831,17 +2835,21 @@ void osc_config (void);
 void interrup_config (void);
 void adc_config (void);
 void USART_config(void);
+
+void adc_conversion1 (void);
+void adc_conversion2 (void);
+
+char leer_char(void);
+void escribir_char (uint8_t valor);
+
 void lcd (void);
 void Conversion1 (void);
 void Conversion2 (void);
-void escribir_char (uint8_t valor);
-char leer_char(void);
 void contador_lcd(void) ;
+
 void virtual_display1 (void);
 void virtual_display2 (void);
-void adc_conversion1 (void);
-void adc_conversion2 (void);
-void tmr0_config (void);
+void virtual_display3 (void);
 
 
 
@@ -2849,23 +2857,11 @@ void tmr0_config (void);
 
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
-
     if (PIR1bits.RCIF == 1)
     {
         leer = leer_char();
         PIR1bits.RCIF = 0;
     }
-
-      if (INTCONbits.TMR0IF == 1)
-    {
-        INTCONbits.TMR0IF = 0;
-        unidad = unidad;
-        x2 = x2;
-        y2 = y2;
-
-        TMR0 = 10;
-
-      }
 }
 
 
@@ -2877,17 +2873,15 @@ void main(void)
     setup();
     osc_config();
     interrup_config();
-    tmr0_config();
     Lcd_Init();
     adc_config ();
     USART_config();
-
     while (1)
     {
         lcd ();
-        pressed_ok1 = pressed_ok1 + 1;
-        pressed_ok2 = pressed_ok2 + 1;
-
+        velocidad1 = velocidad1 + 1;
+        velocidad2 = velocidad2 + 1;
+        velocidad3 = velocidad3 + 1;
         initADC (0);
         adc_conversion1 ();
         initADC (1);
@@ -2924,7 +2918,7 @@ void interrup_config (void)
 {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.T0IE = 1;
+    INTCONbits.T0IE = 0;
     INTCONbits.INTE = 0;
     INTCONbits.RBIE = 0;
     INTCONbits.T0IF = 0;
@@ -2942,17 +2936,6 @@ void osc_config (void)
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 1;
     OSCCONbits.SCS = 0;
-}
-
-void tmr0_config (void)
-{
-    OPTION_REGbits.nRBPU = 1;
-    OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.PS2 = 0;
-    OPTION_REGbits.PS1 = 1;
-    OPTION_REGbits.PS0 = 0;
-    TMR0 = 200;
 }
 
 
@@ -2976,28 +2959,27 @@ void USART_config(void)
 void adc_conversion1 (void)
 {
     ADCON0bits.GO_DONE = 1;
-        _delay((unsigned long)((10)*(4000000/4000.0)));
-        if (ADCON0bits.GO_DONE == 0)
-        {
-            ADCON0bits.GO_DONE = 1;
-            adc_value1 = ADRESH;
-        }
+    _delay((unsigned long)((10)*(4000000/4000.0)));
+    if (ADCON0bits.GO_DONE == 0)
+    {
+        ADCON0bits.GO_DONE = 1;
+        adc_value1 = ADRESH;
+    }
 }
 
 void adc_conversion2 (void)
 {
     ADCON0bits.GO_DONE = 1;
-        _delay((unsigned long)((10)*(4000000/4000.0)));
-        if (ADCON0bits.GO_DONE == 0)
-        {
-            ADCON0bits.GO_DONE = 1;
-            adc_value2 = ADRESH;
-        }
+    _delay((unsigned long)((10)*(4000000/4000.0)));
+    if (ADCON0bits.GO_DONE == 0)
+    {
+        ADCON0bits.GO_DONE = 1;
+        adc_value2 = ADRESH;
+    }
 }
 
 void lcd (void)
 {
-    unsigned int a;
     Lcd_Set_Cursor(1,1);
     Lcd_Write_String("S1:   S2:   S3: ");
     Lcd_Set_Cursor(2,0);
@@ -3012,8 +2994,8 @@ void lcd (void)
     }
     else if (contador >= 10)
     {
-        char w1 = contador/10;
-        char w2 = contador % 10;
+        w1 = contador/10;
+        w2 = contador % 10;
         Lcd_Set_Cursor(2,13);
         Lcd_Write_Char(w1+48);
         Lcd_Write_Char(w2+48);
@@ -3024,13 +3006,10 @@ void Conversion1 ()
 {
     voltaje = adc_value1 * 2;
     unidad = voltaje / 100;
-
     x1 = voltaje % 100;
     x2 = x1 / 10;
-
     y1 = x1 % 10;
     y2 = y1 / 1;
-
     Lcd_Write_Char(unidad+48);
     Lcd_Write_Char(46);
     Lcd_Write_Char(x2+48);
@@ -3043,58 +3022,94 @@ void Conversion2 ()
 {
     voltajez = adc_value2 * 2;
     unidadz = voltajez / 100;
-
     x1z = voltajez % 100;
     x2z = x1z / 10;
-
     y1z = x1z % 10;
     y2z = y1z / 1;
-
     Lcd_Write_Char(unidadz+48);
     Lcd_Write_Char(46);
     Lcd_Write_Char(x2z+48);
     Lcd_Write_Char(y2z+48);
     Lcd_Write_Char(86);
     virtual_display2();
+    virtual_display3();
 }
 
 void virtual_display1 (void)
 {
-
-    if (pressed_ok1 > 25)
-        {
-            escribir_char (83);
-            escribir_char (49);
-            escribir_char (58);
-            escribir_char (unidad+48);
-            escribir_char (46);
-            escribir_char (x2+48);
-            escribir_char (y2+48);
-            escribir_char (86);
-            escribir_char (32);
-            escribir_char (32);
-            pressed_ok1 = 0;
-        }
+    if (velocidad1 > 15)
+    {
+        escribir_char (83);
+        escribir_char (49);
+        escribir_char (58);
+        escribir_char (unidad+48);
+        escribir_char (46);
+        escribir_char (x2+48);
+        escribir_char (y2+48);
+        escribir_char (86);
+        escribir_char (32);
+        escribir_char (32);
+        velocidad1 = 0;
+    }
 }
 
 void virtual_display2 (void)
 {
-    if (pressed_ok2 > 25)
-        {
-            escribir_char (83);
-            escribir_char (50);
-            escribir_char (58);
-            escribir_char (unidadz+48);
-            escribir_char (46);
-            escribir_char (x2z+48);
-            escribir_char (y2z+48);
-            escribir_char (86);
-            escribir_char (32);
-            escribir_char (32);
-            pressed_ok2 = 0;
-        }
-
+    if (velocidad2 > 15)
+    {
+        escribir_char (83);
+        escribir_char (50);
+        escribir_char (58);
+        escribir_char (unidadz+48);
+        escribir_char (46);
+        escribir_char (x2z+48);
+        escribir_char (y2z+48);
+        escribir_char (86);
+        escribir_char (32);
+        escribir_char (32);
+        velocidad2 = 0;
+    }
 }
+
+void virtual_display3 (void)
+{
+    if (velocidad3 > 15)
+    {
+        if (contador < 10)
+        {
+            escribir_char (67);
+            escribir_char (58);
+            escribir_char (48);
+            escribir_char (contador+48);
+            escribir_char ('\r');
+            velocidad3 = 0;
+        }
+        else
+        {
+            escribir_char (67);
+            escribir_char (58);
+            escribir_char (w1+48);
+            escribir_char (w2+48);
+            escribir_char ('\r');
+            velocidad3 = 0;
+        }
+    }
+}
+
+void contador_lcd (void)
+{
+    if (leer == '+')
+    {
+        contador = contador + 1;
+        leer = 0;
+    }
+    else if (leer == '-')
+    {
+        contador = contador - 1;
+        leer = 0;
+    }
+}
+
 
 void escribir_char (uint8_t valor)
 {
@@ -3111,18 +3126,4 @@ char leer_char(void)
         CREN = 1;
     }
     return (RCREG);
-}
-
-void contador_lcd (void)
-{
-    if (leer == '+')
-    {
-        contador = contador + 1;
-        leer = 0;
-    }
-    else if (leer == '-')
-    {
-        contador = contador - 1;
-        leer = 0;
-    }
 }

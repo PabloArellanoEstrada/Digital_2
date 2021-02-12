@@ -1,12 +1,20 @@
 /* 
- * Project: Interrupciones y Librerias
+ * Project: LCD
  * File:    ADC_lib.c
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
  * Created: February 9, 2021,
  */
 
-#include "ADC_lib.h"                    // Se incluye header
+//============================================================================*/
+// LIBRERIA
+//============================================================================*/
+
+#include "ADC_lib.h"                    
+
+//============================================================================*/
+// FUNCIONES
+//============================================================================*/
 
 void initADC (uint8_t CHS)
 {
@@ -109,7 +117,7 @@ void initADC (uint8_t CHS)
             ADCON0bits.CHS0  = 1;
             break;
             
-        default:
+        default:                        //ERROR
             ADCON0bits.CHS3  = 1;      
             ADCON0bits.CHS2  = 1;
             ADCON0bits.CHS1  = 1;
@@ -121,7 +129,7 @@ void initADC (uint8_t CHS)
     ADCON0bits.GO_DONE= 0;              // Conversion apagada al principio
     ADCON0bits.ADON  = 1;               // La conversion esta habilitada
     
-    ADCON1bits.ADFM  = 0;               // Justificado a la derecha 
+    ADCON1bits.ADFM  = 0;               // Justificado a la izquierda
     ADCON1bits.VCFG1 = 0;               // Voltaje = 5V
     ADCON1bits.VCFG0 = 0;               // Tierra  = 0V
 }

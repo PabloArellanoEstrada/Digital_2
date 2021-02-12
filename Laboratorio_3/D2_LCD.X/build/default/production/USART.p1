@@ -300,75 +300,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"14 USART.c
-[; ;USART.c: 14: void USART_lib_config()
+"18 USART.c
+[; ;USART.c: 18: void USART_lib_config()
 [v _USART_lib_config `(v ~T0 @X0 1 ef ]
-"15
-[; ;USART.c: 15: {
+"19
+[; ;USART.c: 19: {
 {
 [e :U _USART_lib_config ]
 [f ]
-"16
-[; ;USART.c: 16:     SPBRG = 25;
-[e = _SPBRG -> -> 25 `i `uc ]
-"18
-[; ;USART.c: 18:     TXSTAbits.CSRC = 0;
-[e = . . _TXSTAbits 0 7 -> -> 0 `i `uc ]
-"19
-[; ;USART.c: 19:     TXSTAbits.TX9 = 0;
-[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
 "20
-[; ;USART.c: 20:     TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"21
-[; ;USART.c: 21:     TXSTAbits.SYNC = 0;
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;USART.c: 20:     SPBRG = 25;
+[e = _SPBRG -> -> 25 `i `uc ]
 "22
-[; ;USART.c: 22:     TXSTAbits.SENDB= 0;
-[e = . . _TXSTAbits 0 3 -> -> 0 `i `uc ]
+[; ;USART.c: 22:     TXSTAbits.CSRC = 0;
+[e = . . _TXSTAbits 0 7 -> -> 0 `i `uc ]
 "23
-[; ;USART.c: 23:     TXSTAbits.BRGH = 1;
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+[; ;USART.c: 23:     TXSTAbits.TX9 = 0;
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
 "24
-[; ;USART.c: 24:     TXSTAbits.TRMT = 0;
-[e = . . _TXSTAbits 0 1 -> -> 0 `i `uc ]
+[; ;USART.c: 24:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
 "25
-[; ;USART.c: 25:     TXSTAbits.TX9D = 0;
-[e = . . _TXSTAbits 0 0 -> -> 0 `i `uc ]
+[; ;USART.c: 25:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"26
+[; ;USART.c: 26:     TXSTAbits.SENDB= 0;
+[e = . . _TXSTAbits 0 3 -> -> 0 `i `uc ]
 "27
-[; ;USART.c: 27:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+[; ;USART.c: 27:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
 "28
-[; ;USART.c: 28:     RCSTAbits.RX9 = 0;
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+[; ;USART.c: 28:     TXSTAbits.TRMT = 0;
+[e = . . _TXSTAbits 0 1 -> -> 0 `i `uc ]
 "29
-[; ;USART.c: 29:     RCSTAbits.SREN = 0;
-[e = . . _RCSTAbits 0 5 -> -> 0 `i `uc ]
-"30
-[; ;USART.c: 30:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;USART.c: 29:     TXSTAbits.TX9D = 0;
+[e = . . _TXSTAbits 0 0 -> -> 0 `i `uc ]
 "31
-[; ;USART.c: 31:     RCSTAbits.ADDEN= 0;
-[e = . . _RCSTAbits 0 3 -> -> 0 `i `uc ]
+[; ;USART.c: 31:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "32
-[; ;USART.c: 32:     RCSTAbits.FERR = 0;
-[e = . . _RCSTAbits 0 2 -> -> 0 `i `uc ]
+[; ;USART.c: 32:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
 "33
-[; ;USART.c: 33:     RCSTAbits.OERR = 0;
-[e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
+[; ;USART.c: 33:     RCSTAbits.SREN = 0;
+[e = . . _RCSTAbits 0 5 -> -> 0 `i `uc ]
 "34
-[; ;USART.c: 34:     RCSTAbits.RX9D = 0;
-[e = . . _RCSTAbits 0 0 -> -> 0 `i `uc ]
+[; ;USART.c: 34:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"35
+[; ;USART.c: 35:     RCSTAbits.ADDEN= 0;
+[e = . . _RCSTAbits 0 3 -> -> 0 `i `uc ]
 "36
-[; ;USART.c: 36:     PIR1bits.RCIF = 0;
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;USART.c: 36:     RCSTAbits.FERR = 0;
+[e = . . _RCSTAbits 0 2 -> -> 0 `i `uc ]
 "37
-[; ;USART.c: 37:     PIE1bits.RCIE = 1;
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;USART.c: 37:     RCSTAbits.OERR = 0;
+[e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
 "38
-[; ;USART.c: 38:     PIR1bits.TXIF = 0;
+[; ;USART.c: 38:     RCSTAbits.RX9D = 0;
+[e = . . _RCSTAbits 0 0 -> -> 0 `i `uc ]
+"40
+[; ;USART.c: 40:     PIR1bits.RCIF = 0;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"41
+[; ;USART.c: 41:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"42
+[; ;USART.c: 42:     PIR1bits.TXIF = 0;
 [e = . . _PIR1bits 0 4 -> -> 0 `i `uc ]
-"39
-[; ;USART.c: 39: }
+"43
+[; ;USART.c: 43: }
 [e :UE 139 ]
 }
