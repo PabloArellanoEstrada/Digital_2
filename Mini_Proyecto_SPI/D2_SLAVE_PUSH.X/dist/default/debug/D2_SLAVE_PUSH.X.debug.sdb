@@ -1,0 +1,153 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"65 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_PUSH.X\SLAVE_PUSH_SPI.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"77
+[v _main main `(v  1 e 1 0 ]
+"93
+[v _setup setup `(v  1 e 1 0 ]
+"122
+[v _osc_config osc_config `(v  1 e 1 0 ]
+"143
+[v _incrementar incrementar `(v  1 e 1 0 ]
+"174
+[v _decrementar decrementar `(v  1 e 1 0 ]
+"166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"414
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S138 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S143 . 1 `S138 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES143  1 e 1 @9 ]
+[s S80 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S89 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S94 . 1 `S80 1 . 1 0 `S89 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES94  1 e 1 @11 ]
+[s S22 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S30 . 1 `S22 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES30  1 e 1 @12 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S66 . 1 `uc 1 TRISE0 1 0 :1:0 
+`uc 1 TRISE1 1 0 :1:1 
+`uc 1 TRISE2 1 0 :1:2 
+`uc 1 TRISE3 1 0 :1:3 
+]
+"1677
+[u S71 . 1 `S66 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES71  1 e 1 @137 ]
+[s S112 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1882
+[s S118 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S123 . 1 `S112 1 . 1 0 `S118 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES123  1 e 1 @143 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"42 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_PUSH.X\SLAVE_PUSH_SPI.c
+[v _pressed_ok pressed_ok `ui  1 e 2 0 ]
+"43
+[v _released_ok released_ok `ui  1 e 2 0 ]
+"44
+[v _presionado presionado `ui  1 e 2 0 ]
+"47
+[v _pressed_ok2 pressed_ok2 `ui  1 e 2 0 ]
+"48
+[v _released_ok2 released_ok2 `ui  1 e 2 0 ]
+"49
+[v _presionado2 presionado2 `ui  1 e 2 0 ]
+"77
+[v _main main `(v  1 e 1 0 ]
+{
+"87
+} 0
+"93
+[v _setup setup `(v  1 e 1 0 ]
+{
+"107
+} 0
+"122
+[v _osc_config osc_config `(v  1 e 1 0 ]
+{
+"131
+} 0
+"143
+[v _incrementar incrementar `(v  1 e 1 0 ]
+{
+"162
+[v incrementar@e_206 e `i  1 a 2 2 ]
+"147
+[v incrementar@e e `i  1 a 2 0 ]
+"172
+} 0
+"174
+[v _decrementar decrementar `(v  1 e 1 0 ]
+{
+"193
+[v decrementar@e_209 e `i  1 a 2 2 ]
+"178
+[v decrementar@e e `i  1 a 2 0 ]
+"203
+} 0
+"65
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"71
+} 0
