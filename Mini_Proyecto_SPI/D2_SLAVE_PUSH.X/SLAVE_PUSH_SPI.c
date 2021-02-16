@@ -51,6 +51,7 @@ uint16_t released_ok2 = 0;
 uint16_t presionado2 = 0;
 
 char dato;
+char dato_maestro;
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -91,7 +92,12 @@ void main(void)
     SPI_config ();
     while (1)                           // Loop principal
     {
-          
+        if (SSPIF == 1)
+        {
+        dato_maestro = SPI_Recibir();
+        SPI_Enviar (PORTD);  
+        SSPIF = 0;
+        }
     }
 }
 
@@ -127,7 +133,7 @@ void setup(void)
 void interrup_config (void) 
 {
     INTCONbits.GIE = 1;       // Interrupciones globales habilitadas
-    INTCONbits.PEIE = 0;      // Interrupciones periferias deshabilidatas
+    INTCONbits.PEIE = 1;      // Interrupciones periferias deshabilidatas
     INTCONbits.T0IE = 0;      // Interrupcion del Timer0 habilitada
     INTCONbits.INTE = 0;      // Interrupcion externa INT deshabilitada
     INTCONbits.RBIE = 1;      // Interrupcion del Puerto B habilitadas
@@ -154,7 +160,7 @@ void osc_config (void)
 
 void SPI_config (void)
 {
-    SPI_Esclavo_Init (4, 0);
+    SPI_Esclavo_Init (4, 2);
 }
 
 //============================================================================*/

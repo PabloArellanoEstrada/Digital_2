@@ -19,26 +19,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "228
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"62 SLAVE_PUSH_SPI.c
-[; ;SLAVE_PUSH_SPI.c: 62: 
+"63 SLAVE_PUSH_SPI.c
+[; ;SLAVE_PUSH_SPI.c: 63:         }
 [v _incrementar `(v ~T0 @X0 0 ef ]
-"63
-[; ;SLAVE_PUSH_SPI.c: 63: 
+"64
+[; ;SLAVE_PUSH_SPI.c: 64:     }
 [v _decrementar `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"59
-[; ;SLAVE_PUSH_SPI.c: 59: }
-[v _setup `(v ~T0 @X0 0 ef ]
 "60
-[; ;SLAVE_PUSH_SPI.c: 60: 
-[v _osc_config `(v ~T0 @X0 0 ef ]
+[; ;SLAVE_PUSH_SPI.c: 60:         dato_maestro = SPI_Recibir();
+[v _setup `(v ~T0 @X0 0 ef ]
 "61
-[; ;SLAVE_PUSH_SPI.c: 61: 
+[; ;SLAVE_PUSH_SPI.c: 61:         SPI_Enviar (PORTD);
+[v _osc_config `(v ~T0 @X0 0 ef ]
+"62
+[; ;SLAVE_PUSH_SPI.c: 62:         SSPIF = 0;
 [v _interrup_config `(v ~T0 @X0 0 ef ]
-"64
-[; ;SLAVE_PUSH_SPI.c: 64: 
+"65
+[; ;SLAVE_PUSH_SPI.c: 65: }
 [v _SPI_config `(v ~T0 @X0 0 ef ]
-"3387 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+"4277 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4277: extern volatile __bit SSPIF __attribute__((address(0x63)));
+[v _SSPIF `Vb ~T0 @X0 0 e@99 ]
+"29 ./SPI_SPI.h
+[; ;./SPI_SPI.h: 29: char SPI_Recibir ();
+[v _SPI_Recibir `(uc ~T0 @X0 0 e? ]
+"28
+[; ;./SPI_SPI.h: 28: void SPI_Enviar (char valor);
+[v _SPI_Enviar `(v ~T0 @X0 0 ef1`uc ]
+"352 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"3387
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "1416
@@ -117,9 +129,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1602
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"352
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "1664
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
 [v _TRISE `Vuc ~T0 @X0 0 e@137 ]
@@ -382,22 +391,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "23 SLAVE_PUSH_SPI.c
-[; ;SLAVE_PUSH_SPI.c: 23: void osc_config (void);
+[; ;SLAVE_PUSH_SPI.c: 23: void setup(void);
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "24
-[; ;SLAVE_PUSH_SPI.c: 24: void interrup_config (void);
+[; ;SLAVE_PUSH_SPI.c: 24: void osc_config (void);
 [p x WDTE  =  OFF        ]
 "25
-[; ;SLAVE_PUSH_SPI.c: 25: void incrementar(void);
+[; ;SLAVE_PUSH_SPI.c: 25: void interrup_config (void);
 [p x PWRTE  =  OFF       ]
 "26
-[; ;SLAVE_PUSH_SPI.c: 26: void decrementar(void);
+[; ;SLAVE_PUSH_SPI.c: 26: void incrementar(void);
 [p x MCLRE  =  OFF       ]
 "27
-[; ;SLAVE_PUSH_SPI.c: 27: void SPI_config (void);
+[; ;SLAVE_PUSH_SPI.c: 27: void decrementar(void);
 [p x CP  =  OFF          ]
 "28
-[; ;SLAVE_PUSH_SPI.c: 28: 
+[; ;SLAVE_PUSH_SPI.c: 28: void SPI_config (void);
 [p x CPD  =  OFF         ]
 "29
 [; ;SLAVE_PUSH_SPI.c: 29: 
@@ -412,19 +421,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SLAVE_PUSH_SPI.c: 32: 
 [p x LVP  =  OFF         ]
 "34
-[; ;SLAVE_PUSH_SPI.c: 34: {
+[; ;SLAVE_PUSH_SPI.c: 34: void __attribute__((picinterrupt(("")))) ISR(void)
 [p x BOR4V  =  BOR40V    ]
 "35
-[; ;SLAVE_PUSH_SPI.c: 35:    if (INTCONbits.RBIF == 1)
+[; ;SLAVE_PUSH_SPI.c: 35: {
 [p x WRT  =  OFF         ]
 "43
-[; ;SLAVE_PUSH_SPI.c: 43: }
+[; ;SLAVE_PUSH_SPI.c: 43:     }
 [v _contador `ui ~T0 @X0 1 e ]
 [i _contador
 -> -> 0 `i `ui
 ]
 "44
-[; ;SLAVE_PUSH_SPI.c: 44: 
+[; ;SLAVE_PUSH_SPI.c: 44: }
 [v _pressed_ok `ui ~T0 @X0 1 e ]
 [i _pressed_ok
 -> -> 0 `i `ui
@@ -448,464 +457,486 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `ui
 ]
 "49
-[; ;SLAVE_PUSH_SPI.c: 49: void main(void)
+[; ;SLAVE_PUSH_SPI.c: 49: 
 [v _pressed_ok2 `ui ~T0 @X0 1 e ]
 [i _pressed_ok2
 -> -> 0 `i `ui
 ]
 "50
-[; ;SLAVE_PUSH_SPI.c: 50: {
+[; ;SLAVE_PUSH_SPI.c: 50: void main(void)
 [v _released_ok2 `ui ~T0 @X0 1 e ]
 [i _released_ok2
 -> -> 0 `i `ui
 ]
 "51
-[; ;SLAVE_PUSH_SPI.c: 51:     setup();
+[; ;SLAVE_PUSH_SPI.c: 51: {
 [v _presionado2 `ui ~T0 @X0 1 e ]
 [i _presionado2
 -> -> 0 `i `ui
 ]
 "53
-[; ;SLAVE_PUSH_SPI.c: 53:     interrup_config();
+[; ;SLAVE_PUSH_SPI.c: 53:     osc_config();
 [v _dato `uc ~T0 @X0 1 e ]
+"54
+[; ;SLAVE_PUSH_SPI.c: 54:     interrup_config();
+[v _dato_maestro `uc ~T0 @X0 1 e ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"70
-[; ;SLAVE_PUSH_SPI.c: 70:     ANSELbits.ANS5 = 0;
-[v _ISR `(v ~T1 @X0 1 ef ]
 "71
-[; ;SLAVE_PUSH_SPI.c: 71:     PORTA = 0;
+[; ;SLAVE_PUSH_SPI.c: 71: void setup(void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"72
+[; ;SLAVE_PUSH_SPI.c: 72: {
 {
 [e :U _ISR ]
 [f ]
-"72
-[; ;SLAVE_PUSH_SPI.c: 72:     ANSELH = 0;
-[e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 140  ]
 "73
-[; ;SLAVE_PUSH_SPI.c: 73:     TRISB = 0;
-{
+[; ;SLAVE_PUSH_SPI.c: 73:     ANSEL = 0;
+[e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 140  ]
 "74
-[; ;SLAVE_PUSH_SPI.c: 74:     TRISBbits.TRISB2 = 1;
-[v _a `uc ~T0 @X0 1 a ]
+[; ;SLAVE_PUSH_SPI.c: 74:     TRISA = 0;
+{
 "75
-[; ;SLAVE_PUSH_SPI.c: 75:     TRISBbits.TRISB3 = 1;
-[e = _a _PORTB ]
+[; ;SLAVE_PUSH_SPI.c: 75:     TRISAbits.TRISA5 = 1;
+[v _a `uc ~T0 @X0 1 a ]
 "76
-[; ;SLAVE_PUSH_SPI.c: 76:     PORTB = 0;
-[e ( _incrementar ..  ]
+[; ;SLAVE_PUSH_SPI.c: 76:     ANSELbits.ANS5 = 0;
+[e = _a _PORTB ]
 "77
-[; ;SLAVE_PUSH_SPI.c: 77:     PORTBbits.RB2 = 0;
-[e ( _decrementar ..  ]
+[; ;SLAVE_PUSH_SPI.c: 77:     PORTA = 0;
+[e ( _incrementar ..  ]
 "78
-[; ;SLAVE_PUSH_SPI.c: 78:     PORTBbits.RB3 = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 78:     ANSELH = 0;
+[e ( _decrementar ..  ]
 "79
-[; ;SLAVE_PUSH_SPI.c: 79:     TRISC = 0;
+[; ;SLAVE_PUSH_SPI.c: 79:     TRISB = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"80
+[; ;SLAVE_PUSH_SPI.c: 80:     TRISBbits.TRISB2 = 1;
 }
 [e :U 140 ]
-"80
-[; ;SLAVE_PUSH_SPI.c: 80:     PORTC = 0;
+"81
+[; ;SLAVE_PUSH_SPI.c: 81:     TRISBbits.TRISB3 = 1;
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"86
-[; ;SLAVE_PUSH_SPI.c: 86:     TRISE = 0;
-[v _main `(v ~T0 @X0 1 ef ]
 "87
-[; ;SLAVE_PUSH_SPI.c: 87:     PORTE = 0;
+[; ;SLAVE_PUSH_SPI.c: 87:     TRISCbits.TRISC3 = 1;
+[v _main `(v ~T0 @X0 1 ef ]
+"88
+[; ;SLAVE_PUSH_SPI.c: 88:     TRISCbits.TRISC4 = 1;
 {
 [e :U _main ]
 [f ]
-"88
-[; ;SLAVE_PUSH_SPI.c: 88: }
-[e ( _setup ..  ]
 "89
-[; ;SLAVE_PUSH_SPI.c: 89: 
-[e ( _osc_config ..  ]
+[; ;SLAVE_PUSH_SPI.c: 89:     TRISCbits.TRISC5 = 0;
+[e ( _setup ..  ]
 "90
-[; ;SLAVE_PUSH_SPI.c: 90: void interrup_config (void)
-[e ( _interrup_config ..  ]
+[; ;SLAVE_PUSH_SPI.c: 90:     TRISD = 0;
+[e ( _osc_config ..  ]
 "91
-[; ;SLAVE_PUSH_SPI.c: 91: {
-[e ( _SPI_config ..  ]
+[; ;SLAVE_PUSH_SPI.c: 91:     PORTD = 0;
+[e ( _interrup_config ..  ]
 "92
-[; ;SLAVE_PUSH_SPI.c: 92:     INTCONbits.GIE = 1;
-[e :U 143 ]
+[; ;SLAVE_PUSH_SPI.c: 92:     TRISE = 0;
+[e ( _SPI_config ..  ]
 "93
-[; ;SLAVE_PUSH_SPI.c: 93:     INTCONbits.PEIE = 0;
+[; ;SLAVE_PUSH_SPI.c: 93:     PORTE = 0;
+[e :U 143 ]
+"94
+[; ;SLAVE_PUSH_SPI.c: 94: }
 {
 "95
-[; ;SLAVE_PUSH_SPI.c: 95:     INTCONbits.INTE = 0;
+[; ;SLAVE_PUSH_SPI.c: 95: 
+[e $ ! == -> _SSPIF `i -> 1 `i 145  ]
+"96
+[; ;SLAVE_PUSH_SPI.c: 96: void interrup_config (void)
+{
+"97
+[; ;SLAVE_PUSH_SPI.c: 97: {
+[e = _dato_maestro ( _SPI_Recibir ..  ]
+"98
+[; ;SLAVE_PUSH_SPI.c: 98:     INTCONbits.GIE = 1;
+[e ( _SPI_Enviar (1 -> _PORTD `uc ]
+"99
+[; ;SLAVE_PUSH_SPI.c: 99:     INTCONbits.PEIE = 1;
+[e = _SSPIF -> -> 0 `i `b ]
+"100
+[; ;SLAVE_PUSH_SPI.c: 100:     INTCONbits.T0IE = 0;
+}
+[e :U 145 ]
+"101
+[; ;SLAVE_PUSH_SPI.c: 101:     INTCONbits.INTE = 0;
 }
 [e :U 142 ]
 [e $U 143  ]
 [e :U 144 ]
-"96
-[; ;SLAVE_PUSH_SPI.c: 96:     INTCONbits.RBIE = 1;
+"102
+[; ;SLAVE_PUSH_SPI.c: 102:     INTCONbits.RBIE = 1;
 [e :UE 141 ]
 }
-"102
-[; ;SLAVE_PUSH_SPI.c: 102: 
+"108
+[; ;SLAVE_PUSH_SPI.c: 108: 
 [v _setup `(v ~T0 @X0 1 ef ]
-"103
-[; ;SLAVE_PUSH_SPI.c: 103: void osc_config (void)
+"109
+[; ;SLAVE_PUSH_SPI.c: 109: void osc_config (void)
 {
 [e :U _setup ]
 [f ]
-"104
-[; ;SLAVE_PUSH_SPI.c: 104: {
-[e = _ANSEL -> -> 0 `i `uc ]
-"105
-[; ;SLAVE_PUSH_SPI.c: 105:     OSCCONbits.IRCF2 = 1;
-[e = _TRISA -> -> 0 `i `uc ]
-"106
-[; ;SLAVE_PUSH_SPI.c: 106:     OSCCONbits.IRCF1 = 1;
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"107
-[; ;SLAVE_PUSH_SPI.c: 107:     OSCCONbits.IRCF0 = 0;
-[e = . . _ANSELbits 0 5 -> -> 0 `i `uc ]
-"108
-[; ;SLAVE_PUSH_SPI.c: 108:     OSCCONbits.OSTS = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"109
-[; ;SLAVE_PUSH_SPI.c: 109:     OSCCONbits.HTS = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
 "110
-[; ;SLAVE_PUSH_SPI.c: 110:     OSCCONbits.LTS = 1;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 110: {
+[e = _ANSEL -> -> 0 `i `uc ]
 "111
-[; ;SLAVE_PUSH_SPI.c: 111:     OSCCONbits.SCS = 0;
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 111:     OSCCONbits.IRCF2 = 1;
+[e = _TRISA -> -> 0 `i `uc ]
 "112
-[; ;SLAVE_PUSH_SPI.c: 112: }
-[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 112:     OSCCONbits.IRCF1 = 1;
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
 "113
-[; ;SLAVE_PUSH_SPI.c: 113: 
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 113:     OSCCONbits.IRCF0 = 0;
+[e = . . _ANSELbits 0 5 -> -> 0 `i `uc ]
 "114
-[; ;SLAVE_PUSH_SPI.c: 114: 
-[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 114:     OSCCONbits.OSTS = 0;
+[e = _PORTA -> -> 0 `i `uc ]
 "115
-[; ;SLAVE_PUSH_SPI.c: 115: 
-[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 115:     OSCCONbits.HTS = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "116
-[; ;SLAVE_PUSH_SPI.c: 116: 
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 116:     OSCCONbits.LTS = 1;
+[e = _TRISB -> -> 0 `i `uc ]
 "117
-[; ;SLAVE_PUSH_SPI.c: 117: 
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 117:     OSCCONbits.SCS = 0;
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
 "118
-[; ;SLAVE_PUSH_SPI.c: 118: void SPI_config (void)
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 118: }
+[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
 "119
-[; ;SLAVE_PUSH_SPI.c: 119: {
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 119: 
+[e = _PORTB -> -> 0 `i `uc ]
 "120
-[; ;SLAVE_PUSH_SPI.c: 120:     SPI_Esclavo_Init (4, 0);
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 120: 
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
 "121
-[; ;SLAVE_PUSH_SPI.c: 121: }
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 121: 
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
 "122
 [; ;SLAVE_PUSH_SPI.c: 122: 
-[e = _PORTD -> -> 0 `i `uc ]
+[e = _TRISC -> -> 0 `i `uc ]
 "123
 [; ;SLAVE_PUSH_SPI.c: 123: 
-[e = _TRISE -> -> 0 `i `uc ]
+[e = _PORTC -> -> 0 `i `uc ]
 "124
-[; ;SLAVE_PUSH_SPI.c: 124: 
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 124: void SPI_config (void)
+[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
 "125
-[; ;SLAVE_PUSH_SPI.c: 125: 
-[e :UE 145 ]
-}
+[; ;SLAVE_PUSH_SPI.c: 125: {
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+"126
+[; ;SLAVE_PUSH_SPI.c: 126:     SPI_Esclavo_Init (4, 2);
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 "127
-[; ;SLAVE_PUSH_SPI.c: 127: void incrementar(void)
-[v _interrup_config `(v ~T0 @X0 1 ef ]
+[; ;SLAVE_PUSH_SPI.c: 127: }
+[e = _TRISD -> -> 0 `i `uc ]
 "128
-[; ;SLAVE_PUSH_SPI.c: 128: {
+[; ;SLAVE_PUSH_SPI.c: 128: 
+[e = _PORTD -> -> 0 `i `uc ]
+"129
+[; ;SLAVE_PUSH_SPI.c: 129: 
+[e = _TRISE -> -> 0 `i `uc ]
+"130
+[; ;SLAVE_PUSH_SPI.c: 130: 
+[e = _PORTE -> -> 0 `i `uc ]
+"131
+[; ;SLAVE_PUSH_SPI.c: 131: 
+[e :UE 146 ]
+}
+"133
+[; ;SLAVE_PUSH_SPI.c: 133: void incrementar(void)
+[v _interrup_config `(v ~T0 @X0 1 ef ]
+"134
+[; ;SLAVE_PUSH_SPI.c: 134: {
 {
 [e :U _interrup_config ]
 [f ]
-"129
-[; ;SLAVE_PUSH_SPI.c: 129:     if (PORTBbits.RB2 == 1)
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"130
-[; ;SLAVE_PUSH_SPI.c: 130:     {
-[e = . . _INTCONbits 0 6 -> -> 0 `i `uc ]
-"131
-[; ;SLAVE_PUSH_SPI.c: 131:         for (int e = 0; e < 11; e++){
-[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
-"132
-[; ;SLAVE_PUSH_SPI.c: 132:         pressed_ok = pressed_ok + 1; }
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-"133
-[; ;SLAVE_PUSH_SPI.c: 133:         released_ok = 0;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"134
-[; ;SLAVE_PUSH_SPI.c: 134:         if (pressed_ok > 10)
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "135
-[; ;SLAVE_PUSH_SPI.c: 135:         {
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 135:     if (PORTBbits.RB2 == 1)
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "136
-[; ;SLAVE_PUSH_SPI.c: 136:             if (presionado == 0)
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 136:     {
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "137
-[; ;SLAVE_PUSH_SPI.c: 137:             {
-[e = _IOCB -> -> 252 `i `uc ]
+[; ;SLAVE_PUSH_SPI.c: 137:         for (int e = 0; e < 11; e++){
+[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
 "138
-[; ;SLAVE_PUSH_SPI.c: 138:                 PORTD = PORTD + 1;
-[e :UE 146 ]
-}
+[; ;SLAVE_PUSH_SPI.c: 138:         pressed_ok = pressed_ok + 1; }
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+"139
+[; ;SLAVE_PUSH_SPI.c: 139:         released_ok = 0;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "140
-[; ;SLAVE_PUSH_SPI.c: 140:             }
-[v _osc_config `(v ~T0 @X0 1 ef ]
+[; ;SLAVE_PUSH_SPI.c: 140:         if (pressed_ok > 10)
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "141
-[; ;SLAVE_PUSH_SPI.c: 141:         }
+[; ;SLAVE_PUSH_SPI.c: 141:         {
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"142
+[; ;SLAVE_PUSH_SPI.c: 142:             if (presionado == 0)
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"143
+[; ;SLAVE_PUSH_SPI.c: 143:             {
+[e = _IOCB -> -> 252 `i `uc ]
+"144
+[; ;SLAVE_PUSH_SPI.c: 144:                 PORTD = PORTD + 1;
+[e :UE 147 ]
+}
+"146
+[; ;SLAVE_PUSH_SPI.c: 146:             }
+[v _osc_config `(v ~T0 @X0 1 ef ]
+"147
+[; ;SLAVE_PUSH_SPI.c: 147:         }
 {
 [e :U _osc_config ]
 [f ]
-"142
-[; ;SLAVE_PUSH_SPI.c: 142:         pressed_ok = 0;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"143
-[; ;SLAVE_PUSH_SPI.c: 143:         }
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"144
-[; ;SLAVE_PUSH_SPI.c: 144:     else
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"145
-[; ;SLAVE_PUSH_SPI.c: 145:     {
-[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
-"146
-[; ;SLAVE_PUSH_SPI.c: 146:         for (int e = 0; e < 11; e++){
-[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
-"147
-[; ;SLAVE_PUSH_SPI.c: 147:         released_ok = released_ok + 1;}
-[e = . . _OSCCONbits 0 1 -> -> 1 `i `uc ]
 "148
 [; ;SLAVE_PUSH_SPI.c: 148:         pressed_ok = 0;
-[e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
 "149
-[; ;SLAVE_PUSH_SPI.c: 149:         if (released_ok > 10)
-[e :UE 147 ]
-}
+[; ;SLAVE_PUSH_SPI.c: 149:         }
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"150
+[; ;SLAVE_PUSH_SPI.c: 150:     else
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+"151
+[; ;SLAVE_PUSH_SPI.c: 151:     {
+[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
+"152
+[; ;SLAVE_PUSH_SPI.c: 152:         for (int e = 0; e < 11; e++){
+[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
+"153
+[; ;SLAVE_PUSH_SPI.c: 153:         released_ok = released_ok + 1;}
+[e = . . _OSCCONbits 0 1 -> -> 1 `i `uc ]
+"154
+[; ;SLAVE_PUSH_SPI.c: 154:         pressed_ok = 0;
+[e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
 "155
-[; ;SLAVE_PUSH_SPI.c: 155:     return;
+[; ;SLAVE_PUSH_SPI.c: 155:         if (released_ok > 10)
+[e :UE 148 ]
+}
+"161
+[; ;SLAVE_PUSH_SPI.c: 161:     return;
 [v _SPI_config `(v ~T0 @X0 1 ef ]
-"156
-[; ;SLAVE_PUSH_SPI.c: 156: }
+"162
+[; ;SLAVE_PUSH_SPI.c: 162: }
 {
 [e :U _SPI_config ]
 [f ]
-"157
-[; ;SLAVE_PUSH_SPI.c: 157: 
-[e ( _SPI_Esclavo_Init (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-"158
-[; ;SLAVE_PUSH_SPI.c: 158: void decrementar(void)
-[e :UE 148 ]
-}
+"163
+[; ;SLAVE_PUSH_SPI.c: 163: 
+[e ( _SPI_Esclavo_Init (2 , -> -> 4 `i `uc -> -> 2 `i `uc ]
 "164
-[; ;SLAVE_PUSH_SPI.c: 164:         released_ok2 = 0;
+[; ;SLAVE_PUSH_SPI.c: 164: void decrementar(void)
+[e :UE 149 ]
+}
+"170
+[; ;SLAVE_PUSH_SPI.c: 170:         released_ok2 = 0;
 [v _incrementar `(v ~T0 @X0 1 ef ]
-"165
-[; ;SLAVE_PUSH_SPI.c: 165:         if (pressed_ok2 > 10)
+"171
+[; ;SLAVE_PUSH_SPI.c: 171:         if (pressed_ok2 > 10)
 {
 [e :U _incrementar ]
 [f ]
-"166
-[; ;SLAVE_PUSH_SPI.c: 166:         {
-[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 150  ]
-"167
-[; ;SLAVE_PUSH_SPI.c: 167:             if (presionado2 == 0)
+"172
+[; ;SLAVE_PUSH_SPI.c: 172:         {
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 151  ]
+"173
+[; ;SLAVE_PUSH_SPI.c: 173:             if (presionado2 == 0)
 {
-"168
-[; ;SLAVE_PUSH_SPI.c: 168:             {
+"174
+[; ;SLAVE_PUSH_SPI.c: 174:             {
 {
 [v _e `i ~T0 @X0 1 a ]
 [e = _e -> 0 `i ]
-[e $ < _e -> 11 `i 151  ]
-[e $U 152  ]
-[e :U 151 ]
+[e $ < _e -> 11 `i 152  ]
+[e $U 153  ]
+[e :U 152 ]
 {
-"169
-[; ;SLAVE_PUSH_SPI.c: 169:                 PORTD = PORTD - 1;
+"175
+[; ;SLAVE_PUSH_SPI.c: 175:                 PORTD = PORTD - 1;
 [e = _pressed_ok + _pressed_ok -> -> 1 `i `ui ]
 }
 [e ++ _e -> 1 `i ]
-[e $ < _e -> 11 `i 151  ]
-[e :U 152 ]
+[e $ < _e -> 11 `i 152  ]
+[e :U 153 ]
 }
-"170
-[; ;SLAVE_PUSH_SPI.c: 170:                 presionado2 = 1;
-[e = _released_ok -> -> 0 `i `ui ]
-"171
-[; ;SLAVE_PUSH_SPI.c: 171:             }
-[e $ ! > _pressed_ok -> -> 10 `i `ui 154  ]
-"172
-[; ;SLAVE_PUSH_SPI.c: 172:         }
-{
-"173
-[; ;SLAVE_PUSH_SPI.c: 173:         pressed_ok2 = 0;
-[e $ ! == _presionado -> -> 0 `i `ui 155  ]
-"174
-[; ;SLAVE_PUSH_SPI.c: 174:         }
-{
-"175
-[; ;SLAVE_PUSH_SPI.c: 175:     else
-[e = _PORTD -> + -> _PORTD `i -> 1 `i `uc ]
 "176
-[; ;SLAVE_PUSH_SPI.c: 176:     {
-[e = _presionado -> -> 1 `i `ui ]
+[; ;SLAVE_PUSH_SPI.c: 176:                 presionado2 = 1;
+[e = _released_ok -> -> 0 `i `ui ]
 "177
-[; ;SLAVE_PUSH_SPI.c: 177:         for (int e = 0; e < 11; e++){
-}
-[e :U 155 ]
+[; ;SLAVE_PUSH_SPI.c: 177:             }
+[e $ ! > _pressed_ok -> -> 10 `i `ui 155  ]
 "178
-[; ;SLAVE_PUSH_SPI.c: 178:         released_ok2 = released_ok2 + 1;}
-}
-[e :U 154 ]
+[; ;SLAVE_PUSH_SPI.c: 178:         }
+{
 "179
 [; ;SLAVE_PUSH_SPI.c: 179:         pressed_ok2 = 0;
-[e = _pressed_ok -> -> 0 `i `ui ]
+[e $ ! == _presionado -> -> 0 `i `ui 156  ]
 "180
-[; ;SLAVE_PUSH_SPI.c: 180:         if (released_ok2 > 10)
-}
-[e $U 156  ]
-"181
-[; ;SLAVE_PUSH_SPI.c: 181:         {
-[e :U 150 ]
-"182
-[; ;SLAVE_PUSH_SPI.c: 182:             presionado2 = 0;
+[; ;SLAVE_PUSH_SPI.c: 180:         }
 {
+"181
+[; ;SLAVE_PUSH_SPI.c: 181:     else
+[e = _PORTD -> + -> _PORTD `i -> 1 `i `uc ]
+"182
+[; ;SLAVE_PUSH_SPI.c: 182:     {
+[e = _presionado -> -> 1 `i `ui ]
 "183
-[; ;SLAVE_PUSH_SPI.c: 183:             released_ok = 0;
+[; ;SLAVE_PUSH_SPI.c: 183:         for (int e = 0; e < 11; e++){
+}
+[e :U 156 ]
+"184
+[; ;SLAVE_PUSH_SPI.c: 184:         released_ok2 = released_ok2 + 1;}
+}
+[e :U 155 ]
+"185
+[; ;SLAVE_PUSH_SPI.c: 185:         pressed_ok2 = 0;
+[e = _pressed_ok -> -> 0 `i `ui ]
+"186
+[; ;SLAVE_PUSH_SPI.c: 186:         if (released_ok2 > 10)
+}
+[e $U 157  ]
+"187
+[; ;SLAVE_PUSH_SPI.c: 187:         {
+[e :U 151 ]
+"188
+[; ;SLAVE_PUSH_SPI.c: 188:             presionado2 = 0;
+{
+"189
+[; ;SLAVE_PUSH_SPI.c: 189:             released_ok = 0;
 {
 [v _e `i ~T0 @X0 1 a ]
 [e = _e -> 0 `i ]
-[e $ < _e -> 11 `i 157  ]
-[e $U 158  ]
-[e :U 157 ]
+[e $ < _e -> 11 `i 158  ]
+[e $U 159  ]
+[e :U 158 ]
 {
-"184
-[; ;SLAVE_PUSH_SPI.c: 184:         }
+"190
+[; ;SLAVE_PUSH_SPI.c: 190:         }
 [e = _released_ok + _released_ok -> -> 1 `i `ui ]
 }
 [e ++ _e -> 1 `i ]
-[e $ < _e -> 11 `i 157  ]
-[e :U 158 ]
+[e $ < _e -> 11 `i 158  ]
+[e :U 159 ]
 }
-"185
-[; ;SLAVE_PUSH_SPI.c: 185:     }
-[e = _pressed_ok -> -> 0 `i `ui ]
-"186
-[; ;SLAVE_PUSH_SPI.c: 186:     return;
-[e $ ! > _released_ok -> -> 10 `i `ui 160  ]
-"187
-[; ;SLAVE_PUSH_SPI.c: 187: }
-{
-"188
-[e = _presionado -> -> 0 `i `ui ]
-"189
-[e = _released_ok -> -> 0 `i `ui ]
-"190
-}
-[e :U 160 ]
 "191
-}
-[e :U 156 ]
+[; ;SLAVE_PUSH_SPI.c: 191:     }
+[e = _pressed_ok -> -> 0 `i `ui ]
 "192
-[e $UE 149  ]
+[; ;SLAVE_PUSH_SPI.c: 192:     return;
+[e $ ! > _released_ok -> -> 10 `i `ui 161  ]
 "193
-[e :UE 149 ]
-}
+[; ;SLAVE_PUSH_SPI.c: 193: }
+{
+"194
+[e = _presionado -> -> 0 `i `ui ]
 "195
-[v _decrementar `(v ~T0 @X0 1 ef ]
+[e = _released_ok -> -> 0 `i `ui ]
 "196
+}
+[e :U 161 ]
+"197
+}
+[e :U 157 ]
+"198
+[e $UE 150  ]
+"199
+[e :UE 150 ]
+}
+"201
+[v _decrementar `(v ~T0 @X0 1 ef ]
+"202
 {
 [e :U _decrementar ]
 [f ]
-"197
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 162  ]
-"198
+"203
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 163  ]
+"204
 {
-"199
+"205
 {
 [v _e `i ~T0 @X0 1 a ]
 [e = _e -> 0 `i ]
-[e $ < _e -> 11 `i 163  ]
-[e $U 164  ]
-[e :U 163 ]
+[e $ < _e -> 11 `i 164  ]
+[e $U 165  ]
+[e :U 164 ]
 {
-"200
+"206
 [e = _pressed_ok2 + _pressed_ok2 -> -> 1 `i `ui ]
 }
 [e ++ _e -> 1 `i ]
-[e $ < _e -> 11 `i 163  ]
-[e :U 164 ]
+[e $ < _e -> 11 `i 164  ]
+[e :U 165 ]
 }
-"201
-[e = _released_ok2 -> -> 0 `i `ui ]
-"202
-[e $ ! > _pressed_ok2 -> -> 10 `i `ui 166  ]
-"203
-{
-"204
-[e $ ! == _presionado2 -> -> 0 `i `ui 167  ]
-"205
-{
-"206
-[e = _PORTD -> - -> _PORTD `i -> 1 `i `uc ]
 "207
-[e = _presionado2 -> -> 1 `i `ui ]
+[e = _released_ok2 -> -> 0 `i `ui ]
 "208
+[e $ ! > _pressed_ok2 -> -> 10 `i `ui 167  ]
+"209
+{
+"210
+[e $ ! == _presionado2 -> -> 0 `i `ui 168  ]
+"211
+{
+"212
+[e = _PORTD -> - -> _PORTD `i -> 1 `i `uc ]
+"213
+[e = _presionado2 -> -> 1 `i `ui ]
+"214
+}
+[e :U 168 ]
+"215
 }
 [e :U 167 ]
-"209
-}
-[e :U 166 ]
-"210
-[e = _pressed_ok2 -> -> 0 `i `ui ]
-"211
-}
-[e $U 168  ]
-"212
-[e :U 162 ]
-"213
-{
-"214
-{
-[v _e `i ~T0 @X0 1 a ]
-[e = _e -> 0 `i ]
-[e $ < _e -> 11 `i 169  ]
-[e $U 170  ]
-[e :U 169 ]
-{
-"215
-[e = _released_ok2 + _released_ok2 -> -> 1 `i `ui ]
-}
-[e ++ _e -> 1 `i ]
-[e $ < _e -> 11 `i 169  ]
-[e :U 170 ]
-}
 "216
 [e = _pressed_ok2 -> -> 0 `i `ui ]
 "217
-[e $ ! > _released_ok2 -> -> 10 `i `ui 172  ]
+}
+[e $U 169  ]
 "218
-{
+[e :U 163 ]
 "219
-[e = _presionado2 -> -> 0 `i `ui ]
+{
 "220
-[e = _released_ok -> -> 0 `i `ui ]
+{
+[v _e `i ~T0 @X0 1 a ]
+[e = _e -> 0 `i ]
+[e $ < _e -> 11 `i 170  ]
+[e $U 171  ]
+[e :U 170 ]
+{
 "221
+[e = _released_ok2 + _released_ok2 -> -> 1 `i `ui ]
 }
-[e :U 172 ]
+[e ++ _e -> 1 `i ]
+[e $ < _e -> 11 `i 170  ]
+[e :U 171 ]
+}
 "222
-}
-[e :U 168 ]
+[e = _pressed_ok2 -> -> 0 `i `ui ]
 "223
-[e $UE 161  ]
+[e $ ! > _released_ok2 -> -> 10 `i `ui 173  ]
 "224
-[e :UE 161 ]
+{
+"225
+[e = _presionado2 -> -> 0 `i `ui ]
+"226
+[e = _released_ok -> -> 0 `i `ui ]
+"227
+}
+[e :U 173 ]
+"228
+}
+[e :U 169 ]
+"229
+[e $UE 162  ]
+"230
+[e :UE 162 ]
 }

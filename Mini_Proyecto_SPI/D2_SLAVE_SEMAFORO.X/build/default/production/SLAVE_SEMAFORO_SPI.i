@@ -2740,6 +2740,20 @@ void SPI_Enviar (char valor);
 char SPI_Recibir ();
 # 16 "SLAVE_SEMAFORO_SPI.c" 2
 
+# 1 "./ADC_SPI.h" 1
+# 16 "./ADC_SPI.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 16 "./ADC_SPI.h" 2
+
+
+
+
+
+
+void initADC (uint8_t CHS);
+# 17 "SLAVE_SEMAFORO_SPI.c" 2
+
+
 
 
 
@@ -2758,8 +2772,10 @@ char SPI_Recibir ();
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 45 "SLAVE_SEMAFORO_SPI.c"
+# 47 "SLAVE_SEMAFORO_SPI.c"
 char dato;
+char SPI_value;
+char dato_maestro;
 
 
 
@@ -2768,9 +2784,11 @@ char dato;
 void setup(void);
 void osc_config (void);
 void interrup_config (void);
-void adc_config (void);
-void USART_config(void);
+void tmr0_config (void);
 void SPI_config (void);
+void adc_config (void);
+void adc_conversion (void);
+void semaforo(void);
 
 
 
@@ -2778,11 +2796,14 @@ void SPI_config (void);
 
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
-    if (PIR1bits.RCIF == 1)
+    if (INTCONbits.TMR0IF == 1)
     {
-
-        PIR1bits.RCIF = 0;
+        adc_conversion();
+        INTCONbits.TMR0IF = 0;
+        TMR0 = 100;
     }
+
+
 }
 
 
@@ -2794,12 +2815,20 @@ void main(void)
     setup();
     osc_config();
     interrup_config();
+    tmr0_config ();
+    adc_config();
     SPI_config ();
     while (1)
     {
-        dato = SPI_Recibir();
-        PORTD = dato;
-        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+        if (SSPIF == 1)
+        {
+        dato_maestro = SPI_Recibir();
+        SPI_Enviar (PORTD);
+        SSPIF = 0;
+        }
+
+
     }
 }
 
@@ -2811,12 +2840,18 @@ void setup(void)
 {
     ANSEL = 0;
     TRISA = 0;
+    TRISAbits.TRISA0 = 1;
+    ANSELbits.ANS0 = 1;
     TRISAbits.TRISA5 = 1;
     ANSELbits.ANS5 = 0;
     PORTA = 0;
+
     ANSELH = 0;
     TRISB = 0;
     PORTB = 0;
+    PORTBbits.RB0 = 0;
+    PORTBbits.RB1 = 0;
+    PORTBbits.RB2 = 0;
     TRISC = 0;
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
@@ -2832,7 +2867,7 @@ void interrup_config (void)
 {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.T0IE = 0;
+    INTCONbits.T0IE = 1;
     INTCONbits.INTE = 0;
     INTCONbits.RBIE = 0;
     INTCONbits.T0IF = 0;
@@ -2852,13 +2887,29 @@ void osc_config (void)
     OSCCONbits.SCS = 0;
 }
 
+void tmr0_config (void)
+{
+    OPTION_REGbits.nRBPU = 1;
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS2 = 0;
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS0 = 0;
+    TMR0 = 100;
+}
 
 
 
+
+
+void adc_config (void)
+{
+    initADC (0);
+}
 
 void SPI_config (void)
 {
-    SPI_Esclavo_Init (4, 0);
+    SPI_Esclavo_Init (4, 2);
 }
 
 
@@ -2867,17 +2918,34 @@ void SPI_config (void)
 
 void semaforo(void)
 {
+    if (PORTD < 13)
+    {
+        PORTBbits.RB2 = 1;
+        PORTBbits.RB1 = 0;
+        PORTBbits.RB0 = 0;
+    }
+    else if (PORTD >= 13 && PORTD <= 18)
+    {
+        PORTBbits.RB2 = 0;
+        PORTBbits.RB1 = 1;
+        PORTBbits.RB0 = 0;
+    }
+    else
+    {
+        PORTBbits.RB2 = 0;
+        PORTBbits.RB1 = 0;
+        PORTBbits.RB0 = 1;
+    }
+}
 
-
-
-
-
-
-    PORTEbits.RE0 = 1;
-    _delay((unsigned long)((700)*(4000000/4000.0)));
-    PORTEbits.RE0 = 0;
-    PORTEbits.RE1 = 1;
-    _delay((unsigned long)((700)*(4000000/4000.0)));
-    PORTEbits.RE1 = 0;
-    return;
+void adc_conversion (void)
+{
+    ADCON0bits.GO_DONE = 1;
+    _delay((unsigned long)((10)*(4000000/4000.0)));
+    if (ADCON0bits.GO_DONE == 0)
+    {
+        ADCON0bits.GO_DONE = 1;
+        PORTD = ADRESH;
+        semaforo();
+    }
 }

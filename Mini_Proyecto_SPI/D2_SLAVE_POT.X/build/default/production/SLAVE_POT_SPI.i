@@ -2782,7 +2782,7 @@ uint8_t i = 0;
 uint8_t adc_value1 = 0;
 uint8_t adc_value2 = 0;
 
-char dato;
+char dato_maestro;
 
 
 
@@ -2791,23 +2791,21 @@ char dato;
 void setup(void);
 void osc_config (void);
 void interrup_config (void);
-void adc_config (void);
-void USART_config(void);
-void adc_conversion1 (void);
+void tmr0_config (void);
 void SPI_config (void);
-
-
-
-
-
-
-
+void adc_config (void);
+void adc_conversion (void);
+# 68 "SLAVE_POT_SPI.c"
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
-    if (PIR1bits.RCIF == 1)
+    if (INTCONbits.TMR0IF == 1)
     {
-        PIR1bits.RCIF = 0;
+        adc_conversion();
+        INTCONbits.TMR0IF = 0;
+        TMR0 = 100;
     }
+
+
 }
 
 
@@ -2819,12 +2817,20 @@ void main(void)
     setup();
     osc_config();
     interrup_config();
-    adc_config ();
+    tmr0_config ();
+    adc_config();
     SPI_config ();
+
     while (1)
     {
-        initADC (0);
-        adc_conversion1 ();
+        if (SSPIF == 1)
+        {
+        dato_maestro = SPI_Recibir();
+        SPI_Enviar (PORTD);
+        SSPIF = 0;
+    }
+
+
     }
 }
 
@@ -2836,10 +2842,10 @@ void setup(void)
 {
     ANSEL = 0;
     TRISA = 0;
-    TRISAbits.TRISA5 = 1;
-    ANSELbits.ANS5 = 0;
     TRISAbits.TRISA0 = 1;
     ANSELbits.ANS0 = 1;
+    TRISAbits.TRISA5 = 1;
+    ANSELbits.ANS5 = 0;
     PORTA = 0;
 
     ANSELH = 0;
@@ -2858,9 +2864,9 @@ void setup(void)
 
 void interrup_config (void)
 {
-    INTCONbits.GIE = 0;
-    INTCONbits.PEIE = 0;
-    INTCONbits.T0IE = 0;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.T0IE = 1;
     INTCONbits.INTE = 0;
     INTCONbits.RBIE = 0;
     INTCONbits.T0IF = 0;
@@ -2880,6 +2886,17 @@ void osc_config (void)
     OSCCONbits.SCS = 0;
 }
 
+void tmr0_config (void)
+{
+    OPTION_REGbits.nRBPU = 1;
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS2 = 0;
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS0 = 0;
+    TMR0 = 100;
+}
+
 
 
 
@@ -2891,14 +2908,14 @@ void adc_config (void)
 
 void SPI_config (void)
 {
-    SPI_Esclavo_Init (4, 0);
+    SPI_Esclavo_Init (4, 2);
 }
 
 
 
 
 
-void adc_conversion1 (void)
+void adc_conversion (void)
 {
     ADCON0bits.GO_DONE = 1;
     _delay((unsigned long)((10)*(4000000/4000.0)));

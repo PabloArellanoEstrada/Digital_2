@@ -2825,6 +2825,10 @@ uint8_t velocidad1 = 0;
 uint8_t velocidad2 = 0;
 uint8_t velocidad3 = 0;
 
+uint8_t dato_pot = 0;
+uint8_t dato_push = 0;
+uint8_t dato_semaforo = 0;
+
 
 
 
@@ -2845,8 +2849,6 @@ void Conversion2 (void);
 void virtual_display1 (void);
 void virtual_display2 (void);
 void virtual_display3 (void);
-
-
 
 
 
@@ -2874,18 +2876,21 @@ void main(void)
     SPI_config ();
     while (1)
     {
-        PORTAbits.RA7 = 0;
-        for (char j = 0; j<= 15; j++)
-        {
-            SPI_Enviar (j);
-            _delay((unsigned long)((500)*(4000000/4000.0)));
-        }
-        PORTAbits.RA7 = 1;
-        _delay((unsigned long)((100)*(4000000/4000.0)));
+        PORTCbits.RC0 = 0;
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+
+        SPI_Enviar (dato_pot);
+        PORTA = SPI_Recibir();
+
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+        PORTCbits.RC0 = 1;
+
         lcd ();
         velocidad1 = velocidad1 + 1;
         velocidad2 = velocidad2 + 1;
         velocidad3 = velocidad3 + 1;
+
+
     }
 }
 
@@ -2902,9 +2907,12 @@ void setup(void)
     TRISB = 0;
     PORTB = 0;
     TRISC = 0;
+    PORTC = 0;
     TRISCbits.TRISC6 = 0;
     TRISCbits.TRISC4 = 1;
-    PORTC = 0;
+    PORTCbits.RC0 = 1;
+    PORTCbits.RC1 = 1;
+    PORTCbits.RC2 = 1;
     TRISD = 0;
     PORTD = 0;
     TRISE = 0;

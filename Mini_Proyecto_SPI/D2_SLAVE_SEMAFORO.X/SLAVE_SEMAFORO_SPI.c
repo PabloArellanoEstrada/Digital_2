@@ -14,6 +14,8 @@
 #include <stdint.h>             // Variables de ancho definido
 #include <stdio.h>              // Tipos de variables, macros, entradas y salidas
 #include "SPI_SPI.h"
+#include "ADC_SPI.h" 
+
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION
@@ -34,15 +36,17 @@
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 // DEFINE
 #define _XTAL_FREQ 4000000
-#define LED_rojo PORTEbits.RE0  // Uso de defines para mejor identificacion de color de semaforo
-#define LED_amarillo PORTEbits.RE1  
-#define LED_verde PORTEbits.RE2
+#define LED_rojo     PORTBbits.RB0  // Uso de defines para mejor identificacion de color de semaforo
+#define LED_amarillo PORTBbits.RB1  
+#define LED_verde    PORTBbits.RB2
 
 //============================================================================*/
 // VARIABLES
 //============================================================================*/
 
 char dato;
+char SPI_value;
+char dato_maestro;
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -51,9 +55,11 @@ char dato;
 void setup(void);                    // Configuracion inicial
 void osc_config (void);
 void interrup_config (void);
-void adc_config (void);
-void USART_config(void); 
+void tmr0_config (void);
 void SPI_config (void);
+void adc_config (void);
+void adc_conversion (void);
+void semaforo(void); 
 
 //============================================================================*/
 // INTERRUPCIONES
@@ -61,11 +67,14 @@ void SPI_config (void);
 
 void __interrupt() ISR(void)    
 {                               // GIE = 0
-    if (PIR1bits.RCIF == 1)     // Se puede leer?                                            
+    if (INTCONbits.TMR0IF == 1)  // Si hay desboradmiento de TIMER0 la bandera se levanta y se revisa
     {
-       
-        PIR1bits.RCIF = 0;      // Se apaga bandera
-    } 
+        adc_conversion();
+        INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
+        TMR0 = 100;                
+    }
+    
+    
 }                               // GIE = 1
 
 //============================================================================*/
@@ -77,12 +86,20 @@ void main(void)
     setup();                            // Funciones de Configuracion
     osc_config();
     interrup_config();
+    tmr0_config ();
+    adc_config();
     SPI_config ();
     while (1)                           // Loop principal
     {
-        dato = SPI_Recibir();
-        PORTD = dato;
-        __delay_ms(100);
+       
+        if (SSPIF == 1)
+        {
+        dato_maestro = SPI_Recibir();
+        SPI_Enviar (PORTD);  
+        SSPIF = 0;
+        }
+        //dato++;
+        //__delay_ms(1000);       
     }
 }
 
@@ -92,14 +109,20 @@ void main(void)
 
 void setup(void) 
 {
-    ANSEL = 0;                // Puerto digital
-    TRISA = 0;                // Puerto A como entrada 
+    ANSEL = 0;                // Puerto A digital
+    TRISA = 0;                // Puerto A como entrada
+    TRISAbits.TRISA0 = 1;     // Entrada
+    ANSELbits.ANS0 = 1;       // Analogico
     TRISAbits.TRISA5 = 1;     // Bit 5 entrada
     ANSELbits.ANS5 = 0;       // Digital
     PORTA = 0;                // Puerto A entrada apagado
+    
     ANSELH = 0;               // Puerto B digital
     TRISB = 0;                // Puerto B salida
     PORTB = 0;                // Puerto B RB0 y RB1 entrada igual a 0
+    LED_rojo = 0;
+    LED_amarillo = 0;
+    LED_verde = 0;
     TRISC = 0;                // Puerto C salida leds
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
@@ -115,7 +138,7 @@ void interrup_config (void)
 {
     INTCONbits.GIE = 1;       // Interrupciones globales habilitadas
     INTCONbits.PEIE = 1;      // Interrupciones periferias habilidatas
-    INTCONbits.T0IE = 0;      // Interrupcion del Timer0 deshabilitada
+    INTCONbits.T0IE = 1;      // Interrupcion del Timer0 deshabilitada
     INTCONbits.INTE = 0;      // Interrupcion externa INT deshabilitada
     INTCONbits.RBIE = 0;      // Interrupcion del Puerto B habilitadas
     INTCONbits.T0IF = 0;      // Bandera de Interrupcion del Timer 0
@@ -135,13 +158,29 @@ void osc_config (void)
     OSCCONbits.SCS   = 0;     // Oscilador basado en el reloj
 }
 
+void tmr0_config (void) 
+{
+    OPTION_REGbits.nRBPU = 1; // PORTB pull-ups habilitados
+    OPTION_REGbits.T0CS = 0;  // TIMER0 como temporizador, no contador
+    OPTION_REGbits.PSA = 0;   // Modulo de TIMER con prescaler, no se usa WDT
+    OPTION_REGbits.PS2 = 0;   // Prescaler en 8
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS0 = 0;
+    TMR0 = 100;                // Valor del TIMER0 para un delay de 0.246 seg.
+}
+
 //============================================================================*/
     // CONFIGURACION CON LIBRERIA
 //============================================================================*/
 
+void adc_config (void)
+{
+    initADC (0);              // ADC
+}
+
 void SPI_config (void)
 {
-    SPI_Esclavo_Init (4, 0);
+    SPI_Esclavo_Init (4, 2);
 }
 
 //============================================================================*/
@@ -150,19 +189,36 @@ void SPI_config (void)
 
 void semaforo(void) 
 {
-    //*************************************************************************
-    // Enciende y apaga el led rojo y amarillo del semaforo con un delay de 
-    // 700ms para que cada color este encendido ese tiempo, luego regresa 
-    // al loop principal
-    //*************************************************************************
-    
-    LED_rojo = 1;
-    __delay_ms(700);
-    LED_rojo = 0;
-    LED_amarillo = 1;
-    __delay_ms(700);
-    LED_amarillo = 0;
-    return;      
+    if (PORTD < 13)
+    {
+        LED_verde = 1;
+        LED_amarillo = 0;
+        LED_rojo = 0;
+    }
+    else if (PORTD >= 13 && PORTD <= 18)
+    {
+        LED_verde = 0;
+        LED_amarillo = 1;
+        LED_rojo = 0;
+    }
+    else
+    {
+        LED_verde = 0;
+        LED_amarillo = 0;
+        LED_rojo = 1;
+    }
+}
+
+void adc_conversion (void)
+{
+    ADCON0bits.GO_DONE = 1;            // GO_DONE para iniciar conversion
+    __delay_ms(10);                    // Se da tiempo para el Acquisition Time Example
+    if (ADCON0bits.GO_DONE == 0)       // Si ya termino la conversion
+    {
+        ADCON0bits.GO_DONE = 1;        // Se inicia el GO_DONE para iniciar nuevamente
+        PORTD = ADRESH;
+        semaforo();
+    }
 }
 
 

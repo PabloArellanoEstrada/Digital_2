@@ -3,9 +3,9 @@
 
 void SPI_Maestro_Init (char port_mode, char SCK)
 {
-    TRISAbits.TRISA5 = 0;  // ss
-    TRISAbits.TRISA6 = 0;  // ss
-    TRISAbits.TRISA7 = 0;  // ss
+    TRISCbits.TRISC0 = 0;  // ss
+    TRISCbits.TRISC1 = 0;  // ss
+    TRISCbits.TRISC2 = 0;  // ss
     TRISCbits.TRISC5 = 0;  // SDO out_maestro / in_esclavo
     TRISCbits.TRISC4 = 1;  // SDI in_maestro / out_esclavo
     TRISCbits.TRISC3 = 0;  // clk
@@ -84,8 +84,8 @@ void SPI_Maestro_Init (char port_mode, char SCK)
 void SPI_Esclavo_Init (char port_mode, char SCK)
 {
     TRISAbits.TRISA5 = 1;  // ss
-    TRISCbits.TRISC5 = 0;  // SDO out_maestro / in_esclavo
-    TRISCbits.TRISC4 = 1;  // SDI in_maestro / out_esclavo
+    TRISCbits.TRISC5 = 0;  // SDO in_maestro / out_esclavo
+    TRISCbits.TRISC4 = 1;  // SDI out_maestro / in_esclavo 
     TRISCbits.TRISC3 = 1;  // clk
     
     switch (port_mode)

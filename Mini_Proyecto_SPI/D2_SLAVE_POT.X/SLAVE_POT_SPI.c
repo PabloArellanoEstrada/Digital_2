@@ -44,7 +44,7 @@ uint8_t i = 0;                  // ADC
 uint8_t adc_value1 = 0; 
 uint8_t adc_value2 = 0; 
 
-char dato;
+char dato_maestro;
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -53,10 +53,11 @@ char dato;
 void setup(void);                    // Configuracion inicial
 void osc_config (void);
 void interrup_config (void);
-void adc_config (void);
-void USART_config(void); 
-void adc_conversion1 (void);         // ADC
+void tmr0_config (void);
 void SPI_config (void);
+void adc_config (void);
+void adc_conversion (void);         // ADC
+
 
 
 
@@ -66,11 +67,15 @@ void SPI_config (void);
 
 void __interrupt() ISR(void)    
 {                               // GIE = 0
-    if (PIR1bits.RCIF == 1)     // Se puede leer?                                            
+    if (INTCONbits.TMR0IF == 1)  // Si hay desboradmiento de TIMER0 la bandera se levanta y se revisa
     {
-        PIR1bits.RCIF = 0;      // Se apaga bandera
-    } 
-}                               // GIE = 1
+        adc_conversion();
+        INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
+        TMR0 = 100;                
+    }
+    
+   
+}                            // GIE = 1
 
 //============================================================================*/
 // CICLO PRINCIPAL
@@ -81,12 +86,20 @@ void main(void)
     setup();                            // Funciones de Configuracion
     osc_config();
     interrup_config();
-    adc_config ();
+    tmr0_config ();
+    adc_config();
     SPI_config ();
+    
     while (1)                           // Loop principal
     {
-        initADC (0);                    // Canal 0
-        adc_conversion1 ();             // Conversion canal 0
+        if (SSPIF == 1)
+        {
+        dato_maestro = SPI_Recibir();
+        SPI_Enviar (PORTD);  
+        SSPIF = 0;
+    }
+        
+        
     }
 }
 
@@ -97,11 +110,11 @@ void main(void)
 void setup(void) 
 {
     ANSEL = 0;                // Puerto A digital
-    TRISA = 0;                // Puerto A como entrada 
-    TRISAbits.TRISA5 = 1;     // Bit 5 entrada
-    ANSELbits.ANS5 = 0;       // Digital
+    TRISA = 0;                // Puerto A como entrada
     TRISAbits.TRISA0 = 1;     // Entrada
     ANSELbits.ANS0 = 1;       // Analogico
+    TRISAbits.TRISA5 = 1;     // Bit 5 entrada
+    ANSELbits.ANS5 = 0;       // Digital
     PORTA = 0;                // Puerto A entrada apagado
     
     ANSELH = 0;               // Puerto B digital
@@ -120,9 +133,9 @@ void setup(void)
 
 void interrup_config (void) 
 {
-    INTCONbits.GIE = 0;       // Interrupciones globales habilitadas
-    INTCONbits.PEIE = 0;      // Interrupciones periferias habilidatas
-    INTCONbits.T0IE = 0;      // Interrupcion del Timer0 deshabilitada
+    INTCONbits.GIE = 1;       // Interrupciones globales habilitadas
+    INTCONbits.PEIE = 1;      // Interrupciones periferias habilidatas
+    INTCONbits.T0IE = 1;      // Interrupcion del Timer0 deshabilitada
     INTCONbits.INTE = 0;      // Interrupcion externa INT deshabilitada
     INTCONbits.RBIE = 0;      // Interrupcion del Puerto B habilitadas
     INTCONbits.T0IF = 0;      // Bandera de Interrupcion del Timer 0
@@ -142,6 +155,17 @@ void osc_config (void)
     OSCCONbits.SCS   = 0;     // Oscilador basado en el reloj
 }
 
+void tmr0_config (void) 
+{
+    OPTION_REGbits.nRBPU = 1; // PORTB pull-ups habilitados
+    OPTION_REGbits.T0CS = 0;  // TIMER0 como temporizador, no contador
+    OPTION_REGbits.PSA = 0;   // Modulo de TIMER con prescaler, no se usa WDT
+    OPTION_REGbits.PS2 = 0;   // Prescaler en 8
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS0 = 0;
+    TMR0 = 100;                // Valor del TIMER0 para un delay de 0.246 seg.
+}
+
 //============================================================================*/
     // CONFIGURACION CON LIBRERIA
 //============================================================================*/
@@ -153,14 +177,14 @@ void adc_config (void)
 
 void SPI_config (void)
 {
-    SPI_Esclavo_Init (4, 0);
+    SPI_Esclavo_Init (4, 2);
 }
 
 //============================================================================*/
 // FUNCIONES
 //============================================================================*/
 
-void adc_conversion1 (void)
+void adc_conversion (void)
 {
     ADCON0bits.GO_DONE = 1;            // GO_DONE para iniciar conversion
     __delay_ms(10);                    // Se da tiempo para el Acquisition Time Example

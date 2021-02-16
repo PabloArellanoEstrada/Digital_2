@@ -65,6 +65,10 @@ uint8_t velocidad1 = 0;
 uint8_t velocidad2 = 0;   
 uint8_t velocidad3 = 0; 
 
+uint8_t dato_pot = 0;
+uint8_t dato_push = 0;
+uint8_t dato_semaforo = 0;
+
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
 //============================================================================*/
@@ -85,8 +89,6 @@ void Conversion2 (void);
 void virtual_display1 (void);        // Terminal virtual
 void virtual_display2 (void);
 void virtual_display3 (void);
-
-
 
 //============================================================================*/
 // INTERRUPCIONES
@@ -114,18 +116,21 @@ void main(void)
     SPI_config ();
     while (1)                           // Loop principal
     {
-        PORTAbits.RA7 = 0;
-        for (char j = 0; j<= 15; j++)
-        {
-            SPI_Enviar (j);
-            __delay_ms(500);
-        }
-        PORTAbits.RA7 = 1;
-        __delay_ms(100);
+        PORTCbits.RC0 = 0;
+        __delay_ms(1);
+        
+        SPI_Enviar (dato_pot);        
+        PORTA = SPI_Recibir();
+        
+        __delay_ms(1);        
+        PORTCbits.RC0 = 1;
+                
         lcd ();                         // LCD
         velocidad1 = velocidad1 + 1;    // Velocidad terminal
         velocidad2 = velocidad2 + 1;
         velocidad3 = velocidad3 + 1;
+        
+        
     }
 }
 
@@ -142,9 +147,12 @@ void setup(void)
     TRISB = 0;                // Puerto B salida
     PORTB = 0;                // Puerto B RB0 y RB1 entrada igual a 0
     TRISC = 0;                // Puerto C salida leds
+    PORTC = 0;                // Puerto C salida leds apagados
     TRISCbits.TRISC6 = 0;     // TX salida
     TRISCbits.TRISC4 = 1;     // Dato de esclavo
-    PORTC = 0;                // Puerto C salida leds apagados
+    PORTCbits.RC0 = 1;
+    PORTCbits.RC1 = 1;
+    PORTCbits.RC2 = 1;
     TRISD = 0;                // Puerto D salida display
     PORTD = 0;                // Puerto D salida apagados
     TRISE = 0;                // Puerto E salida transistores y alarma

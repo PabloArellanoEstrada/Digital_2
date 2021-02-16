@@ -2640,9 +2640,9 @@ char SPI_Recibir ();
 
 void SPI_Maestro_Init (char port_mode, char SCK)
 {
-    TRISAbits.TRISA5 = 0;
-    TRISAbits.TRISA6 = 0;
-    TRISAbits.TRISA7 = 0;
+    TRISCbits.TRISC0 = 0;
+    TRISCbits.TRISC1 = 0;
+    TRISCbits.TRISC2 = 0;
     TRISCbits.TRISC5 = 0;
     TRISCbits.TRISC4 = 1;
     TRISCbits.TRISC3 = 0;
