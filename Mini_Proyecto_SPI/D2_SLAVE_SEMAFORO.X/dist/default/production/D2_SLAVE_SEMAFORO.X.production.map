@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\D2_SLAVE_SEMAFORO.X.production.sym \
   --cmf=dist/default/production\D2_SLAVE_SEMAFORO.X.production.cmf -z \
-  -Q16F887 -oC:\Users\pablo\AppData\Local\Temp\sfug.2 \
+  -Q16F887 -oC:\Users\pablo\AppData\Local\Temp\sfac.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/D2_SLAVE_SEMAFORO.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
@@ -19,7 +19,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\pablo\AppData\Local\Temp\sfug.o \
+  -pfunctab=ENTRY -k C:\Users\pablo\AppData\Local\Temp\sfac.o \
   dist/default/production\D2_SLAVE_SEMAFORO.X.production.o 
 
 Object code version is 3.11
@@ -29,7 +29,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\pablo\AppData\Local\Temp\sfug.o
+C:\Users\pablo\AppData\Local\Temp\sfac.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -37,19 +37,19 @@ dist/default/production\D2_SLAVE_SEMAFORO.X.production.o
                 cinit                                 F        F        7        8       0
                 intentry                              4        4        8        8       0
                 config                             2007     2007        2        0       4
-                text13                              1A6      1A6       20        8       0
-                text12                              1C6      1C6       1B        8       0
-                text11                              1E1      1E1       15        8       0
-                text10                              22D      22D        6        8       0
-                text9                               233      233        4        8       0
+                text13                              1AB      1AB       20        8       0
+                text12                              1CB      1CB       1B        8       0
+                text11                              1E6      1E6       15        8       0
+                text10                              232      232        6        8       0
+                text9                               238      238        4        8       0
                 text8                                BF       BF       77        8       0
-                text7                               203      203        D        8       0
+                text7                               208      208        D        8       0
                 text6                                16       16       A9        8       0
-                text5                               226      226        7        8       0
-                text4                               210      210        C        8       0
-                text3                               21C      21C        A        8       0
-                text2                               171      171       35        8       0
-                text1                               1F6      1F6        D        8       0
+                text5                               22B      22B        7        8       0
+                text4                               215      215        C        8       0
+                text3                               221      221        A        8       0
+                text2                               171      171       3A        8       0
+                text1                               1FB      1FB        D        8       0
                 maintext                            136      136       3B        8       0
                 cstackBANK0                          20       20        3       20       1
                 cstackCOMMON                         70       70        7       70       1
@@ -63,19 +63,19 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                 F        F        7         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        3         0
-                text13                              1A6      1A6       20         0
-                text12                              1C6      1C6       1B         0
-                text11                              1E1      1E1       15         0
-                text10                              22D      22D        6         0
-                text9                               233      233        4         0
+                text13                              1AB      1AB       20         0
+                text12                              1CB      1CB       1B         0
+                text11                              1E6      1E6       15         0
+                text10                              232      232        6         0
+                text9                               238      238        4         0
                 text8                                BF       BF       77         0
-                text7                               203      203        D         0
+                text7                               208      208        D         0
                 text6                                16       16       A9         0
-                text5                               226      226        7         0
-                text4                               210      210        C         0
-                text3                               21C      21C        A         0
-                text2                               171      171       35         0
-                text1                               1F6      1F6        D         0
+                text5                               22B      22B        7         0
+                text4                               215      215        C         0
+                text3                               221      221        A         0
+                text2                               171      171       3A         0
+                text1                               1FB      1FB        D         0
                 maintext                            136      136       3B         0
 
         CLASS   STRCODE        
@@ -124,7 +124,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  000233  000237         8       0  CODE        2
+                intentry                       000004  000238  00023C         8       0  CODE        2
                 cstackBANK0                    000020  000003  000023        20       1  BANK0       1
                 cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
 
@@ -137,13 +137,13 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         0237-1FFF            800
+                         023C-1FFF            800
         COMMON           007A-007D              4           1
         CONST            0003-0003              1           2
-                         0237-1FFF            100
+                         023C-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         0237-1FFF            100
+                         023C-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0023-006F             4D           1
                          00A0-00EF             50
@@ -155,9 +155,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         0237-1FFF           1DC9
+                         023C-1FFF           1DC4
         STRING           0003-0003              1           2
-                         0237-1FFF            100
+                         023C-1FFF            100
 
                                   Symbol Table
 
@@ -172,19 +172,20 @@ _ANSELH                    (abs)        0189
 _ANSELbits                 (abs)        0188
 _INTCONbits                (abs)        000B
 _IOCB                      (abs)        0096
-_ISR                       text11       01E1
+_ISR                       text11       01E6
 _OPTION_REGbits            (abs)        0081
 _OSCCONbits                (abs)        008F
 _PORTA                     (abs)        0005
+_PORTAbits                 (abs)        0005
 _PORTB                     (abs)        0006
 _PORTBbits                 (abs)        0006
 _PORTC                     (abs)        0007
 _PORTD                     (abs)        0008
 _PORTE                     (abs)        0009
-_SPI_Enviar                text10       022D
+_SPI_Enviar                text10       0232
 _SPI_Esclavo_Init          text8        00BF
-_SPI_Recibir               text9        0233
-_SPI_config                text7        0203
+_SPI_Recibir               text9        0238
+_SPI_config                text7        0208
 _SSPBUF                    (abs)        0013
 _SSPCONbits                (abs)        0014
 _SSPIF                     (abs)        0063
@@ -223,7 +224,7 @@ __Hsfr0                    sfr0         0000
 __Hsfr1                    sfr1         0000
 __Hsfr2                    sfr2         0000
 __Hsfr3                    sfr3         0000
-__Hspace_0                 (abs)        0237
+__Hspace_0                 (abs)        023C
 __Hspace_1                 (abs)        007A
 __Hspace_2                 (abs)        0000
 __Hspace_3                 (abs)        0000
@@ -265,7 +266,7 @@ __Lspace_4                 (abs)        0000
 __Lstack                   stack        0000
 __Lstrings                 strings      0000
 __Ltext                    text         0000
-__S0                       (abs)        0237
+__S0                       (abs)        023C
 __S1                       (abs)        007A
 __S2                       (abs)        0000
 __S3                       (abs)        0000
@@ -274,40 +275,40 @@ ___latbits                 (abs)        0002
 ___sp                      stack        0000
 ___stackhi                 (abs)        0000
 ___stacklo                 (abs)        0000
-__end_of_ISR               text11       01F6
-__end_of_SPI_Enviar        text10       0233
+__end_of_ISR               text11       01FB
+__end_of_SPI_Enviar        text10       0238
 __end_of_SPI_Esclavo_Init  text8        0136
-__end_of_SPI_Recibir       text9        0237
-__end_of_SPI_config        text7        0210
+__end_of_SPI_Recibir       text9        023C
+__end_of_SPI_config        text7        0215
 __end_of__initialization   cinit        0012
-__end_of_adc_config        text5        022D
-__end_of_adc_conversion    text12       01E1
+__end_of_adc_config        text5        0232
+__end_of_adc_conversion    text12       01E6
 __end_of_initADC           text6        00BF
-__end_of_interrup_config   text4        021C
+__end_of_interrup_config   text4        0221
 __end_of_main              maintext     0171
-__end_of_osc_config        text3        0226
-__end_of_semaforo          text13       01C6
-__end_of_setup             text2        01A6
-__end_of_tmr0_config       text1        0203
+__end_of_osc_config        text3        022B
+__end_of_semaforo          text13       01CB
+__end_of_setup             text2        01AB
+__end_of_tmr0_config       text1        0208
 __initialization           cinit        000F
 __pbssCOMMON               bssCOMMON    0077
 __pcstackBANK0             cstackBANK0  0020
 __pcstackCOMMON            cstackCOMMON 0070
 __pintentry                intentry     0004
 __pmaintext                maintext     0136
-__ptext1                   text1        01F6
-__ptext10                  text10       022D
-__ptext11                  text11       01E1
-__ptext12                  text12       01C6
-__ptext13                  text13       01A6
+__ptext1                   text1        01FB
+__ptext10                  text10       0232
+__ptext11                  text11       01E6
+__ptext12                  text12       01CB
+__ptext13                  text13       01AB
 __ptext2                   text2        0171
-__ptext3                   text3        021C
-__ptext4                   text4        0210
-__ptext5                   text5        0226
+__ptext3                   text3        0221
+__ptext4                   text4        0215
+__ptext5                   text5        022B
 __ptext6                   text6        0016
-__ptext7                   text7        0203
+__ptext7                   text7        0208
 __ptext8                   text8        00BF
-__ptext9                   text9        0233
+__ptext9                   text9        0238
 __size_of_ISR              (abs)        0000
 __size_of_SPI_Enviar       (abs)        0000
 __size_of_SPI_Esclavo_Init (abs)        0000
@@ -322,16 +323,16 @@ __size_of_osc_config       (abs)        0000
 __size_of_semaforo         (abs)        0000
 __size_of_setup            (abs)        0000
 __size_of_tmr0_config      (abs)        0000
-_adc_config                text5        0226
-_adc_conversion            text12       01C6
+_adc_config                text5        022B
+_adc_conversion            text12       01CB
 _dato_maestro              bssCOMMON    0077
 _initADC                   text6        0016
-_interrup_config           text4        0210
+_interrup_config           text4        0215
 _main                      maintext     0136
-_osc_config                text3        021C
-_semaforo                  text13       01A6
+_osc_config                text3        0221
+_semaforo                  text13       01AB
 _setup                     text2        0171
-_tmr0_config               text1        01F6
+_tmr0_config               text1        01FB
 btemp                      (abs)        007E
 end_of_initialization      cinit        0012
 initADC@CHS                cstackCOMMON 0076
@@ -389,7 +390,7 @@ Total ram usage:        1 bytes
 
  *************** function _tmr0_config *****************
  Defined at:
-		line 161 in file "SLAVE_SEMAFORO_SPI.c"
+		line 162 in file "SLAVE_SEMAFORO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -449,7 +450,7 @@ Total ram usage:        0 bytes
 
  *************** function _osc_config *****************
  Defined at:
-		line 150 in file "SLAVE_SEMAFORO_SPI.c"
+		line 151 in file "SLAVE_SEMAFORO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -479,7 +480,7 @@ Total ram usage:        0 bytes
 
  *************** function _interrup_config *****************
  Defined at:
-		line 137 in file "SLAVE_SEMAFORO_SPI.c"
+		line 138 in file "SLAVE_SEMAFORO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -509,7 +510,7 @@ Total ram usage:        0 bytes
 
  *************** function _adc_config *****************
  Defined at:
-		line 176 in file "SLAVE_SEMAFORO_SPI.c"
+		line 177 in file "SLAVE_SEMAFORO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -569,7 +570,7 @@ Total ram usage:        3 bytes
 
  *************** function _SPI_config *****************
  Defined at:
-		line 181 in file "SLAVE_SEMAFORO_SPI.c"
+		line 182 in file "SLAVE_SEMAFORO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -720,7 +721,7 @@ Total ram usage:        2 bytes
 
  *************** function _adc_conversion *****************
  Defined at:
-		line 212 in file "SLAVE_SEMAFORO_SPI.c"
+		line 213 in file "SLAVE_SEMAFORO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -750,7 +751,7 @@ Total ram usage:        2 bytes
 
  *************** function _semaforo *****************
  Defined at:
-		line 190 in file "SLAVE_SEMAFORO_SPI.c"
+		line 191 in file "SLAVE_SEMAFORO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -787,18 +788,18 @@ ADC_SPI.c
 ADC_SPI.c estimated size: 169
 
 SLAVE_SEMAFORO_SPI.c
-		_osc_config    		CODE           	021C	0000	10
-		_interrup_config		CODE           	0210	0000	12
-		_ISR           		CODE           	01E1	0000	21
+		_osc_config    		CODE           	0221	0000	10
+		_interrup_config		CODE           	0215	0000	12
+		_ISR           		CODE           	01E6	0000	21
 		_main          		CODE           	0136	0000	59
-		_tmr0_config   		CODE           	01F6	0000	13
-		_adc_config    		CODE           	0226	0000	7
-		_semaforo      		CODE           	01A6	0000	32
-		_setup         		CODE           	0171	0000	53
-		_adc_conversion		CODE           	01C6	0000	27
-		_SPI_config    		CODE           	0203	0000	13
+		_tmr0_config   		CODE           	01FB	0000	13
+		_adc_config    		CODE           	022B	0000	7
+		_semaforo      		CODE           	01AB	0000	32
+		_setup         		CODE           	0171	0000	58
+		_adc_conversion		CODE           	01CB	0000	27
+		_SPI_config    		CODE           	0208	0000	13
 
-SLAVE_SEMAFORO_SPI.c estimated size: 247
+SLAVE_SEMAFORO_SPI.c estimated size: 252
 
 shared
 		__initialization		CODE           	000F	0000	3
@@ -807,8 +808,8 @@ shared estimated size: 3
 
 SPI_SPI.c
 		_SPI_Esclavo_Init		CODE           	00BF	0000	119
-		_SPI_Enviar    		CODE           	022D	0000	6
-		_SPI_Recibir   		CODE           	0233	0000	4
+		_SPI_Enviar    		CODE           	0232	0000	6
+		_SPI_Recibir   		CODE           	0238	0000	4
 
 SPI_SPI.c estimated size: 129
 

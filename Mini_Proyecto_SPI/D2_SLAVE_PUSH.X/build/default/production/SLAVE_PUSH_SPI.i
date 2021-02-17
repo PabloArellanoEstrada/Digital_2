@@ -2835,9 +2835,12 @@ void setup(void)
 {
     ANSEL = 0;
     TRISA = 0;
+    PORTA = 0;
     TRISAbits.TRISA5 = 1;
     ANSELbits.ANS5 = 0;
-    PORTA = 0;
+    PORTAbits.RA5 = 1;
+
+
     ANSELH = 0;
     TRISB = 0;
     TRISBbits.TRISB2 = 1;
@@ -2897,10 +2900,10 @@ void incrementar(void)
 {
     if (PORTBbits.RB2 == 1)
     {
-        for (int e = 0; e < 11; e++){
+        for (int e = 0; e < 6; e++){
         pressed_ok = pressed_ok + 1; }
         released_ok = 0;
-        if (pressed_ok > 10)
+        if (pressed_ok > 5)
         {
             if (presionado == 0)
             {
@@ -2912,10 +2915,10 @@ void incrementar(void)
         }
     else
     {
-        for (int e = 0; e < 11; e++){
+        for (int e = 0; e < 6; e++){
         released_ok = released_ok + 1;}
         pressed_ok = 0;
-        if (released_ok > 10)
+        if (released_ok > 5)
         {
             presionado = 0;
             released_ok = 0;
@@ -2928,10 +2931,10 @@ void decrementar(void)
 {
     if (PORTBbits.RB3 == 1)
     {
-        for (int e = 0; e < 11; e++){
+        for (int e = 0; e < 6; e++){
         pressed_ok2 = pressed_ok2 + 1; }
         released_ok2 = 0;
-        if (pressed_ok2 > 10)
+        if (pressed_ok2 > 5)
         {
             if (presionado2 == 0)
             {
@@ -2943,10 +2946,10 @@ void decrementar(void)
         }
     else
     {
-        for (int e = 0; e < 11; e++){
+        for (int e = 0; e < 6; e++){
         released_ok2 = released_ok2 + 1;}
         pressed_ok2 = 0;
-        if (released_ok2 > 10)
+        if (released_ok2 > 5)
         {
             presionado2 = 0;
             released_ok = 0;

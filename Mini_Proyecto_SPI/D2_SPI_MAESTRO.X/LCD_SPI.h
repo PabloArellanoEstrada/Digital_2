@@ -16,9 +16,9 @@
 #ifndef LCD_SPI_H
 #define	LCD_SPI_H
 
-#define	RS PORTCbits.RC0
-#define	RW PORTCbits.RC1
-#define	E  PORTCbits.RC2
+#define	RS PORTEbits.RE0
+#define	RW PORTEbits.RE2
+#define	E  PORTEbits.RE1
 
 #define D0 PORTDbits.RD0
 #define D1 PORTDbits.RD1
@@ -30,7 +30,7 @@
 #define D7 PORTDbits.RD7
 
 #ifndef _XTAL_FREQ
-#define	_XTAL_FREQ 4000000
+#define	_XTAL_FREQ 8000000
 #endif
 #include <xc.h>                         
 #include <stdint.h>     

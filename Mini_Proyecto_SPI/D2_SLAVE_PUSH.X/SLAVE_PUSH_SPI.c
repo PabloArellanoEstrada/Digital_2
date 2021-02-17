@@ -34,7 +34,7 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 // DEFINE
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 //============================================================================*/
 // VARIABLES
@@ -107,11 +107,14 @@ void main(void)
 
 void setup(void) 
 {
-    ANSEL = 0;                // Puerto A analogico
-    TRISA = 0;                // Puerto A como entrada analogica
+    ANSEL = 0;                // Puerto A digital
+    TRISA = 0;                // Puerto A como entrada
+    PORTA = 0;                // Puerto A entrada apagado
     TRISAbits.TRISA5 = 1;     // Bit 5 entrada
     ANSELbits.ANS5 = 0;       // Digital
-    PORTA = 0;                // Puerto A entrada apagado
+    PORTAbits.RA5 = 1;
+    
+    
     ANSELH = 0;               // Puerto B digital
     TRISB = 0;                // salida B RB0 y RB1 para botones y los demas de salida
     TRISBbits.TRISB2 = 1;     // salida B RB0 y RB1 para botones y los demas de salida
@@ -171,10 +174,10 @@ void incrementar(void)
 {
     if (PORTBbits.RB2 == 1)                // Verifica que el boton este presionado 
     {
-        for (int e = 0; e < 11; e++){
+        for (int e = 0; e < 6; e++){
         pressed_ok = pressed_ok + 1; }     // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
         released_ok = 0;                   // Variable de boton libre se reduce a cero porque boton se esta presionando
-        if (pressed_ok > 10)               // Si el boton esta seguramente presionado
+        if (pressed_ok > 5)               // Si el boton esta seguramente presionado
         {
             if (presionado == 0)           // Verifica que el boton esta en posicion presionado
             {    
@@ -186,10 +189,10 @@ void incrementar(void)
         }
     else                                   // Si el boton no esta presionado
     {
-        for (int e = 0; e < 11; e++){
+        for (int e = 0; e < 6; e++){
         released_ok = released_ok + 1;}    // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
         pressed_ok = 0;                    // Contador de boton presionado se reduce a cero porque boton esta libre
-        if (released_ok > 10)              // Verifica que el boton este libre ...
+        if (released_ok > 5)              // Verifica que el boton este libre ...
         {
             presionado = 0;                // Coloca el boton como libre para siguiente ciclo
             released_ok = 0;               // Variable de boton libre se reduce a cero para siguiente ciclo
@@ -202,10 +205,10 @@ void decrementar(void)
 {
     if (PORTBbits.RB3 == 1)                // Verifica que el boton este presionado 
     {
-        for (int e = 0; e < 11; e++){
+        for (int e = 0; e < 6; e++){
         pressed_ok2 = pressed_ok2 + 1; }   // Se incrementa contador que verifica que el boton este presionado con rango de seguridad 
         released_ok2 = 0;                  // Variable de boton libre se reduce a cero porque boton se esta presionando
-        if (pressed_ok2 > 10)              // Si el boton esta seguramente presionado
+        if (pressed_ok2 > 5)              // Si el boton esta seguramente presionado
         {
             if (presionado2 == 0)          // Verifica que el boton esta en posicion presionado
             {    
@@ -217,10 +220,10 @@ void decrementar(void)
         }
     else                                    // Si el boton no esta presionado
     {
-        for (int e = 0; e < 11; e++){
+        for (int e = 0; e < 6; e++){
         released_ok2 = released_ok2 + 1;}   // Se incrementa contador que verifica que el boton este libre con rango de seguridad 
         pressed_ok2 = 0;                    // Contador de boton presionado se reduce a cero porque boton esta libre
-        if (released_ok2 > 10)              // Verifica que el boton este libre ...
+        if (released_ok2 > 5)              // Verifica que el boton este libre ...
         {
             presionado2 = 0;                // Coloca el boton como libre para siguiente ciclo
             released_ok = 0;                // Variable de boton libre se reduce a cero para siguiente ciclo

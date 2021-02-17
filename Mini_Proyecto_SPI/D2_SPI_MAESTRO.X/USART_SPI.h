@@ -12,7 +12,7 @@
 
 #ifndef USART_SPI_H
 #define	USART_SPI_H
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 #include <xc.h>               
 #include <stdint.h>          
 #include <stdio.h>     

@@ -2815,6 +2815,13 @@ uint8_t y1z;
 uint8_t x2z;
 uint8_t y2z;
 
+uint8_t voltajey;
+uint8_t unidady;
+uint8_t x1y;
+uint8_t y1y;
+uint8_t x2y;
+uint8_t y2y;
+
 uint8_t leer;
 uint8_t contador;
 
@@ -2827,6 +2834,7 @@ uint8_t velocidad3 = 0;
 
 uint8_t dato_pot = 0;
 uint8_t dato_push = 0;
+uint8_t dato_push1 = 0;
 uint8_t dato_semaforo = 0;
 
 
@@ -2836,6 +2844,7 @@ uint8_t dato_semaforo = 0;
 void setup(void);
 void osc_config (void);
 void interrup_config (void);
+void tmr0_config (void);
 void USART_config(void);
 void SPI_config (void);
 
@@ -2845,6 +2854,7 @@ void escribir_char (uint8_t valor);
 void lcd (void);
 void Conversion1 (void);
 void Conversion2 (void);
+void Conversion3 (void);
 
 void virtual_display1 (void);
 void virtual_display2 (void);
@@ -2856,9 +2866,10 @@ void virtual_display3 (void);
 
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
-    if (PIR1bits.RCIF == 1)
+    if (INTCONbits.TMR0IF == 1)
     {
-        PIR1bits.RCIF = 0;
+        INTCONbits.TMR0IF = 0;
+        TMR0 = 100;
     }
 }
 
@@ -2871,19 +2882,38 @@ void main(void)
     setup();
     osc_config();
     interrup_config();
+    tmr0_config ();
     Lcd_Init();
     USART_config();
     SPI_config ();
     while (1)
     {
+
+
+
+
         PORTCbits.RC0 = 0;
-        _delay((unsigned long)((1)*(4000000/4000.0)));
+        _delay((unsigned long)((1)*(8000000/4000.0)));
 
         SPI_Enviar (dato_pot);
-        PORTA = SPI_Recibir();
+        dato_pot = SPI_Recibir();
 
-        _delay((unsigned long)((1)*(4000000/4000.0)));
+        _delay((unsigned long)((1)*(8000000/4000.0)));
         PORTCbits.RC0 = 1;
+
+
+
+        PORTCbits.RC1 = 0;
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+
+        SPI_Enviar (dato_push1);
+        dato_push = SPI_Recibir();
+
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        PORTCbits.RC1 = 1;
+
+
+
 
         lcd ();
         velocidad1 = velocidad1 + 1;
@@ -2923,7 +2953,7 @@ void interrup_config (void)
 {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.T0IE = 0;
+    INTCONbits.T0IE = 1;
     INTCONbits.INTE = 0;
     INTCONbits.RBIE = 0;
     INTCONbits.T0IF = 0;
@@ -2941,6 +2971,17 @@ void osc_config (void)
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 1;
     OSCCONbits.SCS = 0;
+}
+
+void tmr0_config (void)
+{
+    OPTION_REGbits.nRBPU = 0;
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS2 = 0;
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS0 = 0;
+    TMR0 = 100;
 }
 
 
@@ -2963,30 +3004,20 @@ void SPI_config (void)
 
 void lcd (void)
 {
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("S1:   S2:   S3: ");
+    Lcd_Set_Cursor(0,1);
+    Lcd_Write_String("ADC:  BTN: TEMP:");
     Lcd_Set_Cursor(2,0);
     Conversion1 ();
-    Lcd_Set_Cursor(2,6);
+    Lcd_Set_Cursor(2,7);
     Conversion2 ();
-    if (contador < 10)
-    {
-        Lcd_Set_Cursor(2,14);
-        Lcd_Write_Char(contador + 48);
-    }
-    else if (contador >= 10)
-    {
-        w1 = contador/10;
-        w2 = contador % 10;
-        Lcd_Set_Cursor(2,13);
-        Lcd_Write_Char(w1+48);
-        Lcd_Write_Char(w2+48);
-    }
+    Lcd_Set_Cursor(2,12);
+    Conversion3 ();
+
 }
 
 void Conversion1 ()
 {
-
+    voltaje = dato_pot * 2;
     unidad = voltaje / 100;
     x1 = voltaje % 100;
     x2 = x1 / 10;
@@ -3002,18 +3033,35 @@ void Conversion1 ()
 
 void Conversion2 ()
 {
+    if (dato_push < 10)
+    {
+        Lcd_Write_Char(48);
+        Lcd_Write_Char(dato_push+ 48);
+        virtual_display2();
+    }
+    else if (dato_push >= 10)
+    {
+        w1 = dato_push/10;
+        w2 = dato_push % 10;
+        Lcd_Write_Char(w1+48);
+        Lcd_Write_Char(w2+48);
+        virtual_display2();
+    }
+}
 
-    unidadz = voltajez / 100;
-    x1z = voltajez % 100;
-    x2z = x1z / 10;
-    y1z = x1z % 10;
-    y2z = y1z / 1;
-    Lcd_Write_Char(unidadz+48);
+void Conversion3 ()
+{
+    voltajey = dato_pot * 2;
+    unidady = voltajey / 100;
+    x1z = voltajey % 100;
+    x2y = x1y / 10;
+    y1y = x1y % 10;
+    y2y = y1y / 1;
+    Lcd_Write_Char(unidady+48);
     Lcd_Write_Char(46);
-    Lcd_Write_Char(x2z+48);
-    Lcd_Write_Char(y2z+48);
+    Lcd_Write_Char(x2y+48);
+    Lcd_Write_Char(y2y+48);
     Lcd_Write_Char(86);
-    virtual_display2();
     virtual_display3();
 }
 
@@ -3021,14 +3069,17 @@ void virtual_display1 (void)
 {
     if (velocidad1 > 15)
     {
-        escribir_char (83);
-        escribir_char (49);
+        escribir_char (65);
+        escribir_char (68);
+        escribir_char (67);
         escribir_char (58);
         escribir_char (unidad+48);
         escribir_char (46);
         escribir_char (x2+48);
         escribir_char (y2+48);
         escribir_char (86);
+        escribir_char (32);
+        escribir_char (32);
         escribir_char (32);
         escribir_char (32);
         velocidad1 = 0;
@@ -3039,17 +3090,38 @@ void virtual_display2 (void)
 {
     if (velocidad2 > 15)
     {
-        escribir_char (83);
-        escribir_char (50);
-        escribir_char (58);
-        escribir_char (unidadz+48);
-        escribir_char (46);
-        escribir_char (x2z+48);
-        escribir_char (y2z+48);
-        escribir_char (86);
-        escribir_char (32);
-        escribir_char (32);
-        velocidad2 = 0;
+        if (dato_push < 10)
+        {
+            escribir_char (67);
+            escribir_char (79);
+            escribir_char (78);
+            escribir_char (84);
+            escribir_char (58);
+            escribir_char (48);
+            escribir_char (dato_push+48);
+            escribir_char (32);
+            escribir_char (32);
+            escribir_char (32);
+            escribir_char (32);
+
+            velocidad2 = 0;
+        }
+        else
+        {
+            escribir_char (67);
+            escribir_char (79);
+            escribir_char (78);
+            escribir_char (84);
+            escribir_char (58);
+            escribir_char (w1+48);
+            escribir_char (w2+48);
+            escribir_char (32);
+            escribir_char (32);
+            escribir_char (32);
+            escribir_char (32);
+
+            velocidad2 = 0;
+        }
     }
 }
 
@@ -3057,24 +3129,18 @@ void virtual_display3 (void)
 {
     if (velocidad3 > 15)
     {
-        if (contador < 10)
-        {
-            escribir_char (67);
-            escribir_char (58);
-            escribir_char (48);
-            escribir_char (contador+48);
-            escribir_char ('\r');
-            velocidad3 = 0;
-        }
-        else
-        {
-            escribir_char (67);
-            escribir_char (58);
-            escribir_char (w1+48);
-            escribir_char (w2+48);
-            escribir_char ('\r');
-            velocidad3 = 0;
-        }
+        escribir_char (84);
+        escribir_char (69);
+        escribir_char (77);
+        escribir_char (80);
+        escribir_char (58);
+        escribir_char (unidady+48);
+        escribir_char (46);
+        escribir_char (x2y+48);
+        escribir_char (y2y+48);
+        escribir_char (86);
+        escribir_char ('\r');
+        velocidad3 = 0;
     }
 }
 

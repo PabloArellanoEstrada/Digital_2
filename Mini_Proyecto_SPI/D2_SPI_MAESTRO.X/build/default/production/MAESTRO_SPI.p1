@@ -1,35 +1,45 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"543 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 543:     struct {
-[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
-"542
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 542: typedef union {
-[u S18 `S19 1 ]
-[n S18 . . ]
-"553
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
-[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"465 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 465:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"475
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 475:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"464
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 464: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"482
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"59
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
 [p mainexit ]
-"76 MAESTRO_SPI.c
-[; ;MAESTRO_SPI.c: 76:     Lcd_Init();
+"84 MAESTRO_SPI.c
+[; ;MAESTRO_SPI.c: 84:     setup();
 [v _setup `(v ~T0 @X0 0 ef ]
-"77
-[; ;MAESTRO_SPI.c: 77:     USART_config();
+"85
+[; ;MAESTRO_SPI.c: 85:     osc_config();
 [v _osc_config `(v ~T0 @X0 0 ef ]
-"78
-[; ;MAESTRO_SPI.c: 78:     SPI_config ();
+"86
+[; ;MAESTRO_SPI.c: 86:     interrup_config();
 [v _interrup_config `(v ~T0 @X0 0 ef ]
+"87
+[; ;MAESTRO_SPI.c: 87:     tmr0_config ();
+[v _tmr0_config `(v ~T0 @X0 0 ef ]
 "44 ./LCD_SPI.h
 [; ;./LCD_SPI.h: 44: void Lcd_Init(void);
 [v _Lcd_Init `(v ~T0 @X0 0 ef ]
-"79 MAESTRO_SPI.c
-[; ;MAESTRO_SPI.c: 79:     while (1)
+"88 MAESTRO_SPI.c
+[; ;MAESTRO_SPI.c: 88:     Lcd_Init();
 [v _USART_config `(v ~T0 @X0 0 ef ]
-"80
-[; ;MAESTRO_SPI.c: 80:     {
+"89
+[; ;MAESTRO_SPI.c: 89:     USART_config();
 [v _SPI_config `(v ~T0 @X0 0 ef ]
 "296 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 296:     struct {
@@ -49,14 +59,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 ./SPI_SPI.h
 [; ;./SPI_SPI.h: 28: void SPI_Enviar (char valor);
 [v _SPI_Enviar `(v ~T0 @X0 0 ef1`uc ]
-"166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"29 ./SPI_SPI.h
+"29
 [; ;./SPI_SPI.h: 29: char SPI_Recibir ();
 [v _SPI_Recibir `(uc ~T0 @X0 0 e? ]
-"85 MAESTRO_SPI.c
-[; ;MAESTRO_SPI.c: 85:         PORTA = SPI_Recibir();
+"94 MAESTRO_SPI.c
+[; ;MAESTRO_SPI.c: 94: 
 [v _lcd `(v ~T0 @X0 0 ef ]
 "3387 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
@@ -64,6 +71,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1416
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"166
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "3449
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
@@ -102,21 +112,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "414
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
-"465
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 465:     struct {
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
-"475
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 475:     struct {
-[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S17 . . TMR0IF . TMR0IE ]
-"464
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 464: typedef union {
-[u S15 `S16 1 `S17 1 ]
-[n S15 . . . ]
-"482
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 "2416
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2416: extern volatile unsigned char IOCB __attribute__((address(0x096)));
 [v _IOCB `Vuc ~T0 @X0 0 e@150 ]
@@ -135,6 +130,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1882
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1882: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
 [v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
+"1352
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1352:     struct {
+[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1360
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1360:     struct {
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PS0 PS1 PS2 ]
+"1351
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1351: typedef union {
+[u S49 `S50 1 `S51 1 ]
+[n S49 . . . ]
+"1366
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1366: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
+[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
 "24 ./USART_SPI.h
 [; ;./USART_SPI.h: 24: void USART_lib_config(void);
 [v _USART_lib_config `(v ~T0 @X0 0 ef ]
@@ -147,30 +157,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47
 [; ;./LCD_SPI.h: 47: void Lcd_Write_String(char *a);
 [v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
-"86 MAESTRO_SPI.c
-[; ;MAESTRO_SPI.c: 86: 
+"95 MAESTRO_SPI.c
+[; ;MAESTRO_SPI.c: 95: 
 [v _Conversion1 `(v ~T0 @X0 0 ef ]
-"87
-[; ;MAESTRO_SPI.c: 87:         _delay((unsigned long)((1)*(4000000/4000.0)));
+"96
+[; ;MAESTRO_SPI.c: 96: 
 [v _Conversion2 `(v ~T0 @X0 0 ef ]
+"97
+[; ;MAESTRO_SPI.c: 97:         PORTCbits.RC0 = 0;
+[v _Conversion3 `(v ~T0 @X0 0 ef ]
 "50 ./LCD_SPI.h
 [; ;./LCD_SPI.h: 50: void Lcd_Write_Char(char a);
 [v _Lcd_Write_Char `(v ~T0 @X0 0 ef1`uc ]
-"89 MAESTRO_SPI.c
-[; ;MAESTRO_SPI.c: 89: 
+"99 MAESTRO_SPI.c
+[; ;MAESTRO_SPI.c: 99: 
 [v _virtual_display1 `(v ~T0 @X0 0 ef ]
-"90
-[; ;MAESTRO_SPI.c: 90:         lcd ();
+"100
+[; ;MAESTRO_SPI.c: 100:         SPI_Enviar (dato_pot);
 [v _virtual_display2 `(v ~T0 @X0 0 ef ]
-"91
-[; ;MAESTRO_SPI.c: 91:         velocidad1 = velocidad1 + 1;
+"101
+[; ;MAESTRO_SPI.c: 101:         dato_pot = SPI_Recibir();
 [v _virtual_display3 `(v ~T0 @X0 0 ef ]
-"83
-[; ;MAESTRO_SPI.c: 83: 
+"92
+[; ;MAESTRO_SPI.c: 92:     {
 [v _escribir_char `(v ~T0 @X0 0 ef1`uc ]
 "1133 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1133: extern volatile unsigned char TXREG __attribute__((address(0x019)));
 [v _TXREG `Vuc ~T0 @X0 0 e@25 ]
+"543
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -406,733 +430,887 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "24 MAESTRO_SPI.c
-[; ;MAESTRO_SPI.c: 24: uint8_t w2;
+[; ;MAESTRO_SPI.c: 24: uint8_t x2y;
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "25
-[; ;MAESTRO_SPI.c: 25: uint8_t a;
+[; ;MAESTRO_SPI.c: 25: uint8_t y2y;
 [p x WDTE  =  OFF        ]
 "26
-[; ;MAESTRO_SPI.c: 26: uint8_t velocidad1 = 0;
+[; ;MAESTRO_SPI.c: 26: 
 [p x PWRTE  =  OFF       ]
 "27
-[; ;MAESTRO_SPI.c: 27: uint8_t velocidad2 = 0;
+[; ;MAESTRO_SPI.c: 27: uint8_t leer;
 [p x MCLRE  =  OFF       ]
 "28
-[; ;MAESTRO_SPI.c: 28: uint8_t velocidad3 = 0;
+[; ;MAESTRO_SPI.c: 28: uint8_t contador;
 [p x CP  =  OFF          ]
 "29
 [; ;MAESTRO_SPI.c: 29: 
 [p x CPD  =  OFF         ]
 "30
-[; ;MAESTRO_SPI.c: 30: uint8_t dato_pot = 0;
+[; ;MAESTRO_SPI.c: 30: uint8_t w1;
 [p x BOREN  =  OFF       ]
 "31
-[; ;MAESTRO_SPI.c: 31: uint8_t dato_push = 0;
+[; ;MAESTRO_SPI.c: 31: uint8_t w2;
 [p x IESO  =  OFF        ]
 "32
-[; ;MAESTRO_SPI.c: 32: uint8_t dato_semaforo = 0;
+[; ;MAESTRO_SPI.c: 32: uint8_t a;
 [p x FCMEN  =  OFF       ]
 "33
-[; ;MAESTRO_SPI.c: 33: 
+[; ;MAESTRO_SPI.c: 33: uint8_t velocidad1 = 0;
 [p x LVP  =  OFF         ]
 "35
-[; ;MAESTRO_SPI.c: 35: 
+[; ;MAESTRO_SPI.c: 35: uint8_t velocidad3 = 0;
 [p x BOR4V  =  BOR40V    ]
 "36
 [; ;MAESTRO_SPI.c: 36: 
 [p x WRT  =  OFF         ]
 "44
-[; ;MAESTRO_SPI.c: 44: char leer_char(void);
+[; ;MAESTRO_SPI.c: 44: 
 [v _voltaje `uc ~T0 @X0 1 e ]
 "45
-[; ;MAESTRO_SPI.c: 45: void escribir_char (uint8_t valor);
+[; ;MAESTRO_SPI.c: 45: 
 [v _unidad `uc ~T0 @X0 1 e ]
 "46
-[; ;MAESTRO_SPI.c: 46: 
+[; ;MAESTRO_SPI.c: 46: void setup(void);
 [v _x1 `uc ~T0 @X0 1 e ]
 "47
-[; ;MAESTRO_SPI.c: 47: void lcd (void);
+[; ;MAESTRO_SPI.c: 47: void osc_config (void);
 [v _y1 `uc ~T0 @X0 1 e ]
 "48
-[; ;MAESTRO_SPI.c: 48: void Conversion1 (void);
+[; ;MAESTRO_SPI.c: 48: void interrup_config (void);
 [v _x2 `uc ~T0 @X0 1 e ]
 "49
-[; ;MAESTRO_SPI.c: 49: void Conversion2 (void);
+[; ;MAESTRO_SPI.c: 49: void tmr0_config (void);
 [v _y2 `uc ~T0 @X0 1 e ]
 "51
-[; ;MAESTRO_SPI.c: 51: void virtual_display1 (void);
+[; ;MAESTRO_SPI.c: 51: void SPI_config (void);
 [v _voltajez `uc ~T0 @X0 1 e ]
 "52
-[; ;MAESTRO_SPI.c: 52: void virtual_display2 (void);
+[; ;MAESTRO_SPI.c: 52: 
 [v _unidadz `uc ~T0 @X0 1 e ]
 "53
-[; ;MAESTRO_SPI.c: 53: void virtual_display3 (void);
+[; ;MAESTRO_SPI.c: 53: char leer_char(void);
 [v _x1z `uc ~T0 @X0 1 e ]
 "54
-[; ;MAESTRO_SPI.c: 54: 
+[; ;MAESTRO_SPI.c: 54: void escribir_char (uint8_t valor);
 [v _y1z `uc ~T0 @X0 1 e ]
 "55
 [; ;MAESTRO_SPI.c: 55: 
 [v _x2z `uc ~T0 @X0 1 e ]
 "56
-[; ;MAESTRO_SPI.c: 56: 
+[; ;MAESTRO_SPI.c: 56: void lcd (void);
 [v _y2z `uc ~T0 @X0 1 e ]
 "58
-[; ;MAESTRO_SPI.c: 58: 
-[v _leer `uc ~T0 @X0 1 e ]
+[; ;MAESTRO_SPI.c: 58: void Conversion2 (void);
+[v _voltajey `uc ~T0 @X0 1 e ]
 "59
-[; ;MAESTRO_SPI.c: 59: void __attribute__((picinterrupt(("")))) ISR(void)
-[v _contador `uc ~T0 @X0 1 e ]
+[; ;MAESTRO_SPI.c: 59: void Conversion3 (void);
+[v _unidady `uc ~T0 @X0 1 e ]
+"60
+[; ;MAESTRO_SPI.c: 60: 
+[v _x1y `uc ~T0 @X0 1 e ]
 "61
-[; ;MAESTRO_SPI.c: 61:     if (PIR1bits.RCIF == 1)
-[v _w1 `uc ~T0 @X0 1 e ]
+[; ;MAESTRO_SPI.c: 61: void virtual_display1 (void);
+[v _y1y `uc ~T0 @X0 1 e ]
 "62
-[; ;MAESTRO_SPI.c: 62:     {
-[v _w2 `uc ~T0 @X0 1 e ]
+[; ;MAESTRO_SPI.c: 62: void virtual_display2 (void);
+[v _x2y `uc ~T0 @X0 1 e ]
 "63
-[; ;MAESTRO_SPI.c: 63:         PIR1bits.RCIF = 0;
+[; ;MAESTRO_SPI.c: 63: void virtual_display3 (void);
+[v _y2y `uc ~T0 @X0 1 e ]
+"65
+[; ;MAESTRO_SPI.c: 65: 
+[v _leer `uc ~T0 @X0 1 e ]
+"66
+[; ;MAESTRO_SPI.c: 66: 
+[v _contador `uc ~T0 @X0 1 e ]
+"68
+[; ;MAESTRO_SPI.c: 68: 
+[v _w1 `uc ~T0 @X0 1 e ]
+"69
+[; ;MAESTRO_SPI.c: 69: void __attribute__((picinterrupt(("")))) ISR(void)
+[v _w2 `uc ~T0 @X0 1 e ]
+"70
+[; ;MAESTRO_SPI.c: 70: {
 [v _a `uc ~T0 @X0 1 e ]
-"64
-[; ;MAESTRO_SPI.c: 64:     }
+"71
+[; ;MAESTRO_SPI.c: 71:     if (INTCONbits.TMR0IF == 1)
 [v _velocidad1 `uc ~T0 @X0 1 e ]
 [i _velocidad1
 -> -> 0 `i `uc
 ]
-"65
-[; ;MAESTRO_SPI.c: 65: }
+"72
+[; ;MAESTRO_SPI.c: 72:     {
 [v _velocidad2 `uc ~T0 @X0 1 e ]
 [i _velocidad2
 -> -> 0 `i `uc
 ]
-"66
-[; ;MAESTRO_SPI.c: 66: 
+"73
+[; ;MAESTRO_SPI.c: 73:         INTCONbits.TMR0IF = 0;
 [v _velocidad3 `uc ~T0 @X0 1 e ]
 [i _velocidad3
 -> -> 0 `i `uc
 ]
-"68
-[; ;MAESTRO_SPI.c: 68: 
+"75
+[; ;MAESTRO_SPI.c: 75:     }
 [v _dato_pot `uc ~T0 @X0 1 e ]
 [i _dato_pot
 -> -> 0 `i `uc
 ]
-"69
-[; ;MAESTRO_SPI.c: 69: 
+"76
+[; ;MAESTRO_SPI.c: 76: }
 [v _dato_push `uc ~T0 @X0 1 e ]
 [i _dato_push
 -> -> 0 `i `uc
 ]
-"70
-[; ;MAESTRO_SPI.c: 70: 
+"77
+[; ;MAESTRO_SPI.c: 77: 
+[v _dato_push1 `uc ~T0 @X0 1 e ]
+[i _dato_push1
+-> -> 0 `i `uc
+]
+"78
+[; ;MAESTRO_SPI.c: 78: 
 [v _dato_semaforo `uc ~T0 @X0 1 e ]
 [i _dato_semaforo
 -> -> 0 `i `uc
 ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"97
-[; ;MAESTRO_SPI.c: 97: }
+"107
+[; ;MAESTRO_SPI.c: 107: 
 [v _ISR `(v ~T1 @X0 1 ef ]
-"98
-[; ;MAESTRO_SPI.c: 98: 
+"108
+[; ;MAESTRO_SPI.c: 108:         PORTCbits.RC1 = 0;
 {
 [e :U _ISR ]
 [f ]
-"99
-[; ;MAESTRO_SPI.c: 99: 
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 140  ]
-"100
-[; ;MAESTRO_SPI.c: 100: 
+"109
+[; ;MAESTRO_SPI.c: 109:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 140  ]
+"110
+[; ;MAESTRO_SPI.c: 110: 
 {
-"101
-[; ;MAESTRO_SPI.c: 101: 
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"102
-[; ;MAESTRO_SPI.c: 102: 
+"111
+[; ;MAESTRO_SPI.c: 111:         SPI_Enviar (dato_push1);
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+"112
+[; ;MAESTRO_SPI.c: 112:         dato_push = SPI_Recibir();
+[e = _TMR0 -> -> 100 `i `uc ]
+"113
+[; ;MAESTRO_SPI.c: 113: 
 }
 [e :U 140 ]
-"103
-[; ;MAESTRO_SPI.c: 103: void setup(void)
+"114
+[; ;MAESTRO_SPI.c: 114:         _delay((unsigned long)((1)*(8000000/4000.0)));
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"109
-[; ;MAESTRO_SPI.c: 109:     TRISB = 0;
+"120
+[; ;MAESTRO_SPI.c: 120:         lcd ();
 [v _main `(v ~T0 @X0 1 ef ]
-"110
-[; ;MAESTRO_SPI.c: 110:     PORTB = 0;
+"121
+[; ;MAESTRO_SPI.c: 121:         velocidad1 = velocidad1 + 1;
 {
 [e :U _main ]
 [f ]
-"111
-[; ;MAESTRO_SPI.c: 111:     TRISC = 0;
-[e ( _setup ..  ]
-"112
-[; ;MAESTRO_SPI.c: 112:     PORTC = 0;
-[e ( _osc_config ..  ]
-"113
-[; ;MAESTRO_SPI.c: 113:     TRISCbits.TRISC6 = 0;
-[e ( _interrup_config ..  ]
-"114
-[; ;MAESTRO_SPI.c: 114:     TRISCbits.TRISC4 = 1;
-[e ( _Lcd_Init ..  ]
-"115
-[; ;MAESTRO_SPI.c: 115:     PORTCbits.RC0 = 1;
-[e ( _USART_config ..  ]
-"116
-[; ;MAESTRO_SPI.c: 116:     PORTCbits.RC1 = 1;
-[e ( _SPI_config ..  ]
-"117
-[; ;MAESTRO_SPI.c: 117:     PORTCbits.RC2 = 1;
-[e :U 143 ]
-"118
-[; ;MAESTRO_SPI.c: 118:     TRISD = 0;
-{
-"119
-[; ;MAESTRO_SPI.c: 119:     PORTD = 0;
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-"120
-[; ;MAESTRO_SPI.c: 120:     TRISE = 0;
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "122
-[; ;MAESTRO_SPI.c: 122: }
-[e ( _SPI_Enviar (1 -> _dato_pot `uc ]
+[; ;MAESTRO_SPI.c: 122:         velocidad2 = velocidad2 + 1;
+[e ( _setup ..  ]
 "123
-[; ;MAESTRO_SPI.c: 123: 
-[e = _PORTA -> ( _SPI_Recibir ..  `uc ]
+[; ;MAESTRO_SPI.c: 123:         velocidad3 = velocidad3 + 1;
+[e ( _osc_config ..  ]
+"124
+[; ;MAESTRO_SPI.c: 124: 
+[e ( _interrup_config ..  ]
 "125
-[; ;MAESTRO_SPI.c: 125: {
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;MAESTRO_SPI.c: 125: 
+[e ( _tmr0_config ..  ]
 "126
-[; ;MAESTRO_SPI.c: 126:     INTCONbits.GIE = 1;
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;MAESTRO_SPI.c: 126:     }
+[e ( _Lcd_Init ..  ]
+"127
+[; ;MAESTRO_SPI.c: 127: }
+[e ( _USART_config ..  ]
 "128
-[; ;MAESTRO_SPI.c: 128:     INTCONbits.T0IE = 0;
-[e ( _lcd ..  ]
+[; ;MAESTRO_SPI.c: 128: 
+[e ( _SPI_config ..  ]
 "129
-[; ;MAESTRO_SPI.c: 129:     INTCONbits.INTE = 0;
-[e = _velocidad1 -> + -> _velocidad1 `i -> 1 `i `uc ]
+[; ;MAESTRO_SPI.c: 129: 
+[e :U 143 ]
 "130
-[; ;MAESTRO_SPI.c: 130:     INTCONbits.RBIE = 0;
+[; ;MAESTRO_SPI.c: 130: 
+{
+"135
+[; ;MAESTRO_SPI.c: 135:     ANSEL = 0;
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+"136
+[; ;MAESTRO_SPI.c: 136:     TRISA = 0;
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"138
+[; ;MAESTRO_SPI.c: 138:     ANSELH = 0;
+[e ( _SPI_Enviar (1 -> _dato_pot `uc ]
+"139
+[; ;MAESTRO_SPI.c: 139:     TRISB = 0;
+[e = _dato_pot -> ( _SPI_Recibir ..  `uc ]
+"141
+[; ;MAESTRO_SPI.c: 141:     TRISC = 0;
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"142
+[; ;MAESTRO_SPI.c: 142:     PORTC = 0;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+"146
+[; ;MAESTRO_SPI.c: 146:     PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+"147
+[; ;MAESTRO_SPI.c: 147:     PORTCbits.RC2 = 1;
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"149
+[; ;MAESTRO_SPI.c: 149:     PORTD = 0;
+[e ( _SPI_Enviar (1 -> _dato_push1 `uc ]
+"150
+[; ;MAESTRO_SPI.c: 150:     TRISE = 0;
+[e = _dato_push -> ( _SPI_Recibir ..  `uc ]
+"152
+[; ;MAESTRO_SPI.c: 152: }
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"153
+[; ;MAESTRO_SPI.c: 153: 
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"158
+[; ;MAESTRO_SPI.c: 158:     INTCONbits.T0IE = 1;
+[e ( _lcd ..  ]
+"159
+[; ;MAESTRO_SPI.c: 159:     INTCONbits.INTE = 0;
+[e = _velocidad1 -> + -> _velocidad1 `i -> 1 `i `uc ]
+"160
+[; ;MAESTRO_SPI.c: 160:     INTCONbits.RBIE = 0;
 [e = _velocidad2 -> + -> _velocidad2 `i -> 1 `i `uc ]
-"131
-[; ;MAESTRO_SPI.c: 131:     INTCONbits.T0IF = 0;
+"161
+[; ;MAESTRO_SPI.c: 161:     INTCONbits.T0IF = 0;
 [e = _velocidad3 -> + -> _velocidad3 `i -> 1 `i `uc ]
-"134
-[; ;MAESTRO_SPI.c: 134:     IOCB = 0b00000000;
+"164
+[; ;MAESTRO_SPI.c: 164:     IOCB = 0b00000000;
 }
 [e :U 142 ]
 [e $U 143  ]
 [e :U 144 ]
-"135
-[; ;MAESTRO_SPI.c: 135: }
+"165
+[; ;MAESTRO_SPI.c: 165: }
 [e :UE 141 ]
 }
-"141
-[; ;MAESTRO_SPI.c: 141:     OSCCONbits.IRCF0 = 0;
+"171
+[; ;MAESTRO_SPI.c: 171:     OSCCONbits.IRCF0 = 0;
 [v _setup `(v ~T0 @X0 1 ef ]
-"142
-[; ;MAESTRO_SPI.c: 142:     OSCCONbits.OSTS = 0;
+"172
+[; ;MAESTRO_SPI.c: 172:     OSCCONbits.OSTS = 0;
 {
 [e :U _setup ]
 [f ]
-"143
-[; ;MAESTRO_SPI.c: 143:     OSCCONbits.HTS = 0;
+"173
+[; ;MAESTRO_SPI.c: 173:     OSCCONbits.HTS = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"144
-[; ;MAESTRO_SPI.c: 144:     OSCCONbits.LTS = 1;
+"174
+[; ;MAESTRO_SPI.c: 174:     OSCCONbits.LTS = 1;
 [e = _TRISA -> -> 0 `i `uc ]
-"145
-[; ;MAESTRO_SPI.c: 145:     OSCCONbits.SCS = 0;
+"175
+[; ;MAESTRO_SPI.c: 175:     OSCCONbits.SCS = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"146
-[; ;MAESTRO_SPI.c: 146: }
+"176
+[; ;MAESTRO_SPI.c: 176: }
 [e = _ANSELH -> -> 0 `i `uc ]
-"147
-[; ;MAESTRO_SPI.c: 147: 
+"177
+[; ;MAESTRO_SPI.c: 177: 
 [e = _TRISB -> -> 0 `i `uc ]
-"148
-[; ;MAESTRO_SPI.c: 148: 
+"178
+[; ;MAESTRO_SPI.c: 178: void tmr0_config (void)
 [e = _PORTB -> -> 0 `i `uc ]
-"149
-[; ;MAESTRO_SPI.c: 149: 
+"179
+[; ;MAESTRO_SPI.c: 179: {
 [e = _TRISC -> -> 0 `i `uc ]
-"150
-[; ;MAESTRO_SPI.c: 150: 
+"180
+[; ;MAESTRO_SPI.c: 180:     OPTION_REGbits.nRBPU = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"151
-[; ;MAESTRO_SPI.c: 151: 
+"181
+[; ;MAESTRO_SPI.c: 181:     OPTION_REGbits.T0CS = 0;
 [e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-"152
-[; ;MAESTRO_SPI.c: 152: void USART_config(void)
+"182
+[; ;MAESTRO_SPI.c: 182:     OPTION_REGbits.PSA = 0;
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"153
-[; ;MAESTRO_SPI.c: 153: {
+"183
+[; ;MAESTRO_SPI.c: 183:     OPTION_REGbits.PS2 = 0;
 [e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-"154
-[; ;MAESTRO_SPI.c: 154:     USART_lib_config();
+"184
+[; ;MAESTRO_SPI.c: 184:     OPTION_REGbits.PS1 = 1;
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"155
-[; ;MAESTRO_SPI.c: 155: }
+"185
+[; ;MAESTRO_SPI.c: 185:     OPTION_REGbits.PS0 = 0;
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"156
-[; ;MAESTRO_SPI.c: 156: 
+"186
+[; ;MAESTRO_SPI.c: 186:     TMR0 = 100;
 [e = _TRISD -> -> 0 `i `uc ]
-"157
-[; ;MAESTRO_SPI.c: 157: void SPI_config (void)
+"187
+[; ;MAESTRO_SPI.c: 187: }
 [e = _PORTD -> -> 0 `i `uc ]
-"158
-[; ;MAESTRO_SPI.c: 158: {
+"188
+[; ;MAESTRO_SPI.c: 188: 
 [e = _TRISE -> -> 0 `i `uc ]
-"159
-[; ;MAESTRO_SPI.c: 159:     SPI_Maestro_Init (0, 2);
+"189
+[; ;MAESTRO_SPI.c: 189: 
 [e = _PORTE -> -> 0 `i `uc ]
-"160
-[; ;MAESTRO_SPI.c: 160: }
+"190
+[; ;MAESTRO_SPI.c: 190: 
 [e :UE 145 ]
 }
-"162
-[; ;MAESTRO_SPI.c: 162: 
+"192
+[; ;MAESTRO_SPI.c: 192: 
 [v _interrup_config `(v ~T0 @X0 1 ef ]
-"163
-[; ;MAESTRO_SPI.c: 163: 
+"193
+[; ;MAESTRO_SPI.c: 193: void USART_config(void)
 {
 [e :U _interrup_config ]
 [f ]
-"164
-[; ;MAESTRO_SPI.c: 164: 
+"194
+[; ;MAESTRO_SPI.c: 194: {
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"165
-[; ;MAESTRO_SPI.c: 165: 
+"195
+[; ;MAESTRO_SPI.c: 195:     USART_lib_config();
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"166
-[; ;MAESTRO_SPI.c: 166: void lcd (void)
-[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
-"167
-[; ;MAESTRO_SPI.c: 167: {
+"196
+[; ;MAESTRO_SPI.c: 196: }
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"197
+[; ;MAESTRO_SPI.c: 197: 
 [e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-"168
-[; ;MAESTRO_SPI.c: 168:     Lcd_Set_Cursor(1,1);
+"198
+[; ;MAESTRO_SPI.c: 198: void SPI_config (void)
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"169
-[; ;MAESTRO_SPI.c: 169:     Lcd_Write_String("S1:   S2:   S3: ");
+"199
+[; ;MAESTRO_SPI.c: 199: {
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"170
-[; ;MAESTRO_SPI.c: 170:     Lcd_Set_Cursor(2,0);
+"200
+[; ;MAESTRO_SPI.c: 200:     SPI_Maestro_Init (0, 2);
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"171
-[; ;MAESTRO_SPI.c: 171:     Conversion1 ();
+"201
+[; ;MAESTRO_SPI.c: 201: }
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"172
-[; ;MAESTRO_SPI.c: 172:     Lcd_Set_Cursor(2,6);
+"202
+[; ;MAESTRO_SPI.c: 202: 
 [e = _IOCB -> -> 0 `i `uc ]
-"173
-[; ;MAESTRO_SPI.c: 173:     Conversion2 ();
+"203
+[; ;MAESTRO_SPI.c: 203: 
 [e :UE 146 ]
 }
-"175
-[; ;MAESTRO_SPI.c: 175:     {
+"205
+[; ;MAESTRO_SPI.c: 205: 
 [v _osc_config `(v ~T0 @X0 1 ef ]
-"176
-[; ;MAESTRO_SPI.c: 176:         Lcd_Set_Cursor(2,14);
+"206
+[; ;MAESTRO_SPI.c: 206: 
 {
 [e :U _osc_config ]
 [f ]
-"177
-[; ;MAESTRO_SPI.c: 177:         Lcd_Write_Char(contador + 48);
+"207
+[; ;MAESTRO_SPI.c: 207: void lcd (void)
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"178
-[; ;MAESTRO_SPI.c: 178:     }
+"208
+[; ;MAESTRO_SPI.c: 208: {
 [e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"179
-[; ;MAESTRO_SPI.c: 179:     else if (contador >= 10)
+"209
+[; ;MAESTRO_SPI.c: 209:     Lcd_Set_Cursor(0,1);
 [e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"180
-[; ;MAESTRO_SPI.c: 180:     {
+"210
+[; ;MAESTRO_SPI.c: 210:     Lcd_Write_String("ADC:  BTN: TEMP:");
 [e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
-"181
-[; ;MAESTRO_SPI.c: 181:         w1 = contador/10;
+"211
+[; ;MAESTRO_SPI.c: 211:     Lcd_Set_Cursor(2,0);
 [e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
-"182
-[; ;MAESTRO_SPI.c: 182:         w2 = contador % 10;
+"212
+[; ;MAESTRO_SPI.c: 212:     Conversion1 ();
 [e = . . _OSCCONbits 0 1 -> -> 1 `i `uc ]
-"183
-[; ;MAESTRO_SPI.c: 183:         Lcd_Set_Cursor(2,13);
+"213
+[; ;MAESTRO_SPI.c: 213:     Lcd_Set_Cursor(2,7);
 [e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
-"184
-[; ;MAESTRO_SPI.c: 184:         Lcd_Write_Char(w1+48);
+"214
+[; ;MAESTRO_SPI.c: 214:     Conversion2 ();
 [e :UE 147 ]
 }
-"190
-[; ;MAESTRO_SPI.c: 190: {
+"216
+[; ;MAESTRO_SPI.c: 216:     Conversion3 ();
+[v _tmr0_config `(v ~T0 @X0 1 ef ]
+"217
+[; ;MAESTRO_SPI.c: 217: 
+{
+[e :U _tmr0_config ]
+[f ]
+"218
+[; ;MAESTRO_SPI.c: 218: }
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+"219
+[; ;MAESTRO_SPI.c: 219: 
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+"220
+[; ;MAESTRO_SPI.c: 220: void Conversion1 ()
+[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
+"221
+[; ;MAESTRO_SPI.c: 221: {
+[e = . . _OPTION_REGbits 1 2 -> -> 0 `i `uc ]
+"222
+[; ;MAESTRO_SPI.c: 222:     voltaje = dato_pot * 2;
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"223
+[; ;MAESTRO_SPI.c: 223:     unidad = voltaje / 100;
+[e = . . _OPTION_REGbits 1 0 -> -> 0 `i `uc ]
+"224
+[; ;MAESTRO_SPI.c: 224:     x1 = voltaje % 100;
+[e = _TMR0 -> -> 100 `i `uc ]
+"225
+[; ;MAESTRO_SPI.c: 225:     x2 = x1 / 10;
+[e :UE 148 ]
+}
+"231
+[; ;MAESTRO_SPI.c: 231:     Lcd_Write_Char(y2+48);
 [v _USART_config `(v ~T0 @X0 1 ef ]
-"191
-[; ;MAESTRO_SPI.c: 191: 
+"232
+[; ;MAESTRO_SPI.c: 232:     Lcd_Write_Char(86);
 {
 [e :U _USART_config ]
 [f ]
-"192
-[; ;MAESTRO_SPI.c: 192:     unidad = voltaje / 100;
+"233
+[; ;MAESTRO_SPI.c: 233:     virtual_display1();
 [e ( _USART_lib_config ..  ]
-"193
-[; ;MAESTRO_SPI.c: 193:     x1 = voltaje % 100;
-[e :UE 148 ]
+"234
+[; ;MAESTRO_SPI.c: 234: }
+[e :UE 149 ]
 }
-"195
-[; ;MAESTRO_SPI.c: 195:     y1 = x1 % 10;
+"236
+[; ;MAESTRO_SPI.c: 236: void Conversion2 ()
 [v _SPI_config `(v ~T0 @X0 1 ef ]
-"196
-[; ;MAESTRO_SPI.c: 196:     y2 = y1 / 1;
+"237
+[; ;MAESTRO_SPI.c: 237: {
 {
 [e :U _SPI_config ]
 [f ]
-"197
-[; ;MAESTRO_SPI.c: 197:     Lcd_Write_Char(unidad+48);
+"238
+[; ;MAESTRO_SPI.c: 238:     if (dato_push < 10)
 [e ( _SPI_Maestro_Init (2 , -> -> 0 `i `uc -> -> 2 `i `uc ]
-"198
-[; ;MAESTRO_SPI.c: 198:     Lcd_Write_Char(46);
-[e :UE 149 ]
+"239
+[; ;MAESTRO_SPI.c: 239:     {
+[e :UE 150 ]
 }
-"204
-[; ;MAESTRO_SPI.c: 204: 
+"245
+[; ;MAESTRO_SPI.c: 245:     {
 [v _lcd `(v ~T0 @X0 1 ef ]
-"205
-[; ;MAESTRO_SPI.c: 205: void Conversion2 ()
+"246
+[; ;MAESTRO_SPI.c: 246:         w1 = dato_push/10;
 {
 [e :U _lcd ]
 [f ]
-"206
-[; ;MAESTRO_SPI.c: 206: {
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"207
-[; ;MAESTRO_SPI.c: 207: 
+"247
+[; ;MAESTRO_SPI.c: 247:         w2 = dato_push % 10;
+[e ( _Lcd_Set_Cursor (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"248
+[; ;MAESTRO_SPI.c: 248:         Lcd_Write_Char(w1+48);
 [e ( _Lcd_Write_String (1 :s 1C ]
-"208
-[; ;MAESTRO_SPI.c: 208:     unidadz = voltajez / 100;
+"249
+[; ;MAESTRO_SPI.c: 249:         Lcd_Write_Char(w2+48);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"209
-[; ;MAESTRO_SPI.c: 209:     x1z = voltajez % 100;
+"250
+[; ;MAESTRO_SPI.c: 250:         virtual_display2();
 [e ( _Conversion1 ..  ]
-"210
-[; ;MAESTRO_SPI.c: 210:     x2z = x1z / 10;
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
-"211
-[; ;MAESTRO_SPI.c: 211:     y1z = x1z % 10;
+"251
+[; ;MAESTRO_SPI.c: 251:     }
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
+"252
+[; ;MAESTRO_SPI.c: 252: }
 [e ( _Conversion2 ..  ]
-"212
-[; ;MAESTRO_SPI.c: 212:     y2z = y1z / 1;
-[e $ ! < -> _contador `i -> 10 `i 151  ]
-"213
-[; ;MAESTRO_SPI.c: 213:     Lcd_Write_Char(unidadz+48);
-{
-"214
-[; ;MAESTRO_SPI.c: 214:     Lcd_Write_Char(46);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
-"215
-[; ;MAESTRO_SPI.c: 215:     Lcd_Write_Char(x2z+48);
-[e ( _Lcd_Write_Char (1 -> + -> _contador `i -> 48 `i `uc ]
-"216
-[; ;MAESTRO_SPI.c: 216:     Lcd_Write_Char(y2z+48);
+"253
+[; ;MAESTRO_SPI.c: 253: 
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 12 `i `uc ]
+"254
+[; ;MAESTRO_SPI.c: 254: void Conversion3 ()
+[e ( _Conversion3 ..  ]
+"256
+[; ;MAESTRO_SPI.c: 256:     voltajey = dato_pot * 2;
+[e :UE 151 ]
 }
-[e $U 152  ]
-"217
-[; ;MAESTRO_SPI.c: 217:     Lcd_Write_Char(86);
-[e :U 151 ]
-[e $ ! >= -> _contador `i -> 10 `i 153  ]
-"218
-[; ;MAESTRO_SPI.c: 218:     virtual_display2();
-{
-"219
-[; ;MAESTRO_SPI.c: 219:     virtual_display3();
-[e = _w1 -> / -> _contador `i -> 10 `i `uc ]
-"220
-[; ;MAESTRO_SPI.c: 220: }
-[e = _w2 -> % -> _contador `i -> 10 `i `uc ]
-"221
-[; ;MAESTRO_SPI.c: 221: 
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 13 `i `uc ]
-"222
-[; ;MAESTRO_SPI.c: 222: void virtual_display1 (void)
-[e ( _Lcd_Write_Char (1 -> + -> _w1 `i -> 48 `i `uc ]
-"223
-[; ;MAESTRO_SPI.c: 223: {
-[e ( _Lcd_Write_Char (1 -> + -> _w2 `i -> 48 `i `uc ]
-"224
-[; ;MAESTRO_SPI.c: 224:     if (velocidad1 > 15)
-}
-[e :U 153 ]
-[e :U 152 ]
-"225
-[; ;MAESTRO_SPI.c: 225:     {
-[e :UE 150 ]
-}
-"227
-[; ;MAESTRO_SPI.c: 227:         escribir_char (49);
+"258
+[; ;MAESTRO_SPI.c: 258:     x1z = voltajey % 100;
 [v _Conversion1 `(v ~T0 @X0 1 ef ]
-"228
-[; ;MAESTRO_SPI.c: 228:         escribir_char (58);
+"259
+[; ;MAESTRO_SPI.c: 259:     x2y = x1y / 10;
 {
 [e :U _Conversion1 ]
 [f ]
-"230
-[; ;MAESTRO_SPI.c: 230:         escribir_char (46);
+"260
+[; ;MAESTRO_SPI.c: 260:     y1y = x1y % 10;
+[e = _voltaje -> * -> _dato_pot `i -> 2 `i `uc ]
+"261
+[; ;MAESTRO_SPI.c: 261:     y2y = y1y / 1;
 [e = _unidad -> / -> _voltaje `i -> 100 `i `uc ]
-"231
-[; ;MAESTRO_SPI.c: 231:         escribir_char (x2+48);
+"262
+[; ;MAESTRO_SPI.c: 262:     Lcd_Write_Char(unidady+48);
 [e = _x1 -> % -> _voltaje `i -> 100 `i `uc ]
-"232
-[; ;MAESTRO_SPI.c: 232:         escribir_char (y2+48);
+"263
+[; ;MAESTRO_SPI.c: 263:     Lcd_Write_Char(46);
 [e = _x2 -> / -> _x1 `i -> 10 `i `uc ]
-"233
-[; ;MAESTRO_SPI.c: 233:         escribir_char (86);
+"264
+[; ;MAESTRO_SPI.c: 264:     Lcd_Write_Char(x2y+48);
 [e = _y1 -> % -> _x1 `i -> 10 `i `uc ]
-"234
-[; ;MAESTRO_SPI.c: 234:         escribir_char (32);
+"265
+[; ;MAESTRO_SPI.c: 265:     Lcd_Write_Char(y2y+48);
 [e = _y2 -> / -> _y1 `i -> 1 `i `uc ]
-"235
-[; ;MAESTRO_SPI.c: 235:         escribir_char (32);
+"266
+[; ;MAESTRO_SPI.c: 266:     Lcd_Write_Char(86);
 [e ( _Lcd_Write_Char (1 -> + -> _unidad `i -> 48 `i `uc ]
-"236
-[; ;MAESTRO_SPI.c: 236:         velocidad1 = 0;
+"267
+[; ;MAESTRO_SPI.c: 267:     virtual_display3();
 [e ( _Lcd_Write_Char (1 -> -> 46 `i `uc ]
-"237
-[; ;MAESTRO_SPI.c: 237:     }
+"268
+[; ;MAESTRO_SPI.c: 268: }
 [e ( _Lcd_Write_Char (1 -> + -> _x2 `i -> 48 `i `uc ]
-"238
-[; ;MAESTRO_SPI.c: 238: }
+"269
+[; ;MAESTRO_SPI.c: 269: 
 [e ( _Lcd_Write_Char (1 -> + -> _y2 `i -> 48 `i `uc ]
-"239
-[; ;MAESTRO_SPI.c: 239: 
+"270
+[; ;MAESTRO_SPI.c: 270: void virtual_display1 (void)
 [e ( _Lcd_Write_Char (1 -> -> 86 `i `uc ]
-"240
-[; ;MAESTRO_SPI.c: 240: void virtual_display2 (void)
+"271
+[; ;MAESTRO_SPI.c: 271: {
 [e ( _virtual_display1 ..  ]
-"241
-[; ;MAESTRO_SPI.c: 241: {
-[e :UE 154 ]
+"272
+[; ;MAESTRO_SPI.c: 272:     if (velocidad1 > 15)
+[e :UE 152 ]
 }
-"243
-[; ;MAESTRO_SPI.c: 243:     {
+"274
+[; ;MAESTRO_SPI.c: 274:         escribir_char (65);
 [v _Conversion2 `(v ~T0 @X0 1 ef ]
-"244
-[; ;MAESTRO_SPI.c: 244:         escribir_char (83);
+"275
+[; ;MAESTRO_SPI.c: 275:         escribir_char (68);
 {
 [e :U _Conversion2 ]
 [f ]
-"246
-[; ;MAESTRO_SPI.c: 246:         escribir_char (58);
-[e = _unidadz -> / -> _voltajez `i -> 100 `i `uc ]
-"247
-[; ;MAESTRO_SPI.c: 247:         escribir_char (unidadz+48);
-[e = _x1z -> % -> _voltajez `i -> 100 `i `uc ]
-"248
-[; ;MAESTRO_SPI.c: 248:         escribir_char (46);
-[e = _x2z -> / -> _x1z `i -> 10 `i `uc ]
-"249
-[; ;MAESTRO_SPI.c: 249:         escribir_char (x2z+48);
-[e = _y1z -> % -> _x1z `i -> 10 `i `uc ]
-"250
-[; ;MAESTRO_SPI.c: 250:         escribir_char (y2z+48);
-[e = _y2z -> / -> _y1z `i -> 1 `i `uc ]
-"251
-[; ;MAESTRO_SPI.c: 251:         escribir_char (86);
-[e ( _Lcd_Write_Char (1 -> + -> _unidadz `i -> 48 `i `uc ]
-"252
-[; ;MAESTRO_SPI.c: 252:         escribir_char (32);
-[e ( _Lcd_Write_Char (1 -> -> 46 `i `uc ]
-"253
-[; ;MAESTRO_SPI.c: 253:         escribir_char (32);
-[e ( _Lcd_Write_Char (1 -> + -> _x2z `i -> 48 `i `uc ]
-"254
-[; ;MAESTRO_SPI.c: 254:         velocidad2 = 0;
-[e ( _Lcd_Write_Char (1 -> + -> _y2z `i -> 48 `i `uc ]
-"255
-[; ;MAESTRO_SPI.c: 255:     }
-[e ( _Lcd_Write_Char (1 -> -> 86 `i `uc ]
-"256
-[; ;MAESTRO_SPI.c: 256: }
+"276
+[; ;MAESTRO_SPI.c: 276:         escribir_char (67);
+[e $ ! < -> _dato_push `i -> 10 `i 154  ]
+"277
+[; ;MAESTRO_SPI.c: 277:         escribir_char (58);
+{
+"278
+[; ;MAESTRO_SPI.c: 278:         escribir_char (unidad+48);
+[e ( _Lcd_Write_Char (1 -> -> 48 `i `uc ]
+"279
+[; ;MAESTRO_SPI.c: 279:         escribir_char (46);
+[e ( _Lcd_Write_Char (1 -> + -> _dato_push `i -> 48 `i `uc ]
+"280
+[; ;MAESTRO_SPI.c: 280:         escribir_char (x2+48);
 [e ( _virtual_display2 ..  ]
-"257
-[; ;MAESTRO_SPI.c: 257: 
-[e ( _virtual_display3 ..  ]
-"258
-[; ;MAESTRO_SPI.c: 258: void virtual_display3 (void)
-[e :UE 155 ]
+"281
+[; ;MAESTRO_SPI.c: 281:         escribir_char (y2+48);
 }
-"260
-[; ;MAESTRO_SPI.c: 260:     if (velocidad3 > 15)
+[e $U 155  ]
+"282
+[; ;MAESTRO_SPI.c: 282:         escribir_char (86);
+[e :U 154 ]
+[e $ ! >= -> _dato_push `i -> 10 `i 156  ]
+"283
+[; ;MAESTRO_SPI.c: 283:         escribir_char (32);
+{
+"284
+[; ;MAESTRO_SPI.c: 284:         escribir_char (32);
+[e = _w1 -> / -> _dato_push `i -> 10 `i `uc ]
+"285
+[; ;MAESTRO_SPI.c: 285:         escribir_char (32);
+[e = _w2 -> % -> _dato_push `i -> 10 `i `uc ]
+"286
+[; ;MAESTRO_SPI.c: 286:         escribir_char (32);
+[e ( _Lcd_Write_Char (1 -> + -> _w1 `i -> 48 `i `uc ]
+"287
+[; ;MAESTRO_SPI.c: 287:         velocidad1 = 0;
+[e ( _Lcd_Write_Char (1 -> + -> _w2 `i -> 48 `i `uc ]
+"288
+[; ;MAESTRO_SPI.c: 288:     }
+[e ( _virtual_display2 ..  ]
+"289
+[; ;MAESTRO_SPI.c: 289: }
+}
+[e :U 156 ]
+[e :U 155 ]
+"290
+[; ;MAESTRO_SPI.c: 290: 
+[e :UE 153 ]
+}
+"292
+[; ;MAESTRO_SPI.c: 292: {
+[v _Conversion3 `(v ~T0 @X0 1 ef ]
+"293
+[; ;MAESTRO_SPI.c: 293:     if (velocidad2 > 15)
+{
+[e :U _Conversion3 ]
+[f ]
+"294
+[; ;MAESTRO_SPI.c: 294:     {
+[e = _voltajey -> * -> _dato_pot `i -> 2 `i `uc ]
+"295
+[; ;MAESTRO_SPI.c: 295:         if (dato_push < 10)
+[e = _unidady -> / -> _voltajey `i -> 100 `i `uc ]
+"296
+[; ;MAESTRO_SPI.c: 296:         {
+[e = _x1z -> % -> _voltajey `i -> 100 `i `uc ]
+"297
+[; ;MAESTRO_SPI.c: 297:             escribir_char (67);
+[e = _x2y -> / -> _x1y `i -> 10 `i `uc ]
+"298
+[; ;MAESTRO_SPI.c: 298:             escribir_char (79);
+[e = _y1y -> % -> _x1y `i -> 10 `i `uc ]
+"299
+[; ;MAESTRO_SPI.c: 299:             escribir_char (78);
+[e = _y2y -> / -> _y1y `i -> 1 `i `uc ]
+"300
+[; ;MAESTRO_SPI.c: 300:             escribir_char (84);
+[e ( _Lcd_Write_Char (1 -> + -> _unidady `i -> 48 `i `uc ]
+"301
+[; ;MAESTRO_SPI.c: 301:             escribir_char (58);
+[e ( _Lcd_Write_Char (1 -> -> 46 `i `uc ]
+"302
+[; ;MAESTRO_SPI.c: 302:             escribir_char (48);
+[e ( _Lcd_Write_Char (1 -> + -> _x2y `i -> 48 `i `uc ]
+"303
+[; ;MAESTRO_SPI.c: 303:             escribir_char (dato_push+48);
+[e ( _Lcd_Write_Char (1 -> + -> _y2y `i -> 48 `i `uc ]
+"304
+[; ;MAESTRO_SPI.c: 304:             escribir_char (32);
+[e ( _Lcd_Write_Char (1 -> -> 86 `i `uc ]
+"305
+[; ;MAESTRO_SPI.c: 305:             escribir_char (32);
+[e ( _virtual_display3 ..  ]
+"306
+[; ;MAESTRO_SPI.c: 306:             escribir_char (32);
+[e :UE 157 ]
+}
+"308
+[; ;MAESTRO_SPI.c: 308: 
 [v _virtual_display1 `(v ~T0 @X0 1 ef ]
-"261
-[; ;MAESTRO_SPI.c: 261:     {
+"309
+[; ;MAESTRO_SPI.c: 309:             velocidad2 = 0;
 {
 [e :U _virtual_display1 ]
 [f ]
-"262
-[; ;MAESTRO_SPI.c: 262:         if (contador < 10)
-[e $ ! > -> _velocidad1 `i -> 15 `i 157  ]
-"263
-[; ;MAESTRO_SPI.c: 263:         {
+"310
+[; ;MAESTRO_SPI.c: 310:         }
+[e $ ! > -> _velocidad1 `i -> 15 `i 159  ]
+"311
+[; ;MAESTRO_SPI.c: 311:         else
 {
-"264
-[; ;MAESTRO_SPI.c: 264:             escribir_char (67);
-[e ( _escribir_char (1 -> -> 83 `i `uc ]
-"265
-[; ;MAESTRO_SPI.c: 265:             escribir_char (58);
-[e ( _escribir_char (1 -> -> 49 `i `uc ]
-"266
-[; ;MAESTRO_SPI.c: 266:             escribir_char (48);
+"312
+[; ;MAESTRO_SPI.c: 312:         {
+[e ( _escribir_char (1 -> -> 65 `i `uc ]
+"313
+[; ;MAESTRO_SPI.c: 313:             escribir_char (67);
+[e ( _escribir_char (1 -> -> 68 `i `uc ]
+"314
+[; ;MAESTRO_SPI.c: 314:             escribir_char (79);
+[e ( _escribir_char (1 -> -> 67 `i `uc ]
+"315
+[; ;MAESTRO_SPI.c: 315:             escribir_char (78);
 [e ( _escribir_char (1 -> -> 58 `i `uc ]
-"267
-[; ;MAESTRO_SPI.c: 267:             escribir_char (contador+48);
+"316
+[; ;MAESTRO_SPI.c: 316:             escribir_char (84);
 [e ( _escribir_char (1 -> + -> _unidad `i -> 48 `i `uc ]
-"268
-[; ;MAESTRO_SPI.c: 268:             escribir_char ('\r');
+"317
+[; ;MAESTRO_SPI.c: 317:             escribir_char (58);
 [e ( _escribir_char (1 -> -> 46 `i `uc ]
-"269
-[; ;MAESTRO_SPI.c: 269:             velocidad3 = 0;
+"318
+[; ;MAESTRO_SPI.c: 318:             escribir_char (w1+48);
 [e ( _escribir_char (1 -> + -> _x2 `i -> 48 `i `uc ]
-"270
-[; ;MAESTRO_SPI.c: 270:         }
+"319
+[; ;MAESTRO_SPI.c: 319:             escribir_char (w2+48);
 [e ( _escribir_char (1 -> + -> _y2 `i -> 48 `i `uc ]
-"271
-[; ;MAESTRO_SPI.c: 271:         else
+"320
+[; ;MAESTRO_SPI.c: 320:             escribir_char (32);
 [e ( _escribir_char (1 -> -> 86 `i `uc ]
-"272
-[; ;MAESTRO_SPI.c: 272:         {
+"321
+[; ;MAESTRO_SPI.c: 321:             escribir_char (32);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
-"273
-[; ;MAESTRO_SPI.c: 273:             escribir_char (67);
+"322
+[; ;MAESTRO_SPI.c: 322:             escribir_char (32);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
-"274
-[; ;MAESTRO_SPI.c: 274:             escribir_char (58);
+"323
+[; ;MAESTRO_SPI.c: 323:             escribir_char (32);
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"324
+[; ;MAESTRO_SPI.c: 324: 
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"325
+[; ;MAESTRO_SPI.c: 325:             velocidad2 = 0;
 [e = _velocidad1 -> -> 0 `i `uc ]
-"275
-[; ;MAESTRO_SPI.c: 275:             escribir_char (w1+48);
+"326
+[; ;MAESTRO_SPI.c: 326:         }
 }
-[e :U 157 ]
-"276
-[; ;MAESTRO_SPI.c: 276:             escribir_char (w2+48);
-[e :UE 156 ]
+[e :U 159 ]
+"327
+[; ;MAESTRO_SPI.c: 327:     }
+[e :UE 158 ]
 }
-"278
-[; ;MAESTRO_SPI.c: 278:             velocidad3 = 0;
+"329
+[; ;MAESTRO_SPI.c: 329: 
 [v _virtual_display2 `(v ~T0 @X0 1 ef ]
-"279
-[; ;MAESTRO_SPI.c: 279:         }
+"330
+[; ;MAESTRO_SPI.c: 330: void virtual_display3 (void)
 {
 [e :U _virtual_display2 ]
 [f ]
-"280
-[; ;MAESTRO_SPI.c: 280:     }
-[e $ ! > -> _velocidad2 `i -> 15 `i 159  ]
-"281
-[; ;MAESTRO_SPI.c: 281: }
+"331
+[; ;MAESTRO_SPI.c: 331: {
+[e $ ! > -> _velocidad2 `i -> 15 `i 161  ]
+"332
+[; ;MAESTRO_SPI.c: 332:     if (velocidad3 > 15)
 {
-"282
-[; ;MAESTRO_SPI.c: 282: 
-[e ( _escribir_char (1 -> -> 83 `i `uc ]
-"283
-[; ;MAESTRO_SPI.c: 283: void escribir_char (uint8_t valor)
-[e ( _escribir_char (1 -> -> 50 `i `uc ]
-"284
-[; ;MAESTRO_SPI.c: 284: {
+"333
+[; ;MAESTRO_SPI.c: 333:     {
+[e $ ! < -> _dato_push `i -> 10 `i 162  ]
+"334
+[; ;MAESTRO_SPI.c: 334:         escribir_char (84);
+{
+"335
+[; ;MAESTRO_SPI.c: 335:         escribir_char (69);
+[e ( _escribir_char (1 -> -> 67 `i `uc ]
+"336
+[; ;MAESTRO_SPI.c: 336:         escribir_char (77);
+[e ( _escribir_char (1 -> -> 79 `i `uc ]
+"337
+[; ;MAESTRO_SPI.c: 337:         escribir_char (80);
+[e ( _escribir_char (1 -> -> 78 `i `uc ]
+"338
+[; ;MAESTRO_SPI.c: 338:         escribir_char (58);
+[e ( _escribir_char (1 -> -> 84 `i `uc ]
+"339
+[; ;MAESTRO_SPI.c: 339:         escribir_char (unidady+48);
 [e ( _escribir_char (1 -> -> 58 `i `uc ]
-"285
-[; ;MAESTRO_SPI.c: 285:     TXREG = valor;
-[e ( _escribir_char (1 -> + -> _unidadz `i -> 48 `i `uc ]
-"286
-[; ;MAESTRO_SPI.c: 286:     while (PIR1bits.TXIF == 0);
-[e ( _escribir_char (1 -> -> 46 `i `uc ]
-"287
-[; ;MAESTRO_SPI.c: 287: }
-[e ( _escribir_char (1 -> + -> _x2z `i -> 48 `i `uc ]
-"288
-[e ( _escribir_char (1 -> + -> _y2z `i -> 48 `i `uc ]
-"289
-[e ( _escribir_char (1 -> -> 86 `i `uc ]
-"290
+"340
+[; ;MAESTRO_SPI.c: 340:         escribir_char (46);
+[e ( _escribir_char (1 -> -> 48 `i `uc ]
+"341
+[; ;MAESTRO_SPI.c: 341:         escribir_char (x2y+48);
+[e ( _escribir_char (1 -> + -> _dato_push `i -> 48 `i `uc ]
+"342
+[; ;MAESTRO_SPI.c: 342:         escribir_char (y2y+48);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
-"291
+"343
+[; ;MAESTRO_SPI.c: 343:         escribir_char (86);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
-"292
+"344
+[; ;MAESTRO_SPI.c: 344:         escribir_char ('\r');
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"345
+[; ;MAESTRO_SPI.c: 345:         velocidad3 = 0;
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"347
+[; ;MAESTRO_SPI.c: 347: }
 [e = _velocidad2 -> -> 0 `i `uc ]
-"293
+"348
+[; ;MAESTRO_SPI.c: 348: 
 }
-[e :U 159 ]
-"294
-[e :UE 158 ]
+[e $U 163  ]
+"349
+[; ;MAESTRO_SPI.c: 349: void escribir_char (uint8_t valor)
+[e :U 162 ]
+"350
+[; ;MAESTRO_SPI.c: 350: {
+{
+"351
+[; ;MAESTRO_SPI.c: 351:     TXREG = valor;
+[e ( _escribir_char (1 -> -> 67 `i `uc ]
+"352
+[; ;MAESTRO_SPI.c: 352:     while (PIR1bits.TXIF == 0);
+[e ( _escribir_char (1 -> -> 79 `i `uc ]
+"353
+[; ;MAESTRO_SPI.c: 353: }
+[e ( _escribir_char (1 -> -> 78 `i `uc ]
+"354
+[e ( _escribir_char (1 -> -> 84 `i `uc ]
+"355
+[e ( _escribir_char (1 -> -> 58 `i `uc ]
+"356
+[e ( _escribir_char (1 -> + -> _w1 `i -> 48 `i `uc ]
+"357
+[e ( _escribir_char (1 -> + -> _w2 `i -> 48 `i `uc ]
+"358
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"359
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"360
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"361
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"363
+[e = _velocidad2 -> -> 0 `i `uc ]
+"364
 }
-"296
+[e :U 163 ]
+"365
+}
+[e :U 161 ]
+"366
+[e :UE 160 ]
+}
+"368
 [v _virtual_display3 `(v ~T0 @X0 1 ef ]
-"297
+"369
 {
 [e :U _virtual_display3 ]
 [f ]
-"298
-[e $ ! > -> _velocidad3 `i -> 15 `i 161  ]
-"299
+"370
+[e $ ! > -> _velocidad3 `i -> 15 `i 165  ]
+"371
 {
-"300
-[e $ ! < -> _contador `i -> 10 `i 162  ]
-"301
-{
-"302
-[e ( _escribir_char (1 -> -> 67 `i `uc ]
-"303
+"372
+[e ( _escribir_char (1 -> -> 84 `i `uc ]
+"373
+[e ( _escribir_char (1 -> -> 69 `i `uc ]
+"374
+[e ( _escribir_char (1 -> -> 77 `i `uc ]
+"375
+[e ( _escribir_char (1 -> -> 80 `i `uc ]
+"376
 [e ( _escribir_char (1 -> -> 58 `i `uc ]
-"304
-[e ( _escribir_char (1 -> -> 48 `i `uc ]
-"305
-[e ( _escribir_char (1 -> + -> _contador `i -> 48 `i `uc ]
-"306
+"377
+[e ( _escribir_char (1 -> + -> _unidady `i -> 48 `i `uc ]
+"378
+[e ( _escribir_char (1 -> -> 46 `i `uc ]
+"379
+[e ( _escribir_char (1 -> + -> _x2y `i -> 48 `i `uc ]
+"380
+[e ( _escribir_char (1 -> + -> _y2y `i -> 48 `i `uc ]
+"381
+[e ( _escribir_char (1 -> -> 86 `i `uc ]
+"382
 [e ( _escribir_char (1 -> -> 13 `ui `uc ]
-"307
+"383
 [e = _velocidad3 -> -> 0 `i `uc ]
-"308
+"384
 }
-[e $U 163  ]
-"309
-[e :U 162 ]
-"310
-{
-"311
-[e ( _escribir_char (1 -> -> 67 `i `uc ]
-"312
-[e ( _escribir_char (1 -> -> 58 `i `uc ]
-"313
-[e ( _escribir_char (1 -> + -> _w1 `i -> 48 `i `uc ]
-"314
-[e ( _escribir_char (1 -> + -> _w2 `i -> 48 `i `uc ]
-"315
-[e ( _escribir_char (1 -> -> 13 `ui `uc ]
-"316
-[e = _velocidad3 -> -> 0 `i `uc ]
-"317
-}
-[e :U 163 ]
-"318
-}
-[e :U 161 ]
-"319
-[e :UE 160 ]
-}
-"321
-[v _escribir_char `(v ~T0 @X0 1 ef1`uc ]
-"322
-{
-[e :U _escribir_char ]
-"321
-[v _valor `uc ~T0 @X0 1 r1 ]
-"322
-[f ]
-"323
-[e = _TXREG _valor ]
-"324
-[e $U 165  ]
-[e :U 166 ]
 [e :U 165 ]
-[e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 166  ]
-[e :U 167 ]
-"325
+"385
 [e :UE 164 ]
 }
-[a 1C 83 49 58 32 32 32 83 50 58 32 32 32 83 51 58 32 0 ]
+"387
+[v _escribir_char `(v ~T0 @X0 1 ef1`uc ]
+"388
+{
+[e :U _escribir_char ]
+"387
+[v _valor `uc ~T0 @X0 1 r1 ]
+"388
+[f ]
+"389
+[e = _TXREG _valor ]
+"390
+[e $U 167  ]
+[e :U 168 ]
+[e :U 167 ]
+[e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 168  ]
+[e :U 169 ]
+"391
+[e :UE 166 ]
+}
+[a 1C 65 68 67 58 32 32 66 84 78 58 32 84 69 77 80 58 0 ]

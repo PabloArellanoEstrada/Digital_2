@@ -34,7 +34,7 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 // DEFINE
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 //============================================================================*/
 // VARIABLES
@@ -73,8 +73,6 @@ void __interrupt() ISR(void)
         INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
         TMR0 = 100;                
     }
-    
-   
 }                            // GIE = 1
 
 //============================================================================*/
@@ -111,11 +109,13 @@ void setup(void)
 {
     ANSEL = 0;                // Puerto A digital
     TRISA = 0;                // Puerto A como entrada
+    PORTA = 0;                // Puerto A entrada apagado
     TRISAbits.TRISA0 = 1;     // Entrada
     ANSELbits.ANS0 = 1;       // Analogico
     TRISAbits.TRISA5 = 1;     // Bit 5 entrada
     ANSELbits.ANS5 = 0;       // Digital
-    PORTA = 0;                // Puerto A entrada apagado
+    PORTAbits.RA5 = 1;
+    
     
     ANSELH = 0;               // Puerto B digital
     TRISB = 0;                // Puerto B salida

@@ -2842,11 +2842,13 @@ void setup(void)
 {
     ANSEL = 0;
     TRISA = 0;
+    PORTA = 0;
     TRISAbits.TRISA0 = 1;
     ANSELbits.ANS0 = 1;
     TRISAbits.TRISA5 = 1;
     ANSELbits.ANS5 = 0;
-    PORTA = 0;
+    PORTAbits.RA5 = 1;
+
 
     ANSELH = 0;
     TRISB = 0;
@@ -2918,7 +2920,7 @@ void SPI_config (void)
 void adc_conversion (void)
 {
     ADCON0bits.GO_DONE = 1;
-    _delay((unsigned long)((10)*(4000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000.0)));
     if (ADCON0bits.GO_DONE == 0)
     {
         ADCON0bits.GO_DONE = 1;
