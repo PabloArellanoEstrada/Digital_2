@@ -55,6 +55,7 @@ uint8_t y1z;
 uint8_t x2z;
 uint8_t y2z;
 
+uint8_t decenay;
 uint8_t voltajey;               // Conversion a LCD3
 uint8_t unidady;
 uint8_t x1y;
@@ -76,6 +77,10 @@ uint8_t dato_pot = 0;
 uint8_t dato_push = 0;
 uint8_t dato_push1 = 0;
 uint8_t dato_semaforo = 0;
+
+
+
+
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -128,10 +133,7 @@ void main(void)
     SPI_config ();
     while (1)                           // Loop principal
     {
-        
-        
-        
-        
+               
         PORTCbits.RC0 = 0;
         __delay_ms(1);
         
@@ -141,16 +143,29 @@ void main(void)
         __delay_ms(1);        
         PORTCbits.RC0 = 1;
         
-        
+        //----------------------------------------------
         
         PORTCbits.RC1 = 0;
         __delay_ms(1);
         
-        SPI_Enviar (dato_push1);        
+        SPI_Enviar (dato_push);        
         dato_push  = SPI_Recibir();
         
         __delay_ms(1);        
         PORTCbits.RC1 = 1;
+        
+        //----------------------------------------------
+        
+        PORTCbits.RC2 = 0;
+        __delay_ms(1);
+        
+ 
+        SPI_Enviar (dato_semaforo);        
+        dato_semaforo  = SPI_Recibir();
+               
+        __delay_ms(1);        
+        PORTCbits.RC2 = 1;
+        
         
       
     
@@ -291,17 +306,13 @@ void Conversion2 ()
 
 void Conversion3 ()              
 {
-    voltajey = dato_pot * 2;
-    unidady = voltajey / 100;         // Unidad sobre 5V
-    x1z = voltajey % 100;
-    x2y = x1y / 10;                   // Primera posicion despues de punto
-    y1y = x1y % 10;
-    y2y = y1y / 1;                    // Segunda posicion despues de punto
+    voltajey = dato_semaforo * 2;
+    decenay = voltajey / 10;
+    unidady = voltajey % 10;         // Unidad sobre 5V
+    Lcd_Write_Char(decenay+48);       // Decena 
     Lcd_Write_Char(unidady+48);       // Unidad
-    Lcd_Write_Char(46);               // .
-    Lcd_Write_Char(x2y+48);           // Primer numero
-    Lcd_Write_Char(y2y+48);           // Segundo numero 
-    Lcd_Write_Char(86);               // V
+    Lcd_Write_Char(223);              // grados
+    Lcd_Write_Char(67);               // C
     virtual_display3();               // Valores a terminal virtual
 }
 
@@ -373,12 +384,11 @@ void virtual_display3 (void)
         escribir_char (69);            // E
         escribir_char (77);            // M
         escribir_char (80);            // P
-        escribir_char (58);           // :
-        escribir_char (unidady+48);    // Unidad en ASCII                                               
-        escribir_char (46);           // .
-        escribir_char (x2y+48);        // Primer numero
-        escribir_char (y2y+48);        // Segundo numero
-        escribir_char (86);           // V
+        escribir_char (58);            // :
+        escribir_char (decenay+48);    // Unidad en ASCII    
+        escribir_char (unidady+48);    // Unidad en ASCII
+        escribir_char (176);           // Primer numero
+        escribir_char (67);            // Segundo numero
         escribir_char ('\r');          // Enter
         velocidad3 = 0;               // se reinicia Velocidad
     }

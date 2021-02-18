@@ -2776,6 +2776,9 @@ void initADC (uint8_t CHS);
 char dato;
 char SPI_value;
 char dato_maestro;
+char valor1;
+char valor2;
+unsigned int temp;
 
 
 
@@ -2823,11 +2826,11 @@ void main(void)
 
         if (SSPIF == 1)
         {
-        dato_maestro = SPI_Recibir();
-        SPI_Enviar (PORTD);
-        SSPIF = 0;
-        }
 
+            dato_maestro = SPI_Recibir();
+            SPI_Enviar (ADRESH);
+            SSPIF = 0;
+        }
 
     }
 }
@@ -2946,6 +2949,9 @@ void adc_conversion (void)
     if (ADCON0bits.GO_DONE == 0)
     {
         ADCON0bits.GO_DONE = 1;
+        temp = ADRESH * 1.95;
+        valor1 = temp / 10;
+        valor2 = temp % 10;
         PORTD = ADRESH;
         semaforo();
     }

@@ -2815,6 +2815,7 @@ uint8_t y1z;
 uint8_t x2z;
 uint8_t y2z;
 
+uint8_t decenay;
 uint8_t voltajey;
 uint8_t unidady;
 uint8_t x1y;
@@ -2836,11 +2837,7 @@ uint8_t dato_pot = 0;
 uint8_t dato_push = 0;
 uint8_t dato_push1 = 0;
 uint8_t dato_semaforo = 0;
-
-
-
-
-
+# 89 "MAESTRO_SPI.c"
 void setup(void);
 void osc_config (void);
 void interrup_config (void);
@@ -2889,9 +2886,6 @@ void main(void)
     while (1)
     {
 
-
-
-
         PORTCbits.RC0 = 0;
         _delay((unsigned long)((1)*(8000000/4000.0)));
 
@@ -2906,11 +2900,24 @@ void main(void)
         PORTCbits.RC1 = 0;
         _delay((unsigned long)((1)*(8000000/4000.0)));
 
-        SPI_Enviar (dato_push1);
+        SPI_Enviar (dato_push);
         dato_push = SPI_Recibir();
 
         _delay((unsigned long)((1)*(8000000/4000.0)));
         PORTCbits.RC1 = 1;
+
+
+
+        PORTCbits.RC2 = 0;
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+
+
+        SPI_Enviar (dato_semaforo);
+        dato_semaforo = SPI_Recibir();
+
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        PORTCbits.RC2 = 1;
+
 
 
 
@@ -3051,17 +3058,13 @@ void Conversion2 ()
 
 void Conversion3 ()
 {
-    voltajey = dato_pot * 2;
-    unidady = voltajey / 100;
-    x1z = voltajey % 100;
-    x2y = x1y / 10;
-    y1y = x1y % 10;
-    y2y = y1y / 1;
+    voltajey = dato_semaforo * 2;
+    decenay = voltajey / 10;
+    unidady = voltajey % 10;
+    Lcd_Write_Char(decenay+48);
     Lcd_Write_Char(unidady+48);
-    Lcd_Write_Char(46);
-    Lcd_Write_Char(x2y+48);
-    Lcd_Write_Char(y2y+48);
-    Lcd_Write_Char(86);
+    Lcd_Write_Char(223);
+    Lcd_Write_Char(67);
     virtual_display3();
 }
 
@@ -3134,11 +3137,10 @@ void virtual_display3 (void)
         escribir_char (77);
         escribir_char (80);
         escribir_char (58);
+        escribir_char (decenay+48);
         escribir_char (unidady+48);
-        escribir_char (46);
-        escribir_char (x2y+48);
-        escribir_char (y2y+48);
-        escribir_char (86);
+        escribir_char (176);
+        escribir_char (67);
         escribir_char ('\r');
         velocidad3 = 0;
     }

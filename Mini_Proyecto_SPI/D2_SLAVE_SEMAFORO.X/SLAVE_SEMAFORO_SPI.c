@@ -47,6 +47,9 @@
 char dato;
 char SPI_value;
 char dato_maestro;
+char valor1;
+char valor2;
+unsigned int temp;
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -94,12 +97,12 @@ void main(void)
        
         if (SSPIF == 1)
         {
-        dato_maestro = SPI_Recibir();
-        SPI_Enviar (PORTD);  
-        SSPIF = 0;
+         
+            dato_maestro = SPI_Recibir();
+            SPI_Enviar (ADRESH);
+            SSPIF = 0;
         }
-        //dato++;
-        //__delay_ms(1000);       
+              
     }
 }
 
@@ -217,6 +220,9 @@ void adc_conversion (void)
     if (ADCON0bits.GO_DONE == 0)       // Si ya termino la conversion
     {
         ADCON0bits.GO_DONE = 1;        // Se inicia el GO_DONE para iniciar nuevamente
+        temp = ADRESH * 1.95;
+        valor1  = temp / 10;
+        valor2  = temp % 10;
         PORTD = ADRESH;
         semaforo();
     }
