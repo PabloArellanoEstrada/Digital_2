@@ -3024,9 +3024,11 @@ void lcd (void)
 
 void Conversion1 ()
 {
-    voltaje = dato_pot * 2;
-    unidad = voltaje / 100;
-    x1 = voltaje % 100;
+
+    voltaje = dato_pot;
+    int pot = voltaje * 4;
+    unidad = pot / 100;
+    x1 = pot % 100;
     x2 = x1 / 10;
     y1 = x1 % 10;
     y2 = y1 / 1;
@@ -3058,7 +3060,7 @@ void Conversion2 ()
 
 void Conversion3 ()
 {
-    voltajey = dato_semaforo * 2;
+    voltajey = dato_semaforo;
     decenay = voltajey / 10;
     unidady = voltajey % 10;
     Lcd_Write_Char(decenay+48);

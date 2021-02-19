@@ -5,20 +5,10 @@
 [d frameptr 0 ]
 "19 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\ADC_SPI.c
 [v _initADC initADC `(v  1 e 1 0 ]
-"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
@@ -27,21 +17,21 @@
 [v _ISR ISR `II(v  1 e 1 0 ]
 "87
 [v _main main `(v  1 e 1 0 ]
-"113
+"112
 [v _setup setup `(v  1 e 1 0 ]
-"141
+"140
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
-"154
+"153
 [v _osc_config osc_config `(v  1 e 1 0 ]
-"165
+"164
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
-"180
+"179
 [v _adc_config adc_config `(v  1 e 1 0 ]
-"185
+"184
 [v _SPI_config SPI_config `(v  1 e 1 0 ]
-"194
+"193
 [v _semaforo semaforo `(v  1 e 1 0 ]
-"216
+"215
 [v _adc_conversion adc_conversion `(v  1 e 1 0 ]
 "84 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SPI_SPI.c
 [v _SPI_Esclavo_Init SPI_Esclavo_Init `(v  1 e 1 0 ]
@@ -279,63 +269,57 @@
 [v _SSPIF SSPIF `VEb  1 e 0 @99 ]
 "49 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
 [v _dato_maestro dato_maestro `uc  1 e 1 0 ]
-"50
-[v _valor1 valor1 `uc  1 e 1 0 ]
-"51
-[v _valor2 valor2 `uc  1 e 1 0 ]
-"52
-[v _temp temp `ui  1 e 2 0 ]
 "87
 [v _main main `(v  1 e 1 0 ]
 {
-"107
+"106
 } 0
-"165
+"164
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
 {
-"174
+"173
 } 0
-"113
+"112
 [v _setup setup `(v  1 e 1 0 ]
 {
-"139
+"138
 } 0
-"154
+"153
 [v _osc_config osc_config `(v  1 e 1 0 ]
 {
-"163
+"162
 } 0
-"141
+"140
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
 {
-"152
+"151
 } 0
-"180
+"179
 [v _adc_config adc_config `(v  1 e 1 0 ]
 {
-"183
+"182
 } 0
 "19 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\ADC_SPI.c
 [v _initADC initADC `(v  1 e 1 0 ]
 {
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
-[v initADC@CHS CHS `uc  1 a 1 2 ]
+[v initADC@CHS CHS `uc  1 a 1 0 ]
 "135
 } 0
-"185 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
+"184 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
 [v _SPI_config SPI_config `(v  1 e 1 0 ]
 {
-"188
+"187
 } 0
 "84 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SPI_SPI.c
 [v _SPI_Esclavo_Init SPI_Esclavo_Init `(v  1 e 1 0 ]
 {
 [v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 wreg ]
 [v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 wreg ]
-[v SPI_Esclavo_Init@SCK SCK `uc  1 p 1 0 ]
+[v SPI_Esclavo_Init@SCK SCK `uc  1 p 1 4 ]
 "86
-[v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 3 ]
+[v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 5 ]
 "159
 } 0
 "167
@@ -349,7 +333,7 @@
 [v SPI_Enviar@valor valor `uc  1 a 1 wreg ]
 [v SPI_Enviar@valor valor `uc  1 a 1 wreg ]
 "163
-[v SPI_Enviar@valor valor `uc  1 a 1 0 ]
+[v SPI_Enviar@valor valor `uc  1 a 1 4 ]
 "164
 } 0
 "71 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
@@ -357,99 +341,13 @@
 {
 "81
 } 0
-"216
+"215
 [v _adc_conversion adc_conversion `(v  1 e 1 0 ]
 {
-"229
+"225
 } 0
-"194
+"193
 [v _semaforo semaforo `(v  1 e 1 0 ]
 {
-"214
-} 0
-"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-{
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-"13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
-"12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
-"10
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
-"15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
-"44
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
-{
-"10
-[v ___lwmod@counter counter `uc  1 a 1 5 ]
-"5
-[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
-[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
-"25
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-{
-"10
-[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
-"11
-[v ___lwdiv@counter counter `uc  1 a 1 7 ]
-"5
-[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
-[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
-"30
-} 0
-"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
-{
-"45
-[v ___fltol@exp1 exp1 `uc  1 a 1 36 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 35 ]
-"43
-[v ___fltol@f1 f1 `d  1 p 4 26 ]
-"70
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S922 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S927 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S930 . 4 `l 1 i 4 0 `d 1 f 4 0 `S922 1 fAsBytes 4 0 `S927 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S930  1 a 4 20 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S999 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S1002 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S999 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1002  1 a 2 24 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 19 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 18 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 13 ]
-"8
-[v ___flmul@b b `d  1 p 4 0 ]
-[v ___flmul@a a `d  1 p 4 4 ]
-"205
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-{
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
-"5
-[v __Umul8_16@product product `ui  1 a 2 4 ]
-"4
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
-"60
+"213
 } 0

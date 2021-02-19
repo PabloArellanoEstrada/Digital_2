@@ -43,9 +43,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28
 [; ;./SPI_SPI.h: 28: void SPI_Enviar (char valor);
 [v _SPI_Enviar `(v ~T0 @X0 0 ef1`uc ]
-"352 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1238 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 "3387
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
@@ -117,6 +117,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1602
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"352
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "1664
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
 [v _TRISE `Vuc ~T0 @X0 0 e@137 ]
@@ -189,9 +192,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"1238 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
-[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -450,19 +450,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x BOR4V  =  BOR40V    ]
 "35
 [p x WRT  =  OFF         ]
-"43
-[v _i `uc ~T0 @X0 1 e ]
-[i _i
--> -> 0 `i `uc
-]
 "44
-[v _adc_value1 `uc ~T0 @X0 1 e ]
-[i _adc_value1
--> -> 0 `i `uc
-]
-"45
-[v _adc_value2 `uc ~T0 @X0 1 e ]
-[i _adc_value2
+[v _adc_value `uc ~T0 @X0 1 e ]
+[i _adc_value
 -> -> 0 `i `uc
 ]
 "47
@@ -495,313 +485,313 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SLAVE_POT_SPI.c: 75:     }
 }
 [e :U 140 ]
-"78
-[; ;SLAVE_POT_SPI.c: 78: }
+"76
+[; ;SLAVE_POT_SPI.c: 76: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"84
-[; ;SLAVE_POT_SPI.c: 84: void main(void)
+"82
+[; ;SLAVE_POT_SPI.c: 82: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"85
-[; ;SLAVE_POT_SPI.c: 85: {
+"83
+[; ;SLAVE_POT_SPI.c: 83: {
 {
 [e :U _main ]
 [f ]
-"86
-[; ;SLAVE_POT_SPI.c: 86:     setup();
+"84
+[; ;SLAVE_POT_SPI.c: 84:     setup();
 [e ( _setup ..  ]
-"87
-[; ;SLAVE_POT_SPI.c: 87:     osc_config();
+"85
+[; ;SLAVE_POT_SPI.c: 85:     osc_config();
 [e ( _osc_config ..  ]
-"88
-[; ;SLAVE_POT_SPI.c: 88:     interrup_config();
+"86
+[; ;SLAVE_POT_SPI.c: 86:     interrup_config();
 [e ( _interrup_config ..  ]
-"89
-[; ;SLAVE_POT_SPI.c: 89:     tmr0_config ();
+"87
+[; ;SLAVE_POT_SPI.c: 87:     tmr0_config ();
 [e ( _tmr0_config ..  ]
-"90
-[; ;SLAVE_POT_SPI.c: 90:     adc_config();
+"88
+[; ;SLAVE_POT_SPI.c: 88:     adc_config();
 [e ( _adc_config ..  ]
-"91
-[; ;SLAVE_POT_SPI.c: 91:     SPI_config ();
+"89
+[; ;SLAVE_POT_SPI.c: 89:     SPI_config ();
 [e ( _SPI_config ..  ]
-"93
-[; ;SLAVE_POT_SPI.c: 93:     while (1)
+"91
+[; ;SLAVE_POT_SPI.c: 91:     while (1)
 [e :U 143 ]
+"92
+[; ;SLAVE_POT_SPI.c: 92:     {
+{
+"93
+[; ;SLAVE_POT_SPI.c: 93:         if (SSPIF == 1)
+[e $ ! == -> _SSPIF `i -> 1 `i 145  ]
 "94
-[; ;SLAVE_POT_SPI.c: 94:     {
+[; ;SLAVE_POT_SPI.c: 94:         {
 {
 "95
-[; ;SLAVE_POT_SPI.c: 95:         if (SSPIF == 1)
-[e $ ! == -> _SSPIF `i -> 1 `i 145  ]
-"96
-[; ;SLAVE_POT_SPI.c: 96:         {
-{
-"97
-[; ;SLAVE_POT_SPI.c: 97:         dato_maestro = SPI_Recibir();
+[; ;SLAVE_POT_SPI.c: 95:         dato_maestro = SPI_Recibir();
 [e = _dato_maestro ( _SPI_Recibir ..  ]
-"98
-[; ;SLAVE_POT_SPI.c: 98:         SPI_Enviar (PORTD);
-[e ( _SPI_Enviar (1 -> _PORTD `uc ]
-"99
-[; ;SLAVE_POT_SPI.c: 99:         SSPIF = 0;
+"96
+[; ;SLAVE_POT_SPI.c: 96:         SPI_Enviar (ADRESH);
+[e ( _SPI_Enviar (1 -> _ADRESH `uc ]
+"97
+[; ;SLAVE_POT_SPI.c: 97:         SSPIF = 0;
 [e = _SSPIF -> -> 0 `i `b ]
-"100
-[; ;SLAVE_POT_SPI.c: 100:     }
+"98
+[; ;SLAVE_POT_SPI.c: 98:     }
 }
 [e :U 145 ]
-"103
-[; ;SLAVE_POT_SPI.c: 103:     }
+"101
+[; ;SLAVE_POT_SPI.c: 101:     }
 }
 [e :U 142 ]
 [e $U 143  ]
 [e :U 144 ]
-"104
-[; ;SLAVE_POT_SPI.c: 104: }
+"102
+[; ;SLAVE_POT_SPI.c: 102: }
 [e :UE 141 ]
 }
-"110
-[; ;SLAVE_POT_SPI.c: 110: void setup(void)
+"108
+[; ;SLAVE_POT_SPI.c: 108: void setup(void)
 [v _setup `(v ~T0 @X0 1 ef ]
-"111
-[; ;SLAVE_POT_SPI.c: 111: {
+"109
+[; ;SLAVE_POT_SPI.c: 109: {
 {
 [e :U _setup ]
 [f ]
-"112
-[; ;SLAVE_POT_SPI.c: 112:     ANSEL = 0;
+"110
+[; ;SLAVE_POT_SPI.c: 110:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"113
-[; ;SLAVE_POT_SPI.c: 113:     TRISA = 0;
+"111
+[; ;SLAVE_POT_SPI.c: 111:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"114
-[; ;SLAVE_POT_SPI.c: 114:     PORTA = 0;
+"112
+[; ;SLAVE_POT_SPI.c: 112:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"115
-[; ;SLAVE_POT_SPI.c: 115:     TRISAbits.TRISA0 = 1;
+"113
+[; ;SLAVE_POT_SPI.c: 113:     TRISAbits.TRISA0 = 1;
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-"116
-[; ;SLAVE_POT_SPI.c: 116:     ANSELbits.ANS0 = 1;
+"114
+[; ;SLAVE_POT_SPI.c: 114:     ANSELbits.ANS0 = 1;
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-"117
-[; ;SLAVE_POT_SPI.c: 117:     TRISAbits.TRISA5 = 1;
+"115
+[; ;SLAVE_POT_SPI.c: 115:     TRISAbits.TRISA5 = 1;
 [e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"118
-[; ;SLAVE_POT_SPI.c: 118:     ANSELbits.ANS5 = 0;
+"116
+[; ;SLAVE_POT_SPI.c: 116:     ANSELbits.ANS5 = 0;
 [e = . . _ANSELbits 0 5 -> -> 0 `i `uc ]
-"119
-[; ;SLAVE_POT_SPI.c: 119:     PORTAbits.RA5 = 1;
+"117
+[; ;SLAVE_POT_SPI.c: 117:     PORTAbits.RA5 = 1;
 [e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-"122
-[; ;SLAVE_POT_SPI.c: 122:     ANSELH = 0;
+"120
+[; ;SLAVE_POT_SPI.c: 120:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"123
-[; ;SLAVE_POT_SPI.c: 123:     TRISB = 0;
+"121
+[; ;SLAVE_POT_SPI.c: 121:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"124
-[; ;SLAVE_POT_SPI.c: 124:     PORTB = 0;
+"122
+[; ;SLAVE_POT_SPI.c: 122:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"125
-[; ;SLAVE_POT_SPI.c: 125:     TRISC = 0;
+"123
+[; ;SLAVE_POT_SPI.c: 123:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"126
-[; ;SLAVE_POT_SPI.c: 126:     PORTC = 0;
+"124
+[; ;SLAVE_POT_SPI.c: 124:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"127
-[; ;SLAVE_POT_SPI.c: 127:     TRISCbits.TRISC3 = 1;
+"125
+[; ;SLAVE_POT_SPI.c: 125:     TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"128
-[; ;SLAVE_POT_SPI.c: 128:     TRISCbits.TRISC4 = 1;
+"126
+[; ;SLAVE_POT_SPI.c: 126:     TRISCbits.TRISC4 = 1;
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"129
-[; ;SLAVE_POT_SPI.c: 129:     TRISCbits.TRISC5 = 0;
+"127
+[; ;SLAVE_POT_SPI.c: 127:     TRISCbits.TRISC5 = 0;
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-"130
-[; ;SLAVE_POT_SPI.c: 130:     TRISD = 0;
+"128
+[; ;SLAVE_POT_SPI.c: 128:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"131
-[; ;SLAVE_POT_SPI.c: 131:     PORTD = 0;
+"129
+[; ;SLAVE_POT_SPI.c: 129:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"132
-[; ;SLAVE_POT_SPI.c: 132:     TRISE = 0;
+"130
+[; ;SLAVE_POT_SPI.c: 130:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
-"133
-[; ;SLAVE_POT_SPI.c: 133:     PORTE = 0;
+"131
+[; ;SLAVE_POT_SPI.c: 131:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"134
-[; ;SLAVE_POT_SPI.c: 134: }
+"132
+[; ;SLAVE_POT_SPI.c: 132: }
 [e :UE 146 ]
 }
-"136
-[; ;SLAVE_POT_SPI.c: 136: void interrup_config (void)
+"134
+[; ;SLAVE_POT_SPI.c: 134: void interrup_config (void)
 [v _interrup_config `(v ~T0 @X0 1 ef ]
-"137
-[; ;SLAVE_POT_SPI.c: 137: {
+"135
+[; ;SLAVE_POT_SPI.c: 135: {
 {
 [e :U _interrup_config ]
 [f ]
-"138
-[; ;SLAVE_POT_SPI.c: 138:     INTCONbits.GIE = 1;
+"136
+[; ;SLAVE_POT_SPI.c: 136:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"139
-[; ;SLAVE_POT_SPI.c: 139:     INTCONbits.PEIE = 1;
+"137
+[; ;SLAVE_POT_SPI.c: 137:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"140
-[; ;SLAVE_POT_SPI.c: 140:     INTCONbits.T0IE = 1;
+"138
+[; ;SLAVE_POT_SPI.c: 138:     INTCONbits.T0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"141
-[; ;SLAVE_POT_SPI.c: 141:     INTCONbits.INTE = 0;
+"139
+[; ;SLAVE_POT_SPI.c: 139:     INTCONbits.INTE = 0;
 [e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-"142
-[; ;SLAVE_POT_SPI.c: 142:     INTCONbits.RBIE = 0;
+"140
+[; ;SLAVE_POT_SPI.c: 140:     INTCONbits.RBIE = 0;
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"143
-[; ;SLAVE_POT_SPI.c: 143:     INTCONbits.T0IF = 0;
+"141
+[; ;SLAVE_POT_SPI.c: 141:     INTCONbits.T0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"144
-[; ;SLAVE_POT_SPI.c: 144:     INTCONbits.INTF = 0;
+"142
+[; ;SLAVE_POT_SPI.c: 142:     INTCONbits.INTF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"145
-[; ;SLAVE_POT_SPI.c: 145:     INTCONbits.RBIF = 0;
+"143
+[; ;SLAVE_POT_SPI.c: 143:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"146
-[; ;SLAVE_POT_SPI.c: 146:     IOCB = 0b00000000;
+"144
+[; ;SLAVE_POT_SPI.c: 144:     IOCB = 0b00000000;
 [e = _IOCB -> -> 0 `i `uc ]
-"147
-[; ;SLAVE_POT_SPI.c: 147: }
+"145
+[; ;SLAVE_POT_SPI.c: 145: }
 [e :UE 147 ]
 }
-"149
-[; ;SLAVE_POT_SPI.c: 149: void osc_config (void)
+"147
+[; ;SLAVE_POT_SPI.c: 147: void osc_config (void)
 [v _osc_config `(v ~T0 @X0 1 ef ]
-"150
-[; ;SLAVE_POT_SPI.c: 150: {
+"148
+[; ;SLAVE_POT_SPI.c: 148: {
 {
 [e :U _osc_config ]
 [f ]
-"151
-[; ;SLAVE_POT_SPI.c: 151:     OSCCONbits.IRCF2 = 1;
+"149
+[; ;SLAVE_POT_SPI.c: 149:     OSCCONbits.IRCF2 = 1;
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"152
-[; ;SLAVE_POT_SPI.c: 152:     OSCCONbits.IRCF1 = 1;
+"150
+[; ;SLAVE_POT_SPI.c: 150:     OSCCONbits.IRCF1 = 1;
 [e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"153
-[; ;SLAVE_POT_SPI.c: 153:     OSCCONbits.IRCF0 = 0;
+"151
+[; ;SLAVE_POT_SPI.c: 151:     OSCCONbits.IRCF0 = 0;
 [e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"154
-[; ;SLAVE_POT_SPI.c: 154:     OSCCONbits.OSTS = 0;
+"152
+[; ;SLAVE_POT_SPI.c: 152:     OSCCONbits.OSTS = 0;
 [e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
-"155
-[; ;SLAVE_POT_SPI.c: 155:     OSCCONbits.HTS = 0;
+"153
+[; ;SLAVE_POT_SPI.c: 153:     OSCCONbits.HTS = 0;
 [e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
-"156
-[; ;SLAVE_POT_SPI.c: 156:     OSCCONbits.LTS = 1;
+"154
+[; ;SLAVE_POT_SPI.c: 154:     OSCCONbits.LTS = 1;
 [e = . . _OSCCONbits 0 1 -> -> 1 `i `uc ]
-"157
-[; ;SLAVE_POT_SPI.c: 157:     OSCCONbits.SCS = 0;
+"155
+[; ;SLAVE_POT_SPI.c: 155:     OSCCONbits.SCS = 0;
 [e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
-"158
-[; ;SLAVE_POT_SPI.c: 158: }
+"156
+[; ;SLAVE_POT_SPI.c: 156: }
 [e :UE 148 ]
 }
-"160
-[; ;SLAVE_POT_SPI.c: 160: void tmr0_config (void)
+"158
+[; ;SLAVE_POT_SPI.c: 158: void tmr0_config (void)
 [v _tmr0_config `(v ~T0 @X0 1 ef ]
-"161
-[; ;SLAVE_POT_SPI.c: 161: {
+"159
+[; ;SLAVE_POT_SPI.c: 159: {
 {
 [e :U _tmr0_config ]
 [f ]
-"162
-[; ;SLAVE_POT_SPI.c: 162:     OPTION_REGbits.nRBPU = 1;
+"160
+[; ;SLAVE_POT_SPI.c: 160:     OPTION_REGbits.nRBPU = 1;
 [e = . . _OPTION_REGbits 0 5 -> -> 1 `i `uc ]
-"163
-[; ;SLAVE_POT_SPI.c: 163:     OPTION_REGbits.T0CS = 0;
+"161
+[; ;SLAVE_POT_SPI.c: 161:     OPTION_REGbits.T0CS = 0;
 [e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-"164
-[; ;SLAVE_POT_SPI.c: 164:     OPTION_REGbits.PSA = 0;
+"162
+[; ;SLAVE_POT_SPI.c: 162:     OPTION_REGbits.PSA = 0;
 [e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
-"165
-[; ;SLAVE_POT_SPI.c: 165:     OPTION_REGbits.PS2 = 0;
+"163
+[; ;SLAVE_POT_SPI.c: 163:     OPTION_REGbits.PS2 = 0;
 [e = . . _OPTION_REGbits 1 2 -> -> 0 `i `uc ]
-"166
-[; ;SLAVE_POT_SPI.c: 166:     OPTION_REGbits.PS1 = 1;
+"164
+[; ;SLAVE_POT_SPI.c: 164:     OPTION_REGbits.PS1 = 1;
 [e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
-"167
-[; ;SLAVE_POT_SPI.c: 167:     OPTION_REGbits.PS0 = 0;
+"165
+[; ;SLAVE_POT_SPI.c: 165:     OPTION_REGbits.PS0 = 0;
 [e = . . _OPTION_REGbits 1 0 -> -> 0 `i `uc ]
-"168
-[; ;SLAVE_POT_SPI.c: 168:     TMR0 = 100;
+"166
+[; ;SLAVE_POT_SPI.c: 166:     TMR0 = 100;
 [e = _TMR0 -> -> 100 `i `uc ]
-"169
-[; ;SLAVE_POT_SPI.c: 169: }
+"167
+[; ;SLAVE_POT_SPI.c: 167: }
 [e :UE 149 ]
 }
-"175
-[; ;SLAVE_POT_SPI.c: 175: void adc_config (void)
+"173
+[; ;SLAVE_POT_SPI.c: 173: void adc_config (void)
 [v _adc_config `(v ~T0 @X0 1 ef ]
-"176
-[; ;SLAVE_POT_SPI.c: 176: {
+"174
+[; ;SLAVE_POT_SPI.c: 174: {
 {
 [e :U _adc_config ]
 [f ]
-"177
-[; ;SLAVE_POT_SPI.c: 177:     initADC (0);
+"175
+[; ;SLAVE_POT_SPI.c: 175:     initADC (0);
 [e ( _initADC (1 -> -> 0 `i `uc ]
-"178
-[; ;SLAVE_POT_SPI.c: 178: }
+"176
+[; ;SLAVE_POT_SPI.c: 176: }
 [e :UE 150 ]
 }
-"180
-[; ;SLAVE_POT_SPI.c: 180: void SPI_config (void)
+"178
+[; ;SLAVE_POT_SPI.c: 178: void SPI_config (void)
 [v _SPI_config `(v ~T0 @X0 1 ef ]
-"181
-[; ;SLAVE_POT_SPI.c: 181: {
+"179
+[; ;SLAVE_POT_SPI.c: 179: {
 {
 [e :U _SPI_config ]
 [f ]
-"182
-[; ;SLAVE_POT_SPI.c: 182:     SPI_Esclavo_Init (4, 2);
+"180
+[; ;SLAVE_POT_SPI.c: 180:     SPI_Esclavo_Init (4, 2);
 [e ( _SPI_Esclavo_Init (2 , -> -> 4 `i `uc -> -> 2 `i `uc ]
-"183
-[; ;SLAVE_POT_SPI.c: 183: }
+"181
+[; ;SLAVE_POT_SPI.c: 181: }
 [e :UE 151 ]
 }
-"189
-[; ;SLAVE_POT_SPI.c: 189: void adc_conversion (void)
+"187
+[; ;SLAVE_POT_SPI.c: 187: void adc_conversion (void)
 [v _adc_conversion `(v ~T0 @X0 1 ef ]
-"190
-[; ;SLAVE_POT_SPI.c: 190: {
+"188
+[; ;SLAVE_POT_SPI.c: 188: {
 {
 [e :U _adc_conversion ]
 [f ]
-"191
-[; ;SLAVE_POT_SPI.c: 191:     ADCON0bits.GO_DONE = 1;
+"189
+[; ;SLAVE_POT_SPI.c: 189:     ADCON0bits.GO_DONE = 1;
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
-"192
-[; ;SLAVE_POT_SPI.c: 192:     _delay((unsigned long)((10)*(8000000/4000.0)));
+"190
+[; ;SLAVE_POT_SPI.c: 190:     _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"193
-[; ;SLAVE_POT_SPI.c: 193:     if (ADCON0bits.GO_DONE == 0)
+"191
+[; ;SLAVE_POT_SPI.c: 191:     if (ADCON0bits.GO_DONE == 0)
 [e $ ! == -> . . _ADCON0bits 3 1 `i -> 0 `i 153  ]
-"194
-[; ;SLAVE_POT_SPI.c: 194:     {
+"192
+[; ;SLAVE_POT_SPI.c: 192:     {
 {
-"195
-[; ;SLAVE_POT_SPI.c: 195:         ADCON0bits.GO_DONE = 1;
+"193
+[; ;SLAVE_POT_SPI.c: 193:         ADCON0bits.GO_DONE = 1;
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
+"194
+[; ;SLAVE_POT_SPI.c: 194:         PORTD = ADRESH * 2;
+[e = _PORTD -> * -> _ADRESH `i -> 2 `i `uc ]
 "196
-[; ;SLAVE_POT_SPI.c: 196:         adc_value1 = ADRESH;
-[e = _adc_value1 _ADRESH ]
-"197
-[; ;SLAVE_POT_SPI.c: 197:         PORTD = ADRESH;
-[e = _PORTD _ADRESH ]
-"198
-[; ;SLAVE_POT_SPI.c: 198:     }
+[; ;SLAVE_POT_SPI.c: 196:     }
 }
 [e :U 153 ]
-"199
-[; ;SLAVE_POT_SPI.c: 199: }
+"197
+[; ;SLAVE_POT_SPI.c: 197:     adc_value = PORTD;
+[e = _adc_value _PORTD ]
+"198
+[; ;SLAVE_POT_SPI.c: 198: }
 [e :UE 152 ]
 }

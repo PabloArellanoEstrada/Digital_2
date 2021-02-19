@@ -47,17 +47,17 @@
 [v _lcd lcd `(v  1 e 1 0 ]
 "273
 [v _Conversion1 Conversion1 `(v  1 e 1 0 ]
-"289
+"291
 [v _Conversion2 Conversion2 `(v  1 e 1 0 ]
-"307
+"309
 [v _Conversion3 Conversion3 `(v  1 e 1 0 ]
-"319
+"321
 [v _virtual_display1 virtual_display1 `(v  1 e 1 0 ]
-"340
+"342
 [v _virtual_display2 virtual_display2 `(v  1 e 1 0 ]
-"379
+"381
 [v _virtual_display3 virtual_display3 `(v  1 e 1 0 ]
-"397
+"399
 [v _escribir_char escribir_char `(v  1 e 1 0 ]
 "4 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
 [v _SPI_Maestro_Init SPI_Maestro_Init `(v  1 e 1 0 ]
@@ -91,14 +91,14 @@
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S531 . 1 `uc 1 RE0 1 0 :1:0 
+[s S532 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S536 . 1 `S531 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES536  1 e 1 @9 ]
+[u S537 . 1 `S532 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES537  1 e 1 @9 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -129,21 +129,21 @@
 [v _PIR1bits PIR1bits `VES273  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
-[s S582 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S583 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "870
-[s S588 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S589 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S593 . 1 `S582 1 . 1 0 `S588 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES593  1 e 1 @20 ]
-[s S432 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S594 . 1 `S583 1 . 1 0 `S589 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES594  1 e 1 @20 ]
+[s S433 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -153,18 +153,18 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S441 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S442 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S445 . 1 `uc 1 . 1 0 :6:0 
+[s S446 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S448 . 1 `uc 1 . 1 0 :6:0 
+[s S449 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S451 . 1 `S432 1 . 1 0 `S441 1 . 1 0 `S445 1 . 1 0 `S448 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES451  1 e 1 @24 ]
+[u S452 . 1 `S433 1 . 1 0 `S442 1 . 1 0 `S446 1 . 1 0 `S449 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES452  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 [s S183 . 1 `uc 1 PS 1 0 :3:0 
@@ -183,7 +183,7 @@
 [v _OPTION_REGbits OPTION_REGbits `VES194  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S697 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S698 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -193,8 +193,8 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S706 . 1 `S697 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES706  1 e 1 @133 ]
+[u S707 . 1 `S698 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES707  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
@@ -215,7 +215,7 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S487 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S488 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -224,8 +224,8 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S495 . 1 `S487 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES495  1 e 1 @140 ]
+[u S496 . 1 `S488 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES496  1 e 1 @140 ]
 [s S157 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
@@ -240,7 +240,7 @@
 ]
 [u S168 . 1 `S157 1 . 1 0 `S163 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES168  1 e 1 @143 ]
-[s S608 . 1 `uc 1 BF 1 0 :1:0 
+[s S609 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -250,42 +250,42 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S617 . 1 `uc 1 . 1 0 :2:0 
+[s S618 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S622 . 1 `uc 1 . 1 0 :2:0 
+[s S623 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S628 . 1 `uc 1 . 1 0 :2:0 
+[s S629 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S633 . 1 `uc 1 . 1 0 :2:0 
+[s S634 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S638 . 1 `uc 1 . 1 0 :2:0 
+[s S639 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S643 . 1 `uc 1 . 1 0 :2:0 
+[s S644 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S648 . 1 `S608 1 . 1 0 `S617 1 . 1 0 `S622 1 . 1 0 `S628 1 . 1 0 `S633 1 . 1 0 `S638 1 . 1 0 `S643 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES648  1 e 1 @148 ]
+[u S649 . 1 `S609 1 . 1 0 `S618 1 . 1 0 `S623 1 . 1 0 `S629 1 . 1 0 `S634 1 . 1 0 `S639 1 . 1 0 `S644 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES649  1 e 1 @148 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
-[s S395 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S396 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -295,15 +295,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S404 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S405 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S408 . 1 `uc 1 . 1 0 :6:0 
+[s S409 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S411 . 1 `S395 1 . 1 0 `S404 1 . 1 0 `S408 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES411  1 e 1 @152 ]
+[u S412 . 1 `S396 1 . 1 0 `S405 1 . 1 0 `S409 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES412  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
@@ -394,44 +394,46 @@
 [v Lcd_Set_Cursor@a a `uc  1 a 1 8 ]
 "76
 } 0
-"307 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+"309 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 [v _Conversion3 Conversion3 `(v  1 e 1 0 ]
 {
-"317
+"319
 } 0
-"379
+"381
 [v _virtual_display3 virtual_display3 `(v  1 e 1 0 ]
 {
-"395
+"397
 } 0
-"289
+"291
 [v _Conversion2 Conversion2 `(v  1 e 1 0 ]
 {
-"305
+"307
 } 0
-"340
+"342
 [v _virtual_display2 virtual_display2 `(v  1 e 1 0 ]
 {
-"377
+"379
 } 0
 "273
 [v _Conversion1 Conversion1 `(v  1 e 1 0 ]
 {
-"287
+"277
+[v Conversion1@pot pot `i  1 a 2 7 ]
+"289
 } 0
-"319
+"321
 [v _virtual_display1 virtual_display1 `(v  1 e 1 0 ]
 {
-"338
+"340
 } 0
-"397
+"399
 [v _escribir_char escribir_char `(v  1 e 1 0 ]
 {
 [v escribir_char@valor valor `uc  1 a 1 wreg ]
 [v escribir_char@valor valor `uc  1 a 1 wreg ]
-"399
-[v escribir_char@valor valor `uc  1 a 1 2 ]
 "401
+[v escribir_char@valor valor `uc  1 a 1 2 ]
+"403
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]

@@ -931,187 +931,185 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _Conversion1 ]
 [f ]
-"275
-[; ;MAESTRO_SPI.c: 275:     voltaje = dato_pot * 2;
-[e = _voltaje -> * -> _dato_pot `i -> 2 `i `uc ]
 "276
-[; ;MAESTRO_SPI.c: 276:     unidad = voltaje / 100;
-[e = _unidad -> / -> _voltaje `i -> 100 `i `uc ]
+[; ;MAESTRO_SPI.c: 276:     voltaje = dato_pot;
+[e = _voltaje _dato_pot ]
 "277
-[; ;MAESTRO_SPI.c: 277:     x1 = voltaje % 100;
-[e = _x1 -> % -> _voltaje `i -> 100 `i `uc ]
+[; ;MAESTRO_SPI.c: 277:     int pot = voltaje * 4;
+[v _pot `i ~T0 @X0 1 a ]
+[e = _pot * -> _voltaje `i -> 4 `i ]
 "278
-[; ;MAESTRO_SPI.c: 278:     x2 = x1 / 10;
-[e = _x2 -> / -> _x1 `i -> 10 `i `uc ]
+[; ;MAESTRO_SPI.c: 278:     unidad = pot / 100;
+[e = _unidad -> / _pot -> 100 `i `uc ]
 "279
-[; ;MAESTRO_SPI.c: 279:     y1 = x1 % 10;
-[e = _y1 -> % -> _x1 `i -> 10 `i `uc ]
+[; ;MAESTRO_SPI.c: 279:     x1 = pot % 100;
+[e = _x1 -> % _pot -> 100 `i `uc ]
 "280
-[; ;MAESTRO_SPI.c: 280:     y2 = y1 / 1;
-[e = _y2 -> / -> _y1 `i -> 1 `i `uc ]
+[; ;MAESTRO_SPI.c: 280:     x2 = x1 / 10;
+[e = _x2 -> / -> _x1 `i -> 10 `i `uc ]
 "281
-[; ;MAESTRO_SPI.c: 281:     Lcd_Write_Char(unidad+48);
-[e ( _Lcd_Write_Char (1 -> + -> _unidad `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 281:     y1 = x1 % 10;
+[e = _y1 -> % -> _x1 `i -> 10 `i `uc ]
 "282
-[; ;MAESTRO_SPI.c: 282:     Lcd_Write_Char(46);
-[e ( _Lcd_Write_Char (1 -> -> 46 `i `uc ]
+[; ;MAESTRO_SPI.c: 282:     y2 = y1 / 1;
+[e = _y2 -> / -> _y1 `i -> 1 `i `uc ]
 "283
-[; ;MAESTRO_SPI.c: 283:     Lcd_Write_Char(x2+48);
-[e ( _Lcd_Write_Char (1 -> + -> _x2 `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 283:     Lcd_Write_Char(unidad+48);
+[e ( _Lcd_Write_Char (1 -> + -> _unidad `i -> 48 `i `uc ]
 "284
-[; ;MAESTRO_SPI.c: 284:     Lcd_Write_Char(y2+48);
-[e ( _Lcd_Write_Char (1 -> + -> _y2 `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 284:     Lcd_Write_Char(46);
+[e ( _Lcd_Write_Char (1 -> -> 46 `i `uc ]
 "285
-[; ;MAESTRO_SPI.c: 285:     Lcd_Write_Char(86);
-[e ( _Lcd_Write_Char (1 -> -> 86 `i `uc ]
+[; ;MAESTRO_SPI.c: 285:     Lcd_Write_Char(x2+48);
+[e ( _Lcd_Write_Char (1 -> + -> _x2 `i -> 48 `i `uc ]
 "286
-[; ;MAESTRO_SPI.c: 286:     virtual_display1();
-[e ( _virtual_display1 ..  ]
+[; ;MAESTRO_SPI.c: 286:     Lcd_Write_Char(y2+48);
+[e ( _Lcd_Write_Char (1 -> + -> _y2 `i -> 48 `i `uc ]
 "287
-[; ;MAESTRO_SPI.c: 287: }
+[; ;MAESTRO_SPI.c: 287:     Lcd_Write_Char(86);
+[e ( _Lcd_Write_Char (1 -> -> 86 `i `uc ]
+"288
+[; ;MAESTRO_SPI.c: 288:     virtual_display1();
+[e ( _virtual_display1 ..  ]
+"289
+[; ;MAESTRO_SPI.c: 289: }
 [e :UE 152 ]
 }
-"289
-[; ;MAESTRO_SPI.c: 289: void Conversion2 ()
+"291
+[; ;MAESTRO_SPI.c: 291: void Conversion2 ()
 [v _Conversion2 `(v ~T0 @X0 1 ef ]
-"290
-[; ;MAESTRO_SPI.c: 290: {
+"292
+[; ;MAESTRO_SPI.c: 292: {
 {
 [e :U _Conversion2 ]
 [f ]
-"291
-[; ;MAESTRO_SPI.c: 291:     if (dato_push < 10)
-[e $ ! < -> _dato_push `i -> 10 `i 154  ]
-"292
-[; ;MAESTRO_SPI.c: 292:     {
-{
 "293
-[; ;MAESTRO_SPI.c: 293:         Lcd_Write_Char(48);
-[e ( _Lcd_Write_Char (1 -> -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 293:     if (dato_push < 10)
+[e $ ! < -> _dato_push `i -> 10 `i 154  ]
 "294
-[; ;MAESTRO_SPI.c: 294:         Lcd_Write_Char(dato_push+ 48);
-[e ( _Lcd_Write_Char (1 -> + -> _dato_push `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 294:     {
+{
 "295
-[; ;MAESTRO_SPI.c: 295:         virtual_display2();
-[e ( _virtual_display2 ..  ]
+[; ;MAESTRO_SPI.c: 295:         Lcd_Write_Char(48);
+[e ( _Lcd_Write_Char (1 -> -> 48 `i `uc ]
 "296
-[; ;MAESTRO_SPI.c: 296:     }
+[; ;MAESTRO_SPI.c: 296:         Lcd_Write_Char(dato_push+ 48);
+[e ( _Lcd_Write_Char (1 -> + -> _dato_push `i -> 48 `i `uc ]
+"297
+[; ;MAESTRO_SPI.c: 297:         virtual_display2();
+[e ( _virtual_display2 ..  ]
+"298
+[; ;MAESTRO_SPI.c: 298:     }
 }
 [e $U 155  ]
-"297
-[; ;MAESTRO_SPI.c: 297:     else if (dato_push >= 10)
+"299
+[; ;MAESTRO_SPI.c: 299:     else if (dato_push >= 10)
 [e :U 154 ]
 [e $ ! >= -> _dato_push `i -> 10 `i 156  ]
-"298
-[; ;MAESTRO_SPI.c: 298:     {
-{
-"299
-[; ;MAESTRO_SPI.c: 299:         w1 = dato_push/10;
-[e = _w1 -> / -> _dato_push `i -> 10 `i `uc ]
 "300
-[; ;MAESTRO_SPI.c: 300:         w2 = dato_push % 10;
-[e = _w2 -> % -> _dato_push `i -> 10 `i `uc ]
+[; ;MAESTRO_SPI.c: 300:     {
+{
 "301
-[; ;MAESTRO_SPI.c: 301:         Lcd_Write_Char(w1+48);
-[e ( _Lcd_Write_Char (1 -> + -> _w1 `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 301:         w1 = dato_push/10;
+[e = _w1 -> / -> _dato_push `i -> 10 `i `uc ]
 "302
-[; ;MAESTRO_SPI.c: 302:         Lcd_Write_Char(w2+48);
-[e ( _Lcd_Write_Char (1 -> + -> _w2 `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 302:         w2 = dato_push % 10;
+[e = _w2 -> % -> _dato_push `i -> 10 `i `uc ]
 "303
-[; ;MAESTRO_SPI.c: 303:         virtual_display2();
-[e ( _virtual_display2 ..  ]
+[; ;MAESTRO_SPI.c: 303:         Lcd_Write_Char(w1+48);
+[e ( _Lcd_Write_Char (1 -> + -> _w1 `i -> 48 `i `uc ]
 "304
-[; ;MAESTRO_SPI.c: 304:     }
+[; ;MAESTRO_SPI.c: 304:         Lcd_Write_Char(w2+48);
+[e ( _Lcd_Write_Char (1 -> + -> _w2 `i -> 48 `i `uc ]
+"305
+[; ;MAESTRO_SPI.c: 305:         virtual_display2();
+[e ( _virtual_display2 ..  ]
+"306
+[; ;MAESTRO_SPI.c: 306:     }
 }
 [e :U 156 ]
 [e :U 155 ]
-"305
-[; ;MAESTRO_SPI.c: 305: }
+"307
+[; ;MAESTRO_SPI.c: 307: }
 [e :UE 153 ]
 }
-"307
-[; ;MAESTRO_SPI.c: 307: void Conversion3 ()
+"309
+[; ;MAESTRO_SPI.c: 309: void Conversion3 ()
 [v _Conversion3 `(v ~T0 @X0 1 ef ]
-"308
-[; ;MAESTRO_SPI.c: 308: {
+"310
+[; ;MAESTRO_SPI.c: 310: {
 {
 [e :U _Conversion3 ]
 [f ]
-"309
-[; ;MAESTRO_SPI.c: 309:     voltajey = dato_semaforo * 2;
-[e = _voltajey -> * -> _dato_semaforo `i -> 2 `i `uc ]
-"310
-[; ;MAESTRO_SPI.c: 310:     decenay = voltajey / 10;
-[e = _decenay -> / -> _voltajey `i -> 10 `i `uc ]
 "311
-[; ;MAESTRO_SPI.c: 311:     unidady = voltajey % 10;
-[e = _unidady -> % -> _voltajey `i -> 10 `i `uc ]
+[; ;MAESTRO_SPI.c: 311:     voltajey = dato_semaforo;
+[e = _voltajey _dato_semaforo ]
 "312
-[; ;MAESTRO_SPI.c: 312:     Lcd_Write_Char(decenay+48);
-[e ( _Lcd_Write_Char (1 -> + -> _decenay `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 312:     decenay = voltajey / 10;
+[e = _decenay -> / -> _voltajey `i -> 10 `i `uc ]
 "313
-[; ;MAESTRO_SPI.c: 313:     Lcd_Write_Char(unidady+48);
-[e ( _Lcd_Write_Char (1 -> + -> _unidady `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 313:     unidady = voltajey % 10;
+[e = _unidady -> % -> _voltajey `i -> 10 `i `uc ]
 "314
-[; ;MAESTRO_SPI.c: 314:     Lcd_Write_Char(223);
-[e ( _Lcd_Write_Char (1 -> -> 223 `i `uc ]
+[; ;MAESTRO_SPI.c: 314:     Lcd_Write_Char(decenay+48);
+[e ( _Lcd_Write_Char (1 -> + -> _decenay `i -> 48 `i `uc ]
 "315
-[; ;MAESTRO_SPI.c: 315:     Lcd_Write_Char(67);
-[e ( _Lcd_Write_Char (1 -> -> 67 `i `uc ]
+[; ;MAESTRO_SPI.c: 315:     Lcd_Write_Char(unidady+48);
+[e ( _Lcd_Write_Char (1 -> + -> _unidady `i -> 48 `i `uc ]
 "316
-[; ;MAESTRO_SPI.c: 316:     virtual_display3();
-[e ( _virtual_display3 ..  ]
+[; ;MAESTRO_SPI.c: 316:     Lcd_Write_Char(223);
+[e ( _Lcd_Write_Char (1 -> -> 223 `i `uc ]
 "317
-[; ;MAESTRO_SPI.c: 317: }
+[; ;MAESTRO_SPI.c: 317:     Lcd_Write_Char(67);
+[e ( _Lcd_Write_Char (1 -> -> 67 `i `uc ]
+"318
+[; ;MAESTRO_SPI.c: 318:     virtual_display3();
+[e ( _virtual_display3 ..  ]
+"319
+[; ;MAESTRO_SPI.c: 319: }
 [e :UE 157 ]
 }
-"319
-[; ;MAESTRO_SPI.c: 319: void virtual_display1 (void)
+"321
+[; ;MAESTRO_SPI.c: 321: void virtual_display1 (void)
 [v _virtual_display1 `(v ~T0 @X0 1 ef ]
-"320
-[; ;MAESTRO_SPI.c: 320: {
+"322
+[; ;MAESTRO_SPI.c: 322: {
 {
 [e :U _virtual_display1 ]
 [f ]
-"321
-[; ;MAESTRO_SPI.c: 321:     if (velocidad1 > 15)
-[e $ ! > -> _velocidad1 `i -> 15 `i 159  ]
-"322
-[; ;MAESTRO_SPI.c: 322:     {
-{
 "323
-[; ;MAESTRO_SPI.c: 323:         escribir_char (65);
-[e ( _escribir_char (1 -> -> 65 `i `uc ]
+[; ;MAESTRO_SPI.c: 323:     if (velocidad1 > 15)
+[e $ ! > -> _velocidad1 `i -> 15 `i 159  ]
 "324
-[; ;MAESTRO_SPI.c: 324:         escribir_char (68);
-[e ( _escribir_char (1 -> -> 68 `i `uc ]
+[; ;MAESTRO_SPI.c: 324:     {
+{
 "325
-[; ;MAESTRO_SPI.c: 325:         escribir_char (67);
-[e ( _escribir_char (1 -> -> 67 `i `uc ]
+[; ;MAESTRO_SPI.c: 325:         escribir_char (65);
+[e ( _escribir_char (1 -> -> 65 `i `uc ]
 "326
-[; ;MAESTRO_SPI.c: 326:         escribir_char (58);
-[e ( _escribir_char (1 -> -> 58 `i `uc ]
+[; ;MAESTRO_SPI.c: 326:         escribir_char (68);
+[e ( _escribir_char (1 -> -> 68 `i `uc ]
 "327
-[; ;MAESTRO_SPI.c: 327:         escribir_char (unidad+48);
-[e ( _escribir_char (1 -> + -> _unidad `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 327:         escribir_char (67);
+[e ( _escribir_char (1 -> -> 67 `i `uc ]
 "328
-[; ;MAESTRO_SPI.c: 328:         escribir_char (46);
-[e ( _escribir_char (1 -> -> 46 `i `uc ]
+[; ;MAESTRO_SPI.c: 328:         escribir_char (58);
+[e ( _escribir_char (1 -> -> 58 `i `uc ]
 "329
-[; ;MAESTRO_SPI.c: 329:         escribir_char (x2+48);
-[e ( _escribir_char (1 -> + -> _x2 `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 329:         escribir_char (unidad+48);
+[e ( _escribir_char (1 -> + -> _unidad `i -> 48 `i `uc ]
 "330
-[; ;MAESTRO_SPI.c: 330:         escribir_char (y2+48);
-[e ( _escribir_char (1 -> + -> _y2 `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 330:         escribir_char (46);
+[e ( _escribir_char (1 -> -> 46 `i `uc ]
 "331
-[; ;MAESTRO_SPI.c: 331:         escribir_char (86);
-[e ( _escribir_char (1 -> -> 86 `i `uc ]
+[; ;MAESTRO_SPI.c: 331:         escribir_char (x2+48);
+[e ( _escribir_char (1 -> + -> _x2 `i -> 48 `i `uc ]
 "332
-[; ;MAESTRO_SPI.c: 332:         escribir_char (32);
-[e ( _escribir_char (1 -> -> 32 `i `uc ]
+[; ;MAESTRO_SPI.c: 332:         escribir_char (y2+48);
+[e ( _escribir_char (1 -> + -> _y2 `i -> 48 `i `uc ]
 "333
-[; ;MAESTRO_SPI.c: 333:         escribir_char (32);
-[e ( _escribir_char (1 -> -> 32 `i `uc ]
+[; ;MAESTRO_SPI.c: 333:         escribir_char (86);
+[e ( _escribir_char (1 -> -> 86 `i `uc ]
 "334
 [; ;MAESTRO_SPI.c: 334:         escribir_char (32);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
@@ -1119,210 +1117,216 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MAESTRO_SPI.c: 335:         escribir_char (32);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
 "336
-[; ;MAESTRO_SPI.c: 336:         velocidad1 = 0;
-[e = _velocidad1 -> -> 0 `i `uc ]
+[; ;MAESTRO_SPI.c: 336:         escribir_char (32);
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
 "337
-[; ;MAESTRO_SPI.c: 337:     }
+[; ;MAESTRO_SPI.c: 337:         escribir_char (32);
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"338
+[; ;MAESTRO_SPI.c: 338:         velocidad1 = 0;
+[e = _velocidad1 -> -> 0 `i `uc ]
+"339
+[; ;MAESTRO_SPI.c: 339:     }
 }
 [e :U 159 ]
-"338
-[; ;MAESTRO_SPI.c: 338: }
+"340
+[; ;MAESTRO_SPI.c: 340: }
 [e :UE 158 ]
 }
-"340
-[; ;MAESTRO_SPI.c: 340: void virtual_display2 (void)
+"342
+[; ;MAESTRO_SPI.c: 342: void virtual_display2 (void)
 [v _virtual_display2 `(v ~T0 @X0 1 ef ]
-"341
-[; ;MAESTRO_SPI.c: 341: {
+"343
+[; ;MAESTRO_SPI.c: 343: {
 {
 [e :U _virtual_display2 ]
 [f ]
-"342
-[; ;MAESTRO_SPI.c: 342:     if (velocidad2 > 15)
-[e $ ! > -> _velocidad2 `i -> 15 `i 161  ]
-"343
-[; ;MAESTRO_SPI.c: 343:     {
-{
 "344
-[; ;MAESTRO_SPI.c: 344:         if (dato_push < 10)
-[e $ ! < -> _dato_push `i -> 10 `i 162  ]
+[; ;MAESTRO_SPI.c: 344:     if (velocidad2 > 15)
+[e $ ! > -> _velocidad2 `i -> 15 `i 161  ]
 "345
-[; ;MAESTRO_SPI.c: 345:         {
+[; ;MAESTRO_SPI.c: 345:     {
 {
 "346
-[; ;MAESTRO_SPI.c: 346:             escribir_char (67);
-[e ( _escribir_char (1 -> -> 67 `i `uc ]
+[; ;MAESTRO_SPI.c: 346:         if (dato_push < 10)
+[e $ ! < -> _dato_push `i -> 10 `i 162  ]
 "347
-[; ;MAESTRO_SPI.c: 347:             escribir_char (79);
-[e ( _escribir_char (1 -> -> 79 `i `uc ]
+[; ;MAESTRO_SPI.c: 347:         {
+{
 "348
-[; ;MAESTRO_SPI.c: 348:             escribir_char (78);
-[e ( _escribir_char (1 -> -> 78 `i `uc ]
+[; ;MAESTRO_SPI.c: 348:             escribir_char (67);
+[e ( _escribir_char (1 -> -> 67 `i `uc ]
 "349
-[; ;MAESTRO_SPI.c: 349:             escribir_char (84);
-[e ( _escribir_char (1 -> -> 84 `i `uc ]
+[; ;MAESTRO_SPI.c: 349:             escribir_char (79);
+[e ( _escribir_char (1 -> -> 79 `i `uc ]
 "350
-[; ;MAESTRO_SPI.c: 350:             escribir_char (58);
-[e ( _escribir_char (1 -> -> 58 `i `uc ]
+[; ;MAESTRO_SPI.c: 350:             escribir_char (78);
+[e ( _escribir_char (1 -> -> 78 `i `uc ]
 "351
-[; ;MAESTRO_SPI.c: 351:             escribir_char (48);
-[e ( _escribir_char (1 -> -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 351:             escribir_char (84);
+[e ( _escribir_char (1 -> -> 84 `i `uc ]
 "352
-[; ;MAESTRO_SPI.c: 352:             escribir_char (dato_push+48);
-[e ( _escribir_char (1 -> + -> _dato_push `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 352:             escribir_char (58);
+[e ( _escribir_char (1 -> -> 58 `i `uc ]
 "353
-[; ;MAESTRO_SPI.c: 353:             escribir_char (32);
-[e ( _escribir_char (1 -> -> 32 `i `uc ]
+[; ;MAESTRO_SPI.c: 353:             escribir_char (48);
+[e ( _escribir_char (1 -> -> 48 `i `uc ]
 "354
-[; ;MAESTRO_SPI.c: 354:             escribir_char (32);
-[e ( _escribir_char (1 -> -> 32 `i `uc ]
+[; ;MAESTRO_SPI.c: 354:             escribir_char (dato_push+48);
+[e ( _escribir_char (1 -> + -> _dato_push `i -> 48 `i `uc ]
 "355
 [; ;MAESTRO_SPI.c: 355:             escribir_char (32);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
 "356
 [; ;MAESTRO_SPI.c: 356:             escribir_char (32);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
+"357
+[; ;MAESTRO_SPI.c: 357:             escribir_char (32);
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
 "358
-[; ;MAESTRO_SPI.c: 358:             velocidad2 = 0;
+[; ;MAESTRO_SPI.c: 358:             escribir_char (32);
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"360
+[; ;MAESTRO_SPI.c: 360:             velocidad2 = 0;
 [e = _velocidad2 -> -> 0 `i `uc ]
-"359
-[; ;MAESTRO_SPI.c: 359:         }
+"361
+[; ;MAESTRO_SPI.c: 361:         }
 }
 [e $U 163  ]
-"360
-[; ;MAESTRO_SPI.c: 360:         else
-[e :U 162 ]
-"361
-[; ;MAESTRO_SPI.c: 361:         {
-{
 "362
-[; ;MAESTRO_SPI.c: 362:             escribir_char (67);
-[e ( _escribir_char (1 -> -> 67 `i `uc ]
+[; ;MAESTRO_SPI.c: 362:         else
+[e :U 162 ]
 "363
-[; ;MAESTRO_SPI.c: 363:             escribir_char (79);
-[e ( _escribir_char (1 -> -> 79 `i `uc ]
+[; ;MAESTRO_SPI.c: 363:         {
+{
 "364
-[; ;MAESTRO_SPI.c: 364:             escribir_char (78);
-[e ( _escribir_char (1 -> -> 78 `i `uc ]
+[; ;MAESTRO_SPI.c: 364:             escribir_char (67);
+[e ( _escribir_char (1 -> -> 67 `i `uc ]
 "365
-[; ;MAESTRO_SPI.c: 365:             escribir_char (84);
-[e ( _escribir_char (1 -> -> 84 `i `uc ]
+[; ;MAESTRO_SPI.c: 365:             escribir_char (79);
+[e ( _escribir_char (1 -> -> 79 `i `uc ]
 "366
-[; ;MAESTRO_SPI.c: 366:             escribir_char (58);
-[e ( _escribir_char (1 -> -> 58 `i `uc ]
+[; ;MAESTRO_SPI.c: 366:             escribir_char (78);
+[e ( _escribir_char (1 -> -> 78 `i `uc ]
 "367
-[; ;MAESTRO_SPI.c: 367:             escribir_char (w1+48);
-[e ( _escribir_char (1 -> + -> _w1 `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 367:             escribir_char (84);
+[e ( _escribir_char (1 -> -> 84 `i `uc ]
 "368
-[; ;MAESTRO_SPI.c: 368:             escribir_char (w2+48);
-[e ( _escribir_char (1 -> + -> _w2 `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 368:             escribir_char (58);
+[e ( _escribir_char (1 -> -> 58 `i `uc ]
 "369
-[; ;MAESTRO_SPI.c: 369:             escribir_char (32);
-[e ( _escribir_char (1 -> -> 32 `i `uc ]
+[; ;MAESTRO_SPI.c: 369:             escribir_char (w1+48);
+[e ( _escribir_char (1 -> + -> _w1 `i -> 48 `i `uc ]
 "370
-[; ;MAESTRO_SPI.c: 370:             escribir_char (32);
-[e ( _escribir_char (1 -> -> 32 `i `uc ]
+[; ;MAESTRO_SPI.c: 370:             escribir_char (w2+48);
+[e ( _escribir_char (1 -> + -> _w2 `i -> 48 `i `uc ]
 "371
 [; ;MAESTRO_SPI.c: 371:             escribir_char (32);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
 "372
 [; ;MAESTRO_SPI.c: 372:             escribir_char (32);
 [e ( _escribir_char (1 -> -> 32 `i `uc ]
+"373
+[; ;MAESTRO_SPI.c: 373:             escribir_char (32);
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
 "374
-[; ;MAESTRO_SPI.c: 374:             velocidad2 = 0;
+[; ;MAESTRO_SPI.c: 374:             escribir_char (32);
+[e ( _escribir_char (1 -> -> 32 `i `uc ]
+"376
+[; ;MAESTRO_SPI.c: 376:             velocidad2 = 0;
 [e = _velocidad2 -> -> 0 `i `uc ]
-"375
-[; ;MAESTRO_SPI.c: 375:         }
+"377
+[; ;MAESTRO_SPI.c: 377:         }
 }
 [e :U 163 ]
-"376
-[; ;MAESTRO_SPI.c: 376:     }
+"378
+[; ;MAESTRO_SPI.c: 378:     }
 }
 [e :U 161 ]
-"377
-[; ;MAESTRO_SPI.c: 377: }
+"379
+[; ;MAESTRO_SPI.c: 379: }
 [e :UE 160 ]
 }
-"379
-[; ;MAESTRO_SPI.c: 379: void virtual_display3 (void)
+"381
+[; ;MAESTRO_SPI.c: 381: void virtual_display3 (void)
 [v _virtual_display3 `(v ~T0 @X0 1 ef ]
-"380
-[; ;MAESTRO_SPI.c: 380: {
+"382
+[; ;MAESTRO_SPI.c: 382: {
 {
 [e :U _virtual_display3 ]
 [f ]
-"381
-[; ;MAESTRO_SPI.c: 381:     if (velocidad3 > 15)
-[e $ ! > -> _velocidad3 `i -> 15 `i 165  ]
-"382
-[; ;MAESTRO_SPI.c: 382:     {
-{
 "383
-[; ;MAESTRO_SPI.c: 383:         escribir_char (84);
-[e ( _escribir_char (1 -> -> 84 `i `uc ]
+[; ;MAESTRO_SPI.c: 383:     if (velocidad3 > 15)
+[e $ ! > -> _velocidad3 `i -> 15 `i 165  ]
 "384
-[; ;MAESTRO_SPI.c: 384:         escribir_char (69);
-[e ( _escribir_char (1 -> -> 69 `i `uc ]
+[; ;MAESTRO_SPI.c: 384:     {
+{
 "385
-[; ;MAESTRO_SPI.c: 385:         escribir_char (77);
-[e ( _escribir_char (1 -> -> 77 `i `uc ]
+[; ;MAESTRO_SPI.c: 385:         escribir_char (84);
+[e ( _escribir_char (1 -> -> 84 `i `uc ]
 "386
-[; ;MAESTRO_SPI.c: 386:         escribir_char (80);
-[e ( _escribir_char (1 -> -> 80 `i `uc ]
+[; ;MAESTRO_SPI.c: 386:         escribir_char (69);
+[e ( _escribir_char (1 -> -> 69 `i `uc ]
 "387
-[; ;MAESTRO_SPI.c: 387:         escribir_char (58);
-[e ( _escribir_char (1 -> -> 58 `i `uc ]
+[; ;MAESTRO_SPI.c: 387:         escribir_char (77);
+[e ( _escribir_char (1 -> -> 77 `i `uc ]
 "388
-[; ;MAESTRO_SPI.c: 388:         escribir_char (decenay+48);
-[e ( _escribir_char (1 -> + -> _decenay `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 388:         escribir_char (80);
+[e ( _escribir_char (1 -> -> 80 `i `uc ]
 "389
-[; ;MAESTRO_SPI.c: 389:         escribir_char (unidady+48);
-[e ( _escribir_char (1 -> + -> _unidady `i -> 48 `i `uc ]
+[; ;MAESTRO_SPI.c: 389:         escribir_char (58);
+[e ( _escribir_char (1 -> -> 58 `i `uc ]
 "390
-[; ;MAESTRO_SPI.c: 390:         escribir_char (176);
-[e ( _escribir_char (1 -> -> 176 `i `uc ]
+[; ;MAESTRO_SPI.c: 390:         escribir_char (decenay+48);
+[e ( _escribir_char (1 -> + -> _decenay `i -> 48 `i `uc ]
 "391
-[; ;MAESTRO_SPI.c: 391:         escribir_char (67);
-[e ( _escribir_char (1 -> -> 67 `i `uc ]
+[; ;MAESTRO_SPI.c: 391:         escribir_char (unidady+48);
+[e ( _escribir_char (1 -> + -> _unidady `i -> 48 `i `uc ]
 "392
-[; ;MAESTRO_SPI.c: 392:         escribir_char ('\r');
-[e ( _escribir_char (1 -> -> 13 `ui `uc ]
+[; ;MAESTRO_SPI.c: 392:         escribir_char (176);
+[e ( _escribir_char (1 -> -> 176 `i `uc ]
 "393
-[; ;MAESTRO_SPI.c: 393:         velocidad3 = 0;
-[e = _velocidad3 -> -> 0 `i `uc ]
+[; ;MAESTRO_SPI.c: 393:         escribir_char (67);
+[e ( _escribir_char (1 -> -> 67 `i `uc ]
 "394
-[; ;MAESTRO_SPI.c: 394:     }
+[; ;MAESTRO_SPI.c: 394:         escribir_char ('\r');
+[e ( _escribir_char (1 -> -> 13 `ui `uc ]
+"395
+[; ;MAESTRO_SPI.c: 395:         velocidad3 = 0;
+[e = _velocidad3 -> -> 0 `i `uc ]
+"396
+[; ;MAESTRO_SPI.c: 396:     }
 }
 [e :U 165 ]
-"395
-[; ;MAESTRO_SPI.c: 395: }
+"397
+[; ;MAESTRO_SPI.c: 397: }
 [e :UE 164 ]
 }
-"397
-[; ;MAESTRO_SPI.c: 397: void escribir_char (uint8_t valor)
+"399
+[; ;MAESTRO_SPI.c: 399: void escribir_char (uint8_t valor)
 [v _escribir_char `(v ~T0 @X0 1 ef1`uc ]
-"398
-[; ;MAESTRO_SPI.c: 398: {
+"400
+[; ;MAESTRO_SPI.c: 400: {
 {
 [e :U _escribir_char ]
-"397
-[; ;MAESTRO_SPI.c: 397: void escribir_char (uint8_t valor)
-[v _valor `uc ~T0 @X0 1 r1 ]
-"398
-[; ;MAESTRO_SPI.c: 398: {
-[f ]
 "399
-[; ;MAESTRO_SPI.c: 399:     TXREG = valor;
-[e = _TXREG _valor ]
+[; ;MAESTRO_SPI.c: 399: void escribir_char (uint8_t valor)
+[v _valor `uc ~T0 @X0 1 r1 ]
 "400
-[; ;MAESTRO_SPI.c: 400:     while (PIR1bits.TXIF == 0);
+[; ;MAESTRO_SPI.c: 400: {
+[f ]
+"401
+[; ;MAESTRO_SPI.c: 401:     TXREG = valor;
+[e = _TXREG _valor ]
+"402
+[; ;MAESTRO_SPI.c: 402:     while (PIR1bits.TXIF == 0);
 [e $U 167  ]
 [e :U 168 ]
 [e :U 167 ]
 [e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 168  ]
 [e :U 169 ]
-"401
-[; ;MAESTRO_SPI.c: 401: }
+"403
+[; ;MAESTRO_SPI.c: 403: }
 [e :UE 166 ]
 }
 [a 1C 65 68 67 58 32 32 66 84 78 58 32 84 69 77 80 58 0 ]

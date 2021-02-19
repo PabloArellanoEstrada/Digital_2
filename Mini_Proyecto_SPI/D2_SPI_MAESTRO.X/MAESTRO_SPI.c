@@ -1,9 +1,9 @@
 /* 
- * Project: LCD
- * File:    LCD.c
+ * Project: D2_SPI_MAESTRO
+ * File:    MAESTRO_SPI.c
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
- * Created: February 8, 2021,
+ * Created: February 18, 2021.
  */
 
 //============================================================================*/
@@ -13,9 +13,9 @@
 #include <xc.h>                 // XC8 libreria
 #include <stdint.h>             // Variables de ancho definido
 #include <stdio.h>              // Tipos de variables, macros, entradas y salidas
-#include "LCD_SPI.h"          // Libreria Personalizada LCD
-#include "USART_SPI.h"              // Libreria Personalizada comunicacion serial
-#include "SPI_SPI.h"
+#include "LCD_SPI.h"            // Libreria LCD
+#include "USART_SPI.h"          // Libreria comunicacion serial
+#include "SPI_SPI.h"            // Libreria comunicacion SPI
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION
@@ -41,41 +41,37 @@
 // VARIABLES
 //============================================================================*/
 
-uint8_t voltaje;                // Conversion a LCD1
+uint8_t voltaje;                // Conversion POT
 uint8_t unidad;
 uint8_t x1;
 uint8_t y1;
 uint8_t x2;
 uint8_t y2;
 
-uint8_t voltajez;               // Conversion a LCD2
+uint8_t voltajez;               // Conversion BOTONES
 uint8_t unidadz;
 uint8_t x1z;
 uint8_t y1z;
 uint8_t x2z;
 uint8_t y2z;
 
-uint8_t decenay;
-uint8_t voltajey;               // Conversion a LCD3
+uint8_t decenay;                // Conversion SEMAFORO
+uint8_t voltajey;               
 uint8_t unidady;
 uint8_t x1y;
 uint8_t y1y;
 uint8_t x2y;
 uint8_t y2y;
 
-uint8_t leer;                   // Comunicacion Serial
-uint8_t contador;
-
-uint8_t w1;                     // Conversion Terminal Virtual
+uint8_t w1;                     // Terminal Virtual
 uint8_t w2;
 uint8_t a;
 uint8_t velocidad1 = 0;         
 uint8_t velocidad2 = 0;   
 uint8_t velocidad3 = 0; 
 
-uint8_t dato_pot = 0;
+uint8_t dato_pot = 0;           // SPI
 uint8_t dato_push = 0;
-uint8_t dato_push1 = 0;
 uint8_t dato_semaforo = 0;
 
 
@@ -110,13 +106,13 @@ void virtual_display3 (void);
 //============================================================================*/
 
 void __interrupt() ISR(void)    
-{                               // GIE = 0
-    if (INTCONbits.TMR0IF == 1)  // Si hay desboradmiento de TIMER0 la bandera se levanta y se revisa
+{                                    // GIE = 0
+    if (INTCONbits.TMR0IF == 1)      // Desboradmiento? La bandera se levanta y se revisa
     {
-        INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
+        INTCONbits.TMR0IF = 0;       // Se apaga la bandera manualmente
         TMR0 = 100;                
-    }
-}                                      // GIE = 1
+    }                                // GIE = 1
+}                                      
 
 //============================================================================*/
 // CICLO PRINCIPAL
@@ -124,58 +120,51 @@ void __interrupt() ISR(void)
 
 void main(void) 
 {
-    setup();                            // Funciones de Configuracion
+    setup();                             // Funciones de Configuracion
     osc_config();
     interrup_config();
     tmr0_config ();
     Lcd_Init();
     USART_config();  
     SPI_config ();
-    while (1)                           // Loop principal
+    while (1)                           
     {
                
-        PORTCbits.RC0 = 0;
+        PORTCbits.RC0 = 0;               // POT select
         __delay_ms(1);
         
-        SPI_Enviar (dato_pot);        
-        dato_pot  = SPI_Recibir();
+        SPI_Enviar (dato_pot);           // Variable para acceder a informacion
+        dato_pot  = SPI_Recibir();       // Se recibe info
         
         __delay_ms(1);        
         PORTCbits.RC0 = 1;
         
-        //----------------------------------------------
+        //----------------------------------------------------------------------
         
-        PORTCbits.RC1 = 0;
+        PORTCbits.RC1 = 0;               // PUSH select
         __delay_ms(1);
         
-        SPI_Enviar (dato_push);        
-        dato_push  = SPI_Recibir();
+        SPI_Enviar (dato_push);          // Variable para acceder a informacion
+        dato_push  = SPI_Recibir();      // Se recibe info
         
         __delay_ms(1);        
         PORTCbits.RC1 = 1;
         
-        //----------------------------------------------
+        //----------------------------------------------------------------------
         
-        PORTCbits.RC2 = 0;
+        PORTCbits.RC2 = 0;               // SEMAFORO select
         __delay_ms(1);
         
- 
-        SPI_Enviar (dato_semaforo);        
-        dato_semaforo  = SPI_Recibir();
+        SPI_Enviar (dato_semaforo);      // Variable para acceder a informacion 
+        dato_semaforo  = SPI_Recibir();  // Se recibe info
                
         __delay_ms(1);        
         PORTCbits.RC2 = 1;
         
-        
-      
-    
-                
-        lcd ();                         // LCD
-        velocidad1 = velocidad1 + 1;    // Velocidad terminal
+        lcd ();                          // LCD
+        velocidad1 = velocidad1 + 1;     // Velocidad terminal
         velocidad2 = velocidad2 + 1;
         velocidad3 = velocidad3 + 1;
-        
-        
     }
 }
 
@@ -185,36 +174,36 @@ void main(void)
 
 void setup(void) 
 {
-    ANSEL = 0;
-    TRISA = 0;                // Puerto A como entrada 
+    ANSEL = 0;                // Puerto A digital 
+    TRISA = 0;                // Puerto A como salida 
     PORTA = 0;                // Puerto A entrada apagado
     ANSELH = 0;               // Puerto B digital
     TRISB = 0;                // Puerto B salida
-    PORTB = 0;                // Puerto B RB0 y RB1 entrada igual a 0
-    TRISC = 0;                // Puerto C salida leds
-    PORTC = 0;                // Puerto C salida leds apagados
+    PORTB = 0;                // Puerto B apagado
+    TRISC = 0;                // Puerto C salida
+    PORTC = 0;                // Puerto C apagado
     TRISCbits.TRISC6 = 0;     // TX salida
-    TRISCbits.TRISC4 = 1;     // Dato de esclavo
-    PORTCbits.RC0 = 1;
-    PORTCbits.RC1 = 1;
-    PORTCbits.RC2 = 1;
-    TRISD = 0;                // Puerto D salida display
-    PORTD = 0;                // Puerto D salida apagados
-    TRISE = 0;                // Puerto E salida transistores y alarma
-    PORTE = 0;                // Puerto E salida apagado
+    TRISCbits.TRISC4 = 1;     // SPI esclavo entrada
+    PORTCbits.RC0 = 1;        // SS POT
+    PORTCbits.RC1 = 1;        // SS BOTONES
+    PORTCbits.RC2 = 1;        // SS SEMAFORO
+    TRISD = 0;                // Puerto D salida 
+    PORTD = 0;                // Puerto D apagados
+    TRISE = 0;                // Puerto E salida
+    PORTE = 0;                // Puerto E apagado
 }
 
 void interrup_config (void) 
 {
     INTCONbits.GIE = 1;       // Interrupciones globales habilitadas
     INTCONbits.PEIE = 1;      // Interrupciones periferias habilidatas
-    INTCONbits.T0IE = 1;      // Interrupcion del Timer0 deshabilitada
+    INTCONbits.T0IE = 1;      // Interrupcion del Timer0 habilitadas
     INTCONbits.INTE = 0;      // Interrupcion externa INT deshabilitada
-    INTCONbits.RBIE = 0;      // Interrupcion del Puerto B habilitadas
+    INTCONbits.RBIE = 0;      // Interrupcion del Puerto B deshabilitada
     INTCONbits.T0IF = 0;      // Bandera de Interrupcion del Timer 0
     INTCONbits.INTF = 0;      // Bandera de interrupcion del INT
     INTCONbits.RBIF = 0;      // Bandera de interrrupcion del Puerto B
-    IOCB = 0b00000000;        // Interrup on Change enable
+    IOCB = 0b00000000;        // Interrup on Change enable apagado
 }
 
 void osc_config (void) 
@@ -236,7 +225,7 @@ void tmr0_config (void)
     OPTION_REGbits.PS2 = 0;   // Prescaler en 8
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 0;
-    TMR0 = 100;                // Valor del TIMER0 para un delay de 0.246 seg.
+    TMR0 = 100;                // Valor del TIMER0
 }
 
 //============================================================================*/
@@ -250,7 +239,7 @@ void  USART_config(void)
 
 void SPI_config (void)
 {
-    SPI_Maestro_Init (0, 2);
+    SPI_Maestro_Init (0, 2);  // Maestro con Port_Mode/16 y con 
 }
 
 //============================================================================*/
@@ -260,21 +249,23 @@ void SPI_config (void)
 void  lcd (void)
 {
     Lcd_Set_Cursor(0,1);                     // Cursor
-    Lcd_Write_String("ADC:  BTN: TEMP:");   // Titulos
+    Lcd_Write_String("ADC:  BTN: TEMP:");    // Titulos
     Lcd_Set_Cursor(2,0);                     // Cursor
-    Conversion1 (); 
-    Lcd_Set_Cursor(2,7);                // Cursor en columna 14// Converion a Char Pot 1
-    Conversion2 ();                          // Converion a Char Pot 2
+    Conversion1 ();                          // Potenciometro
+    Lcd_Set_Cursor(2,7);                     // Cursor fila dos
+    Conversion2 ();                          // Botones
     Lcd_Set_Cursor(2,12);                    // Cursor
-    Conversion3 ();                          // Converion a Char Pot 3
+    Conversion3 ();                          // Semaforo
     
 }
 
 void Conversion1 ()              
 {
-    voltaje = dato_pot * 2;                  
-    unidad = voltaje / 100;           // Unidad sobre 5V
-    x1 = voltaje % 100;
+    
+    voltaje = dato_pot;               // PIC Potenciometro
+    int pot = voltaje * 4;            // Conversion
+    unidad = pot / 100;               // Unidad 
+    x1 = pot % 100;
     x2 = x1 / 10;                     // Primera posicion despues de punto
     y1 = x1 % 10;
     y2 = y1 / 1;                      // Segunda posicion despues de punto
@@ -287,28 +278,28 @@ void Conversion1 ()
 }
 
 void Conversion2 ()              
-{
-    if (dato_push < 10)                       // Menor a 10?
+{                                          // PIC Botones
+    if (dato_push < 10)                    // Menor a 10?
     {
-        Lcd_Write_Char(48);
-        Lcd_Write_Char(dato_push+ 48);       // Se escribe
-        virtual_display2();               // Valores a terminal virtual
+        Lcd_Write_Char(48);                // 0
+        Lcd_Write_Char(dato_push+ 48);     // unidad
+        virtual_display2();                // Valores a terminal virtual
     }
-    else if (dato_push >= 10)                 // Mayor a 10?
+    else if (dato_push >= 10)              // Mayor a 10?
     {
-        w1 = dato_push/10;                    // Decena
-        w2 = dato_push % 10;                  // Unidad
-        Lcd_Write_Char(w1+48);               // Se escriben valores
-        Lcd_Write_Char(w2+48);
-        virtual_display2();               // Valores a terminal virtual
+        w1 = dato_push/10;                   
+        w2 = dato_push % 10;                 
+        Lcd_Write_Char(w1+48);             // Decena 
+        Lcd_Write_Char(w2+48);             // Unidad
+        virtual_display2();                // Valores a terminal virtual
     }
 }
 
 void Conversion3 ()              
 {
-    voltajey = dato_semaforo * 2;
+    voltajey = dato_semaforo;         // PIC Semaforo
     decenay = voltajey / 10;
-    unidady = voltajey % 10;         // Unidad sobre 5V
+    unidady = voltajey % 10;          
     Lcd_Write_Char(decenay+48);       // Decena 
     Lcd_Write_Char(unidady+48);       // Unidad
     Lcd_Write_Char(223);              // grados
@@ -320,9 +311,9 @@ void virtual_display1 (void)
 {
     if (velocidad1 > 15)              // Velocidad > 15?
     {
-        escribir_char (65);           // S
-        escribir_char (68);           // 1
-        escribir_char (67);           // 1
+        escribir_char (65);           // A
+        escribir_char (68);           // D
+        escribir_char (67);           // C
         escribir_char (58);           // :
         escribir_char (unidad+48);    // Unidad en ASCII                                               
         escribir_char (46);           // .
@@ -339,9 +330,9 @@ void virtual_display1 (void)
        
 void virtual_display2 (void)
 {
-    if (velocidad2 > 15)              // Velocidad > 15?       
+    if (velocidad2 > 15)                   // Velocidad > 15?       
     {
-        if (dato_push  < 10)                // Contador < 10?
+        if (dato_push  < 10)               // Contador < 10?
         {
             escribir_char (67);            // C
             escribir_char (79);            // O
@@ -349,13 +340,13 @@ void virtual_display2 (void)
             escribir_char (84);            // T
             escribir_char (58);            // :
             escribir_char (48);            // 0
-            escribir_char (dato_push+48);   // Contador en ASCII   
-            escribir_char (32);           // espacio en blanco
-            escribir_char (32);           // espacio en blanco 
-            escribir_char (32);           // espacio en blanco
-            escribir_char (32);           // espacio en blanco   
+            escribir_char (dato_push+48);  // Contador en ASCII   
+            escribir_char (32);            // espacio en blanco
+            escribir_char (32);            // espacio en blanco 
+            escribir_char (32);            // espacio en blanco
+            escribir_char (32);            // espacio en blanco   
             
-            velocidad2 = 0;                
+            velocidad2 = 0;                // se reinicia Velocidad
         }
         else
         {
@@ -366,19 +357,19 @@ void virtual_display2 (void)
             escribir_char (58);            // :
             escribir_char (w1+48);         // Decena en ASCII 
             escribir_char (w2+48);         // Unidad en ASCII 
-            escribir_char (32);           // espacio en blanco
-            escribir_char (32);           // espacio en blanco  
-            escribir_char (32);           // espacio en blanco
-            escribir_char (32);           // espacio en blanco   
+            escribir_char (32);            // espacio en blanco
+            escribir_char (32);            // espacio en blanco  
+            escribir_char (32);            // espacio en blanco
+            escribir_char (32);            // espacio en blanco   
             
-            velocidad2 = 0;
-        }              // se reinicia Velocidad
+            velocidad2 = 0;                // se reinicia Velocidad
+        }              
     }
 }
 
 void virtual_display3 (void)
 {
-    if (velocidad3 > 15)              // Velocidad > 15?
+    if (velocidad3 > 15)               // Velocidad > 15?
     {
         escribir_char (84);            // T
         escribir_char (69);            // E
@@ -387,10 +378,10 @@ void virtual_display3 (void)
         escribir_char (58);            // :
         escribir_char (decenay+48);    // Unidad en ASCII    
         escribir_char (unidady+48);    // Unidad en ASCII
-        escribir_char (176);           // Primer numero
-        escribir_char (67);            // Segundo numero
+        escribir_char (176);           // grados
+        escribir_char (67);            // C
         escribir_char ('\r');          // Enter
-        velocidad3 = 0;               // se reinicia Velocidad
+        velocidad3 = 0;                // se reinicia Velocidad
     }
 }
 

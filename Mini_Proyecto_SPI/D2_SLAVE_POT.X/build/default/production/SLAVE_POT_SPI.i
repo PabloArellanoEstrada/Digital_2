@@ -2778,9 +2778,9 @@ char SPI_Recibir ();
 
 
 
-uint8_t i = 0;
-uint8_t adc_value1 = 0;
-uint8_t adc_value2 = 0;
+
+uint8_t adc_value = 0;
+
 
 char dato_maestro;
 
@@ -2804,8 +2804,6 @@ void __attribute__((picinterrupt(("")))) ISR(void)
         INTCONbits.TMR0IF = 0;
         TMR0 = 100;
     }
-
-
 }
 
 
@@ -2826,7 +2824,7 @@ void main(void)
         if (SSPIF == 1)
         {
         dato_maestro = SPI_Recibir();
-        SPI_Enviar (PORTD);
+        SPI_Enviar (ADRESH);
         SSPIF = 0;
     }
 
@@ -2924,7 +2922,8 @@ void adc_conversion (void)
     if (ADCON0bits.GO_DONE == 0)
     {
         ADCON0bits.GO_DONE = 1;
-        adc_value1 = ADRESH;
-        PORTD = ADRESH;
+        PORTD = ADRESH * 2;
+
     }
+    adc_value = PORTD;
 }

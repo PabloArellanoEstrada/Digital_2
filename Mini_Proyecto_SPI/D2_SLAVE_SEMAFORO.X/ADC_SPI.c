@@ -131,7 +131,7 @@ void initADC (uint8_t CHS)
     
     ADCON1bits.ADFM  = 0;               // Justificado a la izquierda
     ADCON1bits.VCFG1 = 0;               // Voltaje = 5V
-    ADCON1bits.VCFG0 = 0;               // Tierra  = 0V
+    ADCON1bits.VCFG0 = 1;               // Tierra  = 0V
 }
 
 

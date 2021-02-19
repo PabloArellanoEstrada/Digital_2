@@ -1,9 +1,9 @@
 /* 
- * Project: LCD
- * File:    LCD.c
+ * Project: D2_SEMAFORO_PUSH
+ * File:    SLAVE_SEMAFORO.c
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
- * Created: February 8, 2021,
+ * Created: February 18, 2021.
  */
 
 //============================================================================*/
@@ -13,8 +13,8 @@
 #include <xc.h>                 // XC8 libreria
 #include <stdint.h>             // Variables de ancho definido
 #include <stdio.h>              // Tipos de variables, macros, entradas y salidas
-#include "SPI_SPI.h"
-#include "ADC_SPI.h" 
+#include "SPI_SPI.h"            // Libreria comunicacion SPI
+#include "ADC_SPI.h"            // Libreria Personalizada ADC
 
 
 //============================================================================*/
@@ -36,20 +36,15 @@
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 // DEFINE
 #define _XTAL_FREQ 8000000
-#define LED_rojo     PORTBbits.RB0  // Uso de defines para mejor identificacion de color de semaforo
-#define LED_amarillo PORTBbits.RB1  
-#define LED_verde    PORTBbits.RB2
+#define LED_rojo     PORTBbits.RB0   // Rojo
+#define LED_amarillo PORTBbits.RB1   // Verde
+#define LED_verde    PORTBbits.RB2   // Verde
 
 //============================================================================*/
 // VARIABLES
 //============================================================================*/
 
-char dato;
-char SPI_value;
-char dato_maestro;
-char valor1;
-char valor2;
-unsigned int temp;
+char dato_maestro;                  // Dato de maestro 
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -61,7 +56,8 @@ void interrup_config (void);
 void tmr0_config (void);
 void SPI_config (void);
 void adc_config (void);
-void adc_conversion (void);
+
+void adc_conversion (void);          // Conversion y Semaforo
 void semaforo(void); 
 
 //============================================================================*/
@@ -69,16 +65,14 @@ void semaforo(void);
 //============================================================================*/
 
 void __interrupt() ISR(void)    
-{                               // GIE = 0
+{                                // GIE = 0
     if (INTCONbits.TMR0IF == 1)  // Si hay desboradmiento de TIMER0 la bandera se levanta y se revisa
     {
-        adc_conversion();
+        adc_conversion();        // Conversion
         INTCONbits.TMR0IF = 0;   // Se apaga la bandera manualmente
         TMR0 = 100;                
-    }
-    
-    
-}                               // GIE = 1
+    }                            // GIE = 1
+}                               
 
 //============================================================================*/
 // CICLO PRINCIPAL
@@ -94,15 +88,12 @@ void main(void)
     SPI_config ();
     while (1)                           // Loop principal
     {
-       
-        if (SSPIF == 1)
+        if (SSPIF == 1)                 // Bandera levantada?
         {
-         
-            dato_maestro = SPI_Recibir();
-            SPI_Enviar (ADRESH);
-            SSPIF = 0;
+        dato_maestro = SPI_Recibir();   // Se recibe dato de maestro
+        SPI_Enviar (ADRESH);            // Se envia conversion
+        SSPIF = 0;                      // Se apaga bandera
         }
-              
     }
 }
 
@@ -113,42 +104,42 @@ void main(void)
 void setup(void) 
 {
     ANSEL = 0;                // Puerto A digital
-    TRISA = 0;                // Puerto A como entrada
-    PORTA = 0;                // Puerto A entrada apagado
-    TRISAbits.TRISA0 = 1;     // Entrada
-    ANSELbits.ANS0 = 1;       // Analogico
-    TRISAbits.TRISA5 = 1;     // Bit 5 entrada
-    ANSELbits.ANS5 = 0;       // Digital
-    PORTAbits.RA5 = 1;        // Puerto A entrada apagado
+    TRISA = 0;                // Puerto A entrada
+    PORTA = 0;                // Puerto A apagado
+    TRISAbits.TRISA0 = 1;     // A0 entrada
+    ANSELbits.ANS0 = 1;       // A0 analogico LM32
+    TRISAbits.TRISA5 = 1;     // A5 entrada
+    ANSELbits.ANS5 = 0;       // A5 digital
+    PORTAbits.RA5 = 1;        // A5 SS deshabilitado
     
     ANSELH = 0;               // Puerto B digital
     TRISB = 0;                // Puerto B salida
-    PORTB = 0;                // Puerto B RB0 y RB1 entrada igual a 0
-    LED_rojo = 0;
-    LED_amarillo = 0;
-    LED_verde = 0;
-    TRISC = 0;                // Puerto C salida leds
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
-    TRISCbits.TRISC5 = 0;
-    PORTC = 0;                // Puerto C salida leds apagados
-    TRISD = 0;                // Puerto D salida display
-    PORTD = 0;                // Puerto D salida apagados
-    TRISE = 0;                // Puerto E salida transistores y alarma
-    PORTE = 0;                // Puerto E salida apagado
+    PORTB = 0;                // Puerto B apagado
+    LED_rojo = 0;             // Semaforo apagado
+    LED_amarillo = 0;         // Semaforo apagado
+    LED_verde = 0;            // Semaforo apagado
+    TRISC = 0;                // Puerto C entrada
+    TRISCbits.TRISC3 = 1;     // Entra Reloj de Maestro
+    TRISCbits.TRISC4 = 1;     // Entra dato de Maestro
+    TRISCbits.TRISC5 = 0;     // Sale dato a Esclavo
+    PORTC = 0;                // Puerto C apagado
+    TRISD = 0;                // Puerto D salida 
+    PORTD = 0;                // Puerto D apagados
+    TRISE = 0;                // Puerto E salida
+    PORTE = 0;                // Puerto E apagado
 }
 
 void interrup_config (void) 
 {
     INTCONbits.GIE = 1;       // Interrupciones globales habilitadas
     INTCONbits.PEIE = 1;      // Interrupciones periferias habilidatas
-    INTCONbits.T0IE = 1;      // Interrupcion del Timer0 deshabilitada
+    INTCONbits.T0IE = 1;      // Interrupcion del Timer0 habilitada
     INTCONbits.INTE = 0;      // Interrupcion externa INT deshabilitada
     INTCONbits.RBIE = 0;      // Interrupcion del Puerto B habilitadas
     INTCONbits.T0IF = 0;      // Bandera de Interrupcion del Timer 0
     INTCONbits.INTF = 0;      // Bandera de interrupcion del INT
     INTCONbits.RBIF = 0;      // Bandera de interrrupcion del Puerto B
-    IOCB = 0b00000000;        // Interrup on Change enable
+    IOCB = 0b00000000;        // Interrup on Change enable deshabilitado
 }
 
 void osc_config (void) 
@@ -170,7 +161,7 @@ void tmr0_config (void)
     OPTION_REGbits.PS2 = 0;   // Prescaler en 8
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 0;
-    TMR0 = 100;                // Valor del TIMER0 para un delay de 0.246 seg.
+    TMR0 = 100;                // Valor del TIMER0 
 }
 
 //============================================================================*/
@@ -179,12 +170,12 @@ void tmr0_config (void)
 
 void adc_config (void)
 {
-    initADC (0);              // ADC
+    initADC (0);                 // ADC canal 0
 }
 
 void SPI_config (void)
 {
-    SPI_Esclavo_Init (4, 2);
+    SPI_Esclavo_Init (4, 2);     // Maestro con Port_Mode/16 y con 
 }
 
 //============================================================================*/
@@ -193,13 +184,13 @@ void SPI_config (void)
 
 void semaforo(void) 
 {
-    if (PORTD < 13)
+    if (PORTD < 25)
     {
         LED_verde = 1;
         LED_amarillo = 0;
         LED_rojo = 0;
     }
-    else if (PORTD >= 13 && PORTD <= 18)
+    else if (PORTD >= 25 && PORTD <= 36)
     {
         LED_verde = 0;
         LED_amarillo = 1;
@@ -220,11 +211,8 @@ void adc_conversion (void)
     if (ADCON0bits.GO_DONE == 0)       // Si ya termino la conversion
     {
         ADCON0bits.GO_DONE = 1;        // Se inicia el GO_DONE para iniciar nuevamente
-        temp = ADRESH * 1.95;
-        valor1  = temp / 10;
-        valor2  = temp % 10;
-        PORTD = ADRESH;
-        semaforo();
+        PORTD = ADRESH;                // Se muestra en puerto D
+        semaforo();                    // Se llama a Semaforo
     }
 }
 

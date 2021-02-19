@@ -2826,7 +2826,6 @@ void main(void)
 
         if (SSPIF == 1)
         {
-
             dato_maestro = SPI_Recibir();
             SPI_Enviar (ADRESH);
             SSPIF = 0;
@@ -2922,13 +2921,13 @@ void SPI_config (void)
 
 void semaforo(void)
 {
-    if (PORTD < 13)
+    if (PORTD < 25)
     {
         PORTBbits.RB2 = 1;
         PORTBbits.RB1 = 0;
         PORTBbits.RB0 = 0;
     }
-    else if (PORTD >= 13 && PORTD <= 18)
+    else if (PORTD >= 25 && PORTD <= 36)
     {
         PORTBbits.RB2 = 0;
         PORTBbits.RB1 = 1;
@@ -2949,9 +2948,6 @@ void adc_conversion (void)
     if (ADCON0bits.GO_DONE == 0)
     {
         ADCON0bits.GO_DONE = 1;
-        temp = ADRESH * 1.95;
-        valor1 = temp / 10;
-        valor2 = temp % 10;
         PORTD = ADRESH;
         semaforo();
     }
