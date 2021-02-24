@@ -27,11 +27,11 @@
 [v _incrementar incrementar `(v  1 e 1 0 ]
 "204
 [v _decrementar decrementar `(v  1 e 1 0 ]
-"84 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_PUSH.X\SPI_SPI.c
+"98 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_PUSH.X\SPI_SPI.c
 [v _SPI_Esclavo_Init SPI_Esclavo_Init `(v  1 e 1 0 ]
-"161
+"175
 [v _SPI_Enviar SPI_Enviar `(v  1 e 1 0 ]
-"167
+"181
 [v _SPI_Recibir SPI_Recibir `(uc  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -86,20 +86,20 @@
 [v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
-[s S367 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S366 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "870
-[s S373 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S372 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S378 . 1 `S367 1 . 1 0 `S373 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES378  1 e 1 @20 ]
+[u S377 . 1 `S366 1 . 1 0 `S372 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES377  1 e 1 @20 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 [s S93 . 1 `uc 1 TRISA0 1 0 :1:0 
@@ -160,7 +160,7 @@
 ]
 [u S238 . 1 `S227 1 . 1 0 `S233 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES238  1 e 1 @143 ]
-[s S393 . 1 `uc 1 BF 1 0 :1:0 
+[s S392 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -170,39 +170,39 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S402 . 1 `uc 1 . 1 0 :2:0 
+[s S401 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S407 . 1 `uc 1 . 1 0 :2:0 
+[s S406 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S413 . 1 `uc 1 . 1 0 :2:0 
+[s S412 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S418 . 1 `uc 1 . 1 0 :2:0 
+[s S417 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S423 . 1 `uc 1 . 1 0 :2:0 
+[s S422 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S428 . 1 `uc 1 . 1 0 :2:0 
+[s S427 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S433 . 1 `S393 1 . 1 0 `S402 1 . 1 0 `S407 1 . 1 0 `S413 1 . 1 0 `S418 1 . 1 0 `S423 1 . 1 0 `S428 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES433  1 e 1 @148 ]
+[u S432 . 1 `S392 1 . 1 0 `S401 1 . 1 0 `S406 1 . 1 0 `S412 1 . 1 0 `S417 1 . 1 0 `S422 1 . 1 0 `S427 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES432  1 e 1 @148 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
 "3387
@@ -262,29 +262,29 @@
 {
 "167
 } 0
-"84 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_PUSH.X\SPI_SPI.c
+"98 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_PUSH.X\SPI_SPI.c
 [v _SPI_Esclavo_Init SPI_Esclavo_Init `(v  1 e 1 0 ]
 {
 [v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 wreg ]
 [v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 wreg ]
 [v SPI_Esclavo_Init@SCK SCK `uc  1 p 1 0 ]
-"86
+"100
 [v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 3 ]
-"159
+"173
 } 0
-"167
+"181
 [v _SPI_Recibir SPI_Recibir `(uc  1 e 1 0 ]
 {
-"170
+"184
 } 0
-"161
+"175
 [v _SPI_Enviar SPI_Enviar `(v  1 e 1 0 ]
 {
 [v SPI_Enviar@valor valor `uc  1 a 1 wreg ]
 [v SPI_Enviar@valor valor `uc  1 a 1 wreg ]
-"163
+"177
 [v SPI_Enviar@valor valor `uc  1 a 1 0 ]
-"164
+"178
 } 0
 "71 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_PUSH.X\SLAVE_PUSH_SPI.c
 [v _ISR ISR `II(v  1 e 1 0 ]
@@ -295,7 +295,7 @@
 [v _incrementar incrementar `(v  1 e 1 0 ]
 {
 "192
-[v incrementar@e_351 e `i  1 a 2 2 ]
+[v incrementar@e_350 e `i  1 a 2 2 ]
 "177
 [v incrementar@e e `i  1 a 2 0 ]
 "202
@@ -304,7 +304,7 @@
 [v _decrementar decrementar `(v  1 e 1 0 ]
 {
 "223
-[v decrementar@e_354 e `i  1 a 2 2 ]
+[v decrementar@e_353 e `i  1 a 2 2 ]
 "208
 [v decrementar@e e `i  1 a 2 0 ]
 "233

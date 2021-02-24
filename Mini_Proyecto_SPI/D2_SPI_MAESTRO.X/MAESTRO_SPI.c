@@ -35,7 +35,7 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 // DEFINE
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 8000000      // Frecuencia compilador
 
 //============================================================================*/
 // VARIABLES
@@ -137,7 +137,7 @@ void main(void)
         dato_pot  = SPI_Recibir();       // Se recibe info
         
         __delay_ms(1);        
-        PORTCbits.RC0 = 1;
+        PORTCbits.RC0 = 1;               // POT unselected
         
         //----------------------------------------------------------------------
         
@@ -148,7 +148,7 @@ void main(void)
         dato_push  = SPI_Recibir();      // Se recibe info
         
         __delay_ms(1);        
-        PORTCbits.RC1 = 1;
+        PORTCbits.RC1 = 1;               // PUSH unselected
         
         //----------------------------------------------------------------------
         
@@ -159,7 +159,7 @@ void main(void)
         dato_semaforo  = SPI_Recibir();  // Se recibe info
                
         __delay_ms(1);        
-        PORTCbits.RC2 = 1;
+        PORTCbits.RC2 = 1;               // SEMAFORO unselected
         
         lcd ();                          // LCD
         velocidad1 = velocidad1 + 1;     // Velocidad terminal
@@ -239,7 +239,7 @@ void  USART_config(void)
 
 void SPI_config (void)
 {
-    SPI_Maestro_Init (0, 2);  // Maestro con Port_Mode/16 y con 
+    SPI_Maestro_Init (0, 2);  // Maestro Port_Mode/4 y con CKP = 0 / CKE = 1
 }
 
 //============================================================================*/
@@ -309,7 +309,7 @@ void Conversion3 ()
 
 void virtual_display1 (void)
 {
-    if (velocidad1 > 15)              // Velocidad > 15?
+    if (velocidad1 > 7)              // Velocidad > 15?
     {
         escribir_char (65);           // A
         escribir_char (68);           // D
@@ -330,7 +330,7 @@ void virtual_display1 (void)
        
 void virtual_display2 (void)
 {
-    if (velocidad2 > 15)                   // Velocidad > 15?       
+    if (velocidad2 > 7)                   // Velocidad > 15?       
     {
         if (dato_push  < 10)               // Contador < 10?
         {
@@ -369,7 +369,7 @@ void virtual_display2 (void)
 
 void virtual_display3 (void)
 {
-    if (velocidad3 > 15)               // Velocidad > 15?
+    if (velocidad3 > 7)               // Velocidad > 15?
     {
         escribir_char (84);            // T
         escribir_char (69);            // E

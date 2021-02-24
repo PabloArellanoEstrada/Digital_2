@@ -92,11 +92,11 @@ void main(void)
     SPI_config ();
     while (1)                           // Loop principal
     {
-        if (SSPIF == 1)                 // Bandera levantada?
+        if (SSPIF == 1)                 // Bandera interrupcion levantada?
         {
         dato_maestro = SPI_Recibir();   // Se recibe dato de maestro
         SPI_Enviar (PORTD);             // Se envia conversion
-        SSPIF = 0;                      // Se apaga bandera
+        SSPIF = 0;                      // Se apaga bandera que permite recepcion de siguiente byte
         }
     }
 }
@@ -163,7 +163,7 @@ void osc_config (void)
 
 void SPI_config (void)
 {
-    SPI_Esclavo_Init (4, 2);   // Maestro con Port_Mode/16 y con 
+    SPI_Esclavo_Init (4, 2);   // Esclavo con SS enable y con CKP = 0 / CKE = 1 
 }
 
 //============================================================================*/
@@ -179,7 +179,7 @@ void incrementar(void)
         released_ok = 0;                   // Variable de boton libre se reduce a cero porque boton se esta presionando
         if (pressed_ok > 5)                // Si el boton esta seguramente presionado
         {
-            if (presionado == 0)           // Verifica que el boton esta en posicion presionado
+            if (presionado == 0)           // Verifica que el boton fue  presionado
             {    
                 PORTD = PORTD + 1;         // Incrementa el contador de decada del puerto
                 presionado = 1;            // Coloca el boton como ya presionado para no volver a repetir este ciclo

@@ -300,75 +300,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"19 USART_SPI.c
-[; ;USART_SPI.c: 19: void USART_lib_config()
+"18 USART_SPI.c
+[; ;USART_SPI.c: 18: void USART_lib_config()
 [v _USART_lib_config `(v ~T0 @X0 1 ef ]
-"20
-[; ;USART_SPI.c: 20: {
+"19
+[; ;USART_SPI.c: 19: {
 {
 [e :U _USART_lib_config ]
 [f ]
-"21
-[; ;USART_SPI.c: 21:     SPBRG = 25;
+"20
+[; ;USART_SPI.c: 20:     SPBRG = 25;
 [e = _SPBRG -> -> 25 `i `uc ]
-"23
-[; ;USART_SPI.c: 23:     TXSTAbits.CSRC = 0;
+"22
+[; ;USART_SPI.c: 22:     TXSTAbits.CSRC = 0;
 [e = . . _TXSTAbits 0 7 -> -> 0 `i `uc ]
-"24
-[; ;USART_SPI.c: 24:     TXSTAbits.TX9 = 0;
+"23
+[; ;USART_SPI.c: 23:     TXSTAbits.TX9 = 0;
 [e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
-"25
-[; ;USART_SPI.c: 25:     TXSTAbits.TXEN = 1;
+"24
+[; ;USART_SPI.c: 24:     TXSTAbits.TXEN = 1;
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"26
-[; ;USART_SPI.c: 26:     TXSTAbits.SYNC = 0;
+"25
+[; ;USART_SPI.c: 25:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"27
-[; ;USART_SPI.c: 27:     TXSTAbits.SENDB= 0;
+"26
+[; ;USART_SPI.c: 26:     TXSTAbits.SENDB= 0;
 [e = . . _TXSTAbits 0 3 -> -> 0 `i `uc ]
-"28
-[; ;USART_SPI.c: 28:     TXSTAbits.BRGH = 1;
+"27
+[; ;USART_SPI.c: 27:     TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"29
-[; ;USART_SPI.c: 29:     TXSTAbits.TRMT = 0;
+"28
+[; ;USART_SPI.c: 28:     TXSTAbits.TRMT = 0;
 [e = . . _TXSTAbits 0 1 -> -> 0 `i `uc ]
-"30
-[; ;USART_SPI.c: 30:     TXSTAbits.TX9D = 0;
+"29
+[; ;USART_SPI.c: 29:     TXSTAbits.TX9D = 0;
 [e = . . _TXSTAbits 0 0 -> -> 0 `i `uc ]
-"32
-[; ;USART_SPI.c: 32:     RCSTAbits.SPEN = 1;
+"31
+[; ;USART_SPI.c: 31:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"33
-[; ;USART_SPI.c: 33:     RCSTAbits.RX9 = 0;
+"32
+[; ;USART_SPI.c: 32:     RCSTAbits.RX9 = 0;
 [e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"34
-[; ;USART_SPI.c: 34:     RCSTAbits.SREN = 0;
+"33
+[; ;USART_SPI.c: 33:     RCSTAbits.SREN = 0;
 [e = . . _RCSTAbits 0 5 -> -> 0 `i `uc ]
-"35
-[; ;USART_SPI.c: 35:     RCSTAbits.CREN = 1;
+"34
+[; ;USART_SPI.c: 34:     RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"36
-[; ;USART_SPI.c: 36:     RCSTAbits.ADDEN= 0;
+"35
+[; ;USART_SPI.c: 35:     RCSTAbits.ADDEN= 0;
 [e = . . _RCSTAbits 0 3 -> -> 0 `i `uc ]
-"37
-[; ;USART_SPI.c: 37:     RCSTAbits.FERR = 0;
+"36
+[; ;USART_SPI.c: 36:     RCSTAbits.FERR = 0;
 [e = . . _RCSTAbits 0 2 -> -> 0 `i `uc ]
-"38
-[; ;USART_SPI.c: 38:     RCSTAbits.OERR = 0;
+"37
+[; ;USART_SPI.c: 37:     RCSTAbits.OERR = 0;
 [e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
-"39
-[; ;USART_SPI.c: 39:     RCSTAbits.RX9D = 0;
+"38
+[; ;USART_SPI.c: 38:     RCSTAbits.RX9D = 0;
 [e = . . _RCSTAbits 0 0 -> -> 0 `i `uc ]
-"41
-[; ;USART_SPI.c: 41:     PIR1bits.RCIF = 0;
+"40
+[; ;USART_SPI.c: 40:     PIR1bits.RCIF = 0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"42
-[; ;USART_SPI.c: 42:     PIE1bits.RCIE = 1;
+"41
+[; ;USART_SPI.c: 41:     PIE1bits.RCIE = 1;
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"43
-[; ;USART_SPI.c: 43:     PIR1bits.TXIF = 0;
+"42
+[; ;USART_SPI.c: 42:     PIR1bits.TXIF = 0;
 [e = . . _PIR1bits 0 4 -> -> 0 `i `uc ]
-"44
-[; ;USART_SPI.c: 44: }
+"43
+[; ;USART_SPI.c: 43: }
 [e :UE 139 ]
 }

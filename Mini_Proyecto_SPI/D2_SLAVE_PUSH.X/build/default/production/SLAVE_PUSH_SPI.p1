@@ -485,9 +485,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _presionado2
 -> -> 0 `i `ui
 ]
-"53
-[; ;SLAVE_PUSH_SPI.c: 53:     osc_config();
-[v _dato `uc ~T0 @X0 1 e ]
 "54
 [; ;SLAVE_PUSH_SPI.c: 54:     interrup_config();
 [v _dato_maestro `uc ~T0 @X0 1 e ]
@@ -522,16 +519,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SLAVE_PUSH_SPI.c: 79: 
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "80
-[; ;SLAVE_PUSH_SPI.c: 80: 
+[; ;SLAVE_PUSH_SPI.c: 80:     ANSELH = 0;
 }
 [e :U 140 ]
 "81
-[; ;SLAVE_PUSH_SPI.c: 81:     ANSELH = 0;
+[; ;SLAVE_PUSH_SPI.c: 81:     TRISB = 0;
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
 "87
-[; ;SLAVE_PUSH_SPI.c: 87:     PORTBbits.RB3 = 0;
+[; ;SLAVE_PUSH_SPI.c: 87: 
 [v _main `(v ~T0 @X0 1 ef ]
 "88
 [; ;SLAVE_PUSH_SPI.c: 88:     TRISC = 0;
@@ -564,7 +561,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "97
 [; ;SLAVE_PUSH_SPI.c: 97: }
-[e = _dato_maestro ( _SPI_Recibir ..  ]
+[e = _dato_maestro -> ( _SPI_Recibir ..  `uc ]
 "98
 [; ;SLAVE_PUSH_SPI.c: 98: 
 [e ( _SPI_Enviar (1 -> _PORTD `uc ]
@@ -611,26 +608,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 "115
 [; ;SLAVE_PUSH_SPI.c: 115:     OSCCONbits.IRCF1 = 1;
 [e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+"117
+[; ;SLAVE_PUSH_SPI.c: 117:     OSCCONbits.OSTS = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "118
 [; ;SLAVE_PUSH_SPI.c: 118:     OSCCONbits.HTS = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
+[e = _TRISB -> -> 0 `i `uc ]
 "119
 [; ;SLAVE_PUSH_SPI.c: 119:     OSCCONbits.LTS = 1;
-[e = _TRISB -> -> 0 `i `uc ]
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
 "120
 [; ;SLAVE_PUSH_SPI.c: 120:     OSCCONbits.SCS = 0;
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
 "121
 [; ;SLAVE_PUSH_SPI.c: 121: }
-[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
+[e = _PORTB -> -> 0 `i `uc ]
 "122
 [; ;SLAVE_PUSH_SPI.c: 122: 
-[e = _PORTB -> -> 0 `i `uc ]
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
 "123
 [; ;SLAVE_PUSH_SPI.c: 123: 
-[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
-"124
-[; ;SLAVE_PUSH_SPI.c: 124: 
 [e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
 "125
 [; ;SLAVE_PUSH_SPI.c: 125: 

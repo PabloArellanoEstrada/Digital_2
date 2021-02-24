@@ -308,154 +308,154 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"4 SPI_SPI.c
-[; ;SPI_SPI.c: 4: void SPI_Maestro_Init (char port_mode, char SCK)
+"19 SPI_SPI.c
+[; ;SPI_SPI.c: 19: void SPI_Maestro_Init (char port_mode, char SCK)
 [v _SPI_Maestro_Init `(v ~T0 @X0 1 ef2`uc`uc ]
-"5
-[; ;SPI_SPI.c: 5: {
+"20
+[; ;SPI_SPI.c: 20: {
 {
 [e :U _SPI_Maestro_Init ]
-"4
-[; ;SPI_SPI.c: 4: void SPI_Maestro_Init (char port_mode, char SCK)
+"19
+[; ;SPI_SPI.c: 19: void SPI_Maestro_Init (char port_mode, char SCK)
 [v _port_mode `uc ~T0 @X0 1 r1 ]
 [v _SCK `uc ~T0 @X0 1 r2 ]
-"5
-[; ;SPI_SPI.c: 5: {
+"20
+[; ;SPI_SPI.c: 20: {
 [f ]
-"6
-[; ;SPI_SPI.c: 6:     TRISCbits.TRISC0 = 0;
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-"7
-[; ;SPI_SPI.c: 7:     TRISCbits.TRISC1 = 0;
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-"8
-[; ;SPI_SPI.c: 8:     TRISCbits.TRISC2 = 0;
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-"9
-[; ;SPI_SPI.c: 9:     TRISCbits.TRISC5 = 0;
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-"10
-[; ;SPI_SPI.c: 10:     TRISCbits.TRISC4 = 1;
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"11
-[; ;SPI_SPI.c: 11:     TRISCbits.TRISC3 = 0;
-[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
-"13
-[; ;SPI_SPI.c: 13:     switch (port_mode)
-[e $U 140  ]
-"14
-[; ;SPI_SPI.c: 14:     {
-{
-"15
-[; ;SPI_SPI.c: 15:         case 0:
-[e :U 141 ]
-"16
-[; ;SPI_SPI.c: 16:             SSPCONbits.SSPM3 = 0;
-[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
-"17
-[; ;SPI_SPI.c: 17:             SSPCONbits.SSPM2 = 0;
-[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
-"18
-[; ;SPI_SPI.c: 18:             SSPCONbits.SSPM1 = 0;
-[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
-"19
-[; ;SPI_SPI.c: 19:             SSPCONbits.SSPM0 = 0;
-[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
 "21
-[; ;SPI_SPI.c: 21:             break;
-[e $U 139  ]
+[; ;SPI_SPI.c: 21:     TRISCbits.TRISC0 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
 "22
-[; ;SPI_SPI.c: 22:          case 1:
-[e :U 142 ]
+[; ;SPI_SPI.c: 22:     TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
 "23
-[; ;SPI_SPI.c: 23:             SSPCONbits.SSPM3 = 0;
-[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+[; ;SPI_SPI.c: 23:     TRISCbits.TRISC2 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
 "24
-[; ;SPI_SPI.c: 24:             SSPCONbits.SSPM2 = 0;
-[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+[; ;SPI_SPI.c: 24:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 "25
-[; ;SPI_SPI.c: 25:             SSPCONbits.SSPM1 = 0;
-[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
+[; ;SPI_SPI.c: 25:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
 "26
-[; ;SPI_SPI.c: 26:             SSPCONbits.SSPM0 = 1;
-[e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
+[; ;SPI_SPI.c: 26:     TRISCbits.TRISC3 = 0;
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
 "28
-[; ;SPI_SPI.c: 28:             break;
-[e $U 139  ]
+[; ;SPI_SPI.c: 28:     switch (port_mode)
+[e $U 140  ]
 "29
-[; ;SPI_SPI.c: 29:          case 2:
-[e :U 143 ]
+[; ;SPI_SPI.c: 29:     {
+{
 "30
-[; ;SPI_SPI.c: 30:             SSPCONbits.SSPM3 = 0;
-[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+[; ;SPI_SPI.c: 30:         case 0:
+[e :U 141 ]
 "31
-[; ;SPI_SPI.c: 31:             SSPCONbits.SSPM2 = 0;
-[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+[; ;SPI_SPI.c: 31:             SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
 "32
-[; ;SPI_SPI.c: 32:             SSPCONbits.SSPM1 = 1;
-[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
-"33
-[; ;SPI_SPI.c: 33:             SSPCONbits.SSPM0 = 0;
-[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
-"35
-[; ;SPI_SPI.c: 35:             break;
-[e $U 139  ]
-"36
-[; ;SPI_SPI.c: 36:          case 3:
-[e :U 144 ]
-"37
-[; ;SPI_SPI.c: 37:             SSPCONbits.SSPM3 = 0;
-[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
-"38
-[; ;SPI_SPI.c: 38:             SSPCONbits.SSPM2 = 0;
+[; ;SPI_SPI.c: 32:             SSPCONbits.SSPM2 = 0;
 [e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
-"39
-[; ;SPI_SPI.c: 39:             SSPCONbits.SSPM1 = 1;
-[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
-"40
-[; ;SPI_SPI.c: 40:             SSPCONbits.SSPM0 = 1;
-[e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
-"41
-[; ;SPI_SPI.c: 41:             break;
-[e $U 139  ]
-"42
-[; ;SPI_SPI.c: 42:          case 4:
-[e :U 145 ]
-"43
-[; ;SPI_SPI.c: 43:             SSPCONbits.SSPM3 = 0;
-[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
-"44
-[; ;SPI_SPI.c: 44:             SSPCONbits.SSPM2 = 1;
-[e = . . _SSPCONbits 1 2 -> -> 1 `i `uc ]
-"45
-[; ;SPI_SPI.c: 45:             SSPCONbits.SSPM1 = 0;
+"33
+[; ;SPI_SPI.c: 33:             SSPCONbits.SSPM1 = 0;
 [e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
-"46
-[; ;SPI_SPI.c: 46:             SSPCONbits.SSPM0 = 0;
+"34
+[; ;SPI_SPI.c: 34:             SSPCONbits.SSPM0 = 0;
 [e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
-"48
-[; ;SPI_SPI.c: 48:             break;
+"36
+[; ;SPI_SPI.c: 36:             break;
 [e $U 139  ]
-"49
-[; ;SPI_SPI.c: 49:          case 5:
-[e :U 146 ]
-"50
-[; ;SPI_SPI.c: 50:             SSPCONbits.SSPM3 = 0;
+"37
+[; ;SPI_SPI.c: 37:          case 1:
+[e :U 142 ]
+"38
+[; ;SPI_SPI.c: 38:             SSPCONbits.SSPM3 = 0;
 [e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
-"51
-[; ;SPI_SPI.c: 51:             SSPCONbits.SSPM2 = 1;
-[e = . . _SSPCONbits 1 2 -> -> 1 `i `uc ]
-"52
-[; ;SPI_SPI.c: 52:             SSPCONbits.SSPM1 = 0;
+"39
+[; ;SPI_SPI.c: 39:             SSPCONbits.SSPM2 = 0;
+[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+"40
+[; ;SPI_SPI.c: 40:             SSPCONbits.SSPM1 = 0;
 [e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
-"53
-[; ;SPI_SPI.c: 53:             SSPCONbits.SSPM0 = 1;
+"41
+[; ;SPI_SPI.c: 41:             SSPCONbits.SSPM0 = 1;
 [e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
-"54
-[; ;SPI_SPI.c: 54:             break;
+"43
+[; ;SPI_SPI.c: 43:             break;
 [e $U 139  ]
+"44
+[; ;SPI_SPI.c: 44:          case 2:
+[e :U 143 ]
+"45
+[; ;SPI_SPI.c: 45:             SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+"46
+[; ;SPI_SPI.c: 46:             SSPCONbits.SSPM2 = 0;
+[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+"47
+[; ;SPI_SPI.c: 47:             SSPCONbits.SSPM1 = 1;
+[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
+"48
+[; ;SPI_SPI.c: 48:             SSPCONbits.SSPM0 = 0;
+[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
+"50
+[; ;SPI_SPI.c: 50:             break;
+[e $U 139  ]
+"51
+[; ;SPI_SPI.c: 51:          case 3:
+[e :U 144 ]
+"52
+[; ;SPI_SPI.c: 52:             SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+"53
+[; ;SPI_SPI.c: 53:             SSPCONbits.SSPM2 = 0;
+[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+"54
+[; ;SPI_SPI.c: 54:             SSPCONbits.SSPM1 = 1;
+[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
 "55
-[; ;SPI_SPI.c: 55:     }
+[; ;SPI_SPI.c: 55:             SSPCONbits.SSPM0 = 1;
+[e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
+"56
+[; ;SPI_SPI.c: 56:             break;
+[e $U 139  ]
+"57
+[; ;SPI_SPI.c: 57:          case 4:
+[e :U 145 ]
+"58
+[; ;SPI_SPI.c: 58:             SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+"59
+[; ;SPI_SPI.c: 59:             SSPCONbits.SSPM2 = 1;
+[e = . . _SSPCONbits 1 2 -> -> 1 `i `uc ]
+"60
+[; ;SPI_SPI.c: 60:             SSPCONbits.SSPM1 = 0;
+[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
+"61
+[; ;SPI_SPI.c: 61:             SSPCONbits.SSPM0 = 0;
+[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
+"62
+[; ;SPI_SPI.c: 62:             break;
+[e $U 139  ]
+"63
+[; ;SPI_SPI.c: 63:          case 5:
+[e :U 146 ]
+"64
+[; ;SPI_SPI.c: 64:             SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+"65
+[; ;SPI_SPI.c: 65:             SSPCONbits.SSPM2 = 1;
+[e = . . _SSPCONbits 1 2 -> -> 1 `i `uc ]
+"66
+[; ;SPI_SPI.c: 66:             SSPCONbits.SSPM1 = 0;
+[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
+"67
+[; ;SPI_SPI.c: 67:             SSPCONbits.SSPM0 = 1;
+[e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
+"68
+[; ;SPI_SPI.c: 68:             break;
+[e $U 139  ]
+"69
+[; ;SPI_SPI.c: 69:     }
 }
 [e $U 139  ]
 [e :U 140 ]
@@ -467,62 +467,62 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 5 `i 146
  139 ]
 [e :U 139 ]
-"57
-[; ;SPI_SPI.c: 57:     switch (SCK)
-[e $U 148  ]
-"58
-[; ;SPI_SPI.c: 58:     {
-{
-"59
-[; ;SPI_SPI.c: 59:         case 0:
-[e :U 149 ]
-"60
-[; ;SPI_SPI.c: 60:             SSPCONbits.CKP = 0;
-[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
-"61
-[; ;SPI_SPI.c: 61:             SSPSTATbits.CKE = 0;
-[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
-"63
-[; ;SPI_SPI.c: 63:             break;
-[e $U 147  ]
-"64
-[; ;SPI_SPI.c: 64:          case 1:
-[e :U 150 ]
-"65
-[; ;SPI_SPI.c: 65:             SSPCONbits.CKP = 1;
-[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"66
-[; ;SPI_SPI.c: 66:             SSPSTATbits.CKE = 0;
-[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
-"68
-[; ;SPI_SPI.c: 68:             break;
-[e $U 147  ]
-"69
-[; ;SPI_SPI.c: 69:          case 2:
-[e :U 151 ]
-"70
-[; ;SPI_SPI.c: 70:             SSPCONbits.CKP = 0;
-[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
 "71
-[; ;SPI_SPI.c: 71:             SSPSTATbits.CKE = 1;
-[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+[; ;SPI_SPI.c: 71:     switch (SCK)
+[e $U 148  ]
+"72
+[; ;SPI_SPI.c: 72:     {
+{
 "73
-[; ;SPI_SPI.c: 73:             break;
-[e $U 147  ]
+[; ;SPI_SPI.c: 73:         case 0:
+[e :U 149 ]
 "74
-[; ;SPI_SPI.c: 74:          case 3:
-[e :U 152 ]
+[; ;SPI_SPI.c: 74:             SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
 "75
-[; ;SPI_SPI.c: 75:             SSPCONbits.CKP = 1;
-[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"76
-[; ;SPI_SPI.c: 76:             SSPSTATbits.CKE = 1;
-[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+[; ;SPI_SPI.c: 75:             SSPSTATbits.CKE = 0;
+[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
 "77
 [; ;SPI_SPI.c: 77:             break;
 [e $U 147  ]
 "78
-[; ;SPI_SPI.c: 78:     }
+[; ;SPI_SPI.c: 78:          case 1:
+[e :U 150 ]
+"79
+[; ;SPI_SPI.c: 79:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"80
+[; ;SPI_SPI.c: 80:             SSPSTATbits.CKE = 0;
+[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
+"82
+[; ;SPI_SPI.c: 82:             break;
+[e $U 147  ]
+"83
+[; ;SPI_SPI.c: 83:          case 2:
+[e :U 151 ]
+"84
+[; ;SPI_SPI.c: 84:             SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+"85
+[; ;SPI_SPI.c: 85:             SSPSTATbits.CKE = 1;
+[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+"87
+[; ;SPI_SPI.c: 87:             break;
+[e $U 147  ]
+"88
+[; ;SPI_SPI.c: 88:          case 3:
+[e :U 152 ]
+"89
+[; ;SPI_SPI.c: 89:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"90
+[; ;SPI_SPI.c: 90:             SSPSTATbits.CKE = 1;
+[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+"91
+[; ;SPI_SPI.c: 91:             break;
+[e $U 147  ]
+"92
+[; ;SPI_SPI.c: 92:     }
 }
 [e $U 147  ]
 [e :U 148 ]
@@ -532,87 +532,51 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 152
  147 ]
 [e :U 147 ]
-"79
-[; ;SPI_SPI.c: 79:     SSPSTATbits.SMP = 0;
+"93
+[; ;SPI_SPI.c: 93:     SSPSTATbits.SMP = 0;
 [e = . . _SSPSTATbits 0 7 -> -> 0 `i `uc ]
-"80
-[; ;SPI_SPI.c: 80:     SSPCONbits.SSPEN = 1;
+"94
+[; ;SPI_SPI.c: 94:     SSPCONbits.SSPEN = 1;
 [e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
-"81
-[; ;SPI_SPI.c: 81: }
+"95
+[; ;SPI_SPI.c: 95: }
 [e :UE 138 ]
 }
-"84
-[; ;SPI_SPI.c: 84: void SPI_Esclavo_Init (char port_mode, char SCK)
+"98
+[; ;SPI_SPI.c: 98: void SPI_Esclavo_Init (char port_mode, char SCK)
 [v _SPI_Esclavo_Init `(v ~T0 @X0 1 ef2`uc`uc ]
-"85
-[; ;SPI_SPI.c: 85: {
+"99
+[; ;SPI_SPI.c: 99: {
 {
 [e :U _SPI_Esclavo_Init ]
-"84
-[; ;SPI_SPI.c: 84: void SPI_Esclavo_Init (char port_mode, char SCK)
+"98
+[; ;SPI_SPI.c: 98: void SPI_Esclavo_Init (char port_mode, char SCK)
 [v _port_mode `uc ~T0 @X0 1 r1 ]
 [v _SCK `uc ~T0 @X0 1 r2 ]
-"85
-[; ;SPI_SPI.c: 85: {
-[f ]
-"86
-[; ;SPI_SPI.c: 86:     TRISAbits.TRISA5 = 1;
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"87
-[; ;SPI_SPI.c: 87:     TRISCbits.TRISC5 = 0;
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-"88
-[; ;SPI_SPI.c: 88:     TRISCbits.TRISC4 = 1;
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"89
-[; ;SPI_SPI.c: 89:     TRISCbits.TRISC3 = 1;
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"91
-[; ;SPI_SPI.c: 91:     switch (port_mode)
-[e $U 155  ]
-"92
-[; ;SPI_SPI.c: 92:     {
-{
-"93
-[; ;SPI_SPI.c: 93:         case 0:
-[e :U 156 ]
-"94
-[; ;SPI_SPI.c: 94:             SSPCONbits.SSPM3 = 0;
-[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
-"95
-[; ;SPI_SPI.c: 95:             SSPCONbits.SSPM2 = 0;
-[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
-"96
-[; ;SPI_SPI.c: 96:             SSPCONbits.SSPM1 = 0;
-[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
-"97
-[; ;SPI_SPI.c: 97:             SSPCONbits.SSPM0 = 0;
-[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
 "99
-[; ;SPI_SPI.c: 99:             break;
-[e $U 154  ]
+[; ;SPI_SPI.c: 99: {
+[f ]
 "100
-[; ;SPI_SPI.c: 100:          case 1:
-[e :U 157 ]
+[; ;SPI_SPI.c: 100:     TRISAbits.TRISA5 = 1;
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
 "101
-[; ;SPI_SPI.c: 101:             SSPCONbits.SSPM3 = 0;
-[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+[; ;SPI_SPI.c: 101:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 "102
-[; ;SPI_SPI.c: 102:             SSPCONbits.SSPM2 = 0;
-[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+[; ;SPI_SPI.c: 102:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
 "103
-[; ;SPI_SPI.c: 103:             SSPCONbits.SSPM1 = 0;
-[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
-"104
-[; ;SPI_SPI.c: 104:             SSPCONbits.SSPM0 = 1;
-[e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
+[; ;SPI_SPI.c: 103:     TRISCbits.TRISC3 = 1;
+[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"105
+[; ;SPI_SPI.c: 105:     switch (port_mode)
+[e $U 155  ]
 "106
-[; ;SPI_SPI.c: 106:             break;
-[e $U 154  ]
+[; ;SPI_SPI.c: 106:     {
+{
 "107
-[; ;SPI_SPI.c: 107:          case 2:
-[e :U 158 ]
+[; ;SPI_SPI.c: 107:         case 0:
+[e :U 156 ]
 "108
 [; ;SPI_SPI.c: 108:             SSPCONbits.SSPM3 = 0;
 [e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
@@ -620,8 +584,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPI_SPI.c: 109:             SSPCONbits.SSPM2 = 0;
 [e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
 "110
-[; ;SPI_SPI.c: 110:             SSPCONbits.SSPM1 = 1;
-[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
+[; ;SPI_SPI.c: 110:             SSPCONbits.SSPM1 = 0;
+[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
 "111
 [; ;SPI_SPI.c: 111:             SSPCONbits.SSPM0 = 0;
 [e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
@@ -629,8 +593,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPI_SPI.c: 113:             break;
 [e $U 154  ]
 "114
-[; ;SPI_SPI.c: 114:          case 3:
-[e :U 159 ]
+[; ;SPI_SPI.c: 114:          case 1:
+[e :U 157 ]
 "115
 [; ;SPI_SPI.c: 115:             SSPCONbits.SSPM3 = 0;
 [e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
@@ -638,52 +602,88 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPI_SPI.c: 116:             SSPCONbits.SSPM2 = 0;
 [e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
 "117
-[; ;SPI_SPI.c: 117:             SSPCONbits.SSPM1 = 1;
-[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
+[; ;SPI_SPI.c: 117:             SSPCONbits.SSPM1 = 0;
+[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
 "118
 [; ;SPI_SPI.c: 118:             SSPCONbits.SSPM0 = 1;
 [e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
-"119
-[; ;SPI_SPI.c: 119:             break;
-[e $U 154  ]
 "120
-[; ;SPI_SPI.c: 120:          case 4:
-[e :U 160 ]
+[; ;SPI_SPI.c: 120:             break;
+[e $U 154  ]
 "121
-[; ;SPI_SPI.c: 121:             SSPCONbits.SSPM3 = 0;
-[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+[; ;SPI_SPI.c: 121:          case 2:
+[e :U 158 ]
 "122
-[; ;SPI_SPI.c: 122:             SSPCONbits.SSPM2 = 1;
-[e = . . _SSPCONbits 1 2 -> -> 1 `i `uc ]
-"123
-[; ;SPI_SPI.c: 123:             SSPCONbits.SSPM1 = 0;
-[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
-"124
-[; ;SPI_SPI.c: 124:             SSPCONbits.SSPM0 = 0;
-[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
-"126
-[; ;SPI_SPI.c: 126:             break;
-[e $U 154  ]
-"127
-[; ;SPI_SPI.c: 127:          case 5:
-[e :U 161 ]
-"128
-[; ;SPI_SPI.c: 128:             SSPCONbits.SSPM3 = 0;
+[; ;SPI_SPI.c: 122:             SSPCONbits.SSPM3 = 0;
 [e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
-"129
-[; ;SPI_SPI.c: 129:             SSPCONbits.SSPM2 = 1;
-[e = . . _SSPCONbits 1 2 -> -> 1 `i `uc ]
-"130
-[; ;SPI_SPI.c: 130:             SSPCONbits.SSPM1 = 0;
-[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
-"131
-[; ;SPI_SPI.c: 131:             SSPCONbits.SSPM0 = 1;
-[e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
-"132
-[; ;SPI_SPI.c: 132:             break;
+"123
+[; ;SPI_SPI.c: 123:             SSPCONbits.SSPM2 = 0;
+[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+"124
+[; ;SPI_SPI.c: 124:             SSPCONbits.SSPM1 = 1;
+[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
+"125
+[; ;SPI_SPI.c: 125:             SSPCONbits.SSPM0 = 0;
+[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
+"127
+[; ;SPI_SPI.c: 127:             break;
 [e $U 154  ]
+"128
+[; ;SPI_SPI.c: 128:          case 3:
+[e :U 159 ]
+"129
+[; ;SPI_SPI.c: 129:             SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+"130
+[; ;SPI_SPI.c: 130:             SSPCONbits.SSPM2 = 0;
+[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+"131
+[; ;SPI_SPI.c: 131:             SSPCONbits.SSPM1 = 1;
+[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
+"132
+[; ;SPI_SPI.c: 132:             SSPCONbits.SSPM0 = 1;
+[e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
 "133
-[; ;SPI_SPI.c: 133:     }
+[; ;SPI_SPI.c: 133:             break;
+[e $U 154  ]
+"134
+[; ;SPI_SPI.c: 134:          case 4:
+[e :U 160 ]
+"135
+[; ;SPI_SPI.c: 135:             SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+"136
+[; ;SPI_SPI.c: 136:             SSPCONbits.SSPM2 = 1;
+[e = . . _SSPCONbits 1 2 -> -> 1 `i `uc ]
+"137
+[; ;SPI_SPI.c: 137:             SSPCONbits.SSPM1 = 0;
+[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
+"138
+[; ;SPI_SPI.c: 138:             SSPCONbits.SSPM0 = 0;
+[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
+"140
+[; ;SPI_SPI.c: 140:             break;
+[e $U 154  ]
+"141
+[; ;SPI_SPI.c: 141:          case 5:
+[e :U 161 ]
+"142
+[; ;SPI_SPI.c: 142:             SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+"143
+[; ;SPI_SPI.c: 143:             SSPCONbits.SSPM2 = 1;
+[e = . . _SSPCONbits 1 2 -> -> 1 `i `uc ]
+"144
+[; ;SPI_SPI.c: 144:             SSPCONbits.SSPM1 = 0;
+[e = . . _SSPCONbits 1 1 -> -> 0 `i `uc ]
+"145
+[; ;SPI_SPI.c: 145:             SSPCONbits.SSPM0 = 1;
+[e = . . _SSPCONbits 1 0 -> -> 1 `i `uc ]
+"146
+[; ;SPI_SPI.c: 146:             break;
+[e $U 154  ]
+"147
+[; ;SPI_SPI.c: 147:     }
 }
 [e $U 154  ]
 [e :U 155 ]
@@ -695,62 +695,62 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 5 `i 161
  154 ]
 [e :U 154 ]
-"135
-[; ;SPI_SPI.c: 135:     switch (SCK)
-[e $U 163  ]
-"136
-[; ;SPI_SPI.c: 136:     {
-{
-"137
-[; ;SPI_SPI.c: 137:         case 0:
-[e :U 164 ]
-"138
-[; ;SPI_SPI.c: 138:             SSPCONbits.CKP = 0;
-[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
-"139
-[; ;SPI_SPI.c: 139:             SSPSTATbits.CKE = 0;
-[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
-"141
-[; ;SPI_SPI.c: 141:             break;
-[e $U 162  ]
-"142
-[; ;SPI_SPI.c: 142:          case 1:
-[e :U 165 ]
-"143
-[; ;SPI_SPI.c: 143:             SSPCONbits.CKP = 1;
-[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"144
-[; ;SPI_SPI.c: 144:             SSPSTATbits.CKE = 0;
-[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
-"146
-[; ;SPI_SPI.c: 146:             break;
-[e $U 162  ]
-"147
-[; ;SPI_SPI.c: 147:          case 2:
-[e :U 166 ]
-"148
-[; ;SPI_SPI.c: 148:             SSPCONbits.CKP = 0;
-[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
 "149
-[; ;SPI_SPI.c: 149:             SSPSTATbits.CKE = 1;
-[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+[; ;SPI_SPI.c: 149:     switch (SCK)
+[e $U 163  ]
+"150
+[; ;SPI_SPI.c: 150:     {
+{
 "151
-[; ;SPI_SPI.c: 151:             break;
-[e $U 162  ]
+[; ;SPI_SPI.c: 151:         case 0:
+[e :U 164 ]
 "152
-[; ;SPI_SPI.c: 152:          case 3:
-[e :U 167 ]
+[; ;SPI_SPI.c: 152:             SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
 "153
-[; ;SPI_SPI.c: 153:             SSPCONbits.CKP = 1;
-[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"154
-[; ;SPI_SPI.c: 154:             SSPSTATbits.CKE = 1;
-[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+[; ;SPI_SPI.c: 153:             SSPSTATbits.CKE = 0;
+[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
 "155
 [; ;SPI_SPI.c: 155:             break;
 [e $U 162  ]
 "156
-[; ;SPI_SPI.c: 156:     }
+[; ;SPI_SPI.c: 156:          case 1:
+[e :U 165 ]
+"157
+[; ;SPI_SPI.c: 157:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"158
+[; ;SPI_SPI.c: 158:             SSPSTATbits.CKE = 0;
+[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
+"160
+[; ;SPI_SPI.c: 160:             break;
+[e $U 162  ]
+"161
+[; ;SPI_SPI.c: 161:          case 2:
+[e :U 166 ]
+"162
+[; ;SPI_SPI.c: 162:             SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+"163
+[; ;SPI_SPI.c: 163:             SSPSTATbits.CKE = 1;
+[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+"165
+[; ;SPI_SPI.c: 165:             break;
+[e $U 162  ]
+"166
+[; ;SPI_SPI.c: 166:          case 3:
+[e :U 167 ]
+"167
+[; ;SPI_SPI.c: 167:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"168
+[; ;SPI_SPI.c: 168:             SSPSTATbits.CKE = 1;
+[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+"169
+[; ;SPI_SPI.c: 169:             break;
+[e $U 162  ]
+"170
+[; ;SPI_SPI.c: 170:     }
 }
 [e $U 162  ]
 [e :U 163 ]
@@ -760,49 +760,49 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 167
  162 ]
 [e :U 162 ]
-"157
-[; ;SPI_SPI.c: 157:     SSPSTATbits.SMP = 0;
+"171
+[; ;SPI_SPI.c: 171:     SSPSTATbits.SMP = 0;
 [e = . . _SSPSTATbits 0 7 -> -> 0 `i `uc ]
-"158
-[; ;SPI_SPI.c: 158:     SSPCONbits.SSPEN = 1;
+"172
+[; ;SPI_SPI.c: 172:     SSPCONbits.SSPEN = 1;
 [e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
-"159
-[; ;SPI_SPI.c: 159: }
+"173
+[; ;SPI_SPI.c: 173: }
 [e :UE 153 ]
 }
-"161
-[; ;SPI_SPI.c: 161: void SPI_Enviar (char valor)
+"175
+[; ;SPI_SPI.c: 175: void SPI_Enviar (char valor)
 [v _SPI_Enviar `(v ~T0 @X0 1 ef1`uc ]
-"162
-[; ;SPI_SPI.c: 162: {
+"176
+[; ;SPI_SPI.c: 176: {
 {
 [e :U _SPI_Enviar ]
-"161
-[; ;SPI_SPI.c: 161: void SPI_Enviar (char valor)
+"175
+[; ;SPI_SPI.c: 175: void SPI_Enviar (char valor)
 [v _valor `uc ~T0 @X0 1 r1 ]
-"162
-[; ;SPI_SPI.c: 162: {
+"176
+[; ;SPI_SPI.c: 176: {
 [f ]
-"163
-[; ;SPI_SPI.c: 163:     SSPBUF = valor;
+"177
+[; ;SPI_SPI.c: 177:     SSPBUF = valor;
 [e = _SSPBUF -> _valor `uc ]
-"164
-[; ;SPI_SPI.c: 164: }
+"178
+[; ;SPI_SPI.c: 178: }
 [e :UE 168 ]
 }
-"167
-[; ;SPI_SPI.c: 167: char SPI_Recibir ()
+"181
+[; ;SPI_SPI.c: 181: char SPI_Recibir ()
 [v _SPI_Recibir `(uc ~T0 @X0 1 ef ]
-"168
-[; ;SPI_SPI.c: 168: {
+"182
+[; ;SPI_SPI.c: 182: {
 {
 [e :U _SPI_Recibir ]
 [f ]
-"169
-[; ;SPI_SPI.c: 169:     return SSPBUF;
+"183
+[; ;SPI_SPI.c: 183:     return SSPBUF;
 [e ) -> _SSPBUF `uc ]
 [e $UE 169  ]
-"170
-[; ;SPI_SPI.c: 170: }
+"184
+[; ;SPI_SPI.c: 184: }
 [e :UE 169 ]
 }

@@ -2776,8 +2776,8 @@ uint16_t pressed_ok2 = 0;
 uint16_t released_ok2 = 0;
 uint16_t presionado2 = 0;
 
-char dato;
-char dato_maestro;
+
+uint8_t dato_maestro;
 
 
 
@@ -2840,7 +2840,6 @@ void setup(void)
     ANSELbits.ANS5 = 0;
     PORTAbits.RA5 = 1;
 
-
     ANSELH = 0;
     TRISB = 0;
     TRISBbits.TRISB2 = 1;
@@ -2848,6 +2847,7 @@ void setup(void)
     PORTB = 0;
     PORTBbits.RB2 = 0;
     PORTBbits.RB3 = 0;
+
     TRISC = 0;
     PORTC = 0;
     TRISCbits.TRISC3 = 1;

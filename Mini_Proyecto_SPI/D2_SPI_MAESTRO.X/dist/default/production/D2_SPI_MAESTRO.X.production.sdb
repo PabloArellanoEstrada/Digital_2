@@ -27,45 +27,45 @@
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 "95
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
-"112 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+"108 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"125
+"121
 [v _main main `(v  1 e 1 0 ]
-"186
+"175
 [v _setup setup `(v  1 e 1 0 ]
-"207
+"196
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
-"220
+"209
 [v _osc_config osc_config `(v  1 e 1 0 ]
-"231
+"220
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
-"246
+"235
 [v _USART_config USART_config `(v  1 e 1 0 ]
-"251
+"240
 [v _SPI_config SPI_config `(v  1 e 1 0 ]
-"260
+"249
 [v _lcd lcd `(v  1 e 1 0 ]
-"273
+"262
 [v _Conversion1 Conversion1 `(v  1 e 1 0 ]
-"291
+"280
 [v _Conversion2 Conversion2 `(v  1 e 1 0 ]
-"309
+"298
 [v _Conversion3 Conversion3 `(v  1 e 1 0 ]
-"321
+"310
 [v _virtual_display1 virtual_display1 `(v  1 e 1 0 ]
-"342
+"331
 [v _virtual_display2 virtual_display2 `(v  1 e 1 0 ]
-"381
+"370
 [v _virtual_display3 virtual_display3 `(v  1 e 1 0 ]
-"399
+"388
 [v _escribir_char escribir_char `(v  1 e 1 0 ]
-"4 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+"19 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
 [v _SPI_Maestro_Init SPI_Maestro_Init `(v  1 e 1 0 ]
-"161
+"175
 [v _SPI_Enviar SPI_Enviar `(v  1 e 1 0 ]
-"167
+"181
 [v _SPI_Recibir SPI_Recibir `(uc  1 e 1 0 ]
-"19 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+"18 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
 [v _USART_lib_config USART_lib_config `(v  1 e 1 0 ]
 "59 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -91,14 +91,14 @@
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S532 . 1 `uc 1 RE0 1 0 :1:0 
+[s S529 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S537 . 1 `S532 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES537  1 e 1 @9 ]
+[u S534 . 1 `S529 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES534  1 e 1 @9 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -129,21 +129,21 @@
 [v _PIR1bits PIR1bits `VES273  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
-[s S583 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S580 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "870
-[s S589 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S586 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S594 . 1 `S583 1 . 1 0 `S589 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES594  1 e 1 @20 ]
-[s S433 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S591 . 1 `S580 1 . 1 0 `S586 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES591  1 e 1 @20 ]
+[s S430 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -153,18 +153,18 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S442 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S439 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S446 . 1 `uc 1 . 1 0 :6:0 
+[s S443 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S449 . 1 `uc 1 . 1 0 :6:0 
+[s S446 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S452 . 1 `S433 1 . 1 0 `S442 1 . 1 0 `S446 1 . 1 0 `S449 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES452  1 e 1 @24 ]
+[u S449 . 1 `S430 1 . 1 0 `S439 1 . 1 0 `S443 1 . 1 0 `S446 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES449  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 [s S183 . 1 `uc 1 PS 1 0 :3:0 
@@ -183,7 +183,7 @@
 [v _OPTION_REGbits OPTION_REGbits `VES194  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S698 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S695 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -193,8 +193,8 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S707 . 1 `S698 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES707  1 e 1 @133 ]
+[u S704 . 1 `S695 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES704  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
@@ -215,7 +215,7 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S488 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S485 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -224,8 +224,8 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S496 . 1 `S488 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES496  1 e 1 @140 ]
+[u S493 . 1 `S485 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES493  1 e 1 @140 ]
 [s S157 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
@@ -240,7 +240,7 @@
 ]
 [u S168 . 1 `S157 1 . 1 0 `S163 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES168  1 e 1 @143 ]
-[s S609 . 1 `uc 1 BF 1 0 :1:0 
+[s S606 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -250,42 +250,42 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S618 . 1 `uc 1 . 1 0 :2:0 
+[s S615 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S623 . 1 `uc 1 . 1 0 :2:0 
+[s S620 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S629 . 1 `uc 1 . 1 0 :2:0 
+[s S626 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S634 . 1 `uc 1 . 1 0 :2:0 
+[s S631 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S639 . 1 `uc 1 . 1 0 :2:0 
+[s S636 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S644 . 1 `uc 1 . 1 0 :2:0 
+[s S641 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S649 . 1 `S609 1 . 1 0 `S618 1 . 1 0 `S623 1 . 1 0 `S629 1 . 1 0 `S634 1 . 1 0 `S639 1 . 1 0 `S644 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES649  1 e 1 @148 ]
+[u S646 . 1 `S606 1 . 1 0 `S615 1 . 1 0 `S620 1 . 1 0 `S626 1 . 1 0 `S631 1 . 1 0 `S636 1 . 1 0 `S641 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES646  1 e 1 @148 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
-[s S396 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S393 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -295,15 +295,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S405 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S402 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S409 . 1 `uc 1 . 1 0 :6:0 
+[s S406 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S412 . 1 `S396 1 . 1 0 `S405 1 . 1 0 `S409 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES412  1 e 1 @152 ]
+[u S409 . 1 `S393 1 . 1 0 `S402 1 . 1 0 `S406 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES409  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
@@ -328,46 +328,46 @@
 [v _voltajey voltajey `uc  1 e 1 0 ]
 "60
 [v _unidady unidady `uc  1 e 1 0 ]
-"69
+"66
 [v _w1 w1 `uc  1 e 1 0 ]
-"70
+"67
 [v _w2 w2 `uc  1 e 1 0 ]
-"72
+"69
 [v _velocidad1 velocidad1 `uc  1 e 1 0 ]
-"73
+"70
 [v _velocidad2 velocidad2 `uc  1 e 1 0 ]
-"74
+"71
 [v _velocidad3 velocidad3 `uc  1 e 1 0 ]
-"76
+"73
 [v _dato_pot dato_pot `uc  1 e 1 0 ]
-"77
+"74
 [v _dato_push dato_push `uc  1 e 1 0 ]
-"79
+"75
 [v _dato_semaforo dato_semaforo `uc  1 e 1 0 ]
-"125
+"121
 [v _main main `(v  1 e 1 0 ]
 {
-"180
-} 0
-"231
-[v _tmr0_config tmr0_config `(v  1 e 1 0 ]
-{
-"240
-} 0
-"186
-[v _setup setup `(v  1 e 1 0 ]
-{
-"205
+"169
 } 0
 "220
-[v _osc_config osc_config `(v  1 e 1 0 ]
+[v _tmr0_config tmr0_config `(v  1 e 1 0 ]
 {
 "229
 } 0
-"260
+"175
+[v _setup setup `(v  1 e 1 0 ]
+{
+"194
+} 0
+"209
+[v _osc_config osc_config `(v  1 e 1 0 ]
+{
+"218
+} 0
+"249
 [v _lcd lcd `(v  1 e 1 0 ]
 {
-"271
+"260
 } 0
 "78 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
@@ -394,46 +394,46 @@
 [v Lcd_Set_Cursor@a a `uc  1 a 1 8 ]
 "76
 } 0
-"309 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+"298 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 [v _Conversion3 Conversion3 `(v  1 e 1 0 ]
 {
-"319
+"308
 } 0
-"381
+"370
 [v _virtual_display3 virtual_display3 `(v  1 e 1 0 ]
 {
-"397
+"386
 } 0
-"291
+"280
 [v _Conversion2 Conversion2 `(v  1 e 1 0 ]
 {
-"307
+"296
 } 0
-"342
+"331
 [v _virtual_display2 virtual_display2 `(v  1 e 1 0 ]
 {
-"379
+"368
 } 0
-"273
+"262
 [v _Conversion1 Conversion1 `(v  1 e 1 0 ]
 {
-"277
+"266
 [v Conversion1@pot pot `i  1 a 2 7 ]
-"289
+"278
 } 0
-"321
+"310
 [v _virtual_display1 virtual_display1 `(v  1 e 1 0 ]
 {
-"340
+"329
 } 0
-"399
+"388
 [v _escribir_char escribir_char `(v  1 e 1 0 ]
 {
 [v escribir_char@valor valor `uc  1 a 1 wreg ]
 [v escribir_char@valor valor `uc  1 a 1 wreg ]
-"401
+"390
 [v escribir_char@valor valor `uc  1 a 1 2 ]
-"403
+"392
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -468,49 +468,49 @@
 [v Lcd_Write_Char@a a `uc  1 a 1 4 ]
 "102
 } 0
-"207 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+"196 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
 {
-"218
+"207
 } 0
-"246
+"235
 [v _USART_config USART_config `(v  1 e 1 0 ]
 {
-"249
+"238
 } 0
-"19 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+"18 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
 [v _USART_lib_config USART_lib_config `(v  1 e 1 0 ]
 {
-"44
+"43
 } 0
-"251 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+"240 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 [v _SPI_config SPI_config `(v  1 e 1 0 ]
 {
-"254
+"243
 } 0
-"4 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+"19 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
 [v _SPI_Maestro_Init SPI_Maestro_Init `(v  1 e 1 0 ]
 {
 [v SPI_Maestro_Init@port_mode port_mode `uc  1 a 1 wreg ]
 [v SPI_Maestro_Init@port_mode port_mode `uc  1 a 1 wreg ]
 [v SPI_Maestro_Init@SCK SCK `uc  1 p 1 2 ]
-"6
+"21
 [v SPI_Maestro_Init@port_mode port_mode `uc  1 a 1 5 ]
-"81
+"95
 } 0
-"167
+"181
 [v _SPI_Recibir SPI_Recibir `(uc  1 e 1 0 ]
 {
-"170
+"184
 } 0
-"161
+"175
 [v _SPI_Enviar SPI_Enviar `(v  1 e 1 0 ]
 {
 [v SPI_Enviar@valor valor `uc  1 a 1 wreg ]
 [v SPI_Enviar@valor valor `uc  1 a 1 wreg ]
-"163
+"177
 [v SPI_Enviar@valor valor `uc  1 a 1 2 ]
-"164
+"178
 } 0
 "37 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
@@ -535,8 +535,8 @@
 [v Lcd_Port@a a `uc  1 a 1 2 ]
 "26
 } 0
-"112 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+"108 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"119
+"115
 } 0

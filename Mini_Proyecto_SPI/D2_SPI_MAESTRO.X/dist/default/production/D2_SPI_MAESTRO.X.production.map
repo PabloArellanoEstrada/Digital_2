@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\D2_SPI_MAESTRO.X.production.sym \
   --cmf=dist/default/production\D2_SPI_MAESTRO.X.production.cmf -z -Q16F887 \
-  -oC:\Users\pablo\AppData\Local\Temp\sghs.3 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\pablo\AppData\Local\Temp\s4ho.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/D2_SPI_MAESTRO.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\pablo\AppData\Local\Temp\sghs.o \
+  -pfunctab=ENTRY -k C:\Users\pablo\AppData\Local\Temp\s4ho.o \
   dist/default/production\D2_SPI_MAESTRO.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\pablo\AppData\Local\Temp\sghs.o
+C:\Users\pablo\AppData\Local\Temp\s4ho.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -64,10 +64,10 @@ dist/default/production\D2_SPI_MAESTRO.X.production.o
                 text2                               54D      54D       2E        8       0
                 text1                               63D      63D        D      C2E       0
                 maintext                             1E       1E       BB        8       0
-                cstackBANK0                          3D       3D        C       20       1
+                cstackBANK0                          3A       3A        C       20       1
                 cstackCOMMON                         70       70        A       70       1
                 clrtext                             675      675        8      C2E       0
-                bssBANK0                             20       20       1D       20       1
+                bssBANK0                             20       20       1A       20       1
                 bssCOMMON                            7A       7A        2       70       1
                 strings                             600      600       17      C00       0
 
@@ -123,8 +123,8 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssCOMMON                            7A       7A        2         1
 
         CLASS   BANK0          
-                cstackBANK0                          3D       3D        C         1
-                bssBANK0                             20       20       1D         1
+                cstackBANK0                          3A       3A        C         1
+                bssBANK0                             20       20       1A         1
 
         CLASS   BANK1          
 
@@ -158,7 +158,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 intentry                       000004  0005F8  0005FC         8       0  CODE        2
-                bssBANK0                       000020  000029  000049        20       1  BANK0       1
+                bssBANK0                       000020  000026  000046        20       1  BANK0       1
                 cstackCOMMON                   000070  00000C  00007C        70       1  COMMON      1
                 strings                        000600  000017  000617       C00       0  STRING      2
                 text16                         000617  00007C  000693       C2E       0  CODE        2
@@ -167,7 +167,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0049-006F             27           1
+        BANK0            0046-006F             2A           1
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
@@ -183,7 +183,7 @@ UNUSED ADDRESS RANGES
                          05FC-05FF              4
                          0693-1FFF            100
         IDLOC            2000-2003              4           2
-        RAM              0049-006F             27           1
+        RAM              0046-006F             2A           1
                          00A0-00EF             50
                          0110-016F             60
                          0190-01EF             60
@@ -203,7 +203,7 @@ UNUSED ADDRESS RANGES
 
 ?___awdiv                  cstackCOMMON 0072
 ?___awmod                  cstackCOMMON 0072
-Conversion1@pot            cstackBANK0  0044
+Conversion1@pot            cstackBANK0  0041
 Lcd_Cmd@a                  cstackCOMMON 0075
 Lcd_Port@a                 cstackCOMMON 0072
 Lcd_Set_Cursor@a           cstackCOMMON 0078
@@ -336,11 +336,11 @@ __S1                       (abs)        007C
 __S2                       (abs)        0000
 __S3                       (abs)        0000
 ___awdiv                   text15       0291
-___awdiv@counter           cstackBANK0  003D
+___awdiv@counter           cstackBANK0  003A
 ___awdiv@dividend          cstackCOMMON 0074
 ___awdiv@divisor           cstackCOMMON 0072
-___awdiv@quotient          cstackBANK0  003F
-___awdiv@sign              cstackBANK0  003E
+___awdiv@quotient          cstackBANK0  003C
+___awdiv@sign              cstackBANK0  003B
 ___awmod                   text14       03C0
 ___awmod@counter           cstackCOMMON 0077
 ___awmod@dividend          cstackCOMMON 0074
@@ -384,7 +384,7 @@ __end_of_virtual_display3  text8        0510
 __initialization           cinit        000F
 __pbssBANK0                bssBANK0     0020
 __pbssCOMMON               bssCOMMON    007A
-__pcstackBANK0             cstackBANK0  003D
+__pcstackBANK0             cstackBANK0  003A
 __pcstackCOMMON            cstackCOMMON 0070
 __pintentry                intentry     0004
 __pmaintext                maintext     001E
@@ -446,7 +446,7 @@ __size_of_virtual_display2 (abs)        0000
 __size_of_virtual_display3 (abs)        0000
 __stringbase               strings      0605
 __stringtab                strings      0600
-_dato_pot                  bssBANK0     0022
+_dato_pot                  bssBANK0     0021
 _dato_push                 bssCOMMON    007A
 _dato_semaforo             bssBANK0     0020
 _decenay                   bssCOMMON    007B
@@ -457,22 +457,22 @@ _main                      maintext     001E
 _osc_config                text3        0661
 _setup                     text2        054D
 _tmr0_config               text1        063D
-_unidad                    bssBANK0     003B
-_unidady                   bssBANK0     002F
-_velocidad1                bssBANK0     0025
-_velocidad2                bssBANK0     0024
-_velocidad3                bssBANK0     0023
+_unidad                    bssBANK0     0038
+_unidady                   bssBANK0     002C
+_velocidad1                bssBANK0     0024
+_velocidad2                bssBANK0     0023
+_velocidad3                bssBANK0     0022
 _virtual_display1          text12       035D
 _virtual_display2          text10       00D9
 _virtual_display3          text8        04C4
-_voltaje                   bssBANK0     003C
-_voltajey                  bssBANK0     0030
-_w1                        bssBANK0     0028
-_w2                        bssBANK0     0027
-_x1                        bssBANK0     003A
-_x2                        bssBANK0     0038
-_y1                        bssBANK0     0039
-_y2                        bssBANK0     0037
+_voltaje                   bssBANK0     0039
+_voltajey                  bssBANK0     002D
+_w1                        bssBANK0     0027
+_w2                        bssBANK0     0026
+_x1                        bssBANK0     0037
+_x2                        bssBANK0     0035
+_y1                        bssBANK0     0036
+_y2                        bssBANK0     0034
 btemp                      (abs)        007E
 clear_ram0                 clrtext      0675
 end_of_initialization      cinit        001A
@@ -495,7 +495,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 125 in file "MAESTRO_SPI.c"
+		line 121 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -533,7 +533,7 @@ Total ram usage:        2 bytes
 
  *************** function _tmr0_config *****************
  Defined at:
-		line 231 in file "MAESTRO_SPI.c"
+		line 220 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -563,7 +563,7 @@ Total ram usage:        0 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 186 in file "MAESTRO_SPI.c"
+		line 175 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -593,7 +593,7 @@ Total ram usage:        0 bytes
 
  *************** function _osc_config *****************
  Defined at:
-		line 220 in file "MAESTRO_SPI.c"
+		line 209 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -623,7 +623,7 @@ Total ram usage:        0 bytes
 
  *************** function _lcd *****************
  Defined at:
-		line 260 in file "MAESTRO_SPI.c"
+		line 249 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -722,7 +722,7 @@ Total ram usage:        4 bytes
 
  *************** function _Conversion3 *****************
  Defined at:
-		line 309 in file "MAESTRO_SPI.c"
+		line 298 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -755,7 +755,7 @@ Total ram usage:        3 bytes
 
  *************** function _virtual_display3 *****************
  Defined at:
-		line 381 in file "MAESTRO_SPI.c"
+		line 370 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -785,7 +785,7 @@ Total ram usage:        0 bytes
 
  *************** function _Conversion2 *****************
  Defined at:
-		line 291 in file "MAESTRO_SPI.c"
+		line 280 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -818,7 +818,7 @@ Total ram usage:        3 bytes
 
  *************** function _virtual_display2 *****************
  Defined at:
-		line 342 in file "MAESTRO_SPI.c"
+		line 331 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -848,7 +848,7 @@ Total ram usage:        0 bytes
 
  *************** function _Conversion1 *****************
  Defined at:
-		line 273 in file "MAESTRO_SPI.c"
+		line 262 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -881,7 +881,7 @@ Total ram usage:        5 bytes
 
  *************** function _virtual_display1 *****************
  Defined at:
-		line 321 in file "MAESTRO_SPI.c"
+		line 310 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -911,7 +911,7 @@ Total ram usage:        0 bytes
 
  *************** function _escribir_char *****************
  Defined at:
-		line 399 in file "MAESTRO_SPI.c"
+		line 388 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
   valor           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1045,7 +1045,7 @@ Total ram usage:        2 bytes
 
  *************** function _interrup_config *****************
  Defined at:
-		line 207 in file "MAESTRO_SPI.c"
+		line 196 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1075,7 +1075,7 @@ Total ram usage:        0 bytes
 
  *************** function _USART_config *****************
  Defined at:
-		line 246 in file "MAESTRO_SPI.c"
+		line 235 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1105,7 +1105,7 @@ Total ram usage:        0 bytes
 
  *************** function _USART_lib_config *****************
  Defined at:
-		line 19 in file "USART_SPI.c"
+		line 18 in file "USART_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1135,7 +1135,7 @@ Total ram usage:        0 bytes
 
  *************** function _SPI_config *****************
  Defined at:
-		line 251 in file "MAESTRO_SPI.c"
+		line 240 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1165,7 +1165,7 @@ Total ram usage:        1 bytes
 
  *************** function _SPI_Maestro_Init *****************
  Defined at:
-		line 4 in file "SPI_SPI.c"
+		line 19 in file "SPI_SPI.c"
  Parameters:    Size  Location     Type
   port_mode       1    wreg     unsigned char 
   SCK             1    2[COMMON] unsigned char 
@@ -1196,7 +1196,7 @@ Total ram usage:        4 bytes
 
  *************** function _SPI_Recibir *****************
  Defined at:
-		line 167 in file "SPI_SPI.c"
+		line 181 in file "SPI_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1226,7 +1226,7 @@ Total ram usage:        0 bytes
 
  *************** function _SPI_Enviar *****************
  Defined at:
-		line 161 in file "SPI_SPI.c"
+		line 175 in file "SPI_SPI.c"
  Parameters:    Size  Location     Type
   valor           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1353,7 +1353,7 @@ Total ram usage:        1 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 112 in file "MAESTRO_SPI.c"
+		line 108 in file "MAESTRO_SPI.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

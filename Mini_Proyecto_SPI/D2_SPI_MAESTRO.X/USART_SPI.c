@@ -1,7 +1,6 @@
-
 /* 
- * Project: LCD
- * File:    USART.h
+ * Project: D2_SPI_MAESTRO
+ * File:    USART_SPI.c
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
  * Created: February 9, 2021,
@@ -10,7 +9,7 @@
 // LIBRERIA
 //============================================================================*/
 
-#include "USART_SPI.h"  
+#include "USART_SPI.h"      // Libreria USART
 
 //============================================================================*/
 // FUNCIONES

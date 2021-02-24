@@ -2773,12 +2773,7 @@ void initADC (uint8_t CHS);
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 # 47 "SLAVE_SEMAFORO_SPI.c"
-char dato;
-char SPI_value;
 char dato_maestro;
-char valor1;
-char valor2;
-unsigned int temp;
 
 
 
@@ -2790,6 +2785,7 @@ void interrup_config (void);
 void tmr0_config (void);
 void SPI_config (void);
 void adc_config (void);
+
 void adc_conversion (void);
 void semaforo(void);
 
@@ -2805,8 +2801,6 @@ void __attribute__((picinterrupt(("")))) ISR(void)
         INTCONbits.TMR0IF = 0;
         TMR0 = 100;
     }
-
-
 }
 
 
@@ -2823,14 +2817,12 @@ void main(void)
     SPI_config ();
     while (1)
     {
-
         if (SSPIF == 1)
         {
-            dato_maestro = SPI_Recibir();
-            SPI_Enviar (ADRESH);
-            SSPIF = 0;
+        dato_maestro = SPI_Recibir();
+        SPI_Enviar (ADRESH);
+        SSPIF = 0;
         }
-
     }
 }
 

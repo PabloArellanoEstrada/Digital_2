@@ -1,6 +1,6 @@
 /* 
- * Project: LCD
- * File:    ADC_lib.c
+ * Project: D2_SLAVE_SEMAFORO
+ * File:    ADC_SPI.c
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
  * Created: February 9, 2021,
@@ -10,7 +10,7 @@
 // LIBRERIA
 //============================================================================*/
 
-#include "ADC_SPI.h"                    
+#include "ADC_SPI.h"                   // Libreria ADC          
 
 //============================================================================*/
 // FUNCIONES
@@ -130,8 +130,8 @@ void initADC (uint8_t CHS)
     ADCON0bits.ADON  = 1;               // La conversion esta habilitada
     
     ADCON1bits.ADFM  = 0;               // Justificado a la izquierda
-    ADCON1bits.VCFG1 = 0;               // Voltaje = 5V
-    ADCON1bits.VCFG0 = 1;               // Tierra  = 0V
+    ADCON1bits.VCFG1 = 0;               // Tierra = 0V
+    ADCON1bits.VCFG0 = 1;               // Voltaje = Voltaje Vref+
 }
 
 

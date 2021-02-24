@@ -1,7 +1,7 @@
 
 /* 
- * Project: LCD
- * File:    ADC_lib.h
+ * Project: D2_SPI_MAESTRO
+ * File:    ADC_SPI.c
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
  * Created: February 9, 2021,
@@ -14,7 +14,7 @@
 // LIBRERIA
 //============================================================================*/
 
-#include "LCD_SPI.h"  
+#include "LCD_SPI.h"       // Libreria LCD
 
 //============================================================================*/
 // FUNCIONES

@@ -84,11 +84,11 @@ void main(void)
     
     while (1)                           // Loop principal
     {
-        if (SSPIF == 1)                 // Bandera levantada?
+        if (SSPIF == 1)                 // Bandera interrupcion levantada?
         {
         dato_maestro = SPI_Recibir();   // Se recibe dato de maestro
         SPI_Enviar (ADRESH);            // Se envia conversion
-        SSPIF = 0;                      // Se apaga bandera
+        SSPIF = 0;                      // Se apaga bandera que permite recepcion de siguiente byte
         }
     }
 }
@@ -168,7 +168,7 @@ void adc_config (void)
 
 void SPI_config (void)
 {
-    SPI_Esclavo_Init (4, 2);  // Maestro con Port_Mode/16 y con 
+    SPI_Esclavo_Init (4, 2);  // Esclavo con SS enable y con CKP = 0 / CKE = 1 
 }
 
 //============================================================================*/

@@ -7,7 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "USART_SPI.c" 2
-# 13 "USART_SPI.c"
+# 12 "USART_SPI.c"
 # 1 "./USART_SPI.h" 1
 # 16 "./USART_SPI.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
@@ -2732,7 +2732,7 @@ extern int printf(const char *, ...);
 
 
 void USART_lib_config(void);
-# 13 "USART_SPI.c" 2
+# 12 "USART_SPI.c" 2
 
 
 

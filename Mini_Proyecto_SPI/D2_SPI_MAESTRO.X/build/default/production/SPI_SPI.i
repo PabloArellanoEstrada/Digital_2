@@ -7,6 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "SPI_SPI.c" 2
+# 12 "SPI_SPI.c"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2487,7 +2488,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 1 "SPI_SPI.c" 2
+# 12 "SPI_SPI.c" 2
 
 # 1 "./SPI_SPI.h" 1
 # 20 "./SPI_SPI.h"
@@ -2635,7 +2636,11 @@ void SPI_Maestro_Init (char port_mode, char SCK);
 void SPI_Esclavo_Init (char port_mode, char SCK);
 void SPI_Enviar (char valor);
 char SPI_Recibir ();
-# 2 "SPI_SPI.c" 2
+# 13 "SPI_SPI.c" 2
+
+
+
+
 
 
 void SPI_Maestro_Init (char port_mode, char SCK)
@@ -2681,7 +2686,6 @@ void SPI_Maestro_Init (char port_mode, char SCK)
             SSPCONbits.SSPM2 = 1;
             SSPCONbits.SSPM1 = 0;
             SSPCONbits.SSPM0 = 0;
-
             break;
          case 5:
             SSPCONbits.SSPM3 = 0;

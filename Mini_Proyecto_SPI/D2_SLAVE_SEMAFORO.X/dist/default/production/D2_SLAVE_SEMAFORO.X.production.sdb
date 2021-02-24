@@ -13,25 +13,25 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"71 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
+"67 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"87
+"81
 [v _main main `(v  1 e 1 0 ]
-"112
+"104
 [v _setup setup `(v  1 e 1 0 ]
-"140
+"132
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
-"153
+"145
 [v _osc_config osc_config `(v  1 e 1 0 ]
-"164
+"156
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
-"179
+"171
 [v _adc_config adc_config `(v  1 e 1 0 ]
-"184
+"176
 [v _SPI_config SPI_config `(v  1 e 1 0 ]
-"193
+"185
 [v _semaforo semaforo `(v  1 e 1 0 ]
-"215
+"207
 [v _adc_conversion adc_conversion `(v  1 e 1 0 ]
 "84 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SPI_SPI.c
 [v _SPI_Esclavo_Init SPI_Esclavo_Init `(v  1 e 1 0 ]
@@ -94,20 +94,20 @@
 [v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
-[s S436 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S431 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "870
-[s S442 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S437 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S447 . 1 `S436 1 . 1 0 `S442 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES447  1 e 1 @20 ]
+[u S442 . 1 `S431 1 . 1 0 `S437 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES442  1 e 1 @20 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 [s S275 . 1 `uc 1 ADON 1 0 :1:0 
@@ -195,7 +195,7 @@
 ]
 [u S223 . 1 `S212 1 . 1 0 `S218 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES223  1 e 1 @143 ]
-[s S462 . 1 `uc 1 BF 1 0 :1:0 
+[s S457 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -205,50 +205,50 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S471 . 1 `uc 1 . 1 0 :2:0 
+[s S466 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S476 . 1 `uc 1 . 1 0 :2:0 
+[s S471 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S482 . 1 `uc 1 . 1 0 :2:0 
+[s S477 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S487 . 1 `uc 1 . 1 0 :2:0 
+[s S482 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S492 . 1 `uc 1 . 1 0 :2:0 
+[s S487 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S497 . 1 `uc 1 . 1 0 :2:0 
+[s S492 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S502 . 1 `S462 1 . 1 0 `S471 1 . 1 0 `S476 1 . 1 0 `S482 1 . 1 0 `S487 1 . 1 0 `S492 1 . 1 0 `S497 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES502  1 e 1 @148 ]
+[u S497 . 1 `S457 1 . 1 0 `S466 1 . 1 0 `S471 1 . 1 0 `S477 1 . 1 0 `S482 1 . 1 0 `S487 1 . 1 0 `S492 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES497  1 e 1 @148 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
-[s S616 . 1 `uc 1 . 1 0 :4:0 
+[s S611 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S622 . 1 `S616 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES622  1 e 1 @159 ]
+[u S617 . 1 `S611 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES617  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 [s S118 . 1 `uc 1 ANS0 1 0 :1:0 
@@ -267,50 +267,50 @@
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4277
 [v _SSPIF SSPIF `VEb  1 e 0 @99 ]
-"49 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
+"47 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
 [v _dato_maestro dato_maestro `uc  1 e 1 0 ]
-"87
+"81
 [v _main main `(v  1 e 1 0 ]
 {
-"106
+"98
 } 0
-"164
+"156
 [v _tmr0_config tmr0_config `(v  1 e 1 0 ]
 {
-"173
+"165
 } 0
-"112
+"104
 [v _setup setup `(v  1 e 1 0 ]
 {
-"138
+"130
 } 0
-"153
+"145
 [v _osc_config osc_config `(v  1 e 1 0 ]
 {
-"162
+"154
 } 0
-"140
+"132
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
 {
-"151
+"143
 } 0
-"179
+"171
 [v _adc_config adc_config `(v  1 e 1 0 ]
 {
-"182
+"174
 } 0
 "19 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\ADC_SPI.c
 [v _initADC initADC `(v  1 e 1 0 ]
 {
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
 [v initADC@CHS CHS `uc  1 a 1 wreg ]
-[v initADC@CHS CHS `uc  1 a 1 0 ]
+[v initADC@CHS CHS `uc  1 a 1 6 ]
 "135
 } 0
-"184 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
+"176 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
 [v _SPI_config SPI_config `(v  1 e 1 0 ]
 {
-"187
+"179
 } 0
 "84 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SPI_SPI.c
 [v _SPI_Esclavo_Init SPI_Esclavo_Init `(v  1 e 1 0 ]
@@ -319,7 +319,7 @@
 [v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 wreg ]
 [v SPI_Esclavo_Init@SCK SCK `uc  1 p 1 4 ]
 "86
-[v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 5 ]
+[v SPI_Esclavo_Init@port_mode port_mode `uc  1 a 1 7 ]
 "159
 } 0
 "167
@@ -336,18 +336,18 @@
 [v SPI_Enviar@valor valor `uc  1 a 1 4 ]
 "164
 } 0
-"71 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
+"67 C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SLAVE_SEMAFORO.X\SLAVE_SEMAFORO_SPI.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"81
+"75
 } 0
-"215
+"207
 [v _adc_conversion adc_conversion `(v  1 e 1 0 ]
 {
-"225
+"217
 } 0
-"193
+"185
 [v _semaforo semaforo `(v  1 e 1 0 ]
 {
-"213
+"205
 } 0

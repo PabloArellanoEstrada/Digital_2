@@ -2823,9 +2823,6 @@ uint8_t y1y;
 uint8_t x2y;
 uint8_t y2y;
 
-uint8_t leer;
-uint8_t contador;
-
 uint8_t w1;
 uint8_t w2;
 uint8_t a;
@@ -2835,9 +2832,8 @@ uint8_t velocidad3 = 0;
 
 uint8_t dato_pot = 0;
 uint8_t dato_push = 0;
-uint8_t dato_push1 = 0;
 uint8_t dato_semaforo = 0;
-# 89 "MAESTRO_SPI.c"
+# 85 "MAESTRO_SPI.c"
 void setup(void);
 void osc_config (void);
 void interrup_config (void);
@@ -2911,23 +2907,16 @@ void main(void)
         PORTCbits.RC2 = 0;
         _delay((unsigned long)((1)*(8000000/4000.0)));
 
-
         SPI_Enviar (dato_semaforo);
         dato_semaforo = SPI_Recibir();
 
         _delay((unsigned long)((1)*(8000000/4000.0)));
         PORTCbits.RC2 = 1;
 
-
-
-
-
         lcd ();
         velocidad1 = velocidad1 + 1;
         velocidad2 = velocidad2 + 1;
         velocidad3 = velocidad3 + 1;
-
-
     }
 }
 
@@ -3072,7 +3061,7 @@ void Conversion3 ()
 
 void virtual_display1 (void)
 {
-    if (velocidad1 > 15)
+    if (velocidad1 > 7)
     {
         escribir_char (65);
         escribir_char (68);
@@ -3093,7 +3082,7 @@ void virtual_display1 (void)
 
 void virtual_display2 (void)
 {
-    if (velocidad2 > 15)
+    if (velocidad2 > 7)
     {
         if (dato_push < 10)
         {
@@ -3132,7 +3121,7 @@ void virtual_display2 (void)
 
 void virtual_display3 (void)
 {
-    if (velocidad3 > 15)
+    if (velocidad3 > 7)
     {
         escribir_char (84);
         escribir_char (69);

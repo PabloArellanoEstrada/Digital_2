@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\pablo\AppData\Local\Temp\sghs.o
+$C:\Users\pablo\AppData\Local\Temp\s4ho.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -46,9 +46,9 @@ text26 CODE 0 689 689 6 2
 text27 CODE 0 62D 62D 10 2
 maintext CODE 0 1E 1E BB 2
 cstackCOMMON COMMON 1 70 70 A 1
-cstackBANK0 BANK0 1 3D 3D C 1
+cstackBANK0 BANK0 1 3A 3A C 1
 intentry CODE 0 4 4 8 2
-bssBANK0 BANK0 1 20 20 1D 1
+bssBANK0 BANK0 1 20 20 1A 1
 strings STRING 0 600 600 17 2
 clrtext CODE 0 675 675 8 2
 bssCOMMON COMMON 1 7A 7A 2 1
@@ -59,11 +59,11 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 49-6F 1
+RAM 46-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 49-6F 1
+BANK0 46-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
@@ -104,24 +104,24 @@ STRING 693-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\D2_SPI_MAESTRO.X.production.o
-F cinit CODE >1048:C:\Users\pablo\AppData\Local\Temp\sghs.s
-F cinit CODE >1051:C:\Users\pablo\AppData\Local\Temp\sghs.s
-F cinit CODE >1170:C:\Users\pablo\AppData\Local\Temp\sghs.s
-10 cinit CODE >1171:C:\Users\pablo\AppData\Local\Temp\sghs.s
-11 cinit CODE >1174:C:\Users\pablo\AppData\Local\Temp\sghs.s
-12 cinit CODE >1175:C:\Users\pablo\AppData\Local\Temp\sghs.s
-13 cinit CODE >1176:C:\Users\pablo\AppData\Local\Temp\sghs.s
-14 cinit CODE >1177:C:\Users\pablo\AppData\Local\Temp\sghs.s
-15 cinit CODE >1178:C:\Users\pablo\AppData\Local\Temp\sghs.s
-1A cinit CODE >1184:C:\Users\pablo\AppData\Local\Temp\sghs.s
-1A cinit CODE >1186:C:\Users\pablo\AppData\Local\Temp\sghs.s
-1B cinit CODE >1187:C:\Users\pablo\AppData\Local\Temp\sghs.s
-4 intentry CODE >112:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-62D text27 CODE >112:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-62D text27 CODE >114:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-631 text27 CODE >116:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-632 text27 CODE >117:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-636 text27 CODE >119:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+F cinit CODE >1048:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+F cinit CODE >1051:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+F cinit CODE >1161:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+10 cinit CODE >1162:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+11 cinit CODE >1165:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+12 cinit CODE >1166:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+13 cinit CODE >1167:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+14 cinit CODE >1168:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+15 cinit CODE >1169:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+1A cinit CODE >1175:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+1A cinit CODE >1177:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+1B cinit CODE >1178:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+4 intentry CODE >108:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+62D text27 CODE >108:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+62D text27 CODE >110:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+631 text27 CODE >112:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+632 text27 CODE >113:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+636 text27 CODE >115:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 689 text26 CODE >23:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 68A text26 CODE >25:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 68E text26 CODE >26:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
@@ -151,116 +151,116 @@ F cinit CODE >1170:C:\Users\pablo\AppData\Local\Temp\sghs.s
 463 text24 CODE >54:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 469 text24 CODE >55:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 46F text24 CODE >56:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
-683 text23 CODE >161:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-684 text23 CODE >163:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-688 text23 CODE >164:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-68F text22 CODE >167:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-68F text22 CODE >169:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-692 text22 CODE >170:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-20C text21 CODE >4:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-20D text21 CODE >6:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-210 text21 CODE >7:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-211 text21 CODE >8:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-212 text21 CODE >9:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-213 text21 CODE >10:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-214 text21 CODE >11:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-215 text21 CODE >13:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-216 text21 CODE >15:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-216 text21 CODE >16:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-219 text21 CODE >17:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-21A text21 CODE >18:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-21B text21 CODE >19:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-21C text21 CODE >21:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-21D text21 CODE >22:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-21D text21 CODE >23:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-220 text21 CODE >24:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-221 text21 CODE >25:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-222 text21 CODE >26:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-223 text21 CODE >28:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-224 text21 CODE >29:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-224 text21 CODE >30:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-227 text21 CODE >31:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-228 text21 CODE >32:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-229 text21 CODE >33:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-22A text21 CODE >35:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-22B text21 CODE >36:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-22B text21 CODE >37:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-22E text21 CODE >38:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-22F text21 CODE >39:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-230 text21 CODE >40:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-231 text21 CODE >41:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-232 text21 CODE >42:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-232 text21 CODE >43:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-235 text21 CODE >44:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-236 text21 CODE >45:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-237 text21 CODE >46:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-238 text21 CODE >48:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-239 text21 CODE >49:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-239 text21 CODE >50:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-23C text21 CODE >51:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-23D text21 CODE >52:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-23E text21 CODE >53:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-23F text21 CODE >54:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-240 text21 CODE >55:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-25C text21 CODE >59:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-25C text21 CODE >60:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-25E text21 CODE >61:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-261 text21 CODE >63:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-262 text21 CODE >64:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-262 text21 CODE >65:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-264 text21 CODE >66:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-267 text21 CODE >68:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-268 text21 CODE >69:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-268 text21 CODE >70:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-26A text21 CODE >71:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-26D text21 CODE >73:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-26E text21 CODE >74:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-26E text21 CODE >75:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-270 text21 CODE >76:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-273 text21 CODE >77:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-274 text21 CODE >78:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-28A text21 CODE >79:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-28D text21 CODE >80:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-290 text21 CODE >81:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
-656 text20 CODE >251:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-656 text20 CODE >253:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-660 text20 CODE >254:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-5C4 text19 CODE >19:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5C4 text19 CODE >21:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5C8 text19 CODE >23:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5C9 text19 CODE >24:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5CA text19 CODE >25:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5CB text19 CODE >26:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5CC text19 CODE >27:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5CD text19 CODE >28:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5CE text19 CODE >29:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5CF text19 CODE >30:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5D0 text19 CODE >32:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5D3 text19 CODE >33:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5D4 text19 CODE >34:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5D5 text19 CODE >35:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5D6 text19 CODE >36:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5D7 text19 CODE >37:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5D8 text19 CODE >38:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5D9 text19 CODE >39:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5DA text19 CODE >41:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5DB text19 CODE >42:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5DE text19 CODE >43:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-5E1 text19 CODE >44:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
-67D text18 CODE >246:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-67D text18 CODE >248:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-682 text18 CODE >249:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-64A text17 CODE >207:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-64A text17 CODE >209:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-64B text17 CODE >210:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-64C text17 CODE >211:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-64D text17 CODE >212:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-64E text17 CODE >213:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-64F text17 CODE >214:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-650 text17 CODE >215:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-651 text17 CODE >216:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-652 text17 CODE >217:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-655 text17 CODE >218:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+683 text23 CODE >175:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+684 text23 CODE >177:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+688 text23 CODE >178:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+68F text22 CODE >181:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+68F text22 CODE >183:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+692 text22 CODE >184:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+20C text21 CODE >19:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+20D text21 CODE >21:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+210 text21 CODE >22:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+211 text21 CODE >23:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+212 text21 CODE >24:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+213 text21 CODE >25:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+214 text21 CODE >26:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+215 text21 CODE >28:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+216 text21 CODE >30:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+216 text21 CODE >31:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+219 text21 CODE >32:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+21A text21 CODE >33:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+21B text21 CODE >34:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+21C text21 CODE >36:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+21D text21 CODE >37:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+21D text21 CODE >38:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+220 text21 CODE >39:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+221 text21 CODE >40:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+222 text21 CODE >41:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+223 text21 CODE >43:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+224 text21 CODE >44:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+224 text21 CODE >45:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+227 text21 CODE >46:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+228 text21 CODE >47:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+229 text21 CODE >48:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+22A text21 CODE >50:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+22B text21 CODE >51:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+22B text21 CODE >52:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+22E text21 CODE >53:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+22F text21 CODE >54:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+230 text21 CODE >55:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+231 text21 CODE >56:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+232 text21 CODE >57:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+232 text21 CODE >58:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+235 text21 CODE >59:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+236 text21 CODE >60:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+237 text21 CODE >61:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+238 text21 CODE >62:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+239 text21 CODE >63:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+239 text21 CODE >64:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+23C text21 CODE >65:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+23D text21 CODE >66:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+23E text21 CODE >67:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+23F text21 CODE >68:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+240 text21 CODE >69:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+25C text21 CODE >73:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+25C text21 CODE >74:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+25E text21 CODE >75:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+261 text21 CODE >77:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+262 text21 CODE >78:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+262 text21 CODE >79:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+264 text21 CODE >80:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+267 text21 CODE >82:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+268 text21 CODE >83:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+268 text21 CODE >84:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+26A text21 CODE >85:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+26D text21 CODE >87:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+26E text21 CODE >88:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+26E text21 CODE >89:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+270 text21 CODE >90:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+273 text21 CODE >91:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+274 text21 CODE >92:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+28A text21 CODE >93:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+28D text21 CODE >94:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+290 text21 CODE >95:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\SPI_SPI.c
+656 text20 CODE >240:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+656 text20 CODE >242:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+660 text20 CODE >243:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+5C4 text19 CODE >18:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5C4 text19 CODE >20:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5C8 text19 CODE >22:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5C9 text19 CODE >23:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5CA text19 CODE >24:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5CB text19 CODE >25:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5CC text19 CODE >26:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5CD text19 CODE >27:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5CE text19 CODE >28:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5CF text19 CODE >29:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5D0 text19 CODE >31:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5D3 text19 CODE >32:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5D4 text19 CODE >33:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5D5 text19 CODE >34:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5D6 text19 CODE >35:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5D7 text19 CODE >36:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5D8 text19 CODE >37:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5D9 text19 CODE >38:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5DA text19 CODE >40:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5DB text19 CODE >41:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5DE text19 CODE >42:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+5E1 text19 CODE >43:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\USART_SPI.c
+67D text18 CODE >235:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+67D text18 CODE >237:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+682 text18 CODE >238:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+64A text17 CODE >196:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+64A text17 CODE >198:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+64B text17 CODE >199:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+64C text17 CODE >200:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+64D text17 CODE >201:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+64E text17 CODE >202:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+64F text17 CODE >203:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+650 text17 CODE >204:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+651 text17 CODE >205:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+652 text17 CODE >206:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+655 text17 CODE >207:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 617 text16 CODE >95:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 618 text16 CODE >97:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 61B text16 CODE >98:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
@@ -314,107 +314,107 @@ F cinit CODE >1170:C:\Users\pablo\AppData\Local\Temp\sghs.s
 40F text14 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 414 text14 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 418 text14 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-66B text13 CODE >399:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-66C text13 CODE >401:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-670 text13 CODE >402:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-674 text13 CODE >403:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-35D text12 CODE >321:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-35D text12 CODE >323:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-365 text12 CODE >325:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-36B text12 CODE >326:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-371 text12 CODE >327:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-377 text12 CODE >328:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-37D text12 CODE >329:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-386 text12 CODE >330:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-38C text12 CODE >331:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-395 text12 CODE >332:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-39E text12 CODE >333:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-3A4 text12 CODE >334:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-3AA text12 CODE >335:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-3B0 text12 CODE >336:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-3B6 text12 CODE >337:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-3BC text12 CODE >338:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-3BF text12 CODE >340:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-178 text11 CODE >273:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-178 text11 CODE >276:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-17E text11 CODE >277:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-18B text11 CODE >278:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-19E text11 CODE >279:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1B1 text11 CODE >280:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1C7 text11 CODE >281:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1DD text11 CODE >282:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1E1 text11 CODE >283:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1E8 text11 CODE >284:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1EE text11 CODE >285:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1F7 text11 CODE >286:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-200 text11 CODE >287:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-206 text11 CODE >288:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-20B text11 CODE >289:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-D9 text10 CODE >342:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-D9 text10 CODE >344:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-E1 text10 CODE >346:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-E7 text10 CODE >348:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-ED text10 CODE >349:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-F3 text10 CODE >350:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-F9 text10 CODE >351:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-FF text10 CODE >352:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-105 text10 CODE >353:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-10B text10 CODE >354:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-112 text10 CODE >355:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-118 text10 CODE >356:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-11E text10 CODE >357:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-124 text10 CODE >358:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-12A text10 CODE >360:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-12D text10 CODE >361:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-12E text10 CODE >364:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-134 text10 CODE >365:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-13A text10 CODE >366:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-140 text10 CODE >367:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-146 text10 CODE >368:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-14C text10 CODE >369:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-155 text10 CODE >370:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-15E text10 CODE >371:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-164 text10 CODE >372:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-16A text10 CODE >373:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-170 text10 CODE >374:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-177 text10 CODE >379:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-2FA text9 CODE >291:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-2FA text9 CODE >293:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-300 text9 CODE >295:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-306 text9 CODE >296:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-30D text9 CODE >297:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-312 text9 CODE >298:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-313 text9 CODE >299:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-319 text9 CODE >301:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-331 text9 CODE >302:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-347 text9 CODE >303:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-34E text9 CODE >304:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-357 text9 CODE >305:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-35C text9 CODE >307:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4C4 text8 CODE >381:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4C4 text8 CODE >383:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4CC text8 CODE >385:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4D2 text8 CODE >386:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4D8 text8 CODE >387:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4DE text8 CODE >388:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4E4 text8 CODE >389:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4EA text8 CODE >390:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4F1 text8 CODE >391:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4FA text8 CODE >392:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-500 text8 CODE >393:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-506 text8 CODE >394:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-50C text8 CODE >395:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-50F text8 CODE >397:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-470 text7 CODE >309:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-470 text7 CODE >311:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-476 text7 CODE >312:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-48C text7 CODE >313:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4A2 text7 CODE >314:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4A9 text7 CODE >315:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4B2 text7 CODE >316:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4B8 text7 CODE >317:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4BE text7 CODE >318:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4C3 text7 CODE >319:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+66B text13 CODE >388:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+66C text13 CODE >390:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+670 text13 CODE >391:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+674 text13 CODE >392:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+35D text12 CODE >310:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+35D text12 CODE >312:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+365 text12 CODE >314:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+36B text12 CODE >315:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+371 text12 CODE >316:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+377 text12 CODE >317:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+37D text12 CODE >318:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+386 text12 CODE >319:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+38C text12 CODE >320:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+395 text12 CODE >321:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+39E text12 CODE >322:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+3A4 text12 CODE >323:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+3AA text12 CODE >324:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+3B0 text12 CODE >325:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+3B6 text12 CODE >326:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+3BC text12 CODE >327:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+3BF text12 CODE >329:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+178 text11 CODE >262:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+178 text11 CODE >265:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+17E text11 CODE >266:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+18B text11 CODE >267:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+19E text11 CODE >268:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1B1 text11 CODE >269:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1C7 text11 CODE >270:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1DD text11 CODE >271:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1E1 text11 CODE >272:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1E8 text11 CODE >273:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1EE text11 CODE >274:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1F7 text11 CODE >275:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+200 text11 CODE >276:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+206 text11 CODE >277:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+20B text11 CODE >278:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+D9 text10 CODE >331:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+D9 text10 CODE >333:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+E1 text10 CODE >335:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+E7 text10 CODE >337:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+ED text10 CODE >338:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+F3 text10 CODE >339:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+F9 text10 CODE >340:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+FF text10 CODE >341:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+105 text10 CODE >342:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+10B text10 CODE >343:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+112 text10 CODE >344:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+118 text10 CODE >345:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+11E text10 CODE >346:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+124 text10 CODE >347:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+12A text10 CODE >349:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+12D text10 CODE >350:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+12E text10 CODE >353:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+134 text10 CODE >354:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+13A text10 CODE >355:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+140 text10 CODE >356:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+146 text10 CODE >357:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+14C text10 CODE >358:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+155 text10 CODE >359:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+15E text10 CODE >360:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+164 text10 CODE >361:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+16A text10 CODE >362:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+170 text10 CODE >363:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+177 text10 CODE >368:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+2FA text9 CODE >280:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+2FA text9 CODE >282:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+300 text9 CODE >284:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+306 text9 CODE >285:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+30D text9 CODE >286:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+312 text9 CODE >287:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+313 text9 CODE >288:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+319 text9 CODE >290:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+331 text9 CODE >291:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+347 text9 CODE >292:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+34E text9 CODE >293:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+357 text9 CODE >294:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+35C text9 CODE >296:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4C4 text8 CODE >370:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4C4 text8 CODE >372:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4CC text8 CODE >374:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4D2 text8 CODE >375:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4D8 text8 CODE >376:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4DE text8 CODE >377:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4E4 text8 CODE >378:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4EA text8 CODE >379:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4F1 text8 CODE >380:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4FA text8 CODE >381:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+500 text8 CODE >382:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+506 text8 CODE >383:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+50C text8 CODE >384:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+50F text8 CODE >386:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+470 text7 CODE >298:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+470 text7 CODE >300:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+476 text7 CODE >301:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+48C text7 CODE >302:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4A2 text7 CODE >303:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4A9 text7 CODE >304:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4B2 text7 CODE >305:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4B8 text7 CODE >306:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4BE text7 CODE >307:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4C3 text7 CODE >308:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
 5A0 text6 CODE >63:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 5A1 text6 CODE >66:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 5A6 text6 CODE >68:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
@@ -428,93 +428,93 @@ FF text10 CODE >352:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MA
 57C text5 CODE >81:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 57F text5 CODE >82:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
 59F text5 CODE >83:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\LCD_SPI.c
-510 text4 CODE >260:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-510 text4 CODE >262:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-518 text4 CODE >263:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-51E text4 CODE >264:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-525 text4 CODE >265:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-52A text4 CODE >266:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-536 text4 CODE >267:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-53B text4 CODE >268:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-547 text4 CODE >269:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-54C text4 CODE >271:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-661 text3 CODE >220:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-661 text3 CODE >222:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-664 text3 CODE >223:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-665 text3 CODE >224:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-666 text3 CODE >225:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-667 text3 CODE >226:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-668 text3 CODE >227:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-669 text3 CODE >228:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-66A text3 CODE >229:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-54D text2 CODE >186:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-54D text2 CODE >188:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-550 text2 CODE >189:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-553 text2 CODE >190:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-556 text2 CODE >191:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-559 text2 CODE >192:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-55C text2 CODE >193:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-55F text2 CODE >194:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-562 text2 CODE >195:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-565 text2 CODE >196:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-568 text2 CODE >197:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-569 text2 CODE >198:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-56C text2 CODE >199:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-56D text2 CODE >200:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-56E text2 CODE >201:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-571 text2 CODE >202:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-574 text2 CODE >203:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-577 text2 CODE >204:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-57A text2 CODE >205:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-63D text1 CODE >231:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-63D text1 CODE >233:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-640 text1 CODE >234:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-641 text1 CODE >235:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-642 text1 CODE >236:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-643 text1 CODE >237:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-644 text1 CODE >238:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-645 text1 CODE >239:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-649 text1 CODE >240:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1E maintext CODE >125:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-1E maintext CODE >127:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-23 maintext CODE >128:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-28 maintext CODE >129:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-2D maintext CODE >130:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-32 maintext CODE >131:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-37 maintext CODE >132:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-3C maintext CODE >133:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-41 maintext CODE >137:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-44 maintext CODE >138:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-4E maintext CODE >140:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-56 maintext CODE >141:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-60 maintext CODE >143:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-6A maintext CODE >144:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-6D maintext CODE >148:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-6E maintext CODE >149:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-78 maintext CODE >151:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-7E maintext CODE >152:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-88 maintext CODE >154:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-92 maintext CODE >155:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-95 maintext CODE >159:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-96 maintext CODE >160:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-A0 maintext CODE >163:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-A8 maintext CODE >164:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-B2 maintext CODE >166:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-BC maintext CODE >167:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-BF maintext CODE >173:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-C4 maintext CODE >174:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-CB maintext CODE >175:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-D0 maintext CODE >176:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
-675 clrtext CODE >1157:C:\Users\pablo\AppData\Local\Temp\sghs.s
-675 clrtext CODE >1158:C:\Users\pablo\AppData\Local\Temp\sghs.s
-676 clrtext CODE >1159:C:\Users\pablo\AppData\Local\Temp\sghs.s
-676 clrtext CODE >1160:C:\Users\pablo\AppData\Local\Temp\sghs.s
-677 clrtext CODE >1161:C:\Users\pablo\AppData\Local\Temp\sghs.s
-678 clrtext CODE >1162:C:\Users\pablo\AppData\Local\Temp\sghs.s
-679 clrtext CODE >1163:C:\Users\pablo\AppData\Local\Temp\sghs.s
-67A clrtext CODE >1164:C:\Users\pablo\AppData\Local\Temp\sghs.s
-67B clrtext CODE >1165:C:\Users\pablo\AppData\Local\Temp\sghs.s
-67C clrtext CODE >1166:C:\Users\pablo\AppData\Local\Temp\sghs.s
+510 text4 CODE >249:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+510 text4 CODE >251:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+518 text4 CODE >252:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+51E text4 CODE >253:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+525 text4 CODE >254:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+52A text4 CODE >255:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+536 text4 CODE >256:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+53B text4 CODE >257:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+547 text4 CODE >258:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+54C text4 CODE >260:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+661 text3 CODE >209:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+661 text3 CODE >211:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+664 text3 CODE >212:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+665 text3 CODE >213:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+666 text3 CODE >214:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+667 text3 CODE >215:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+668 text3 CODE >216:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+669 text3 CODE >217:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+66A text3 CODE >218:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+54D text2 CODE >175:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+54D text2 CODE >177:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+550 text2 CODE >178:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+553 text2 CODE >179:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+556 text2 CODE >180:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+559 text2 CODE >181:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+55C text2 CODE >182:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+55F text2 CODE >183:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+562 text2 CODE >184:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+565 text2 CODE >185:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+568 text2 CODE >186:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+569 text2 CODE >187:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+56C text2 CODE >188:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+56D text2 CODE >189:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+56E text2 CODE >190:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+571 text2 CODE >191:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+574 text2 CODE >192:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+577 text2 CODE >193:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+57A text2 CODE >194:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+63D text1 CODE >220:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+63D text1 CODE >222:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+640 text1 CODE >223:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+641 text1 CODE >224:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+642 text1 CODE >225:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+643 text1 CODE >226:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+644 text1 CODE >227:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+645 text1 CODE >228:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+649 text1 CODE >229:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1E maintext CODE >121:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+1E maintext CODE >123:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+23 maintext CODE >124:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+28 maintext CODE >125:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+2D maintext CODE >126:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+32 maintext CODE >127:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+37 maintext CODE >128:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+3C maintext CODE >129:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+41 maintext CODE >133:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+44 maintext CODE >134:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+4E maintext CODE >136:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+56 maintext CODE >137:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+60 maintext CODE >139:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+6A maintext CODE >140:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+6D maintext CODE >144:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+6E maintext CODE >145:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+78 maintext CODE >147:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+7E maintext CODE >148:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+88 maintext CODE >150:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+92 maintext CODE >151:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+95 maintext CODE >155:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+96 maintext CODE >156:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+A0 maintext CODE >158:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+A8 maintext CODE >159:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+B2 maintext CODE >161:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+BC maintext CODE >162:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+BF maintext CODE >164:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+C4 maintext CODE >165:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+CB maintext CODE >166:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+D0 maintext CODE >167:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_MAESTRO.X\MAESTRO_SPI.c
+675 clrtext CODE >1148:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+675 clrtext CODE >1149:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+676 clrtext CODE >1150:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+676 clrtext CODE >1151:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+677 clrtext CODE >1152:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+678 clrtext CODE >1153:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+679 clrtext CODE >1154:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+67A clrtext CODE >1155:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+67B clrtext CODE >1156:C:\Users\pablo\AppData\Local\Temp\s4ho.s
+67C clrtext CODE >1157:C:\Users\pablo\AppData\Local\Temp\s4ho.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -529,7 +529,7 @@ D0 maintext CODE >176:C:\Users\pablo\Desktop\Digital_2\Mini_Proyecto_SPI\D2_SPI_
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of_tmr0_config 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
-___awdiv@counter 3D 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+___awdiv@counter 3A 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __Hspace_0 693 0 ABS 0 - -
 __Hspace_1 7C 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
@@ -540,23 +540,23 @@ _Lcd_Port D12 0 CODE 0 text26 dist/default/production\D2_SPI_MAESTRO.X.productio
 __end_of_SPI_Maestro_Init 522 0 CODE 0 text21 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __size_of_SPI_Maestro_Init 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
-_w1 28 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
-_w2 27 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
-_x1 3A 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
-_x2 38 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
-_y1 39 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
-_y2 37 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_w1 27 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_w2 26 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_x1 37 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_x2 35 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_y1 36 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_y2 34 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 SPI_Maestro_Init@SCK 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 __end_of_Lcd_Init 8E0 0 CODE 0 text24 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __end_of_Lcd_Port D1E 0 CODE 0 text26 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _IOCB 96 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\sghs.o
+___sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s4ho.o
 _main 3C 0 CODE 0 maintext dist/default/production\D2_SPI_MAESTRO.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 _Lcd_Write_Char C2E 0 CODE 0 text16 dist/default/production\D2_SPI_MAESTRO.X.production.o
-start 18 0 CODE 0 init C:\Users\pablo\AppData\Local\Temp\sghs.o
+start 18 0 CODE 0 init C:\Users\pablo\AppData\Local\Temp\s4ho.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
@@ -566,12 +566,12 @@ _OPTION_REGbits 81 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 78 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 __end_of_SPI_config CC2 0 CODE 0 text20 dist/default/production\D2_SPI_MAESTRO.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sghs.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sghs.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sghs.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sghs.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sghs.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\sghs.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4ho.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4ho.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4ho.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4ho.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4ho.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s4ho.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
@@ -579,7 +579,7 @@ __end_of_interrup_config CAC 0 CODE 0 text17 dist/default/production\D2_SPI_MAES
 __Hfunctab 0 0 ENTRY 0 functab -
 __size_of_SPI_Enviar 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of_Lcd_Set_Cursor 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
-___awdiv@sign 3E 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+___awdiv@sign 3B 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 _decenay 7B 0 COMMON 1 bssCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of_SPI_Recibir 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
@@ -587,9 +587,9 @@ __end_of_Lcd_Write_Char C5A 0 CODE 0 text16 dist/default/production\D2_SPI_MAEST
 _ANSELH 189 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 ___awdiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
-_velocidad1 25 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
-_velocidad2 24 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
-_velocidad3 23 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_velocidad1 24 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_velocidad2 23 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_velocidad3 22 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of_Conversion1 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of_Conversion2 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of_Conversion3 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
@@ -598,8 +598,8 @@ ___awdiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAEST
 __end_of___awdiv 5F4 0 CODE 0 text15 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __end_of___awmod 832 0 CODE 0 text14 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _interrup_config C94 0 CODE 0 text17 dist/default/production\D2_SPI_MAESTRO.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\sghs.o
-___stacklo 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\sghs.o
+___stackhi 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s4ho.o
+___stacklo 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s4ho.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 Lcd_Set_Cursor@temp 79 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 SPI_Maestro_Init@port_mode 75 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
@@ -610,12 +610,12 @@ _TRISCbits 87 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 _osc_config CC2 0 CODE 0 text3 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _Lcd_Write_String AF6 0 CODE 0 text5 dist/default/production\D2_SPI_MAESTRO.X.production.o
 clear_ram0 CEA 0 CODE 0 clrtext dist/default/production\D2_SPI_MAESTRO.X.production.o
-__pcstackBANK0 3D 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+__pcstackBANK0 3A 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
-_unidady 2F 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_unidady 2C 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 _USART_lib_config B88 0 CODE 0 text19 dist/default/production\D2_SPI_MAESTRO.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\sghs.o
+___int_sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s4ho.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -637,7 +637,7 @@ __size_of_interrup_config 0 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.p
 _PORTCbits 7 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 _PORTEbits 9 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 _INTCONbits B 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
-_voltajey 30 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_voltajey 2D 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 18 0 CODE 0 init -
@@ -677,7 +677,7 @@ Lcd_Write_String@i 75 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAE
 _Conversion1 2F0 0 CODE 0 text11 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _Conversion2 5F4 0 CODE 0 text9 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _Conversion3 8E0 0 CODE 0 text7 dist/default/production\D2_SPI_MAESTRO.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\pablo\AppData\Local\Temp\sghs.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\pablo\AppData\Local\Temp\s4ho.o
 _escribir_char CD6 0 CODE 0 text13 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __end_of_USART_lib_config BC4 0 CODE 0 text19 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __end_of_Lcd_Cmd BF8 0 CODE 0 text25 dist/default/production\D2_SPI_MAESTRO.X.production.o
@@ -713,8 +713,8 @@ SPI_Enviar@valor 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAEST
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 _dato_push 7A 0 COMMON 1 bssCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
-_unidad 3B 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
-_voltaje 3C 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_unidad 38 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_voltaje 39 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _virtual_display1 6BA 0 CODE 0 text12 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _virtual_display2 1B2 0 CODE 0 text10 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _virtual_display3 988 0 CODE 0 text8 dist/default/production\D2_SPI_MAESTRO.X.production.o
@@ -728,10 +728,10 @@ __pbssCOMMON 7A 0 COMMON 1 bssCOMMON dist/default/production\D2_SPI_MAESTRO.X.pr
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits C 0 ABS 0 - dist/default/production\D2_SPI_MAESTRO.X.production.o
 __Lend_init 18 0 CODE 0 end_init -
-_dato_pot 22 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+_dato_pot 21 0 BANK0 1 bssBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 _SPI_Enviar D06 0 CODE 0 text23 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-Conversion1@pot 44 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+Conversion1@pot 41 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 end_of_initialization 34 0 CODE 0 cinit dist/default/production\D2_SPI_MAESTRO.X.production.o
 _USART_config CFA 0 CODE 0 text18 dist/default/production\D2_SPI_MAESTRO.X.production.o
 __end_of_tmr0_config C94 0 CODE 0 text1 dist/default/production\D2_SPI_MAESTRO.X.production.o
@@ -740,7 +740,7 @@ __Hintentry 18 0 CODE 0 intentry -
 Lcd_Set_Cursor@a 78 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 Lcd_Set_Cursor@b 76 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 __Lstrings 0 0 ABS 0 strings -
-___awdiv@quotient 3F 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
+___awdiv@quotient 3C 0 BANK0 1 cstackBANK0 dist/default/production\D2_SPI_MAESTRO.X.production.o
 ?___awdiv 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 ?___awmod 72 0 COMMON 1 cstackCOMMON dist/default/production\D2_SPI_MAESTRO.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
@@ -844,7 +844,7 @@ text16 0 617 C2E 7C 2
 cstackCOMMON 1 70 70 C 1
 intentry 0 4 8 5F8 2
 reset_vec 0 0 0 3 2
-bssBANK0 1 20 20 29 1
+bssBANK0 1 20 20 26 1
 strings 0 600 C00 17 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

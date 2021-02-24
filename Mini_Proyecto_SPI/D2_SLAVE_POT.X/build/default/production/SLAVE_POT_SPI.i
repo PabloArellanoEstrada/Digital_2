@@ -2778,10 +2778,6 @@ char SPI_Recibir ();
 
 
 
-
-uint8_t adc_value = 0;
-
-
 char dato_maestro;
 
 
@@ -2794,8 +2790,13 @@ void interrup_config (void);
 void tmr0_config (void);
 void SPI_config (void);
 void adc_config (void);
+
 void adc_conversion (void);
-# 68 "SLAVE_POT_SPI.c"
+
+
+
+
+
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
     if (INTCONbits.TMR0IF == 1)
@@ -2826,9 +2827,7 @@ void main(void)
         dato_maestro = SPI_Recibir();
         SPI_Enviar (ADRESH);
         SSPIF = 0;
-    }
-
-
+        }
     }
 }
 
@@ -2846,7 +2845,6 @@ void setup(void)
     TRISAbits.TRISA5 = 1;
     ANSELbits.ANS5 = 0;
     PORTAbits.RA5 = 1;
-
 
     ANSELH = 0;
     TRISB = 0;
@@ -2925,5 +2923,4 @@ void adc_conversion (void)
         PORTD = ADRESH * 2;
 
     }
-    adc_value = PORTD;
 }

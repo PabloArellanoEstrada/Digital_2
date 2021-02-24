@@ -1,9 +1,9 @@
 /* 
- * Project: LCD
- * File:    ADC_lib.h
+ * Project: D2_SLAVE_POT
+ * File:    SPI_SPI.h
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
- * Created: February 9, 2021,
+ * Created: February 18, 2021.
  */
 
 //============================================================================*/
@@ -14,10 +14,10 @@
 #define	SPI_SPI_H
 
 #ifndef _XTAL_FREQ
-#define	_XTAL_FREQ 8000000
+#define	_XTAL_FREQ 8000000       // Frecuencia compilador
 #endif
-#include <xc.h>                         
-#include <stdint.h>     
+#include <xc.h>                  // XC8 libreria              
+#include <stdint.h>              // Variables de ancho definido
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES 
@@ -28,5 +28,5 @@ void SPI_Esclavo_Init (char port_mode, char SCK);
 void SPI_Enviar (char valor);
 char SPI_Recibir ();
 
-#endif	/* LCD_H */
+#endif	/* SPI_SPI_H */
 

@@ -1,9 +1,9 @@
 /* 
- * Project: LCD
- * File:    ADC_lib.h
+ * Project: D2_SPI_MAESTRO
+ * File:    LCD_SPI.c
  * Author:  Pablo Rene Arellano Estrada
  * Carnet:  151379
- * Created: February 9, 2021,
+ * Created: February 18, 2021.
  * Libreria https://electrosome.com/lcd-pic-mplab-xc8/
  * Autor:   Ligo George
  * Autor 2: Pablo Mazariegos (Canvas)
@@ -16,7 +16,7 @@
 #ifndef LCD_SPI_H
 #define	LCD_SPI_H
 
-#define	RS PORTEbits.RE0
+#define	RS PORTEbits.RE0         // Puertos de salida
 #define	RW PORTEbits.RE2
 #define	E  PORTEbits.RE1
 
@@ -30,10 +30,10 @@
 #define D7 PORTDbits.RD7
 
 #ifndef _XTAL_FREQ
-#define	_XTAL_FREQ 8000000
+#define	_XTAL_FREQ 8000000      // Frecuencia compilador
 #endif
-#include <xc.h>                         
-#include <stdint.h>     
+#include <xc.h>                 // XC8 libreria 
+#include <stdint.h>             // Variables de ancho definido
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES 
@@ -50,5 +50,5 @@ void Lcd_Shift_Right(void);
 void Lcd_Write_Char(char a);
 void Lcd_Write_Char_4(char a);
 
-#endif	/* LCD_H */
+#endif	/* LCD_SPI_H */
 
