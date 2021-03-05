@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>I2C_LIB.h</itemPath>
       <itemPath>I2C_USART.h</itemPath>
+      <itemPath>I2C_PMU_Define.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

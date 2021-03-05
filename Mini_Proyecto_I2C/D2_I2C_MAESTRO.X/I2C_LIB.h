@@ -63,4 +63,10 @@ unsigned short I2C_Master_Read(unsigned short a);
 //*****************************************************************************
 void I2C_Slave_Init(uint8_t address);
 //*****************************************************************************
+
+void I2C_Start_Wait(char slave_write_address);
+
+void MSdelay(unsigned int val);
+
+char I2C_Repeated_Start(char slave_read_address);
 #endif	/* __I2C_H */

@@ -16,6 +16,7 @@
 #include <pic16f887.h>
 #include "I2C_LIB.h"
 #include "I2C_USART.h"          // Libreria comunicacion serial
+// #include "MPU6050_res_define.h"
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION
@@ -42,7 +43,8 @@
 //============================================================================*/
 
 uint8_t valor;
-uint8_t contador;
+uint16_t contador;
+uint8_t str;
 
 //============================================================================*/
 // PROTOTIPO DE FUNCIONES
@@ -56,8 +58,14 @@ void osc_config (void);
 void interrup_config (void);
 void tmr0_config (void);
 
+void MPU6050_Init();
+char leer_char(void);
+void USART_SendString();
+void MPU_Start_Loc();
+
 //============================================================================*/
 // INTERRUPCIONES
+
 //============================================================================*/
 
 void __interrupt() ISR(void)    
@@ -67,6 +75,7 @@ void __interrupt() ISR(void)
         INTCONbits.TMR0IF = 0;       // Se apaga la bandera manualmente
         TMR0 = 100;        
         contador = contador + 1;
+        Led();
     }                                // GIE = 1
 } 
 
@@ -80,22 +89,73 @@ void main(void) {
     osc_config();
     interrup_config();
     tmr0_config ();
+    MPU6050_Init();		/* Initialize Gyro */
+    
+    char buffer[20];
+	int Ax,Ay,Az,T,Gx,Gy,Gz;
+	float Xa,Ya,Za,t,Xg,Yg,Zg;
+    
     while(1){
-        I2C_Master_Start();            // iniciar
-        I2C_Master_Write(0x50);        // direccion
-        I2C_Master_Write(6);           // valor de puerto B I2C
-        I2C_Master_Stop();
-        escribir_char (65);            // AAAA USART
-        escribir_char ('\n');
-        __delay_ms(200);
+        //I2C_Master_Start();            // iniciar
+        //I2C_Master_Write(0x50);        // direccion
+        //I2C_Master_Write(6);           // PUERTO B I2C
+        //I2C_Master_Stop();
+        
+        escribir_char (48);            // AAAA USART
+        __delay_ms(5);
+        escribir_char ('\n');  
+        
+        
+        MPU_Start_Loc();
+		//Read Gyro values continuously & send to terminal over UART 
+		Ax = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+		Ay = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+		Az = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+		T =  (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+		Gx = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+		Gy = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+		Gz = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(1));
+		I2C_Master_Stop();
+             
+		//Divide raw value by sensitivity scale factor 
+		Xa = (float)Ax/16384.0;	
+		Ya = (float)Ay/16384.0;
+		Za = (float)Az/16384.0;
+		Xg = (float)Gx/131.0;
+		Yg = (float)Gy/131.0;
+		Zg = (float)Gz/131.0;
+		t = ((float)T/340.00)+36.53; // Convert temperature in °/c 
+                                          
+        //Take values in buffer to send all parameters over USART 
+                          
+		sprintf(buffer," Ax = %.2f g\t",Xa);
+		USART_SendString(buffer);
+                                     
+		sprintf(buffer," Ay = %.2f g\t",Ya);
+		USART_SendString(buffer);
+		
+		sprintf(buffer," Az = %.2f g\t",Za);
+		USART_SendString(buffer);
+		// 0xF8 Ascii value of degree '°' on serial 
+		sprintf(buffer," T = %.2f%cC\t",t,0xF8);
+		USART_SendString(buffer);
+
+		sprintf(buffer," Gx = %.2f%c/s\t",Xg,0xF8);
+		USART_SendString(buffer);
+
+		sprintf(buffer," Gy = %.2f%c/s\t",Yg,0xF8);
+		USART_SendString(buffer);
+		
+		sprintf(buffer," Gz = %.2f%c/s\r\n",Zg,0xF8);
+		USART_SendString(buffer);
+        
        
-        I2C_Master_Start();             // iniciar
-        I2C_Master_Write(0x51);         // direccion
-        PORTD = I2C_Master_Read(0);     // te quiero escuchar, leer, mando o no aknoldwege
-        I2C_Master_Stop();              // leer 
-        __delay_ms(200);
-        PORTB++;   
-        Led();
+        //I2C_Master_Start();             // iniciar
+        //I2C_Master_Write(0x51);         // direccion
+        //PORTD = I2C_Master_Read(0);     // te quiero escuchar, leer, mando o no aknoldwege
+        //I2C_Master_Stop();              // leer 
+        //__delay_ms(5);
+        PORTB++; 
     }
     return;
 }
@@ -140,9 +200,9 @@ void interrup_config (void)
 
 void osc_config (void) 
 {  
-    OSCCONbits.IRCF2 = 1;     // Oscilador en 4Mhz
+    OSCCONbits.IRCF2 = 1;     // Oscilador en 8Mhz
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF0 = 0;     
+    OSCCONbits.IRCF0 = 1;     
     OSCCONbits.OSTS  = 0;     // Oscilador interno
     OSCCONbits.HTS   = 0;       
     OSCCONbits.LTS   = 1;
@@ -171,9 +231,69 @@ void escribir_char (uint8_t valor)
     while (PIR1bits.TXIF == 0);        // Espera a que se haya enviado dato
 }
 
+
+void USART_SendString(const char *str)
+{
+   while(*str!='\0')                /* Transmit data until null */
+   {            
+        escribir_char(*str);
+        str++;
+   }
+}
+
+char leer_char(void)
+{
+    if (RCSTAbits.OERR ==0)            // Hay error?
+    {
+        CREN = 0;                      // Apagar modulo para apagar error
+        NOP();
+        CREN = 1;                      // Enciende una vez no haya error
+    }
+    return (RCREG);                    // Se envia valor a RCREG
+} 
+
+void MPU_Start_Loc()
+
+{
+	I2C_Start_Wait(0xD0);	/* I2C start with device write address */
+	I2C_Master_Write(0x3B);/* Write start location address to read */ 
+	I2C_Repeated_Start(0xD1);/* I2C start with device read address */
+}
+
+void MPU6050_Init()		//Gyro initialization function 
+{
+    
+	MSdelay(150);		//Power up time >100ms 
+	I2C_Start_Wait(0xD0);	//Start with device write address 
+	I2C_Master_Write(0x19);	//Write to sample rate register 
+	I2C_Master_Write(0x07);	//1KHz sample rate 
+	I2C_Master_Stop();
+
+	I2C_Start_Wait(0xD0);
+	I2C_Master_Write(0x6B);	//Write to power management register 
+	I2C_Master_Write(0x01);	//X axis gyroscope reference frequency 
+	I2C_Master_Stop();
+
+	I2C_Start_Wait(0xD0);
+	I2C_Master_Write(0x1A);	// Write to Configuration register 
+	I2C_Master_Write(0x00);	// Fs = 8KHz 
+	I2C_Master_Stop();
+
+	I2C_Start_Wait(0xD0);
+	I2C_Master_Write(0x1B);	// Write to Gyro configuration register 
+	I2C_Master_Write(0x18);	// Full scale range +/- 2000 degree/C 
+	I2C_Master_Stop();
+
+	I2C_Start_Wait(0xD0);
+	I2C_Master_Write(0x38);	// Write to interrupt enable register 
+	I2C_Master_Write(0x01);
+	I2C_Master_Stop();
+}
+
+
 void Led(void)
 {
-    if (contador > 50)
+    if (contador > 1000)
     {
     if (PORTEbits.RE0 == 1)
     {

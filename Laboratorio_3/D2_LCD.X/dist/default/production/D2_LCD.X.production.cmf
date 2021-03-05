@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\pablo\AppData\Local\Temp\s22lg.o
+$C:\Users\pablo\AppData\Local\Temp\s170.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -99,32 +99,32 @@ STRING 675-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\D2_LCD.X.production.o
-F cinit CODE >1051:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-F cinit CODE >1054:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-F cinit CODE >1149:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-10 cinit CODE >1150:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-11 cinit CODE >1151:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-12 cinit CODE >1154:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-13 cinit CODE >1155:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-14 cinit CODE >1156:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-15 cinit CODE >1157:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-16 cinit CODE >1158:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-1B cinit CODE >1164:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-1B cinit CODE >1166:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-1C cinit CODE >1167:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-4 intentry CODE >101:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-62D text27 CODE >363:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-62D text27 CODE >365:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-633 text27 CODE >367:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-634 text27 CODE >368:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-635 text27 CODE >369:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-638 text27 CODE >371:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-639 text27 CODE >372:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5E9 text26 CODE >101:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5E9 text26 CODE >103:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5EF text26 CODE >105:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5F9 text26 CODE >106:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5FA text26 CODE >108:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+F cinit CODE >1051:C:\Users\pablo\AppData\Local\Temp\s170.s
+F cinit CODE >1054:C:\Users\pablo\AppData\Local\Temp\s170.s
+F cinit CODE >1149:C:\Users\pablo\AppData\Local\Temp\s170.s
+10 cinit CODE >1150:C:\Users\pablo\AppData\Local\Temp\s170.s
+11 cinit CODE >1151:C:\Users\pablo\AppData\Local\Temp\s170.s
+12 cinit CODE >1154:C:\Users\pablo\AppData\Local\Temp\s170.s
+13 cinit CODE >1155:C:\Users\pablo\AppData\Local\Temp\s170.s
+14 cinit CODE >1156:C:\Users\pablo\AppData\Local\Temp\s170.s
+15 cinit CODE >1157:C:\Users\pablo\AppData\Local\Temp\s170.s
+16 cinit CODE >1158:C:\Users\pablo\AppData\Local\Temp\s170.s
+1B cinit CODE >1164:C:\Users\pablo\AppData\Local\Temp\s170.s
+1B cinit CODE >1166:C:\Users\pablo\AppData\Local\Temp\s170.s
+1C cinit CODE >1167:C:\Users\pablo\AppData\Local\Temp\s170.s
+4 intentry CODE >102:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+62D text27 CODE >364:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+62D text27 CODE >366:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+633 text27 CODE >368:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+634 text27 CODE >369:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+635 text27 CODE >370:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+638 text27 CODE >372:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+639 text27 CODE >373:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5E9 text26 CODE >102:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5E9 text26 CODE >104:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5EF text26 CODE >106:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5F9 text26 CODE >107:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5FA text26 CODE >109:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 66F text25 CODE >22:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 670 text25 CODE >24:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 674 text25 CODE >25:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
@@ -176,9 +176,9 @@ F cinit CODE >1149:C:\Users\pablo\AppData\Local\Temp\s22lg.s
 57D text22 CODE >41:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\USART.c
 580 text22 CODE >42:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\USART.c
 583 text22 CODE >43:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\USART.c
-669 text21 CODE >193:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-669 text21 CODE >195:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-66E text21 CODE >196:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+669 text21 CODE >194:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+669 text21 CODE >196:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+66E text21 CODE >197:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 1F text20 CODE >19:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
 20 text20 CODE >21:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
 21 text20 CODE >23:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
@@ -280,34 +280,34 @@ C2 text20 CODE >132:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_
 C5 text20 CODE >133:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
 C6 text20 CODE >134:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
 C7 text20 CODE >135:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
-662 text19 CODE >188:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-662 text19 CODE >190:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-668 text19 CODE >191:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5D1 text18 CODE >202:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5D1 text18 CODE >204:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5D4 text18 CODE >205:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5DD text18 CODE >206:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5E3 text18 CODE >208:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5E4 text18 CODE >209:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5E8 text18 CODE >211:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5B9 text17 CODE >213:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5B9 text17 CODE >215:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5BC text17 CODE >216:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5C5 text17 CODE >217:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5CB text17 CODE >219:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5CC text17 CODE >220:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-5D0 text17 CODE >222:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-63A text16 CODE >160:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-63A text16 CODE >162:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-63B text16 CODE >163:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-63C text16 CODE >164:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-63D text16 CODE >165:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-63E text16 CODE >166:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-63F text16 CODE >167:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-640 text16 CODE >168:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-641 text16 CODE >169:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-642 text16 CODE >170:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-645 text16 CODE >171:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+662 text19 CODE >189:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+662 text19 CODE >191:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+668 text19 CODE >192:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5D1 text18 CODE >203:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5D1 text18 CODE >205:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5D4 text18 CODE >206:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5DD text18 CODE >207:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5E3 text18 CODE >209:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5E4 text18 CODE >210:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5E8 text18 CODE >212:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5B9 text17 CODE >214:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5B9 text17 CODE >216:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5BC text17 CODE >217:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5C5 text17 CODE >218:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5CB text17 CODE >220:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5CC text17 CODE >221:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+5D0 text17 CODE >223:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+63A text16 CODE >161:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+63A text16 CODE >163:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+63B text16 CODE >164:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+63C text16 CODE >165:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+63D text16 CODE >166:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+63E text16 CODE >167:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+63F text16 CODE >168:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+640 text16 CODE >169:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+641 text16 CODE >170:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+642 text16 CODE >171:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+645 text16 CODE >172:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 618 text15 CODE >94:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 619 text15 CODE >96:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 61C text15 CODE >97:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
@@ -361,83 +361,83 @@ C7 text20 CODE >135:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_
 39D text13 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 3A2 text13 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 3A6 text13 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-650 text12 CODE >357:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-651 text12 CODE >359:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-655 text12 CODE >360:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-659 text12 CODE >361:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-44F text11 CODE >281:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-44F text11 CODE >283:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-457 text11 CODE >285:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-45D text11 CODE >286:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-463 text11 CODE >287:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-469 text11 CODE >288:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-470 text11 CODE >289:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-476 text11 CODE >290:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-47F text11 CODE >291:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-488 text11 CODE >292:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-48E text11 CODE >293:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-494 text11 CODE >294:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-49A text11 CODE >295:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-49D text11 CODE >297:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1F7 text10 CODE >248:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1F7 text10 CODE >250:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1FF text10 CODE >251:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-215 text10 CODE >252:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-22B text10 CODE >253:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-241 text10 CODE >254:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-257 text10 CODE >255:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-25B text10 CODE >256:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-262 text10 CODE >257:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-268 text10 CODE >258:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-271 text10 CODE >259:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-27A text10 CODE >260:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-280 text10 CODE >261:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-285 text10 CODE >262:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3FE text9 CODE >299:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3FE text9 CODE >301:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-406 text9 CODE >303:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-40C text9 CODE >304:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-412 text9 CODE >305:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-418 text9 CODE >306:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-421 text9 CODE >307:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-427 text9 CODE >308:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-430 text9 CODE >309:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-439 text9 CODE >310:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-43F text9 CODE >311:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-445 text9 CODE >312:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-44B text9 CODE >313:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-44E text9 CODE >315:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3A7 text8 CODE >317:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3A7 text8 CODE >319:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3AF text8 CODE >321:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3B5 text8 CODE >323:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3BB text8 CODE >324:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3C1 text8 CODE >325:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3C7 text8 CODE >326:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3CE text8 CODE >327:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3D4 text8 CODE >328:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3D7 text8 CODE >329:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3D8 text8 CODE >332:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3DE text8 CODE >333:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3E4 text8 CODE >334:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3ED text8 CODE >335:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3F6 text8 CODE >336:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-3FD text8 CODE >340:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-163 text7 CODE >264:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-163 text7 CODE >266:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-16B text7 CODE >267:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-181 text7 CODE >268:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-197 text7 CODE >269:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1AD text7 CODE >270:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1C3 text7 CODE >271:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1C7 text7 CODE >272:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1CE text7 CODE >273:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1D4 text7 CODE >274:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1DD text7 CODE >275:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1E6 text7 CODE >276:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1EC text7 CODE >277:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1F1 text7 CODE >278:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-1F6 text7 CODE >279:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+650 text12 CODE >358:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+651 text12 CODE >360:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+655 text12 CODE >361:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+659 text12 CODE >362:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+44F text11 CODE >282:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+44F text11 CODE >284:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+457 text11 CODE >286:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+45D text11 CODE >287:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+463 text11 CODE >288:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+469 text11 CODE >289:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+470 text11 CODE >290:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+476 text11 CODE >291:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+47F text11 CODE >292:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+488 text11 CODE >293:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+48E text11 CODE >294:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+494 text11 CODE >295:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+49A text11 CODE >296:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+49D text11 CODE >298:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1F7 text10 CODE >249:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1F7 text10 CODE >251:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1FF text10 CODE >252:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+215 text10 CODE >253:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+22B text10 CODE >254:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+241 text10 CODE >255:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+257 text10 CODE >256:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+25B text10 CODE >257:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+262 text10 CODE >258:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+268 text10 CODE >259:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+271 text10 CODE >260:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+27A text10 CODE >261:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+280 text10 CODE >262:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+285 text10 CODE >263:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3FE text9 CODE >300:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3FE text9 CODE >302:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+406 text9 CODE >304:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+40C text9 CODE >305:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+412 text9 CODE >306:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+418 text9 CODE >307:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+421 text9 CODE >308:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+427 text9 CODE >309:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+430 text9 CODE >310:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+439 text9 CODE >311:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+43F text9 CODE >312:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+445 text9 CODE >313:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+44B text9 CODE >314:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+44E text9 CODE >316:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3A7 text8 CODE >318:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3A7 text8 CODE >320:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3AF text8 CODE >322:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3B5 text8 CODE >324:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3BB text8 CODE >325:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3C1 text8 CODE >326:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3C7 text8 CODE >327:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3CE text8 CODE >328:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3D4 text8 CODE >329:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3D7 text8 CODE >330:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3D8 text8 CODE >333:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3DE text8 CODE >334:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3E4 text8 CODE >335:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3ED text8 CODE >336:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3F6 text8 CODE >337:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+3FD text8 CODE >341:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+163 text7 CODE >265:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+163 text7 CODE >267:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+16B text7 CODE >268:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+181 text7 CODE >269:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+197 text7 CODE >270:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1AD text7 CODE >271:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1C3 text7 CODE >272:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1C7 text7 CODE >273:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1CE text7 CODE >274:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1D4 text7 CODE >275:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1DD text7 CODE >276:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1E6 text7 CODE >277:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1EC text7 CODE >278:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1F1 text7 CODE >279:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+1F6 text7 CODE >280:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 540 text6 CODE >62:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 543 text6 CODE >65:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 548 text6 CODE >67:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
@@ -451,87 +451,87 @@ C7 text20 CODE >135:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_
 51A text5 CODE >80:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 51D text5 CODE >81:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 53F text5 CODE >82:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
-584 text4 CODE >342:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-584 text4 CODE >344:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-58C text4 CODE >346:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-591 text4 CODE >347:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-592 text4 CODE >348:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-593 text4 CODE >349:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-599 text4 CODE >351:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-59F text4 CODE >354:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-C8 text3 CODE >224:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-C8 text3 CODE >226:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-D0 text3 CODE >227:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-D6 text3 CODE >228:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-DD text3 CODE >229:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-E2 text3 CODE >230:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-EE text3 CODE >231:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-F3 text3 CODE >232:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-F8 text3 CODE >233:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-FE text3 CODE >235:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-10A text3 CODE >236:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-111 text3 CODE >237:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-112 text3 CODE >238:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-118 text3 CODE >240:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-130 text3 CODE >241:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-146 text3 CODE >242:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-150 text3 CODE >243:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-159 text3 CODE >244:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-162 text3 CODE >246:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-646 text2 CODE >173:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-646 text2 CODE >175:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-649 text2 CODE >176:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-64A text2 CODE >177:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-64B text2 CODE >178:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-64C text2 CODE >179:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-64D text2 CODE >180:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-64E text2 CODE >181:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-64F text2 CODE >182:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4EC text1 CODE >139:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4EC text1 CODE >141:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4EF text1 CODE >142:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4F0 text1 CODE >143:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4F4 text1 CODE >144:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4F5 text1 CODE >145:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4F6 text1 CODE >146:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4F9 text1 CODE >147:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4FC text1 CODE >148:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4FF text1 CODE >149:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-502 text1 CODE >150:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-505 text1 CODE >151:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-506 text1 CODE >152:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-507 text1 CODE >153:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-50A text1 CODE >154:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-50D text1 CODE >155:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-510 text1 CODE >156:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-513 text1 CODE >157:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-516 text1 CODE >158:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-49E maintext CODE >114:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-49E maintext CODE >116:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4A3 maintext CODE >117:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4A8 maintext CODE >118:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4AD maintext CODE >119:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4B2 maintext CODE >120:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4B7 maintext CODE >121:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4BC maintext CODE >122:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4BC maintext CODE >124:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4C1 maintext CODE >125:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4C8 maintext CODE >126:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4CD maintext CODE >127:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4D2 maintext CODE >128:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4D8 maintext CODE >129:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4DD maintext CODE >130:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-4E3 maintext CODE >131:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
-65A clrtext CODE >1136:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-65A clrtext CODE >1137:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-65B clrtext CODE >1138:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-65B clrtext CODE >1139:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-65C clrtext CODE >1140:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-65D clrtext CODE >1141:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-65E clrtext CODE >1142:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-65F clrtext CODE >1143:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-660 clrtext CODE >1144:C:\Users\pablo\AppData\Local\Temp\s22lg.s
-661 clrtext CODE >1145:C:\Users\pablo\AppData\Local\Temp\s22lg.s
+584 text4 CODE >343:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+584 text4 CODE >345:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+58C text4 CODE >347:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+591 text4 CODE >348:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+592 text4 CODE >349:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+593 text4 CODE >350:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+599 text4 CODE >352:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+59F text4 CODE >355:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+C8 text3 CODE >225:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+C8 text3 CODE >227:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+D0 text3 CODE >228:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+D6 text3 CODE >229:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+DD text3 CODE >230:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+E2 text3 CODE >231:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+EE text3 CODE >232:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+F3 text3 CODE >233:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+F8 text3 CODE >234:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+FE text3 CODE >236:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+10A text3 CODE >237:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+111 text3 CODE >238:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+112 text3 CODE >239:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+118 text3 CODE >241:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+130 text3 CODE >242:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+146 text3 CODE >243:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+150 text3 CODE >244:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+159 text3 CODE >245:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+162 text3 CODE >247:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+646 text2 CODE >174:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+646 text2 CODE >176:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+649 text2 CODE >177:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+64A text2 CODE >178:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+64B text2 CODE >179:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+64C text2 CODE >180:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+64D text2 CODE >181:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+64E text2 CODE >182:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+64F text2 CODE >183:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4EC text1 CODE >140:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4EC text1 CODE >142:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4EF text1 CODE >143:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4F0 text1 CODE >144:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4F4 text1 CODE >145:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4F5 text1 CODE >146:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4F6 text1 CODE >147:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4F9 text1 CODE >148:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4FC text1 CODE >149:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4FF text1 CODE >150:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+502 text1 CODE >151:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+505 text1 CODE >152:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+506 text1 CODE >153:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+507 text1 CODE >154:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+50A text1 CODE >155:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+50D text1 CODE >156:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+510 text1 CODE >157:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+513 text1 CODE >158:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+516 text1 CODE >159:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+49E maintext CODE >115:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+49E maintext CODE >117:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4A3 maintext CODE >118:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4A8 maintext CODE >119:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4AD maintext CODE >120:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4B2 maintext CODE >121:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4B7 maintext CODE >122:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4BC maintext CODE >123:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4BC maintext CODE >125:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4C1 maintext CODE >126:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4C8 maintext CODE >127:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4CD maintext CODE >128:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4D2 maintext CODE >129:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4D8 maintext CODE >130:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4DD maintext CODE >131:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+4E3 maintext CODE >132:C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+65A clrtext CODE >1136:C:\Users\pablo\AppData\Local\Temp\s170.s
+65A clrtext CODE >1137:C:\Users\pablo\AppData\Local\Temp\s170.s
+65B clrtext CODE >1138:C:\Users\pablo\AppData\Local\Temp\s170.s
+65B clrtext CODE >1139:C:\Users\pablo\AppData\Local\Temp\s170.s
+65C clrtext CODE >1140:C:\Users\pablo\AppData\Local\Temp\s170.s
+65D clrtext CODE >1141:C:\Users\pablo\AppData\Local\Temp\s170.s
+65E clrtext CODE >1142:C:\Users\pablo\AppData\Local\Temp\s170.s
+65F clrtext CODE >1143:C:\Users\pablo\AppData\Local\Temp\s170.s
+660 clrtext CODE >1144:C:\Users\pablo\AppData\Local\Temp\s170.s
+661 clrtext CODE >1145:C:\Users\pablo\AppData\Local\Temp\s170.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -567,12 +567,12 @@ __size_of_adc_conversion2 0 0 ABS 0 - dist/default/production\D2_LCD.X.productio
 __Hstrings 0 0 ABS 0 strings -
 _CREN C4 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
 _IOCB 96 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s22lg.o
+___sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s170.o
 _leer 26 0 BANK0 1 bssBANK0 dist/default/production\D2_LCD.X.production.o
 _main 93C 0 CODE 0 maintext dist/default/production\D2_LCD.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
 _Lcd_Write_Char C30 0 CODE 0 text15 dist/default/production\D2_LCD.X.production.o
-start 18 0 CODE 0 init C:\Users\pablo\AppData\Local\Temp\s22lg.o
+start 18 0 CODE 0 init C:\Users\pablo\AppData\Local\Temp\s170.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
@@ -580,12 +580,12 @@ Lcd_Port@a 73 0 COMMON 1 cstackCOMMON dist/default/production\D2_LCD.X.productio
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 35 0 BANK0 1 cstackBANK0 dist/default/production\D2_LCD.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s22lg.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s22lg.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s22lg.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s22lg.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s22lg.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s22lg.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s170.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s170.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s170.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s170.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s170.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\pablo\AppData\Local\Temp\s170.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
@@ -609,8 +609,8 @@ ___awdiv@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production\D2_LCD.X.pro
 __end_of___awdiv 5DE 0 CODE 0 text14 dist/default/production\D2_LCD.X.production.o
 __end_of___awmod 74E 0 CODE 0 text13 dist/default/production\D2_LCD.X.production.o
 _interrup_config C74 0 CODE 0 text16 dist/default/production\D2_LCD.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s22lg.o
-___stacklo 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s22lg.o
+___stackhi 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s170.o
+___stacklo 0 0 ABS 0 - C:\Users\pablo\AppData\Local\Temp\s170.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
 Lcd_Set_Cursor@temp 36 0 BANK0 1 cstackBANK0 dist/default/production\D2_LCD.X.production.o
 _adc_config CC4 0 CODE 0 text19 dist/default/production\D2_LCD.X.production.o
@@ -626,7 +626,7 @@ initADC@CHS 75 0 COMMON 1 cstackCOMMON dist/default/production\D2_LCD.X.producti
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\D2_LCD.X.production.o
 _USART_lib_config ACC 0 CODE 0 text22 dist/default/production\D2_LCD.X.production.o
 __end_of_initADC 190 0 CODE 0 text20 dist/default/production\D2_LCD.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s22lg.o
+___int_sp 0 0 STACK 2 stack C:\Users\pablo\AppData\Local\Temp\s170.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -693,7 +693,7 @@ Lcd_Write_String@a 34 0 BANK0 1 cstackBANK0 dist/default/production\D2_LCD.X.pro
 Lcd_Write_String@i 35 0 BANK0 1 cstackBANK0 dist/default/production\D2_LCD.X.production.o
 _Conversion1 3EE 0 CODE 0 text10 dist/default/production\D2_LCD.X.production.o
 _Conversion2 2C6 0 CODE 0 text7 dist/default/production\D2_LCD.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\pablo\AppData\Local\Temp\s22lg.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\pablo\AppData\Local\Temp\s170.o
 _escribir_char CA0 0 CODE 0 text12 dist/default/production\D2_LCD.X.production.o
 __end_of_USART_lib_config B08 0 CODE 0 text22 dist/default/production\D2_LCD.X.production.o
 __end_of_Lcd_Cmd B72 0 CODE 0 text24 dist/default/production\D2_LCD.X.production.o

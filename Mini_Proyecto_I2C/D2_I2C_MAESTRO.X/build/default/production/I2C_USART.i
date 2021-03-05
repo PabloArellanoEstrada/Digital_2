@@ -2741,7 +2741,7 @@ void USART_lib_config(void);
 
 void USART_lib_config()
 {
-    SPBRG = 25;
+    SPBRG = 52;
 
     TXSTAbits.CSRC = 0;
     TXSTAbits.TX9 = 0;

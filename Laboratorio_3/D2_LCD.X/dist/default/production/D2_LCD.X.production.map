@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\D2_LCD.X.production.sym \
   --cmf=dist/default/production\D2_LCD.X.production.cmf -z -Q16F887 \
-  -oC:\Users\pablo\AppData\Local\Temp\s22lg.3 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\pablo\AppData\Local\Temp\s170.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/D2_LCD.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\pablo\AppData\Local\Temp\s22lg.o \
+  -pfunctab=ENTRY -k C:\Users\pablo\AppData\Local\Temp\s170.o \
   dist/default/production\D2_LCD.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\pablo\AppData\Local\Temp\s22lg.o
+C:\Users\pablo\AppData\Local\Temp\s170.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -490,7 +490,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 114 in file "LCD.c"
+		line 115 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -528,7 +528,7 @@ Total ram usage:        1 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 139 in file "LCD.c"
+		line 140 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -558,7 +558,7 @@ Total ram usage:        0 bytes
 
  *************** function _osc_config *****************
  Defined at:
-		line 173 in file "LCD.c"
+		line 174 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -588,7 +588,7 @@ Total ram usage:        0 bytes
 
  *************** function _lcd *****************
  Defined at:
-		line 224 in file "LCD.c"
+		line 225 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -625,7 +625,7 @@ Total ram usage:        3 bytes
 
  *************** function _contador_lcd *****************
  Defined at:
-		line 342 in file "LCD.c"
+		line 343 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -720,7 +720,7 @@ Total ram usage:        4 bytes
 
  *************** function _Conversion2 *****************
  Defined at:
-		line 264 in file "LCD.c"
+		line 265 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -754,7 +754,7 @@ Total ram usage:        3 bytes
 
  *************** function _virtual_display3 *****************
  Defined at:
-		line 317 in file "LCD.c"
+		line 318 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -784,7 +784,7 @@ Total ram usage:        0 bytes
 
  *************** function _virtual_display2 *****************
  Defined at:
-		line 299 in file "LCD.c"
+		line 300 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -814,7 +814,7 @@ Total ram usage:        0 bytes
 
  *************** function _Conversion1 *****************
  Defined at:
-		line 248 in file "LCD.c"
+		line 249 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -847,7 +847,7 @@ Total ram usage:        3 bytes
 
  *************** function _virtual_display1 *****************
  Defined at:
-		line 281 in file "LCD.c"
+		line 282 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -877,7 +877,7 @@ Total ram usage:        0 bytes
 
  *************** function _escribir_char *****************
  Defined at:
-		line 357 in file "LCD.c"
+		line 358 in file "LCD.c"
  Parameters:    Size  Location     Type
   valor           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1011,7 +1011,7 @@ Total ram usage:        2 bytes
 
  *************** function _interrup_config *****************
  Defined at:
-		line 160 in file "LCD.c"
+		line 161 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1041,7 +1041,7 @@ Total ram usage:        0 bytes
 
  *************** function _adc_conversion2 *****************
  Defined at:
-		line 213 in file "LCD.c"
+		line 214 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1071,7 +1071,7 @@ Total ram usage:        2 bytes
 
  *************** function _adc_conversion1 *****************
  Defined at:
-		line 202 in file "LCD.c"
+		line 203 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1101,7 +1101,7 @@ Total ram usage:        2 bytes
 
  *************** function _adc_config *****************
  Defined at:
-		line 188 in file "LCD.c"
+		line 189 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1162,7 +1162,7 @@ Total ram usage:        3 bytes
 
  *************** function _USART_config *****************
  Defined at:
-		line 193 in file "LCD.c"
+		line 194 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1319,7 +1319,7 @@ Total ram usage:        1 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 101 in file "LCD.c"
+		line 102 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1349,7 +1349,7 @@ Total ram usage:        3 bytes
 
  *************** function _leer_char *****************
  Defined at:
-		line 363 in file "LCD.c"
+		line 364 in file "LCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

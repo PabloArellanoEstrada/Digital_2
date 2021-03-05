@@ -309,8 +309,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _USART_lib_config ]
 [f ]
 "20
-[; ;I2C_USART.c: 20:     SPBRG = 25;
-[e = _SPBRG -> -> 25 `i `uc ]
+[; ;I2C_USART.c: 20:     SPBRG = 52;
+[e = _SPBRG -> -> 52 `i `uc ]
 "22
 [; ;I2C_USART.c: 22:     TXSTAbits.CSRC = 0;
 [e = . . _TXSTAbits 0 7 -> -> 0 `i `uc ]

@@ -17,14 +17,14 @@
 
 void  USART_lib_config()                 
 {
-    SPBRG = 25;  
+    SPBRG = 52;                // se pone 12 y BRGH 0
      
     TXSTAbits.CSRC = 0;     // No importa, solo para sincrono
     TXSTAbits.TX9  = 0;     // 8 bits
     TXSTAbits.TXEN = 1;     // Permitir transmision
     TXSTAbits.SYNC = 0;     // Asincrono
     TXSTAbits.SENDB= 0;     // 
-    TXSTAbits.BRGH = 1;     // Alta velocidad por 4Mhz   
+    TXSTAbits.BRGH = 1;     // Alta velocidad por 8Mhz   
     TXSTAbits.TRMT = 0;     //
     TXSTAbits.TX9D = 0;     // 
     

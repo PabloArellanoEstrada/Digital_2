@@ -2766,6 +2766,13 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
+
+
+void I2C_Start_Wait(char slave_write_address);
+
+void MSdelay(unsigned int val);
+
+char I2C_Repeated_Start(char slave_read_address);
 # 17 "MAIN_I2C.c" 2
 
 # 1 "./I2C_USART.h" 1
@@ -2781,6 +2788,7 @@ void I2C_Slave_Init(uint8_t address);
 
 void USART_lib_config(void);
 # 18 "MAIN_I2C.c" 2
+
 
 
 
@@ -2808,7 +2816,8 @@ void USART_lib_config(void);
 
 
 uint8_t valor;
-uint8_t contador;
+uint16_t contador;
+uint8_t str;
 
 
 
@@ -2822,6 +2831,12 @@ void osc_config (void);
 void interrup_config (void);
 void tmr0_config (void);
 
+void MPU6050_Init();
+char leer_char(void);
+void USART_SendString();
+void MPU_Start_Loc();
+
+
 
 
 
@@ -2833,6 +2848,7 @@ void __attribute__((picinterrupt(("")))) ISR(void)
         INTCONbits.TMR0IF = 0;
         TMR0 = 100;
         contador = contador + 1;
+        Led();
     }
 }
 
@@ -2846,22 +2862,73 @@ void main(void) {
     osc_config();
     interrup_config();
     tmr0_config ();
-    while(1){
-        I2C_Master_Start();
-        I2C_Master_Write(0x50);
-        I2C_Master_Write(6);
-        I2C_Master_Stop();
-        escribir_char (65);
-        escribir_char ('\n');
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+    MPU6050_Init();
 
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        PORTD = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+    char buffer[20];
+ int Ax,Ay,Az,T,Gx,Gy,Gz;
+ float Xa,Ya,Za,t,Xg,Yg,Zg;
+
+    while(1){
+
+
+
+
+
+        escribir_char (48);
+        _delay((unsigned long)((5)*(8000000/4000.0)));
+        escribir_char ('\n');
+
+
+        MPU_Start_Loc();
+
+  Ax = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+  Ay = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+  Az = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+  T = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+  Gx = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+  Gy = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
+  Gz = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(1));
+  I2C_Master_Stop();
+
+
+  Xa = (float)Ax/16384.0;
+  Ya = (float)Ay/16384.0;
+  Za = (float)Az/16384.0;
+  Xg = (float)Gx/131.0;
+  Yg = (float)Gy/131.0;
+  Zg = (float)Gz/131.0;
+  t = ((float)T/340.00)+36.53;
+
+
+
+  sprintf(buffer," Ax = %.2f g\t",Xa);
+  USART_SendString(buffer);
+
+  sprintf(buffer," Ay = %.2f g\t",Ya);
+  USART_SendString(buffer);
+
+  sprintf(buffer," Az = %.2f g\t",Za);
+  USART_SendString(buffer);
+
+  sprintf(buffer," T = %.2f%cC\t",t,0xF8);
+  USART_SendString(buffer);
+
+  sprintf(buffer," Gx = %.2f%c/s\t",Xg,0xF8);
+  USART_SendString(buffer);
+
+  sprintf(buffer," Gy = %.2f%c/s\t",Yg,0xF8);
+  USART_SendString(buffer);
+
+  sprintf(buffer," Gz = %.2f%c/s\r\n",Zg,0xF8);
+  USART_SendString(buffer);
+
+
+
+
+
+
+
         PORTB++;
-        Led();
     }
     return;
 }
@@ -2908,7 +2975,7 @@ void osc_config (void)
 {
     OSCCONbits.IRCF2 = 1;
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF0 = 0;
+    OSCCONbits.IRCF0 = 1;
     OSCCONbits.OSTS = 0;
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 1;
@@ -2937,9 +3004,69 @@ void escribir_char (uint8_t valor)
     while (PIR1bits.TXIF == 0);
 }
 
+
+void USART_SendString(const char *str)
+{
+   while(*str!='\0')
+   {
+        escribir_char(*str);
+        str++;
+   }
+}
+
+char leer_char(void)
+{
+    if (RCSTAbits.OERR ==0)
+    {
+        CREN = 0;
+        __nop();
+        CREN = 1;
+    }
+    return (RCREG);
+}
+
+void MPU_Start_Loc()
+
+{
+ I2C_Start_Wait(0xD0);
+ I2C_Master_Write(0x3B);
+ I2C_Repeated_Start(0xD1);
+}
+
+void MPU6050_Init()
+{
+
+ MSdelay(150);
+ I2C_Start_Wait(0xD0);
+ I2C_Master_Write(0x19);
+ I2C_Master_Write(0x07);
+ I2C_Master_Stop();
+
+ I2C_Start_Wait(0xD0);
+ I2C_Master_Write(0x6B);
+ I2C_Master_Write(0x01);
+ I2C_Master_Stop();
+
+ I2C_Start_Wait(0xD0);
+ I2C_Master_Write(0x1A);
+ I2C_Master_Write(0x00);
+ I2C_Master_Stop();
+
+ I2C_Start_Wait(0xD0);
+ I2C_Master_Write(0x1B);
+ I2C_Master_Write(0x18);
+ I2C_Master_Stop();
+
+ I2C_Start_Wait(0xD0);
+ I2C_Master_Write(0x38);
+ I2C_Master_Write(0x01);
+ I2C_Master_Stop();
+}
+
+
 void Led(void)
 {
-    if (contador > 50)
+    if (contador > 1000)
     {
     if (PORTEbits.RE0 == 1)
     {

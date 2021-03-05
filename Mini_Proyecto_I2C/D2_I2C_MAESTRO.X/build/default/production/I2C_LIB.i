@@ -2664,6 +2664,13 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
+
+
+void I2C_Start_Wait(char slave_write_address);
+
+void MSdelay(unsigned int val);
+
+char I2C_Repeated_Start(char slave_read_address);
 # 12 "I2C_LIB.c" 2
 
 
@@ -2759,4 +2766,45 @@ void I2C_Slave_Init(uint8_t address)
     PEIE = 1;
     SSPIF = 0;
     SSPIE = 1;
+}
+
+
+void I2C_Start_Wait(char slave_write_address)
+{
+  while(1)
+  {
+    SSPCON2bits.SEN = 1;
+    while(SSPCON2bits.SEN);
+    SSPIF = 0;
+    if(!SSPSTATbits.S)
+        continue;
+    I2C_Master_Write(slave_write_address);
+    if(ACKSTAT)
+    {
+        I2C_Master_Stop();
+        continue;
+    }
+    break;
+  }
+}
+
+void MSdelay(unsigned int val)
+{
+     unsigned int i,j;
+        for(i=0;i<=val;i++)
+            for(j=0;j<165;j++);
+}
+
+char I2C_Repeated_Start(char slave_read_address)
+{
+    RSEN = 1;
+    while(SSPCON2bits.RSEN);
+    SSPIF = 0;
+    if(!SSPSTATbits.S)
+    return 0;
+    I2C_Write(slave_read_address);
+    if (ACKSTAT)
+     return 1;
+    else
+     return 2;
 }

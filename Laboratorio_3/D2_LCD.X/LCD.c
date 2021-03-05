@@ -16,6 +16,7 @@
 #include "ADC_lib.h"            // Libreria Personalizada ADC
 #include "LCD_8bits.h"          // Libreria Personalizada LCD
 #include "USART.h"              // Libreria Personalizada comunicacion serial
+#include <pic16f887.h>
 
 //============================================================================*/
 // PALABRA DE CONFIGURACION

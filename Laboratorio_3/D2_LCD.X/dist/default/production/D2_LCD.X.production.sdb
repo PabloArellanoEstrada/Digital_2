@@ -17,41 +17,41 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"101 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"102 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"114
+"115
 [v _main main `(v  1 e 1 0 ]
-"139
+"140
 [v _setup setup `(v  1 e 1 0 ]
-"160
+"161
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
-"173
+"174
 [v _osc_config osc_config `(v  1 e 1 0 ]
-"188
+"189
 [v _adc_config adc_config `(v  1 e 1 0 ]
-"193
+"194
 [v _USART_config USART_config `(v  1 e 1 0 ]
-"202
+"203
 [v _adc_conversion1 adc_conversion1 `(v  1 e 1 0 ]
-"213
+"214
 [v _adc_conversion2 adc_conversion2 `(v  1 e 1 0 ]
-"224
+"225
 [v _lcd lcd `(v  1 e 1 0 ]
-"248
+"249
 [v _Conversion1 Conversion1 `(v  1 e 1 0 ]
-"264
+"265
 [v _Conversion2 Conversion2 `(v  1 e 1 0 ]
-"281
+"282
 [v _virtual_display1 virtual_display1 `(v  1 e 1 0 ]
-"299
+"300
 [v _virtual_display2 virtual_display2 `(v  1 e 1 0 ]
-"317
+"318
 [v _virtual_display3 virtual_display3 `(v  1 e 1 0 ]
-"342
+"343
 [v _contador_lcd contador_lcd `(v  1 e 1 0 ]
-"357
+"358
 [v _escribir_char escribir_char `(v  1 e 1 0 ]
-"363
+"364
 [v _leer_char leer_char `(uc  1 e 1 0 ]
 "22 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
@@ -275,72 +275,72 @@
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3836
 [v _CREN CREN `VEb  1 e 0 @196 ]
-"45 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"46 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _adc_value1 adc_value1 `uc  1 e 1 0 ]
-"46
+"47
 [v _adc_value2 adc_value2 `uc  1 e 1 0 ]
-"48
-[v _voltaje voltaje `uc  1 e 1 0 ]
 "49
-[v _unidad unidad `uc  1 e 1 0 ]
+[v _voltaje voltaje `uc  1 e 1 0 ]
 "50
-[v _x1 x1 `uc  1 e 1 0 ]
+[v _unidad unidad `uc  1 e 1 0 ]
 "51
-[v _y1 y1 `uc  1 e 1 0 ]
+[v _x1 x1 `uc  1 e 1 0 ]
 "52
-[v _x2 x2 `uc  1 e 1 0 ]
+[v _y1 y1 `uc  1 e 1 0 ]
 "53
+[v _x2 x2 `uc  1 e 1 0 ]
+"54
 [v _y2 y2 `uc  1 e 1 0 ]
-"55
-[v _voltajez voltajez `uc  1 e 1 0 ]
 "56
-[v _unidadz unidadz `uc  1 e 1 0 ]
+[v _voltajez voltajez `uc  1 e 1 0 ]
 "57
-[v _x1z x1z `uc  1 e 1 0 ]
+[v _unidadz unidadz `uc  1 e 1 0 ]
 "58
-[v _y1z y1z `uc  1 e 1 0 ]
+[v _x1z x1z `uc  1 e 1 0 ]
 "59
-[v _x2z x2z `uc  1 e 1 0 ]
+[v _y1z y1z `uc  1 e 1 0 ]
 "60
+[v _x2z x2z `uc  1 e 1 0 ]
+"61
 [v _y2z y2z `uc  1 e 1 0 ]
-"62
-[v _leer leer `uc  1 e 1 0 ]
 "63
+[v _leer leer `uc  1 e 1 0 ]
+"64
 [v _contador contador `uc  1 e 1 0 ]
-"65
-[v _w1 w1 `uc  1 e 1 0 ]
 "66
+[v _w1 w1 `uc  1 e 1 0 ]
+"67
 [v _w2 w2 `uc  1 e 1 0 ]
-"68
-[v _velocidad1 velocidad1 `uc  1 e 1 0 ]
 "69
-[v _velocidad2 velocidad2 `uc  1 e 1 0 ]
+[v _velocidad1 velocidad1 `uc  1 e 1 0 ]
 "70
+[v _velocidad2 velocidad2 `uc  1 e 1 0 ]
+"71
 [v _velocidad3 velocidad3 `uc  1 e 1 0 ]
-"114
+"115
 [v _main main `(v  1 e 1 0 ]
 {
-"133
+"134
 } 0
-"139
+"140
 [v _setup setup `(v  1 e 1 0 ]
 {
-"158
+"159
 } 0
-"173
+"174
 [v _osc_config osc_config `(v  1 e 1 0 ]
 {
-"182
+"183
 } 0
-"224
+"225
 [v _lcd lcd `(v  1 e 1 0 ]
 {
-"246
+"247
 } 0
-"342
+"343
 [v _contador_lcd contador_lcd `(v  1 e 1 0 ]
 {
-"354
+"355
 } 0
 "77 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD_8bits.c
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
@@ -367,39 +367,39 @@
 [v Lcd_Set_Cursor@a a `uc  1 a 1 1 ]
 "75
 } 0
-"264 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"265 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _Conversion2 Conversion2 `(v  1 e 1 0 ]
 {
-"279
+"280
 } 0
-"317
+"318
 [v _virtual_display3 virtual_display3 `(v  1 e 1 0 ]
 {
-"340
+"341
 } 0
-"299
+"300
 [v _virtual_display2 virtual_display2 `(v  1 e 1 0 ]
 {
-"315
+"316
 } 0
-"248
+"249
 [v _Conversion1 Conversion1 `(v  1 e 1 0 ]
 {
-"262
+"263
 } 0
-"281
+"282
 [v _virtual_display1 virtual_display1 `(v  1 e 1 0 ]
 {
-"297
+"298
 } 0
-"357
+"358
 [v _escribir_char escribir_char `(v  1 e 1 0 ]
 {
 [v escribir_char@valor valor `uc  1 a 1 wreg ]
 [v escribir_char@valor valor `uc  1 a 1 wreg ]
-"359
+"360
 [v escribir_char@valor valor `uc  1 a 1 3 ]
-"361
+"362
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -434,25 +434,25 @@
 [v Lcd_Write_Char@a a `uc  1 a 1 5 ]
 "101
 } 0
-"160 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"161 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _interrup_config interrup_config `(v  1 e 1 0 ]
 {
-"171
+"172
 } 0
-"213
+"214
 [v _adc_conversion2 adc_conversion2 `(v  1 e 1 0 ]
 {
-"222
+"223
 } 0
-"202
+"203
 [v _adc_conversion1 adc_conversion1 `(v  1 e 1 0 ]
 {
-"211
+"212
 } 0
-"188
+"189
 [v _adc_config adc_config `(v  1 e 1 0 ]
 {
-"191
+"192
 } 0
 "19 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\ADC_lib.c
 [v _initADC initADC `(v  1 e 1 0 ]
@@ -462,10 +462,10 @@
 [v initADC@CHS CHS `uc  1 a 1 5 ]
 "135
 } 0
-"193 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"194 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _USART_config USART_config `(v  1 e 1 0 ]
 {
-"196
+"197
 } 0
 "18 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\USART.c
 [v _USART_lib_config USART_lib_config `(v  1 e 1 0 ]
@@ -495,13 +495,13 @@
 [v Lcd_Port@a a `uc  1 a 1 3 ]
 "25
 } 0
-"101 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
+"102 C:\Users\pablo\Desktop\Digital_2\Laboratorio_3\D2_LCD.X\LCD.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"108
+"109
 } 0
-"363
+"364
 [v _leer_char leer_char `(uc  1 e 1 0 ]
 {
-"372
+"373
 } 0

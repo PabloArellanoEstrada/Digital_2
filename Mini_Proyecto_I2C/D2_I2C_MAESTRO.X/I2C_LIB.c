@@ -106,3 +106,42 @@ void I2C_Slave_Init(uint8_t address)
 }
 //*****************************************************************************
 
+void I2C_Start_Wait(char slave_write_address)
+{
+  while(1)
+  {   
+    SSPCON2bits.SEN = 1;            /* Send START condition */
+    while(SSPCON2bits.SEN);         /* Wait for completion of START */
+    SSPIF = 0;
+    if(!SSPSTATbits.S)              /* Continue if START is failed */
+        continue;
+    I2C_Master_Write(slave_write_address); /* Write slave device address with write to communicate */
+    if(ACKSTAT)                     /* Check whether Acknowledgment received or not */
+    {
+        I2C_Master_Stop();                 /* If not then initiate STOP and continue */
+        continue;
+    }    
+    break;                          /* If yes then break loop */
+  }
+}
+
+void MSdelay(unsigned int val)
+{
+     unsigned int i,j;
+        for(i=0;i<=val;i++)
+            for(j=0;j<165;j++);      /*This count Provide delay of 1 ms for 8MHz Frequency */
+}
+
+char I2C_Repeated_Start(char slave_read_address)
+{
+    RSEN = 1;                       /* Send REPEATED START condition */
+    while(SSPCON2bits.RSEN);        /* Wait for completion of REPEATED START condition */
+    SSPIF = 0;
+    if(!SSPSTATbits.S)              /* Return 0 if REPEATED START is failed */
+    return 0;
+    I2C_Write(slave_read_address);  /* Write slave device address with read to communicate */
+    if (ACKSTAT)                    /* Return 2 if acknowledgment received else 1 */
+     return 1;
+    else
+     return 2;
+}
