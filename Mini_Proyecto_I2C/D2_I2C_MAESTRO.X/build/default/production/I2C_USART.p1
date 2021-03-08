@@ -1,8 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"2642 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2642: extern volatile unsigned char SPBRG __attribute__((address(0x099)));
-[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
-"2562
+"2562 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2562:     struct {
 [s S99 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S99 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
@@ -66,6 +63,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1718
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1718: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
 [v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
+"4466
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4466: extern volatile __bit TRISC6 __attribute__((address(0x43E)));
+[v _TRISC6 `Vb ~T0 @X0 0 e@1086 ]
+"4469
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4469: extern volatile __bit TRISC7 __attribute__((address(0x43F)));
+[v _TRISC7 `Vb ~T0 @X0 0 e@1087 ]
+"2642
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2642: extern volatile unsigned char SPBRG __attribute__((address(0x099)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
+"2556
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2556: extern volatile unsigned char TXSTA __attribute__((address(0x098)));
+[v _TXSTA `Vuc ~T0 @X0 0 e@152 ]
+"1038
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1038: extern volatile unsigned char RCSTA __attribute__((address(0x018)));
+[v _RCSTA `Vuc ~T0 @X0 0 e@24 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -308,9 +320,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _USART_lib_config ]
 [f ]
-"20
-[; ;I2C_USART.c: 20:     SPBRG = 52;
-[e = _SPBRG -> -> 52 `i `uc ]
 "22
 [; ;I2C_USART.c: 22:     TXSTAbits.CSRC = 0;
 [e = . . _TXSTAbits 0 7 -> -> 0 `i `uc ]
@@ -327,8 +336,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;I2C_USART.c: 26:     TXSTAbits.SENDB= 0;
 [e = . . _TXSTAbits 0 3 -> -> 0 `i `uc ]
 "27
-[; ;I2C_USART.c: 27:     TXSTAbits.BRGH = 1;
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+[; ;I2C_USART.c: 27:     TXSTAbits.BRGH = 0;
+[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
 "28
 [; ;I2C_USART.c: 28:     TXSTAbits.TRMT = 0;
 [e = . . _TXSTAbits 0 1 -> -> 0 `i `uc ]
@@ -371,4 +380,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43
 [; ;I2C_USART.c: 43: }
 [e :UE 139 ]
+}
+"45
+[; ;I2C_USART.c: 45: void USART_Init(long baud_rate)
+[v _USART_Init `(v ~T0 @X0 1 ef1`l ]
+"46
+[; ;I2C_USART.c: 46: {
+{
+[e :U _USART_Init ]
+"45
+[; ;I2C_USART.c: 45: void USART_Init(long baud_rate)
+[v _baud_rate `l ~T0 @X0 1 r1 ]
+"46
+[; ;I2C_USART.c: 46: {
+[f ]
+"47
+[; ;I2C_USART.c: 47:     TRISC6 = 0;
+[e = _TRISC6 -> -> 0 `i `b ]
+"48
+[; ;I2C_USART.c: 48:     TRISC7 = 1;
+[e = _TRISC7 -> -> 1 `i `b ]
+"49
+[; ;I2C_USART.c: 49:     SPBRG = (((float)(8000000/64)/(float)baud_rate)-1);
+[e = _SPBRG -> - / -> / -> 8000000 `l -> -> 64 `i `l `f -> _baud_rate `f -> -> 1 `i `f `uc ]
+"50
+[; ;I2C_USART.c: 50:     TXSTA = 0x20;
+[e = _TXSTA -> -> 32 `i `uc ]
+"51
+[; ;I2C_USART.c: 51:     RCSTA = 0x90;
+[e = _RCSTA -> -> 144 `i `uc ]
+"52
+[; ;I2C_USART.c: 52: }
+[e :UE 140 ]
 }

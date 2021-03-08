@@ -10,101 +10,31 @@
  * Basado en Link: http://microcontroladores-mrelberni.com/i2c-pic-comunicacion-serial/
  */
 #include "I2C_LIB.h"
+#include <pic16f887.h>
 //*****************************************************************************
 // Función para inicializar I2C Maestro
 //*****************************************************************************
-void I2C_Master_Init(const unsigned long c)
+void I2C_Init()
 {
-    SSPCON2 = 0;                      // no se modifica nada 
-    SSPADD = (_XTAL_FREQ/(4*c))-1;    // frecuencia de reloj
-    SSPSTAT = 0;
-    TRISCbits.TRISC3 = 1;             // entradas
-    TRISCbits.TRISC4 = 1;             // entradas
-    SSPCON = 0b00101000;              // no collision, no overflow, enable, hold clock low, i2c master mode
-}
-//*****************************************************************************
-// Función de espera: mientras se esté iniciada una comunicación,
-// esté habilitado una recepción, esté habilitado una parada
-// esté habilitado un reinicio de la comunicación, esté iniciada
-// una comunicación o se este transmitiendo, el IC2 PIC se esperará
-// antes de realizar algún trabajo
-//*****************************************************************************
-void I2C_Master_Wait()
-{
-    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F)); // si hay transmision en progreso, o si haya inicio aknoldewge, hay condicion de parada
-                                                  // o esperando a que no este ocupado
-}
-//*****************************************************************************
-// Función de inicio de la comunicación I2C PIC
-//*****************************************************************************
-void I2C_Master_Start()
-{
-    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
-    SSPCON2bits.SEN = 1;    //inicia la comunicación i2c
-}
-//*****************************************************************************
-// Función de reinicio de la comunicación I2C PIC
-//*****************************************************************************
-void I2C_Master_RepeatedStart()
-{
-    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
-    SSPCON2bits.RSEN = 1;   //reinicia la comunicación i2c
-}
-//*****************************************************************************
-// Función de parada de la comunicación I2C PIC
-//*****************************************************************************
-void I2C_Master_Stop()
-{
-    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
-    SSPCON2bits.PEN = 1;    //detener la comunicación i2c
-}
-//*****************************************************************************
-//Función de transmisión de datos del maestro al esclavo
-//esta función devolverá un 0 si el esclavo a recibido
-//el dato
-//*****************************************************************************
-void I2C_Master_Write(unsigned d)
-{
-    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
-    SSPBUF = d;             
-}
-//*****************************************************************************
-//Función de recepción de datos enviados por el esclavo al maestro
-//esta función es para leer los datos que están en el esclavo
-//*****************************************************************************
-unsigned short I2C_Master_Read(unsigned short a) 
-{
-    unsigned short temp;
-    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
-    SSPCON2bits.RCEN = 1;
-    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas recepcion de datos
-    temp = SSPBUF;
-    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas valor en variable temporal
-    if(a == 1){                     
-        SSPCON2bits.ACKDT = 0;      // acknowledge
-    }else{                          
-        SSPCON2bits.ACKDT = 1;      // not acknowledge
-    }
-    SSPCON2bits.ACKEN = 1;          // Iniciar sequencia de Acknowledge
-    return temp;                    // Regresar valor del dato leído
-}
-//*****************************************************************************
-// Función para inicializar I2C Esclavo
-//*****************************************************************************
-void I2C_Slave_Init(uint8_t address)
-{ 
-    SSPADD = address;
-    SSPCON = 0x36;      // 0b00110110   no collision, no overflow, enaable, release clock, i2c slave 7 bit address
-    SSPSTAT = 0x80;     // 0b10000000   slew rate disabled
-    SSPCON2 = 0x01;     // 0b00000001   clow swithcing is enable
-    TRISC3 = 1;         // entrada
-    TRISC4 = 1;         // entrada
-    GIE = 1;
-    PEIE = 1;
+    TRISB0 = 1;                     /* Set up I2C lines by setting as input */
+	TRISB1 = 1;
+	SSPSTAT = 80;                   /* Slew rate disabled, other bits are cleared */
+    SSPCON = 0x28;					/* Enable SSP port for I2C Master mode, clock = FOSC / (4 * (SSPADD+1))*/ 
+	SSPCON2 = 0;
+    SSPADD = BITRATE;               /* Set clock frequency */  
+    SSPIE = 1;                      /* Enable SSPIF interrupt */
     SSPIF = 0;
-    SSPIE = 1;
 }
-//*****************************************************************************
+
+char I2C_Start(char slave_write_address)
+{   
+    SSPCON2bits.SEN = 1;            /* Send START condition */
+    while(SSPCON2bits.SEN);         /* Wait for completion of START */
+    SSPIF=0;
+    if(!SSPSTATbits.S)              /* Return 0 if START is failed */
+    return 0;
+    return (I2C_Write(slave_write_address)); /* Write slave device address with write to communicate */
+}
 
 void I2C_Start_Wait(char slave_write_address)
 {
@@ -115,21 +45,14 @@ void I2C_Start_Wait(char slave_write_address)
     SSPIF = 0;
     if(!SSPSTATbits.S)              /* Continue if START is failed */
         continue;
-    I2C_Master_Write(slave_write_address); /* Write slave device address with write to communicate */
+    I2C_Write(slave_write_address); /* Write slave device address with write to communicate */
     if(ACKSTAT)                     /* Check whether Acknowledgment received or not */
     {
-        I2C_Master_Stop();                 /* If not then initiate STOP and continue */
+        I2C_Stop();                 /* If not then initiate STOP and continue */
         continue;
     }    
     break;                          /* If yes then break loop */
   }
-}
-
-void MSdelay(unsigned int val)
-{
-     unsigned int i,j;
-        for(i=0;i<=val;i++)
-            for(j=0;j<165;j++);      /*This count Provide delay of 1 ms for 8MHz Frequency */
 }
 
 char I2C_Repeated_Start(char slave_read_address)
@@ -145,3 +68,63 @@ char I2C_Repeated_Start(char slave_read_address)
     else
      return 2;
 }
+
+char I2C_Write(unsigned char data)
+{
+      SSPBUF = data;                /* Write data to SSPBUF */
+      I2C_Ready();
+      if (ACKSTAT)                  /* Return 2 if acknowledgment received else 1 */
+        return 1;
+      else
+        return 2;
+}
+
+void I2C_Ack()
+{
+    ACKDT = 0;  					/* Acknowledge data 1:NACK,0:ACK */
+	ACKEN = 1;        				/* Enable ACK to send */
+    while(ACKEN);
+}
+
+void I2C_Nack()
+{
+    ACKDT = 1;          			/* Not Acknowledge data 1:NACK,0:ACK */
+	ACKEN = 1;              		/* Enable ACK to send */	          
+    while(ACKEN);
+}
+char I2C_Read(char flag)            /* Read data from slave devices with 0=Ack & 1=Nack */
+{
+    char buffer;
+    RCEN = 1;                       /* Enable receive */
+    while(!SSPSTATbits.BF);         /* Wait for buffer full flag which set after complete byte receive */
+    buffer = SSPBUF;                /* Copy SSPBUF to buffer */
+    if(flag==0)
+        I2C_Ack();                  /* Send acknowledgment */
+    else
+        I2C_Nack();                 /* Send negative acknowledgment */
+    I2C_Ready();
+    return(buffer);
+}
+
+char I2C_Stop()
+{
+    PEN = 1;                        /* Initiate STOP condition */
+    while(PEN);                     /* Wait for end of STOP condition */
+    SSPIF = 0;
+    if(!SSPSTATbits.P);             /* Return 0 if STOP failed */
+    return 0;
+}
+
+void I2C_Ready()
+{
+    while(!SSPIF);                  /* Wait for operation complete */
+    SSPIF=0;                        /*clear SSPIF interrupt flag*/
+}
+
+void MSdelay(unsigned int val)
+{
+     unsigned int i,j;
+        for(i=0;i<=val;i++)
+            for(j=0;j<165;j++);      /*This count Provide delay of 1 ms for 8MHz Frequency */
+}
+

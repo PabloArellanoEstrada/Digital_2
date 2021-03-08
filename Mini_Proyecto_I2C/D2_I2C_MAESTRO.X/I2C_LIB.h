@@ -12,61 +12,25 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef __I2C_H
-#define	__I2C_H
+#ifndef __I2C_LIB_H
+#define	__I2C_LIB_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
-#include <pic16f887.h>
-#include <stdint.h>
+#include <xc.h>                         /* Include processor files - each processor file is guarded. */
+#define F_OSC 8000000                   /* Define F_OSC, here it's 8 MHz */
+#define I2C_CLOCK 100000                /* I2C clock frequency is 100 kHz*/
+#define BITRATE ((F_OSC/(4*I2C_CLOCK))-1) /* find bit rate to assign this value to SSPADD register*/
 
-#ifndef _XTAL_FREQ
-#define _XTAL_FREQ 8000000
-#endif
+void I2C_Ready();                       /* Check weather I2C is ready/idle or not */
+void I2C_Init();                        /* Initialize I2C configuration*/
+char I2C_Start(char);                   /* Send START pulse with slave device write address */
+void I2C_Start_Wait(char);              /* Send START pulse with slave device write address until acknowledgement */
+char I2C_Repeated_Start(char);          /* Send REPEATED START pulse with slave device read address*/
+char I2C_Stop();                        /* Send STOP pulse*/
+char I2C_Write(unsigned char);          /* Write data/address to slave device */
+void I2C_Ack();                         /* Send acknowledge to slave for continue read */
+void I2C_Nack();                        /* Send negative acknowledge to slave for stop current communication */
+char I2C_Read(char);                    /* Read data from slave devices with 0=Ack & 1=Nack */
+void MSdelay(unsigned int val);     /* millisecond delay function */
 
-//*****************************************************************************
-// Función para inicializar I2C Maestro
-//*****************************************************************************
-void I2C_Master_Init(const unsigned long c);
-//*****************************************************************************
-// Función de espera: mientras se esté iniciada una comunicación,
-// esté habilitado una recepción, esté habilitado una parada
-// esté habilitado un reinicio de la comunicación, esté iniciada
-// una comunicación o se este transmitiendo, el IC2 PIC se esperará
-// antes de realizar algún trabajo
-//*****************************************************************************
-void I2C_Master_Wait(void);
-//*****************************************************************************
-// Función de inicio de la comunicación I2C PIC
-//*****************************************************************************
-void I2C_Master_Start(void);
-//*****************************************************************************
-// Función de reinicio de la comunicación I2C PIC
-//*****************************************************************************
-void I2C_Master_RepeatedStart(void);
-//*****************************************************************************
-// Función de parada de la comunicación I2C PIC
-//*****************************************************************************
-void I2C_Master_Stop(void);
-//*****************************************************************************
-//Función de transmisión de datos del maestro al esclavo
-//esta función devolverá un 0 si el esclavo a recibido
-//el dato
-//*****************************************************************************
-void I2C_Master_Write(unsigned d);
-//*****************************************************************************
-//Función de recepción de datos enviados por el esclavo al maestro
-//esta función es para leer los datos que están en el esclavo
-//*****************************************************************************
-unsigned short I2C_Master_Read(unsigned short a);
-//*****************************************************************************
-// Función para inicializar I2C Esclavo
-//*****************************************************************************
-void I2C_Slave_Init(uint8_t address);
-//*****************************************************************************
 
-void I2C_Start_Wait(char slave_write_address);
-
-void MSdelay(unsigned int val);
-
-char I2C_Repeated_Start(char slave_read_address);
 #endif	/* __I2C_H */

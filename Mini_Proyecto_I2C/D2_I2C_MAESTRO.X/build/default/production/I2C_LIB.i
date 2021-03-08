@@ -2493,281 +2493,47 @@ extern __bank0 __bit __timeout;
 # 18 "./I2C_LIB.h" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
 
 
 
-
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 20 "./I2C_LIB.h" 2
-# 29 "./I2C_LIB.h"
-void I2C_Master_Init(const unsigned long c);
-
-
-
-
-
-
-
-void I2C_Master_Wait(void);
-
-
-
-void I2C_Master_Start(void);
-
-
-
-void I2C_Master_RepeatedStart(void);
-
-
-
-void I2C_Master_Stop(void);
-
-
-
-
-
-void I2C_Master_Write(unsigned d);
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a);
-
-
-
-void I2C_Slave_Init(uint8_t address);
-
-
-void I2C_Start_Wait(char slave_write_address);
-
+void I2C_Ready();
+void I2C_Init();
+char I2C_Start(char);
+void I2C_Start_Wait(char);
+char I2C_Repeated_Start(char);
+char I2C_Stop();
+char I2C_Write(unsigned char);
+void I2C_Ack();
+void I2C_Nack();
+char I2C_Read(char);
 void MSdelay(unsigned int val);
-
-char I2C_Repeated_Start(char slave_read_address);
 # 12 "I2C_LIB.c" 2
 
 
 
 
-void I2C_Master_Init(const unsigned long c)
+
+void I2C_Init()
 {
-    SSPCON2 = 0;
-    SSPADD = (8000000/(4*c))-1;
-    SSPSTAT = 0;
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
-    SSPCON = 0b00101000;
-}
-
-
-
-
-
-
-
-void I2C_Master_Wait()
-{
-    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
-
-}
-
-
-
-void I2C_Master_Start()
-{
-    I2C_Master_Wait();
-    SSPCON2bits.SEN = 1;
-}
-
-
-
-void I2C_Master_RepeatedStart()
-{
-    I2C_Master_Wait();
-    SSPCON2bits.RSEN = 1;
-}
-
-
-
-void I2C_Master_Stop()
-{
-    I2C_Master_Wait();
-    SSPCON2bits.PEN = 1;
-}
-
-
-
-
-
-void I2C_Master_Write(unsigned d)
-{
-    I2C_Master_Wait();
-    SSPBUF = d;
-}
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a)
-{
-    unsigned short temp;
-    I2C_Master_Wait();
-    SSPCON2bits.RCEN = 1;
-    I2C_Master_Wait();
-    temp = SSPBUF;
-    I2C_Master_Wait();
-    if(a == 1){
-        SSPCON2bits.ACKDT = 0;
-    }else{
-        SSPCON2bits.ACKDT = 1;
-    }
-    SSPCON2bits.ACKEN = 1;
-    return temp;
-}
-
-
-
-void I2C_Slave_Init(uint8_t address)
-{
-    SSPADD = address;
-    SSPCON = 0x36;
-    SSPSTAT = 0x80;
-    SSPCON2 = 0x01;
-    TRISC3 = 1;
-    TRISC4 = 1;
-    GIE = 1;
-    PEIE = 1;
-    SSPIF = 0;
+    TRISB0 = 1;
+ TRISB1 = 1;
+ SSPSTAT = 80;
+    SSPCON = 0x28;
+ SSPCON2 = 0;
+    SSPADD = ((8000000/(4*100000))-1);
     SSPIE = 1;
+    SSPIF = 0;
 }
 
+char I2C_Start(char slave_write_address)
+{
+    SSPCON2bits.SEN = 1;
+    while(SSPCON2bits.SEN);
+    SSPIF=0;
+    if(!SSPSTATbits.S)
+    return 0;
+    return (I2C_Write(slave_write_address));
+}
 
 void I2C_Start_Wait(char slave_write_address)
 {
@@ -2778,21 +2544,14 @@ void I2C_Start_Wait(char slave_write_address)
     SSPIF = 0;
     if(!SSPSTATbits.S)
         continue;
-    I2C_Master_Write(slave_write_address);
+    I2C_Write(slave_write_address);
     if(ACKSTAT)
     {
-        I2C_Master_Stop();
+        I2C_Stop();
         continue;
     }
     break;
   }
-}
-
-void MSdelay(unsigned int val)
-{
-     unsigned int i,j;
-        for(i=0;i<=val;i++)
-            for(j=0;j<165;j++);
 }
 
 char I2C_Repeated_Start(char slave_read_address)
@@ -2807,4 +2566,63 @@ char I2C_Repeated_Start(char slave_read_address)
      return 1;
     else
      return 2;
+}
+
+char I2C_Write(unsigned char data)
+{
+      SSPBUF = data;
+      I2C_Ready();
+      if (ACKSTAT)
+        return 1;
+      else
+        return 2;
+}
+
+void I2C_Ack()
+{
+    ACKDT = 0;
+ ACKEN = 1;
+    while(ACKEN);
+}
+
+void I2C_Nack()
+{
+    ACKDT = 1;
+ ACKEN = 1;
+    while(ACKEN);
+}
+char I2C_Read(char flag)
+{
+    char buffer;
+    RCEN = 1;
+    while(!SSPSTATbits.BF);
+    buffer = SSPBUF;
+    if(flag==0)
+        I2C_Ack();
+    else
+        I2C_Nack();
+    I2C_Ready();
+    return(buffer);
+}
+
+char I2C_Stop()
+{
+    PEN = 1;
+    while(PEN);
+    SSPIF = 0;
+    if(!SSPSTATbits.P);
+    return 0;
+}
+
+void I2C_Ready()
+{
+    while(!SSPIF);
+    SSPIF=0;
+}
+
+void MSdelay(unsigned int val)
+{
+     unsigned int i,j;
+        for(i=0;i<=val;i++)
+            for(j=0;j<165;j++);
 }

@@ -2724,70 +2724,158 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 # 15 "MAIN_I2C.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
+
+
+
+
+
+
+typedef unsigned short wchar_t;
+
+
+
+
+
+
+
+typedef struct {
+ int rem;
+ int quot;
+} div_t;
+typedef struct {
+ unsigned rem;
+ unsigned quot;
+} udiv_t;
+typedef struct {
+ long quot;
+ long rem;
+} ldiv_t;
+typedef struct {
+ unsigned long quot;
+ unsigned long rem;
+} uldiv_t;
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+
+
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+
+
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+# 104 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+# 16 "MAIN_I2C.c" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\math.h" 1 3
+
+
+
+# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__unsupported.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\math.h" 2 3
+# 30 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\math.h" 3
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+# 18 "MAIN_I2C.c" 2
 
 # 1 "./I2C_LIB.h" 1
-# 20 "./I2C_LIB.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "./I2C_LIB.h" 2
-# 29 "./I2C_LIB.h"
-void I2C_Master_Init(const unsigned long c);
-
-
-
-
-
-
-
-void I2C_Master_Wait(void);
-
-
-
-void I2C_Master_Start(void);
-
-
-
-void I2C_Master_RepeatedStart(void);
-
-
-
-void I2C_Master_Stop(void);
-
-
-
-
-
-void I2C_Master_Write(unsigned d);
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a);
-
-
-
-void I2C_Slave_Init(uint8_t address);
-
-
-void I2C_Start_Wait(char slave_write_address);
-
+# 23 "./I2C_LIB.h"
+void I2C_Ready();
+void I2C_Init();
+char I2C_Start(char);
+void I2C_Start_Wait(char);
+char I2C_Repeated_Start(char);
+char I2C_Stop();
+char I2C_Write(unsigned char);
+void I2C_Ack();
+void I2C_Nack();
+char I2C_Read(char);
 void MSdelay(unsigned int val);
-
-char I2C_Repeated_Start(char slave_read_address);
-# 17 "MAIN_I2C.c" 2
+# 19 "MAIN_I2C.c" 2
 
 # 1 "./I2C_USART.h" 1
-# 17 "./I2C_USART.h"
+# 21 "./I2C_USART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 17 "./I2C_USART.h" 2
+# 21 "./I2C_USART.h" 2
 
 
 
 
 
 
-
+void USART_Init(long);
 void USART_lib_config(void);
-# 18 "MAIN_I2C.c" 2
+# 20 "MAIN_I2C.c" 2
+
+# 1 "./I2C_PMU_Define.h" 1
+# 21 "MAIN_I2C.c" 2
 
 
 
@@ -2824,16 +2912,18 @@ uint8_t str;
 
 
 void setup(void);
-void USART_config(void);
-void Led(void);
-void escribir_char (uint8_t valor);
 void osc_config (void);
 void interrup_config (void);
 void tmr0_config (void);
 
-void MPU6050_Init();
+void Led(void);
+
+void USART_config(void);
 char leer_char(void);
+void escribir_char (uint8_t valor);
 void USART_SendString();
+
+void MPU6050_Init();
 void MPU_Start_Loc();
 
 
@@ -2858,79 +2948,109 @@ void __attribute__((picinterrupt(("")))) ISR(void)
 
 void main(void) {
     setup();
-    USART_config();
     osc_config();
     interrup_config();
     tmr0_config ();
+    USART_config();
     MPU6050_Init();
+    I2C_Init();
+    USART_Init(9600);
 
-    char buffer[20];
  int Ax,Ay,Az,T,Gx,Gy,Gz;
- float Xa,Ya,Za,t,Xg,Yg,Zg;
+
 
     while(1){
 
 
 
-
-
-        escribir_char (48);
-        _delay((unsigned long)((5)*(8000000/4000.0)));
-        escribir_char ('\n');
-
-
         MPU_Start_Loc();
+  Ax = (((int)I2C_Read(0)<<8) | (int)I2C_Read(0));
+  Ay = (((int)I2C_Read(0)<<8) | (int)I2C_Read(0));
+  Az = (((int)I2C_Read(0)<<8) | (int)I2C_Read(0));
+  T = (((int)I2C_Read(0)<<8) | (int)I2C_Read(0));
+  Gx = (((int)I2C_Read(0)<<8) | (int)I2C_Read(0));
+  Gy = (((int)I2C_Read(0)<<8) | (int)I2C_Read(0));
+  Gz = (((int)I2C_Read(0)<<8) | (int)I2C_Read(1));
+  I2C_Stop();
 
-  Ax = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
-  Ay = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
-  Az = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
-  T = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
-  Gx = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
-  Gy = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(0));
-  Gz = (((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(1));
-  I2C_Master_Stop();
+        char Ax1 = Ax / 256;
+        char Ay1 = Ay / 256;
+        char Az1 = Az / 256;
 
-
-  Xa = (float)Ax/16384.0;
-  Ya = (float)Ay/16384.0;
-  Za = (float)Az/16384.0;
-  Xg = (float)Gx/131.0;
-  Yg = (float)Gy/131.0;
-  Zg = (float)Gz/131.0;
-  t = ((float)T/340.00)+36.53;
+        Ax1 = Ax1 * 4;
+        Ay1 = Ay1 * 4;
+        Az1 = Az1 * 4;
 
 
 
-  sprintf(buffer," Ax = %.2f g\t",Xa);
-  USART_SendString(buffer);
+        char decimal = Ax1 /1000;
+        char residuo0 = Ax1 % 1000;
+        char entero = residuo0 / 100;
+        char residuo1 = residuo0 % 100;
+        char unidad = residuo1 / 10;
+        char residuo2 = residuo1 % 10;
+        char decena = residuo2 / 1;
 
-  sprintf(buffer," Ay = %.2f g\t",Ya);
-  USART_SendString(buffer);
-
-  sprintf(buffer," Az = %.2f g\t",Za);
-  USART_SendString(buffer);
-
-  sprintf(buffer," T = %.2f%cC\t",t,0xF8);
-  USART_SendString(buffer);
-
-  sprintf(buffer," Gx = %.2f%c/s\t",Xg,0xF8);
-  USART_SendString(buffer);
-
-  sprintf(buffer," Gy = %.2f%c/s\t",Yg,0xF8);
-  USART_SendString(buffer);
-
-  sprintf(buffer," Gz = %.2f%c/s\r\n",Zg,0xF8);
-  USART_SendString(buffer);
-
+        escribir_char(65);
+        escribir_char(120);
+        escribir_char(61);
+        escribir_char(32);
+        escribir_char(decimal+48);
+        escribir_char(entero+48);
+        escribir_char(46);
+        escribir_char(unidad+48);
+        escribir_char(decena+48);
+        escribir_char(32);
+        escribir_char(32);
 
 
 
+        decimal = Ay1 /1000;
+        residuo0 = Ay1 % 1000;
+        entero = residuo0 / 100;
+        residuo1 = residuo0 % 100;
+        unidad = residuo1 / 10;
+        residuo2 = residuo1 % 10;
+        decena = residuo2 / 1;
+
+        escribir_char(65);
+        escribir_char(121);
+        escribir_char(61);
+        escribir_char(32);
+        escribir_char(decimal+48);
+        escribir_char(entero+48);
+        escribir_char(46);
+        escribir_char(unidad+48);
+        escribir_char(decena+48);
+        escribir_char(32);
+        escribir_char(32);
 
 
 
-        PORTB++;
+  decimal = Az1 /1000;
+        residuo0 = Az1 % 1000;
+        entero = residuo0 / 100;
+        residuo1 = residuo0 % 100;
+        unidad = residuo1 / 10;
+        residuo2 = residuo1 % 10;
+        decena = residuo2 / 1;
+
+        escribir_char(65);
+        escribir_char(122);
+        escribir_char(61);
+        escribir_char(32);
+        escribir_char(decimal+48);
+        escribir_char(entero+48);
+        escribir_char(46);
+        escribir_char(unidad+48);
+        escribir_char(decena+48);
+        escribir_char(32);
+        escribir_char(32);
+        escribir_char('\n');
     }
-    return;
+
+
+
 }
 
 
@@ -2953,9 +3073,7 @@ void setup(void)
     PORTD = 0;
     TRISE = 0;
     PORTE = 0;
-    TRISEbits.TRISE0 = 0;
-    TRISEbits.TRISE3 = 0;
-    I2C_Master_Init(100000);
+
 }
 
 void interrup_config (void)
@@ -3028,9 +3146,10 @@ char leer_char(void)
 void MPU_Start_Loc()
 
 {
- I2C_Start_Wait(0xD0);
- I2C_Master_Write(0x3B);
+ I2C_Start(0xD0);
+ I2C_Write(0x3B);
  I2C_Repeated_Start(0xD1);
+    I2C_Read(0);
 }
 
 void MPU6050_Init()
@@ -3038,29 +3157,29 @@ void MPU6050_Init()
 
  MSdelay(150);
  I2C_Start_Wait(0xD0);
- I2C_Master_Write(0x19);
- I2C_Master_Write(0x07);
- I2C_Master_Stop();
+ I2C_Write(0x19);
+ I2C_Write(0x07);
+ I2C_Stop();
 
  I2C_Start_Wait(0xD0);
- I2C_Master_Write(0x6B);
- I2C_Master_Write(0x01);
- I2C_Master_Stop();
+ I2C_Write(0x6B);
+ I2C_Write(0x01);
+ I2C_Stop();
 
  I2C_Start_Wait(0xD0);
- I2C_Master_Write(0x1A);
- I2C_Master_Write(0x00);
- I2C_Master_Stop();
+ I2C_Write(0x1A);
+ I2C_Write(0x00);
+ I2C_Stop();
 
  I2C_Start_Wait(0xD0);
- I2C_Master_Write(0x1B);
- I2C_Master_Write(0x18);
- I2C_Master_Stop();
+ I2C_Write(0x1B);
+ I2C_Write(0x18);
+ I2C_Stop();
 
  I2C_Start_Wait(0xD0);
- I2C_Master_Write(0x38);
- I2C_Master_Write(0x01);
- I2C_Master_Stop();
+ I2C_Write(0x38);
+ I2C_Write(0x01);
+ I2C_Stop();
 }
 
 
