@@ -1,53 +1,65 @@
 
 // ______________________________________________________________________________________________________________________________________
 
-String my_name;
-uint8_t i=0;
-uint8_t a=0; 
+String fruit_name;                                         // Variables
+String myFiles[15];
 int cadena = 0;
-char rx_byte = 0;
-String myFiles[10];
+int i3 = 0;
 
-
-#include <SPI.h>
+#include <SPI.h>                                           // Librerias
 #include <SD.h>
 
-File root;
-File entry;
+File root;                                                 // Recorre lista de archivos en un directorio especificado en el Loop
+File entry;                                                // Recorre lista de archivos en un directorio especificado dentro de funcion especifica
+File dibujar;                                              // Para dibujar lo que esta en el archivo
 
 // ________________________________________________________________________________________________________________________________________
 
 void setup()
 {
-  Serial.begin(9600);                        // Open serial communications and wait for port to open
-  SPI.setModule(0);
+   Serial.begin(9600);                                     // 1. Empezar comunicacion serial y esperar a que el puerto se abra  
+   SPI.setModule(0);                                       // 2. Empezar modulo SPI-0
 
-  Serial.print("Initializing SD card...");
-  pinMode(PA_3, OUTPUT);                     // It's set as an output by default, must be left as an output, or the SD library functions will not work.
+   Serial.print("Initializing SD card...");                // 3. Inicializar SD
+   pinMode(PA_3, OUTPUT);                                  //    Salida por default para que libreria SD funcione
 
-  if (!SD.begin(PA_3)) 
-  {
-    Serial.println("initialization failed!");
-    return;
-  }
-  Serial.println("initialization done.");
+   if (!SD.begin(PA_3))                                    //    No se ha iniciado la comunicacion al mandar el SS?
+   {
+      Serial.println("initialization failed!");            //    Fallo la inicializacion
+      return;
+   }
+   Serial.println("initialization done.");                 //    Ya se inicializo
 
+   root = SD.open("/");                                    // 4. Abrir la memoria SD en la ubicacion principal
+   printDirectory(root, 0);                                // 5. Funcion para listar los archivos con directorio
+   entry.close();                                          //    ** Para inicializar contadores
 }
 
 // ________________________________________________________________________________________________________________________________________
 
 void loop()
 {
-     
-   if (Serial.available())                         // is a character available?
+   if (Serial.available())                                 // Hay caracter en el MISO?
    {                       
-      my_name = Serial.readStringUntil('\n');
-      //Serial.println(my_name);        
-      menu();                                   
-      root = SD.open("/");
-      printDirectory(root, 0);
-      entry.close();
-      graficar();
+      fruit_name = Serial.readStringUntil('\n');           // Lee valor hasta que haya una enter
+      int i3 = fruit_name.toInt();                         // Se pasa a entero el valor leido
+      if ((i3 > 0) && (i3 < (cadena-1)))                   // Esta dentro de las opciones del menu?
+      {       
+         menu();                                           // Titulo del menu             
+         root = SD.open("/");                              // Abrir la memoria SD en la ubicacion principal
+         printDirectory(root, 0);                          // Funcion para listar los archivos con directorio
+         entry.close();                                    // Se cierra el archivo
+         lista();                                          // Se escriben lista de archivos antes leidos
+         graficar();                                       // Se grafica el archivo seleccionado
+      }
+      else
+      {
+         Serial.println("");                               // Se le dice que ingrese numero correcto
+         Serial.println("");
+         Serial.print("No disponible, selecciona entre 1 y ");
+         Serial.println(cadena-2);
+         Serial.println("");
+      }
    }  
 }
 
@@ -55,34 +67,27 @@ void loop()
 
 void printDirectory(File dir, int numTabs) 
 {
-   dir.seek(0); 
-   a = 1;
-   cadena = 0;
+   dir.seek(0);                                           // Busca una nueva posicion dentro del archivo, en este caso la posicion inicial                                     
+   cadena = 0;                                            // SD.h regresa el puntero a la posicion inicial dentro del archivo, pero no al inicio del SD 
    while(true) 
    {
-      entry =  dir.openNextFile();
+      entry =  dir.openNextFile();                        // Indicar el proximo archivo dentro de la carpeta
      
-      if (! entry) 
+      if (! entry)                                        // Hay mas archivos?
       {
-          break;         // no more files
+          break;                                          // Termina al no haber mas archivos
       }
-      
-      for (uint8_t i=0; i<numTabs; i++) 
+                
+      if (entry.isDirectory())                            // Hay mas archivos en el directorio?
       {
-         Serial.print('\t');
-      }
-            
-      if (entry.isDirectory()) 
-      {
-          printDirectory(entry, numTabs+1);
+          printDirectory(entry, numTabs+1);               // Se imprime serialmente cada archivo y directorio presente
       } 
       else 
-      {
-          a = a + 1;
-          myFiles[cadena] = entry.name();
-          cadena = cadena + 1;
+      {                                   
+          myFiles[cadena] = entry.name();                 // Se almacena en cadena tipo String los nombres de los archivos
+          cadena = cadena + 1;                            // Contador para recorrer la cadena
       }
-      entry.close();
+      
+      entry.close();                                      // Se cierra el archivo
    }
-   lista();
 }

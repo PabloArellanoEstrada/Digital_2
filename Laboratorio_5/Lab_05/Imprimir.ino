@@ -1,47 +1,52 @@
 
+// ______________________________________________________________________________________________________________________________________
+
 void menu (void)
 {
    Serial.println(" ");
    Serial.println(" ");
    Serial.println(" ");
    Serial.println(" -------------------------- MENU PRINCIPAL ----------------------------");
+   Serial.println(" ");
 }
 
-
+// ______________________________________________________________________________________________________________________________________
 
 void lista (void)
 {
-   int limite = cadena - 2;
-   for (int i2 = 0; i2 < limite;i2 ++ )
+   int limite = cadena - 2;                                    // Limite de cantidad de archivos                              
+   for (int i2 = 0; i2 < limite;i2 ++ )                        // De cero a cantidad de archivos
    {
       Serial.print(" ");
-      Serial.print(i2);
+      Serial.print(i2+1);                                      // Imprime 1, 2, 3, ...
       Serial.print(". ");
-      Serial.println(myFiles[i2 + 2]);
+      Serial.println(myFiles[i2 + 2]);                         // Imprime nombre del archivo almacenado en cadena
    }
 }
 
+// ______________________________________________________________________________________________________________________________________
+
 void graficar(void)
 {
-    int i3 = my_name.toInt();
-                                        
-    String temp = myFiles[i3 + 2];
-
-    char __dataFileName[sizeof(temp)];
-    temp.toCharArray(__dataFileName, sizeof(__dataFileName));
+    int i3 = fruit_name.toInt();                               // Pasar valor leido del Serial-Monitor a entero  
+    String temp = myFiles[i3 + 1];                             // Guardar en String el nombre del archivo seleccionado 
+    
+    char __numeroFruta[sizeof(temp)];                          // Determinar tamaño de nombre de archivo 
+    temp.toCharArray(__numeroFruta, sizeof(__numeroFruta));    // Guardar String en arreglo de Chars para que pueda ser variable leida
                                                   
-    root = SD.open(__dataFileName);                    // re-open the file for reading:
-    if (root) 
+    dibujar = SD.open(__numeroFruta);                             // Abrir el archivo a leer
+    if (dibujar)                                                  // Existe algo en el archivo?
     {
-       while (root.available())                    // read from the file until there's nothing else in it:
+       while (dibujar.available())                                // Leer el archivo hasta que haya terminado de leer
        {                     
-           Serial.write(root.read());
+           Serial.write(dibujar.read());
        }
-       root.close();                               // close the file:
+       dibujar.close();                                           // Cierra el archivo
     } 
     else 
     {
-       Serial.println("error opening file");       // if the file didn't open, print an error:
+       Serial.println("");
+       Serial.println("Error al abrir. Selecciona otra opcion");  // Error al abrir si no se pudo abrir
     }
-    root.close();                               // close the file:
+    dibujar.close();                                              // Cierra el archivo
 }
