@@ -39,7 +39,7 @@ int y;
 int xP = 239; // pillars
 int yP = 66;  // pillars
 int yB = 25;
-int movingRate = 3;
+int movingRate = 10;
 int fallRateInt = 0;
 float fallRate = 0;
 
@@ -72,8 +72,10 @@ void LCD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int
 void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int columns, int index, char flip, char offset);
 
 void initiateGame();
-void drawBird(int yB);
+void drawBird(int yB, int xP, int yP);
 void drawPilars(int xP, int yP);
+void drawBird2(int yB2, int xP2);
+void drawPilars2(int xP2, int yP2);
 
 
 extern uint8_t fondo[];
@@ -99,11 +101,12 @@ void setup() {
 void loop() {
 
    delay (10);
+ 
    
    xP = xP - movingRate;      // coordenada de los pilares
    drawPilars(xP, yP);        // dibujar pilares  
 
-   drawBird(yB);
+   drawBird(yB, xP, yP);
    yB+=fallRateInt;             // caida
    fallRate = fallRate+0.5;     // aceleracion
    fallRateInt = int(fallRate);
@@ -142,7 +145,7 @@ void loop() {
    xP2 = xP2 - movingRate2;      // coordenada de los pilares
    drawPilars2(xP2, yP2);        // dibujar pilares  
 
-   drawBird2(yB2);
+   drawBird2(yB2, xP2);
    yB2+=fallRateInt2;             // caida
    fallRate2 = fallRate2+0.5;     // aceleracion
    fallRateInt2 = int(fallRate2);
@@ -159,6 +162,8 @@ void loop() {
    {
      fallRate2 = -5;
    }   
+
+   H_line(0, 160, 240, 0x0000b);
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
@@ -173,47 +178,68 @@ void initiateGame()
 //--------------------------------------------------------------------------------------------------------------------------------------
 // bird Uno
 //--------------------------------------------------------------------------------------------------------------------------------------
-void drawBird(int yB) 
+void drawBird(int yB, int xP, int yP) 
 {
-  if((yB > 0)&&(yB < 147))
+ 
+  if ((xP < 0) || (xP > 68))
   {
-     LCD_Sprite(50, yB, 18, 13, ave1,3, 0, 0, 0);
-     FillRect(50, 0, 18, yB, 0x9EDDb);
-     FillRect(50, yB+13, 18, 160-(yB+13), 0x9EDDb);
+    if((yB > 0)&&(yB < 147))
+    {
+      LCD_Sprite(50, yB, 18, 13, ave1,3, 0, 0, 0);
+      FillRect(50, 0, 18, yB, 0x9EDDb);
+      FillRect(50, yB+13, 18, 160-(yB+13), 0x9EDDb);
+    }
+    else if (yB < 0)
+    {
+      yB = 0;
+      fallRate = 10;
+    }
+    else
+    {
+      yB = 147;
+      fallRate = -10;
+    }      
   }
-  else if (yB < 0)
+  
+   if ((xP >= 0) && (xP <= 68))
   {
-    yB = 0;
-    fallRate = 10;
+    LCD_Sprite(50, yB, 18, 13, ave1,3, 0, 0, 0);
+    FillRect(50, yP, 18, abs(yB-yP), 0x9EDDb);
+    FillRect(50, yB+13, 18, abs((yP+60)-yB), 0x9EDDb);    
   }
-  else
-  {
-     yB = 147;
-     fallRate = -10;
-  }      
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 // bird Dos
 //--------------------------------------------------------------------------------------------------------------------------------------
-void drawBird2(int yB2) 
+void drawBird2(int yB2, int xP2) 
 {
-  if((yB2 > 161)&&(yB2< 307))
+  if ((xP2 < 0) || (xP2 > 68))
   {
-     LCD_Sprite(50, yB2, 18, 13, ave2,3, 0, 0, 0);
-     FillRect(50, 161, 18, yB2-160, 0x051Db);
-     FillRect(50, yB2+13, 18, 320-(yB2+13), 0x051Db);
-  }
-  else if (yB2 < 161)
+    if((yB2 > 161)&&(yB2< 307))
+    {
+      LCD_Sprite(50, yB2, 18, 13, ave2,3, 0, 0, 0);
+      FillRect(50, 161, 18, yB2-160, 0x051Db);
+      FillRect(50, yB2+13, 18, 320-(yB2+13), 0x051Db);
+    }
+    else if (yB2 < 161)
+    {
+      yB2 = 161;
+      fallRate2 = 10;
+    }
+    else
+    {
+      yB2 = 307;
+      fallRate2 = -10;
+    } 
+  }  
+  
+  if ((xP2 >= 0) && (xP2 <= 68))
   {
-    yB2 = 161;
-    fallRate2 = 10;
-  }
-  else
-  {
-     yB2 = 307;
-     fallRate2 = -10;
-  }      
+    LCD_Sprite(50, yB2, 18, 13, ave2,3, 0, 0, 0);
+    FillRect(50, yB2-8, 18, 8, 0x051Db);
+    FillRect(50, yB2+13, 18, 8, 0x051Db);      
+  }   
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
@@ -225,15 +251,27 @@ void drawPilars(int x, int y) {
   {
      FillRect(x, 0, 240-x, y, 0x0642b);  // VERDE ARRIBA
      FillRect(x, y+60, 240-x, 160-(y+60), 0x0642b); // VERDE ABAJO
+     
+     FillRect(0, 0, 10, 160, 0x9EDDb);
   }
-  else if( x<=189) 
+  else if((x<=189) && (x > 0))
   {    
      FillRect(x, 0, 50, y, 0x0642b);
      FillRect(x, y+60, 50, 160-(y+60), 0x0642b);
 
-     FillRect(x+50, 0, 240-(x+50), y, 0x9EDDb);
-     FillRect(x+50, y+60, 240-(x+50), 160-(y+60), 0x9EDDb);
+     FillRect(x+50, 0, 10, y, 0x9EDDb);
+     FillRect(x+50, y+60, 10, 160-(y+60), 0x9EDDb);
   }
+  else if ((x>-51) && (x < 0))
+  {
+     FillRect(0, 0, 50+x, y, 0x0642b);
+     FillRect(0, y+60, 50+x, 160-(y+60), 0x0642b);
+
+     FillRect(50+x, 0, 10, y, 0x9EDDb);
+     FillRect(50+x, y+60, 10, 160-(y+60), 0x9EDDb);
+  }
+ 
+  
   // Draws the score
   //myGLCD.setColor(0, 0, 0);
   //myGLCD.setBackColor(221, 216, 148);
@@ -250,14 +288,24 @@ void drawPilars2(int x, int y) {
   {
      FillRect(x, 161, 240-x, y-161, 0x0642b);  // VERDE ARRIBA
      FillRect(x, y+60, 240-x, 320-(y+60), 0x0642b); // VERDE ABAJO
+      FillRect(0, 161, 10, 160, 0x051Db);
   }
-  else if( x<=189) 
+  else if ((x<=189) && (x > 0))
   {    
      FillRect(x, 161, 50, y-161, 0x0642b);
      FillRect(x, y+60, 50, 320-(y+60), 0x0642b);
 
-     FillRect(x+50, 161, 240-(x+50), y, 0x051Db);
-     FillRect(x+50, y+60, 240-(x+50), 320-(y+60), 0x051Db);
+     FillRect(x+50, 161, 10, y-161, 0x051Db);
+     FillRect(x+50, y+60, 10, 320-(y+60), 0x051Db);
+  }
+
+    else if ((x>-51) && (x < 0))
+  {
+     FillRect(0, 161, 50+x, y-161, 0x0642b);
+     FillRect(0, y+60, 50+x, 320-(y+60), 0x0642b);
+
+     FillRect(50+x, 161, 10, y-161, 0x051Db);
+     FillRect(50+x, y+60, 10, 320-(y+60), 0x051Db);
   }
   // Draws the score
   //myGLCD.setColor(0, 0, 0);
