@@ -94,6 +94,38 @@ void setup() {
   pinMode(buttonPush2, INPUT_PULLUP);
   FillRect(0, 0, 240, 160, 0x9EDDb);
   FillRect(0, 161, 240, 320, 0x051Db);
+
+  
+  /*
+  LCD_Init();
+  LCD_Clear(0x0000);
+  FillRect(0, 0, 319, 239, 0x1513); //0x421b
+  //String text1 = "    ¡BIENVENIDO!    ";
+  //LCD_Print(text1,20, 110, 2, 0xffff,0x1513);
+
+  
+  String JP67 = "Pablo Arellano Estrada";
+  String RL = "Raul Aguilar 17581";
+  String U = "--Universidad del Valle de Guatemala--";
+  String depa = "DEPTO. DE ELECTRONICA/MECATRONICA";
+  String curso = "Electronica Digital II";
+  String pablo = "Catedratico: Ing. Pablo Mazariegos";
+  String SC = "Score";
+  String sep = "---------------------------------------";
+  int h = 10;
+  LCD_Print(U, 8, h, 1, 0xffff, 0x421b);
+  LCD_Print(depa, 36, h + 15, 1, 0xffff, 0x1513);
+  LCD_Print(curso, 72, h + 30, 1, 0xffff, 0x1513);
+  LCD_Print(pablo, 24, h + 45, 1, 0xffff, 0x1513);
+  LCD_Print(sep, 4, h + 60, 1, 0xffff, 0x1513);
+  LCD_Print(JP67, 48, 135, 1, 0xffff, 0x1513);
+  LCD_Print(RL, 40, 150, 1, 0xffff, 0x1513);
+  delay(10000);
+  LCD_Clear(0x0000);
+  FillRect(0, 0, 240, 160, 0x9EDDb);
+  FillRect(0, 161, 240, 320, 0x051Db);*/
+
+  
 }
 //--------------------------------------------------------------------------------------------------------------------------------------
 // Loop 
@@ -122,6 +154,11 @@ void loop() {
    if (buttonState2 == LOW)
    {
      fallRate = -5;
+   }
+
+   if( ((xP>50) && (xP<68)) && ((yB < yP) || ((yB+13)>(yP+60) )))
+   {  
+     yB = yP + 30;
    }
 
      /*
@@ -159,6 +196,11 @@ void loop() {
    {
      fallRate2 = -5;
    }   
+
+   if( ((xP2>50) && (xP2<68)) && ((yB2 < yP2) || ((yB2+13)>(yP2+60) )))
+   {  
+     yB2 = yP2 + 30;
+   }
 
    H_line(0, 160, 240, 0x0000b);
 }
@@ -209,12 +251,12 @@ void drawBird(int yB, int xP, int yP)
     else if (yB < yP)
     {
       yB = yB;
-      fallRate = 10;
+      fallRate = 5;
     }
     else if ((yB+13)>(yP+60))
     {
       yB = yB;
-      fallRate = -10;
+      fallRate = -5;
     }      
   }  
 }
@@ -235,12 +277,12 @@ void drawBird2(int yB2, int xP2, int yP2)
     else if (yB2 < 161)
     {
       yB2 = 161;
-      fallRate2 = 5;
+      fallRate2 = 10;
     }
     else
     {
       yB2 = 307;
-      fallRate2 = -5;
+      fallRate2 = -10;
     } 
   }  
   
