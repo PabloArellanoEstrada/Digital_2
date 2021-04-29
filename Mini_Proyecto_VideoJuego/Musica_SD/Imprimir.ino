@@ -28,6 +28,7 @@ void lista (void)
 
 void graficar(void)
 {
+    fruit_name = Serial.readStringUntil('\n');           // Lee valor hasta que haya una enter
     int i3 = fruit_name.toInt();                               // Pasar valor leido del Serial-Monitor a entero  
     String temp = myFiles[i3 + 1];                             // Guardar en String el nombre del archivo seleccionado 
     
