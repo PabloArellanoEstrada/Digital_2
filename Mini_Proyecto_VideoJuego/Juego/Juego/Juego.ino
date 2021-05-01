@@ -31,6 +31,7 @@
 #define OUT_MUSICA PF_2
 int DPINS[] = {PB_0, PB_1, PB_2, PB_3, PB_4, PB_5, PB_6, PB_7};
 
+
 //--------------------------------------------------------------------------------------------------------------------------------------
 // Variables 
 //--------------------------------------------------------------------------------------------------------------------------------------
@@ -102,8 +103,9 @@ void drawBird2(int yB2, int xP2, int yP2);
 void drawPilars2(int xP2, int yP2);
 void gameover();
 
+
 //--------------------------------------------------------------------------------------------------------------------------------------
-// Setup
+// Setup: Inicializa la LCD, la SD, se imprime caratula con datos, y dos imagenes
 //--------------------------------------------------------------------------------------------------------------------------------------
 
 void setup() 
@@ -116,7 +118,7 @@ void setup()
   LCD_Clear(0x00);
   FillRect(0, 0, 239, 319, 0x1513); 
   
-  String PA7 = "Pablo Arellano 151379";
+  String PA7 = "Pablo Arellano 151379";                  //  Caratula
   String RL = "Raul Aguilar 17581";
   String U = "--Universidad del Valle--";
   String depa = "DEPTO. MECATRONICA";
@@ -131,19 +133,16 @@ void setup()
   LCD_Print(pablo, 30, h + 45, 1, 0xffff, 0x1513);
   LCD_Print(sep, 4, h + 60, 1, 0xffff, 0x1513);
   LCD_Print(PA7, 30, 100, 1, 0xffff, 0x1513);
-  LCD_Print(RL, 37, 115, 1, 0xffff, 0x1513);  
+  LCD_Print(RL, 37, 115, 1, 0xffff, 0x1513); 
 
-  
-
-
-  pinMode(buttonPush1, INPUT_PULLUP);
+  pinMode(buttonPush1, INPUT_PULLUP);                     //   Botones
   pinMode(buttonPush2, INPUT_PULLUP);
   pinMode(OUT_MUSICA, OUTPUT);
 
-  Serial.begin(9600);                                     // 1. Empezar comunicacion serial y esperar a que el puerto se abra  
-  SPI.setModule(0);                                       // 2. Empezar modulo SPI-0
+  Serial.begin(9600);                                     //    Empezar comunicacion serial y esperar a que el puerto se abra  
+  SPI.setModule(0);                                       //    Empezar modulo SPI-0
 
-  Serial.print("Initializing SD card...");                // 3. Inicializar SD
+  Serial.print("Initializing SD card...");                //    Inicializar SD
   pinMode(PA_3, OUTPUT);                                  //    Salida por default para que libreria SD funcione
 
   if (!SD.begin(PA_3))                                    //    No se ha iniciado la comunicacion al mandar el SS?
@@ -153,11 +152,11 @@ void setup()
   }
   Serial.println("initialization done.");                 //    Ya se inicializo
 
- LCD_SD_Bitmap(77, 200, 85, 45, "intr.txt");
+  LCD_SD_Bitmap(77, 200, 85, 45, "intr.txt");              //    Impresion Angry Bird
 
- delay (5000);
+  delay (5000);
   
-  LCD_SD_Bitmap(5, 160, 40, 40, "tw0.txt");
+  LCD_SD_Bitmap(5, 160, 40, 40, "tw0.txt");               //    Impresion ave grande en imagenes pequeñas
   LCD_SD_Bitmap(45, 160, 40, 40, "tw1.txt");
   LCD_SD_Bitmap(85, 160, 40, 40, "tw2.txt");
   LCD_SD_Bitmap(125, 160, 40, 40, "tw3.txt");
@@ -185,47 +184,44 @@ void setup()
   LCD_SD_Bitmap(165, 280, 40, 35, "tw22.txt");
   LCD_SD_Bitmap(205, 280, 29, 35, "tw23.txt");
   
-
- 
-
-    delay(5000);
+  delay(5000);
       
-  LCD_Clear(0x0000);
-  FillRect(0, 0, 240, 160, 0x9EDDb);
+  LCD_Clear(0x0000);                            //  Limpieza
+  FillRect(0, 0, 240, 160, 0x9EDDb);            //  Impresion de rectangulos para juego
   FillRect(0, 161, 240, 320, 0x051Db);
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
-// Loop 
+// Loop: En esta se dibujan las aves y los pilares. La posicion del ave cambia de acuerdo a los push y los pilares con el xP
 //--------------------------------------------------------------------------------------------------------------------------------------
 
 void loop() 
   {
-  digitalWrite(OUT_MUSICA, HIGH);
+  digitalWrite(OUT_MUSICA, HIGH);              //  Pin para musica
   H_line(0, 160, 240, 0x0000b);
-  if (conta == 9 || conta2 == 9){
+  if (conta == 9 || conta2 == 9){              //  Si hay ganador, se termina el juego
       gameover();
   }  
 
-  // --------------------------------------------------------------------------------------------------------------------------
+  // ------------------------------------------ Ave 1 y Pilares 1 ----------------------------------------------------------------------
 
-  xP = xP - movingRate;        // coordenada de los pilares 
-  drawPilars(xP, yP);          // dibujar pilares  
-  drawBird(yB, xP, yP);
-  yB+=fallRateInt;             // caida
-  fallRate = fallRate+0.5;     // aceleracion
+  xP = xP - movingRate;                        // coordenada de los pilares 
+  drawPilars(xP, yP);                          // dibujar pilares  
+  drawBird(yB, xP, yP);                        // dibujar ave
+  yB+=fallRateInt;                             // caida
+  fallRate = fallRate+0.5;                     // aceleracion
   fallRateInt = int(fallRate); 
 
   if (xP<=-51)                
   {
-     xP=239;                   // Resets xP to 319
-     yP = random(15,89);       // Random number for the pillars height
+     xP=239;                                   // Resets xP to 239
+     yP = random(15,89);                       // Numeros random para altura de columnas
      control_conta = 1;
      control_choque = 1;
      movingRate = conta + 3;
   }
    
-  buttonState2 = digitalRead(buttonPush2);  
+  buttonState2 = digitalRead(buttonPush2);     // Boton para volar
   if (buttonState2 == LOW)
   {
     fallRate = -5;
@@ -245,25 +241,25 @@ void loop()
     control_choque = 0;
   } 
 
-  // --------------------------------------------------------------------------------------------------------------------------
+  // ----------------------------------------- Ave 2 y Pilares 2 ----------------------------------------------------------------------
 
-  xP2 = xP2 - movingRate2;       // coordenada de los pilares 
-  drawPilars2(xP2, yP2);         // dibujar pilares  
+  xP2 = xP2 - movingRate2;                       // coordenada de los pilares 
+  drawPilars2(xP2, yP2);                         // dibujar pilares  
   drawBird2(yB2, xP2, yP2);
-  yB2+=fallRateInt2;             // caida
-  fallRate2 = fallRate2+0.5;     // aceleracion
+  yB2+=fallRateInt2;                             // caida
+  fallRate2 = fallRate2+0.5;                     // aceleracion
   fallRateInt2 = int(fallRate2);
    
   if (xP2<=-51) 
   {
-     xP2=239; // Resets xP to 319
-     yP2 = random(10,89) +180;   // Random number for the pillars height
+     xP2=239;                                    // Resets xP to 239
+     yP2 = random(10,89) +180;                   // Numeros random para altura de columnas
      control_conta2 = 1;
      control_choque2 = 1;
      movingRate2 = conta2 + 3;    
   }
 
-  buttonState1 = digitalRead(buttonPush1); 
+  buttonState1 = digitalRead(buttonPush1);       // Boton para volar
   if (buttonState1 == LOW)
   {
     fallRate2 = -5;
@@ -285,7 +281,7 @@ void loop()
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
-// bird Uno
+// bird Uno: se ingresa altura del ave yB, posicion xP de pilar, y altura de abertura de pilar yp
 //--------------------------------------------------------------------------------------------------------------------------------------
 
 void drawBird(int yB, int xP, int yP) 
@@ -293,7 +289,7 @@ void drawBird(int yB, int xP, int yP)
   aumentar = aumentar + 1;
   if (aumentar > 2)
   {
-    anim = anim + 1;
+    anim = anim + 1;                           // anim para el sprite y que mueva alas
     aumentar = 0;
     if (anim > 2)
     {
@@ -301,33 +297,33 @@ void drawBird(int yB, int xP, int yP)
     }
   } 
 
-  // ------------------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------------------------------------------------------------
   
-  if ((xP < 0) || (xP > 68))  
+  if ((xP < 0) || (xP > 68))                  // Posicion fuera de columnas
   {
-    if((yB > 12)&&(yB < 147))
+    if((yB > 12)&&(yB < 147))                 // Dentro del rango de espacio para volar
     {
       LCD_Sprite(50, yB, 18, 13, ave1,3, anim, 0, 0);
       FillRect(50, 12, 18, yB-12, 0x9EDDb);
       FillRect(50, yB+13, 18, 160-(yB+13), 0x9EDDb);
     }
-    else if (yB <= 12)
+    else if (yB <= 12)                        // Sube demasiado
     {
       yB = 12;
       fallRate = 10;     
     }
-    else
+    else                                      // Baja demasiado
     {
       yB = 147;
       fallRate = -10;  
     }      
   }
 
-  // ------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------------------------------------------
   
-  if ((xP >= 0) && (xP <= 68))
+  if ((xP >= 0) && (xP <= 68))                // Posicion dentro de columnas
   {
-    if( (yB > yP) && ( (yB+13) < (yP+60)) )
+    if( (yB > yP) && ( (yB+13) < (yP+60)) )   // Fuera del rango de espacio para volar
     {
       LCD_Sprite(50, yB, 18, 13, ave1,3, anim, 0, 0);
       FillRect(50, yP, 18, abs(yB-yP), 0x9EDDb);
@@ -339,12 +335,12 @@ void drawBird(int yB, int xP, int yP)
          control_choque = 0;
       }
     }
-    else if (yB < yP)
+    else if (yB < yP)                          // Sube demasiado
     {
       yB = yB;
       fallRate = 5;     
     }
-    else if ((yB+13)>(yP+60))
+    else if ((yB+13)>(yP+60))                  // Baja demasiado
     {
       yB = yB;
       fallRate = -5;
@@ -353,48 +349,48 @@ void drawBird(int yB, int xP, int yP)
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
-// bird Dos
+// bird Dos: se ingresa altura del ave yB, posicion xP de pilar, y abertura de pilar yp
 //--------------------------------------------------------------------------------------------------------------------------------------
 void drawBird2(int yB2, int xP2, int yP2) 
 {
   aumentar2 = aumentar2 + 1;
   if (aumentar2 > 2)
   {
-    anim2 = anim2 + 1;
-    aumentar2 = 0;
+    anim2 = anim2 + 1;                          // anim para el sprite y que mueva alas
+    aumentar2 = 0; 
     if (anim2 > 2)
     {
       anim2 = 0;
     }
   }
 
-  // ------------------------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------------------------------------------------------------
  
-  if ((xP2 < 0) || (xP2 > 68))
+  if ((xP2 < 0) || (xP2 > 68))                   // Posicion fuera de columnas
   {
-    if((yB2 > 172)&&(yB2< 307))
+    if((yB2 > 172)&&(yB2< 307))                  // Dentro del rango de espacio
     {
       LCD_Sprite(50, yB2, 18, 13, ave2,3, anim2, 0, 0);
       FillRect(50, 173, 18, yB2-173, 0x051Db);
       FillRect(50, yB2+13, 18, 320-(yB2+13), 0x051Db);
     }
-    else if (yB2 < 172)
+    else if (yB2 < 172)                          // Sube demasiado
     {
       yB2 = 172;
       fallRate2 = 10;
     }
-    else
+    else                                         // Baja demasiado
     {
       yB2 = 307;
       fallRate2 = -10;
     } 
   }  
 
-  // ------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------------------------
     
-  if ((xP2 >= 0) && (xP2 <= 68))
+  if ((xP2 >= 0) && (xP2 <= 68))                 // Posicion dentro de columnas
   {
-    if( (yB2 > yP2) && ( (yB2+13) < (yP2+60)) )
+    if( (yB2 > yP2) && ( (yB2+13) < (yP2+60)) )  // Fuera del rango de espacio para volar
     {
       LCD_Sprite(50, yB2, 18, 13, ave2,3, anim2, 0, 0);
       FillRect(50, yP2, 18, abs(yB2-yP2), 0x051Db);
@@ -406,12 +402,12 @@ void drawBird2(int yB2, int xP2, int yP2)
          control_choque2 = 0;
       }
     }
-    else if (yB2 < yP2)
+    else if (yB2 < yP2)                           // Sube demasiado
     {
       yB2 = yB2;
       fallRate2 = 5;
     }
-    else if ((yB2+13)>(yP2+60))
+    else if ((yB2+13)>(yP2+60))                   // Baja demasiado
     {
       yB2 = yB2;
       fallRate2 = -5;
@@ -419,74 +415,73 @@ void drawBird2(int yB2, int xP2, int yP2)
   }    
 }
 
-
 //--------------------------------------------------------------------------------------------------------------------------------------
-// Pilares 
+// Pilares 1: mueve pilares a diferentes velocidades, se ingresa posicion en X y altura de abertura de pilar Y
 //--------------------------------------------------------------------------------------------------------------------------------------
 
 void drawPilars(int x, int y) 
   {
-  String text1 = " Score:";
+  String text1 = " Score:";                              // Puntuacion
   String stringOne =  String(conta);
   FillRect(0, 0, 240, 12, 0x1513);
   LCD_Print(text1, 170, 0, 1, 0xffff, 0x1513);
   LCD_Print(stringOne, 225, 0, 1, 0xffff, 0x1513);
 
-  if (x>=190)
+  if (x>=190)                                            // Entra lado izquierdo??                   
   {
-     FillRect(x, 12, 240-x, y-12, 0x0642b);  // VERDE ARRIBA
-     FillRect(x, y+60, 240-x, 160-(y+60), 0x0642b); // VERDE ABAJO
+     FillRect(x, 12, 240-x, y-12, 0x0642b);              // pilar verde arriba
+     FillRect(x, y+60, 240-x, 160-(y+60), 0x0642b);      // pilar verde abajo
      FillRect(0, 12, 10, 160-12, 0x9EDDb);
   }
-  else if((x<=189) && (x > 0))
+  else if((x<=189) && (x > 0))                           // En medio de pantalla??
   {    
-     FillRect(x, 12, 50, y-12, 0x0642b);
-     FillRect(x, y+60, 50, 160-(y+60), 0x0642b);
-     FillRect(x+50, 12, 15, y-12, 0x9EDDb);
-     FillRect(x+50, y+60, 15, 160-(y+60), 0x9EDDb);
+     FillRect(x, 12, 50, y-12, 0x0642b);                 // pilar verde arriba
+     FillRect(x, y+60, 50, 160-(y+60), 0x0642b);         // pilar verde abajo
+     FillRect(x+50, 12, 15, y-12, 0x9EDDb);              // limpieza arriba
+     FillRect(x+50, y+60, 15, 160-(y+60), 0x9EDDb);      // limpieza abajo
   }
-  else if ((x>-51) && (x < 0))
+  else if ((x>-51) && (x < 0))                           // Sale lado derecho??
   {
-     FillRect(0, 12, 50+x, y-12, 0x0642b);
-     FillRect(0, y+60, 50+x, 160-(y+60), 0x0642b);
-     FillRect(50+x, 12, 15, y-12, 0x9EDDb);
-     FillRect(50+x, y+60, 15, 160-(y+60), 0x9EDDb);
+     FillRect(0, 12, 50+x, y-12, 0x0642b);               // pilar verde arriba
+     FillRect(0, y+60, 50+x, 160-(y+60), 0x0642b);       // pilar verde abajo
+     FillRect(50+x, 12, 15, y-12, 0x9EDDb);              // limpieza arriba
+     FillRect(50+x, y+60, 15, 160-(y+60), 0x9EDDb);      // limpieza abajo
   }
 
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
-// Pilares 
+// Pilares 2: mueve pilares a diferentes velocidades, se ingresa posicion en X y avertura de pilar Y
 //--------------------------------------------------------------------------------------------------------------------------------------
 
 void drawPilars2(int x, int y) 
 {  
-  String text2 = " Score:";
+  String text2 = " Score:";                              // Puntuacion
   String stringtwo =  String(conta2);  
   FillRect(0, 161, 240, 12, 0x1513);
   LCD_Print(text2, 170, 161, 1, 0xffff, 0x1513);
   LCD_Print(stringtwo, 225, 161, 1, 0xffff, 0x1513);  
 
-  if (x>=190)
+  if (x>=190)                                            // Entra lado izquierdo??   
   {
-     FillRect(x, 173, 240-x, y-173, 0x0642b);  // VERDE ARRIBA
-     FillRect(x, y+60, 240-x, 320-(y+60), 0x0642b); // VERDE ABAJO
+     FillRect(x, 173, 240-x, y-173, 0x0642b);            // pilar verde arriba
+     FillRect(x, y+60, 240-x, 320-(y+60), 0x0642b);      // pilar verde abajo
      FillRect(0, 173, 10, 160-12, 0x051Db);
   }
-  else if ((x<=189) && (x > 0))
+  else if ((x<=189) && (x > 0))                          // En medio de pantalla??
   {    
-     FillRect(x, 173, 50, y-173, 0x0642b);
-     FillRect(x, y+60, 50, 320-(y+60), 0x0642b);
-     FillRect(x+50, 173, 15, y-173, 0x051Db);
-     FillRect(x+50, y+60, 15, 320-(y+60), 0x051Db);
+     FillRect(x, 173, 50, y-173, 0x0642b);               // pilar verde arriba
+     FillRect(x, y+60, 50, 320-(y+60), 0x0642b);         // pilar verde abajo
+     FillRect(x+50, 173, 15, y-173, 0x051Db);            // limpieza arriba
+     FillRect(x+50, y+60, 15, 320-(y+60), 0x051Db);      // limpieza abajo
   }
 
-    else if ((x>-51) && (x < 0))
+    else if ((x>-51) && (x < 0))                         // Sale lado derecho??
   {
-     FillRect(0, 173, 50+x, y-173, 0x0642b);
-     FillRect(0, y+60, 50+x, 320-(y+60), 0x0642b);
-     FillRect(50+x, 173, 15, y-173, 0x051Db);
-     FillRect(50+x, y+60, 15, 320-(y+60), 0x051Db);
+     FillRect(0, 173, 50+x, y-173, 0x0642b);             // pilar verde arriba
+     FillRect(0, y+60, 50+x, 320-(y+60), 0x0642b);       // pilar verde abajo
+     FillRect(50+x, 173, 15, y-173, 0x051Db);            // limpieza arriba
+     FillRect(50+x, y+60, 15, 320-(y+60), 0x051Db);      // limpieza abajo
   }
 }
 
@@ -498,7 +493,7 @@ void gameover()
 {
   while(conta == 9 || conta2 == 9)
   {
-    if(conta==9)
+    if(conta==9)                                         // Jugador 1 gano?
     {
       digitalWrite(OUT_MUSICA, LOW);
       String Wp= "Congratulation";
@@ -508,7 +503,7 @@ void gameover()
       LCD_Print(W, 1, 170, 2, 0xffff, 0x0000b);
      
     }
-    if(conta2==9) 
+    if(conta2==9)                                        // Jugador 2 gano?
     {
       digitalWrite(OUT_MUSICA, LOW);
       String Wp= "Congratulation";
@@ -521,9 +516,60 @@ void gameover()
     } 
   }  
 }   
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+//  convertir caracter ASCII a numero
+//--------------------------------------------------------------------------------------------------------------------------------------
+unsigned char Char_to_uChar(char letra){     
+  unsigned char num;
+  if(letra>=48 && letra <=57){               // para pasar de numero = "0" a numero = 0
+    num = letra - 48;                        // num = 0
+  }
+  else if (letra >= 97 && letra <=102){      // convierte de "a" a 97
+    num = letra -87;                         // a valor numerico
+  }
+  return num;
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+// Función para dibujar una imagen a partir de un arreglo de colores 
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+void LCD_SD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int height, char * direccion){    
+  File myFile = SD.open(direccion);
+  uint16_t n = 0;                                          // contador 
+  uint16_t dimension = width*height*2;                     // tamaño del array
+  unsigned char bitmap_SD[dimension] = {};                 // array vacio de dimension ancho por alto por 2
+  if (myFile) {
+  
+    while (myFile.available()) {
+
+      unsigned char numero = 0;                            // inicializo variable
+      for(uint8_t m = 0; m < 2; m++){                      // cada elemento va de dos en dos
+        char caracter = myFile.read();
+        unsigned char digito = Char_to_uChar(caracter);    // lo escribo en forma unsigned char 
+        if (m == 0){
+          numero = digito*16;                              // variable lo multiplico por 16 porque son dos bytes, porque es el primer digito va posicion mas significativa
+        }
+        else if (m == 1){
+          numero = numero + digito;                        // segundo digito
+        }
+      }
+      bitmap_SD[n] = numero;                               // agrego al arreglo el valor de numero
+      n ++;                                                // contando el tamaño arreglo
+    }
+    myFile.close();
+  } else {
+    Serial.println("error opening ");
+  }
+   LCD_Bitmap(x,y,width,height,bitmap_SD);
+}
+
+
+
       
-//***************************************************************************************************************************************************************************************
-// Función para inicializar LCD
+//***************************************************************************************************************************************
+// Función para inicializar LCD: Funciones obtenidas de clase 
 //***************************************************************************************************************************************
 void LCD_Init(void) {
   pinMode(LCD_RST, OUTPUT);
@@ -865,52 +911,4 @@ void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int 
     
     }
   digitalWrite(LCD_CS, HIGH);
-}
-
-//************************************************************************************************
-//  convertir caracter en numero
-//************************************************************************************************
-unsigned char Char_to_uChar(char letra){     // letra = "0"   letra = 48
-  unsigned char num;
-  if(letra>=48 && letra <=57){
-    num = letra - 48;                        // num = 0
-  }
-  else if (letra >= 97 && letra <=102){      // convierte a letra
-    num = letra -87;                         // a valor numerico
-  }
-  return num;
-}
-
-//***************************************************************************************************************************************
-// Función para dibujar una imagen a partir de un arreglo de colores 
-//*************************************************************************************************************************************
-
-void LCD_SD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int height, char * direccion){    
-  File myFile = SD.open(direccion);
-  uint16_t n = 0;                                          // contador 
-  uint16_t dimension = width*height*2;                     // tamanio del array
-  unsigned char bitmap_SD[dimension] = {};                 // array vacio de dimension ancho por alto por 2
-  if (myFile) {
-  
-    while (myFile.available()) {
-
-      unsigned char numero = 0;                            // inicializo variable
-      for(uint8_t m = 0; m < 2; m++){                      // cada elemento va de dos en dos
-        char caracter = myFile.read();
-        unsigned char digito = Char_to_uChar(caracter);    // lo escribo en forma unsigned char 
-        if (m == 0){
-          numero = digito*16;                              // variable lo multiplico por 16 porque son dos bytes, porque es el primer digito posicin mas significativa
-        }
-        else if (m == 1){
-          numero = numero + digito;                        // segundo digito
-        }
-      }
-      bitmap_SD[n] = numero;
-      n ++;                                                // contando el tamanio del arreglo
-    }
-    myFile.close();
-  } else {
-    Serial.println("error opening ");
-  }
-   LCD_Bitmap(x,y,width,height,bitmap_SD);
 }
