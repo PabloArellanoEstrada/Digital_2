@@ -18,7 +18,7 @@
 #include "inc/tm4c123gh6pm.h"
 
 uint8_t Push;
-int pressed_ok = 0;                // Jugador 1 debouncing
+int pressed_ok = 0;                //  debouncing
 int released_ok = 0;
 int presionado = 0;
 int i = 0;
@@ -48,7 +48,7 @@ int main(void)
     // Reloj del Sistema: Principal | 16 MHz | (400 MHz/2) = 200 MHz |  (200MHz/5) = 40 MHz
     SysCtlClockSet(SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ |    SYSCTL_USE_PLL    |   SYSCTL_SYSDIV_5  );
 
-    // Enable Puerto F para Leds
+    // Enable del reloj Puerto F (Leds)
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
     // Verifica si hay acceso a perifericos
