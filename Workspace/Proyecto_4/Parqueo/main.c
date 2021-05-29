@@ -8,35 +8,35 @@
 //
 //*****************************************************************************
 
-#include <stdint.h>            // variables de ancho definido
-#include <stdbool.h>           // true or false
-#include "inc/hw_memmap.h"     // mapa de memoria
+#include <stdint.h>              // Variables de Ancho Definido
+#include <stdbool.h>             // True or False
+#include "inc/hw_memmap.h"       // Mapa de Memoria
 #include "driverlib/debug.h"
-#include "driverlib/gpio.h"    // GPIO - Puertos
+#include "driverlib/gpio.h"      // Puertos
 #include "driverlib/sysctl.h"
 #include "inc/hw_types.h"
-#include "inc/tm4c123gh6pm.h"
-#include "driverlib/timer.h"
+#include "inc/tm4c123gh6pm.h"    // Dirverlib
+#include "driverlib/timer.h"     // Timer
 #include "driverlib/systick.h"
-#include "driverlib/uart.h"
-#include "driverlib/pin_map.h"
+#include "driverlib/uart.h"      // UART
+#include "driverlib/pin_map.h"   // Pines
 #include "driverlib/interrupt.h" // Interrupciones
 #include "driverlib/fpu.h"
 
-#define XTAL 16000000
+#define XTAL 16000000            // Frecuencia de Osilacion
 
-uint8_t luz1;                // verificar luz
+uint8_t luz1;                    // Sensores
 uint8_t luz2;
 uint8_t luz3;
 uint8_t luz4;
 
-uint8_t cont1 = 0;           // contar
+uint8_t cont1 = 0;               // Contadores Tiva
 uint8_t cont2 = 0;
 uint8_t cont3 = 0;
 uint8_t cont4 = 0;
 uint8_t total = 0;
 
-unsigned char char1 = '0';        // enviar char
+unsigned char char1 = '0';       // UART para ESP32
 unsigned char char2 = '0';
 unsigned char char3 = '0';
 unsigned char char4 = '0';
@@ -54,6 +54,11 @@ __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
+//*****************************************************************************
+//
+// Configuracion UART
+//
+//*****************************************************************************
 
 void UART1config(void){
 
@@ -70,28 +75,9 @@ void UART1config(void){
     // Inicio Modulo UART: 115200, 8 bits de datos, 1 stop bit, No Paridad
     UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 115200,(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
 
+    // Enable del UART1
     UARTEnable(UART1_BASE);
 }
-
-void UART0config(void){
-
-    // Enable reloj del UART1
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
-
-    // Colocar GPIO C4 - C5 como pines para UART
-    GPIOPinConfigure(GPIO_PA0_U0RX);
-    GPIOPinConfigure(GPIO_PA1_U0TX);
-
-    // Enable los pines para ser perifericos
-    GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-
-    // Inicio Modulo UART: 115200, 8 bits de datos, 1 stop bit, No Paridad
-    UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
-
-    UARTEnable(UART0_BASE);
-}
-
-
 
 //*****************************************************************************
 //
@@ -100,7 +86,6 @@ void UART0config(void){
 //*****************************************************************************
 int main(void)
 {
-    volatile uint32_t ui32Loop;
 
     // Reloj del Sistema: Principal | 16 MHz | (400 MHz/2) = 200 MHz |  (200MHz/5) = 40 MHz
     SysCtlClockSet(SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ |    SYSCTL_USE_PLL    |   SYSCTL_SYSDIV_5  );
@@ -137,118 +122,108 @@ int main(void)
 
     // Enable del reloj Puerto C
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
-
     // Verifica si hay acceso a perifericos
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOC))
     {}
 
+    // Enable GPIO para el LED. Pines de salida y digitales
+    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE, GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_6 | GPIO_PIN_7);
+    GPIOPinTypeGPIOOutput(GPIO_PORTE_BASE, GPIO_PIN_1 | GPIO_PIN_3 );
+    GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE, GPIO_PIN_6 | GPIO_PIN_3 );
 
-    // Enable GPIO para el LED (PA3). Pines de salida y digitales
-    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_6|GPIO_PIN_7);
-    GPIOPinTypeGPIOOutput(GPIO_PORTE_BASE, GPIO_PIN_1 |GPIO_PIN_3);
-    GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE, GPIO_PIN_6 | GPIO_PIN_3);
+    // Enable GPIO para el DISPLAY. Pines de salida y digitales
     GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7);
 
-    // Enable GPIO para el puerto A. Pines de entrada
+    // Enable GPIO. Pines de entrada
     GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_4 | GPIO_PIN_5);
     GPIOPinTypeGPIOInput(GPIO_PORTE_BASE, GPIO_PIN_2 | GPIO_PIN_5);
 
     // Configuracion: Puerto, Pines, Corriente, Pull Up de la Tiva
-    //GPIOPadConfigSet(GPIO_PORTA_BASE,  GPIO_PIN_4, GPIO_PIN_TYPE_STD_WPU);
     GPIOPadConfigSet(GPIO_PORTA_BASE,  GPIO_PIN_4, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD_WPU);
     GPIOPadConfigSet(GPIO_PORTE_BASE,  GPIO_PIN_2, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD_WPU);
     GPIOPadConfigSet(GPIO_PORTE_BASE,  GPIO_PIN_5, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD_WPU);
     GPIOPadConfigSet(GPIO_PORTA_BASE,  GPIO_PIN_5, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD_WPU);
 
+    // Funcion Cofiguracion UART
     UART1config();
-    //UART0config();
 
-    // Loop
-    //
     while(1)
     {
 
+        //******************************************************************************************
 
-        luz1 = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_4);
+        luz1 = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_4);    // Sensor uno recibe luz?
         if (luz1 == 0)
         {
             GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_3);
             cont1 = 0;
-            char1 = '1';
+            char1 = '1';                                    // Led Rojo y contador en 0
         }
         else
         {
             GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_2);
             cont1 = 1;
-            char1 = '0';
-
+            char1 = '0';                                    // Led Verde y contador en 1
         }
 
+        //******************************************************************************************
 
 
-
-
-        luz2 = GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_2);
+        luz2 = GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_2);    // Sensor uno recibe luz?
         if (luz2 == 0)
         {
             GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_6 | GPIO_PIN_3, GPIO_PIN_3);
             cont2 = 0;
-            char2 = '1';
-
+            char2 = '1';                                    // Led Rojo y contador en 0
         }
         else
         {
             GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_6 | GPIO_PIN_3, GPIO_PIN_6);
             cont2 = 1;
-            char2 = '0';
+            char2 = '0';                                    // Led Verde y contador en 1
         }
 
+        //******************************************************************************************
 
 
 
-
-        luz3 = GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_5);
+        luz3 = GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_5);     // Sensor uno recibe luz?
         if (luz3 == 0)
         {
             GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1 |GPIO_PIN_3, GPIO_PIN_3);
             cont3 = 0;
-            char3 = '1';
+            char3 = '1';                                     // Led Rojo y contador en 0
         }
         else
         {
             GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1 |GPIO_PIN_3, GPIO_PIN_1);
             cont3 = 1;
-            char3 = '0';
-
+            char3 = '0';                                     // Led Verde y contador en 1
         }
 
+        //******************************************************************************************
 
-
-
-
-
-        luz4 = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_5);
+        luz4 = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_5);     // Sensor uno recibe luz?
         if (luz4 == 0)
         {
             GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_6);
             cont4 = 0;
-            char4 = '1';
+            char4 = '1';                                     // Led Rojo y contador en 0
         }
         else
         {
             GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_7);
             cont4 = 1;
-            char4 = '0';
+            char4 = '0';                                     // Led Verde y contador en 1
         }
 
-
+        //**************************************************************************************************************************************
 
         total = cont1 + cont2 + cont3 + cont4;
-        if (total == 0)
+        if (total == 0)                                     // Display dependiendo del numero
         {
             GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7,
                                           GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6);
-
         }
         else if (total == 1)
         {
@@ -270,26 +245,17 @@ int main(void)
             GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7,
                                           GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_2 | GPIO_PIN_3);
         }
-/*
 
+        //**************************************************************************************************************************************
 
-
-*/
-
-        UARTCharPut(UART1_BASE,char1);
-        UARTCharPut(UART1_BASE,',');
-        UARTCharPut(UART1_BASE,char2);
-        UARTCharPut(UART1_BASE,',');
-        UARTCharPut(UART1_BASE,char3);
-        UARTCharPut(UART1_BASE,',');
-        UARTCharPut(UART1_BASE,char4);
-        UARTCharPut(UART1_BASE,',');
+        UARTCharPut(UART1_BASE,char1);    // 0 o 1        // La cadena enviada es 0,0,0,0,
+        UARTCharPut(UART1_BASE,',');      // ,
+        UARTCharPut(UART1_BASE,char2);    // 0 o 1
+        UARTCharPut(UART1_BASE,',');      // ,
+        UARTCharPut(UART1_BASE,char3);    // 0 o 1
+        UARTCharPut(UART1_BASE,',');      // ,
+        UARTCharPut(UART1_BASE,char4);    // 0 o 1
+        UARTCharPut(UART1_BASE,',');      // ,
 
     }
-
 }
-
-
-
-
-
